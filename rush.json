@@ -473,6 +473,10 @@
       "projectFolder": "packages/type"
     },
     {
+      "packageName": "@jamashita/anden-validation",
+      "projectFolder": "packages/validation"
+    },
+    {
       "packageName": "@jamashita/anden-uuid",
       "projectFolder": "packages/uuid"
     },
