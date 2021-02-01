@@ -4,8 +4,7 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git@github.com:jamashita/anden.git",
-    "directory": "packages/error"
+    "url": "git@github.com:jamashita/anden.git/packages/error"
   },
   "license": "MIT",
   "author": "jamashita <jamashita@arachnid.xyz>",
@@ -18,13 +17,9 @@
     "src"
   ],
   "scripts": {
-    "build": "yarn clean && concurrently \"npm:build:*\"",
+    "build": "concurrently \"npm:build:*\"",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json",
-    "clean": "rimraf dist && rimraf coverage",
-    "update": "yarn update:upgrade && yarn update:install",
-    "update:install": "yarn install",
-    "update:upgrade": "ncu --upgrade --timeout 600000"
+    "build:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
     "@jamashita/anden-interface": "^3.12.0",
@@ -39,6 +34,5 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://npm.pkg.github.com/"
-  },
-  "gitHead": "6d4296d84b72c900dcceef3378c7ce20fd82b70e"
+  }
 }
