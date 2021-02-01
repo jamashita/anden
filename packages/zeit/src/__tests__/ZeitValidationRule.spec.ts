@@ -1,4 +1,4 @@
-import { ValidationError } from '@jamashita/publikum-validation';
+import { ValidationError } from '@jamashita/anden-validation';
 import { ZeitValidationRule } from '../ZeitValidationRule';
 
 describe('ZeitValidationRule', () => {

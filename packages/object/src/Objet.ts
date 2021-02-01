@@ -1,5 +1,5 @@
-import { isNominative, Nominative } from '@jamashita/publikum-interface';
-import { Kind } from '@jamashita/publikum-type';
+import { isNominative, Nominative } from '@jamashita/anden-interface';
+import { Kind } from '@jamashita/anden-type';
 import hash from 'object-hash';
 
 export abstract class Objet<N extends string = string> implements Nominative<N> {

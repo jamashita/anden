@@ -3,8 +3,8 @@
   "compilerOptions": {
     "rootDir": "src",
     "paths": {
-      "@jamashita/publikum-*": [
-        "node_modules/@jamashita/publikum-*/src"
+      "@jamashita/anden-*": [
+        "node_modules/@jamashita/anden-*/src"
       ]
     }
   },

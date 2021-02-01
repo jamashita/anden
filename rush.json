@@ -456,5 +456,29 @@
     //   "projectFolder": "tools/my-toolchain",
     //   "reviewCategory": "tools"
     // }
+    {
+      "packageName": "@jamashita/anden-error",
+      "projectFolder": "packages/error"
+    },
+    {
+      "packageName": "@jamashita/anden-interface",
+      "projectFolder": "packages/interface"
+    },
+    {
+      "packageName": "@jamashita/anden-object",
+      "projectFolder": "packages/object"
+    },
+    {
+      "packageName": "@jamashita/anden-type",
+      "projectFolder": "packages/type"
+    },
+    {
+      "packageName": "@jamashita/anden-uuid",
+      "projectFolder": "packages/uuid"
+    },
+    {
+      "packageName": "@jamashita/anden-zeit",
+      "projectFolder": "packages/zeit"
+    }
   ]
 }

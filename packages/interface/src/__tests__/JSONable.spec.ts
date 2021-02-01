@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '@jamashita/publikum-type';
+import { ObjectLiteral } from '@jamashita/anden-type';
 import { isJSONable, JSONable } from '../JSONable';
 
 class MockJSONable implements JSONable {

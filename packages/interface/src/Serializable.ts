@@ -1,4 +1,4 @@
-import { Kind } from '@jamashita/publikum-type';
+import { Kind } from '@jamashita/anden-type';
 
 export interface Serializable {
   serialize(): string;

@@ -1,4 +1,4 @@
-import { Noun } from '@jamashita/publikum-interface';
+import { Noun } from '@jamashita/anden-interface';
 import { BaseError, fullStack } from 'make-error-cause';
 
 export abstract class RuntimeError<N extends string = string> extends BaseError implements Noun<N> {

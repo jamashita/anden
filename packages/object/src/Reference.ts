@@ -1,4 +1,4 @@
-import { Inconnu } from '@jamashita/publikum-type';
+import { Inconnu } from '@jamashita/anden-type';
 
 export class Reference {
   public static isCircular(value: unknown): boolean {

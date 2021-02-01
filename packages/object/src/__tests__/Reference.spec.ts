@@ -1,4 +1,4 @@
-import { PlainObject, PlainObjectItem } from '@jamashita/publikum-type';
+import { PlainObject, PlainObjectItem } from '@jamashita/anden-type';
 import { Reference } from '../Reference';
 
 describe('Reference', () => {

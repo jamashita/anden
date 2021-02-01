@@ -1,4 +1,4 @@
-import { RuntimeError } from '@jamashita/publikum-error';
+import { RuntimeError } from '@jamashita/anden-error';
 
 export class RecursiveReferenceError extends RuntimeError<'RecursiveReferenceError'> {
   public readonly noun: 'RecursiveReferenceError' = 'RecursiveReferenceError';

@@ -1,4 +1,4 @@
-import { ValidationError } from '@jamashita/publikum-validation';
+import { ValidationError } from '@jamashita/anden-validation';
 import { UUIDValidationRule } from '../UUIDValidationRule';
 
 describe('UUIDValidationRule', () => {

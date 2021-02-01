@@ -1,4 +1,4 @@
-import { Validate, ValidationError } from '@jamashita/publikum-validation';
+import { Validate, ValidationError } from '@jamashita/anden-validation';
 import 'reflect-metadata';
 import { UUIDValidation } from '../UUIDValidation';
 

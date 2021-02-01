@@ -1,4 +1,4 @@
-import { Inconnu } from '@jamashita/publikum-type';
+import { Inconnu } from '@jamashita/anden-type';
 import { randomBytes } from 'crypto';
 import { Objet } from '../Objet';
 

@@ -1,4 +1,4 @@
-import { ValueObject } from '@jamashita/publikum-object';
+import { ValueObject } from '@jamashita/anden-object';
 import { v4, v5 } from 'uuid';
 import { UUIDError } from './Error/UUIDError';
 

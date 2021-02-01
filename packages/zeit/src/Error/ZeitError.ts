@@ -1,4 +1,4 @@
-import { RuntimeError } from '@jamashita/publikum-error';
+import { RuntimeError } from '@jamashita/anden-error';
 
 export class ZeitError extends RuntimeError<'ZeitError'> {
   public readonly noun: 'ZeitError' = 'ZeitError';

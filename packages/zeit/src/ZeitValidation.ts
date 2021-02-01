@@ -1,4 +1,4 @@
-import { addRule } from '@jamashita/publikum-validation';
+import { addRule } from '@jamashita/anden-validation';
 import { ZeitValidationArgs, ZeitValidationRule } from './ZeitValidationRule';
 
 export const ZeitValidation = (args: ZeitValidationArgs): ParameterDecorator => {

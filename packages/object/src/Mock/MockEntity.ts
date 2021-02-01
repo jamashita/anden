@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '@jamashita/publikum-type';
+import { ObjectLiteral } from '@jamashita/anden-type';
 import { Entity } from '../Entity';
 import { Objet } from '../Objet';
 

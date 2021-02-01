@@ -1,4 +1,4 @@
-import { Kind, ObjectLiteral } from '@jamashita/publikum-type';
+import { Kind, ObjectLiteral } from '@jamashita/anden-type';
 
 export interface JSONable<O extends ObjectLiteral = ObjectLiteral> {
   toJSON(): O;

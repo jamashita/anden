@@ -19,7 +19,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest'
   },
   moduleNameMapper: {
-    '^@jamashita/publikum-(.*)$': '<rootDir>/packages/$1/src/index'
+    '^@jamashita/anden-(.*)$': '<rootDir>/packages/$1/src/index'
   },
   moduleFileExtensions: [
     'js',

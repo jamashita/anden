@@ -1,5 +1,5 @@
-import { Kind } from '@jamashita/publikum-type';
-import { ValidationError, ValidationRule } from '@jamashita/publikum-validation';
+import { Kind } from '@jamashita/anden-type';
+import { ValidationError, ValidationRule } from '@jamashita/anden-validation';
 import { Zeit } from './Zeit';
 
 export type ZeitValidationArgs = Readonly<{

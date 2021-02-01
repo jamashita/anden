@@ -1,4 +1,4 @@
-import { Kind } from '@jamashita/publikum-type';
+import { Kind } from '@jamashita/anden-type';
 
 export interface Noun<N extends string = string> {
   readonly noun: N;

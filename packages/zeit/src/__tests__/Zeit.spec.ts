@@ -1,4 +1,4 @@
-import { MockValueObject } from '@jamashita/publikum-object';
+import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
 import sinon, { SinonFakeTimers } from 'sinon';
 import { ZeitError } from '../Error/ZeitError';

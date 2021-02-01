@@ -1,5 +1,5 @@
-import { ValueObject } from '@jamashita/publikum-object';
-import { Kind } from '@jamashita/publikum-type';
+import { ValueObject } from '@jamashita/anden-object';
+import { Kind } from '@jamashita/anden-type';
 import dayjs from 'dayjs';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';

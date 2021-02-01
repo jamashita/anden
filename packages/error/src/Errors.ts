@@ -1,4 +1,4 @@
-import { Ambiguous, Kind } from '@jamashita/publikum-type';
+import { Ambiguous, Kind } from '@jamashita/anden-type';
 import { RuntimeError } from './RuntimeError';
 
 export class Errors<E extends Error> extends RuntimeError<'Errors'> implements Iterable<E> {

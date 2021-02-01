@@ -1,4 +1,4 @@
-import { MockValueObject } from '@jamashita/publikum-object';
+import { MockValueObject } from '@jamashita/anden-object';
 import { UUIDError } from '../Error/UUIDError';
 import { UUID } from '../UUID';
 

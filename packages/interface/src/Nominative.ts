@@ -1,4 +1,4 @@
-import { Kind } from '@jamashita/publikum-type';
+import { Kind } from '@jamashita/anden-type';
 import { Equalable, isEqualable } from './Equalable';
 import { isNoun, Noun } from './Noun';
 import { isSerializable, Serializable } from './Serializable';
