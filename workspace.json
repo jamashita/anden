@@ -1,45 +1,47 @@
 {
   "version": 2,
   "projects": {
-    "sample-package1": {
-      "root": "packages/sample-package1",
-      "sourceRoot": "packages/sample-package1/src",
+    "@jamashita/anden-error": {
+      "root": "packages/error",
+      "sourceRoot": "packages/error/src",
       "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "packages/sample-package1/**/*.ts"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/sample-package1"
-          ],
-          "options": {
-            "jestConfig": "packages/sample-package1/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
-          "options": {
-            "outputPath": "dist/packages/sample-package1",
-            "tsConfig": "packages/sample-package1/tsconfig.lib.json",
-            "packageJson": "packages/sample-package1/package.json",
-            "main": "packages/sample-package1/src/index.ts",
-            "assets": [
-              "packages/sample-package1/*.md"
-            ]
-          }
-        }
-      }
+      "targets": {}
+    },
+    "@jamashita/anden-interface": {
+      "root": "packages/interface",
+      "sourceRoot": "packages/interface/src",
+      "projectType": "library",
+      "targets": {}
+    },
+    "@jamashita/anden-object": {
+      "root": "packages/object",
+      "sourceRoot": "packages/object/src",
+      "projectType": "library",
+      "targets": {}
+    },
+    "@jamashita/anden-type": {
+      "root": "packages/type",
+      "sourceRoot": "packages/type/src",
+      "projectType": "library",
+      "targets": {}
+    },
+    "@jamashita/anden-uuid": {
+      "root": "packages/uuid",
+      "sourceRoot": "packages/uuid/src",
+      "projectType": "library",
+      "targets": {}
+    },
+    "@jamashita/anden-validation": {
+      "root": "packages/validation",
+      "sourceRoot": "packages/validation/src",
+      "projectType": "library",
+      "targets": {}
+    },
+    "@jamashita/anden-zeit": {
+      "root": "packages/zeit",
+      "sourceRoot": "packages/zeit/src",
+      "projectType": "library",
+      "targets": {}
     }
   },
   "cli": {
