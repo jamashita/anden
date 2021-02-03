@@ -1,7 +1,7 @@
 {
   "version": 2,
   "projects": {
-    "@jamashita/anden-error": {
+    "error": {
       "root": "packages/error",
       "sourceRoot": "packages/error/src",
       "projectType": "library",
@@ -9,46 +9,95 @@
         "build": {
           "builder": "@nrwl/workspace:run-commands",
           "options": {
-            "command": "ls apps/frontend/src"
+            "command": "yarn build",
+            "cwd": "packages/error"
           }
         }
       }
     },
-    "@jamashita/anden-interface": {
+    "interface": {
       "root": "packages/interface",
       "sourceRoot": "packages/interface/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/interface"
+          }
+        }
+      }
     },
-    "@jamashita/anden-object": {
+    "object": {
       "root": "packages/object",
       "sourceRoot": "packages/object/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/object"
+          }
+        }
+      }
     },
-    "@jamashita/anden-type": {
+    "type": {
       "root": "packages/type",
       "sourceRoot": "packages/type/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/type"
+          }
+        }
+      }
     },
-    "@jamashita/anden-uuid": {
+    "uuid": {
       "root": "packages/uuid",
       "sourceRoot": "packages/uuid/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/uuid"
+          }
+        }
+      }
     },
-    "@jamashita/anden-validation": {
+    "validation": {
       "root": "packages/validation",
       "sourceRoot": "packages/validation/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/validation"
+          }
+        }
+      }
     },
-    "@jamashita/anden-zeit": {
+    "zeit": {
       "root": "packages/zeit",
       "sourceRoot": "packages/zeit/src",
       "projectType": "library",
-      "targets": {}
+      "targets": {
+        "build": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn build",
+            "cwd": "packages/zeit"
+          }
+        }
+      }
     }
   },
   "cli": {

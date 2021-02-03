@@ -29,53 +29,53 @@
     }
   },
   "projects": {
-    "@jamashita/anden-error": {
+    "error": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-interface",
-        "@jamashita/anden-type"
+        "interface",
+        "type"
       ]
     },
-    "@jamashita/anden-interface": {
+    "interface": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-type"
+        "type"
       ]
     },
-    "@jamashita/anden-object": {
+    "object": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-error",
-        "@jamashita/anden-interface",
-        "@jamashita/anden-type"
+        "error",
+        "interface",
+        "type"
       ]
     },
-    "@jamashita/anden-type": {
+    "type": {
       "tags": []
     },
-    "@jamashita/anden-uuid": {
+    "uuid": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-error",
-        "@jamashita/anden-object",
-        "@jamashita/anden-type",
-        "@jamashita/anden-validation"
+        "error",
+        "object",
+        "type",
+        "validation"
       ]
     },
-    "@jamashita/anden-validation": {
+    "validation": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-error",
-        "@jamashita/anden-type"
+        "error",
+        "type"
       ]
     },
-    "@jamashita/anden-zeit": {
+    "zeit": {
       "tags": [],
       "implicitDependencies": [
-        "@jamashita/anden-error",
-        "@jamashita/anden-object",
-        "@jamashita/anden-type",
-        "@jamashita/anden-validation"
+        "error",
+        "object",
+        "type",
+        "validation"
       ]
     }
   },
