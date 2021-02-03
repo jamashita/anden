@@ -1,0 +1,85 @@
+{
+  "npmScope": "anden",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "workspace.json": "*",
+    "tsconfig.json": "*",
+    "nx.json": "*",
+    ".eslintrc": "*",
+    ".huskyrc": "*",
+    ".lintstagedrc.json": "*",
+    "jest.config.cjs": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "@jamashita/anden-error": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-interface",
+        "@jamashita/anden-type"
+      ]
+    },
+    "@jamashita/anden-interface": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-type"
+      ]
+    },
+    "@jamashita/anden-object": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-error",
+        "@jamashita/anden-interface",
+        "@jamashita/anden-type"
+      ]
+    },
+    "@jamashita/anden-type": {
+      "tags": []
+    },
+    "@jamashita/anden-uuid": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-error",
+        "@jamashita/anden-object",
+        "@jamashita/anden-type",
+        "@jamashita/anden-validation"
+      ]
+    },
+    "@jamashita/anden-validation": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-error",
+        "@jamashita/anden-type"
+      ]
+    },
+    "@jamashita/anden-zeit": {
+      "tags": [],
+      "implicitDependencies": [
+        "@jamashita/anden-error",
+        "@jamashita/anden-object",
+        "@jamashita/anden-type",
+        "@jamashita/anden-validation"
+      ]
+    }
+  },
+  "workspaceLayout": {
+    "libsDir": "packages"
+  }
+}
