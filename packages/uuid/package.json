@@ -17,9 +17,10 @@
     "src"
   ],
   "scripts": {
-    "build": "concurrently \"npm:build:*\"",
+    "build": "yarn clean && concurrently \"npm:build:*\"",
     "build:cjs": "tsc -p tsconfig.cjs.json",
-    "build:esm": "tsc -p tsconfig.esm.json"
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "clean": "rimraf dist && rimraf coverage"
   },
   "dependencies": {
     "@jamashita/anden-error": "^3.12.0",

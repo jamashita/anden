@@ -10,6 +10,7 @@
   "author": "jamashita <jamashita@arachnid.xyz>",
   "scripts": {
     "build": "nx affected --target=build --all --parallel",
+    "clean": "nx affected --target=clean --all --parallel",
     "commit": "git cz",
     "echo": "nx affected --target=echo --all --parallel",
     "format": "eslint --fix 'packages/*/src/**/*.{ts,tsx}'",
