@@ -1,0 +1,48 @@
+{
+  "version": 2,
+  "projects": {
+    "sample-package1": {
+      "root": "packages/sample-package1",
+      "sourceRoot": "packages/sample-package1/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/sample-package1/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/sample-package1"
+          ],
+          "options": {
+            "jestConfig": "packages/sample-package1/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/packages/sample-package1",
+            "tsConfig": "packages/sample-package1/tsconfig.lib.json",
+            "packageJson": "packages/sample-package1/package.json",
+            "main": "packages/sample-package1/src/index.ts",
+            "assets": [
+              "packages/sample-package1/*.md"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  }
+}
