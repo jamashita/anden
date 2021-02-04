@@ -36,6 +36,9 @@
         "type"
       ]
     },
+    "helper": {
+      "tags": []
+    },
     "interface": {
       "tags": [],
       "implicitDependencies": [
