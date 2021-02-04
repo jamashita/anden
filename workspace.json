@@ -7,9 +7,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/error"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/error"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/error"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/error"
           }
         }
@@ -21,9 +42,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/interface"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/interface"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/interface"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/interface"
           }
         }
@@ -35,9 +77,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/object"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/object"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/object"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/object"
           }
         }
@@ -49,9 +112,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/type"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/type"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/type"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/type"
           }
         }
@@ -63,9 +147,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/uuid"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/uuid"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/uuid"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/uuid"
           }
         }
@@ -77,9 +182,30 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
+            "cwd": "packages/validation"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/validation"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/validation"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
             "cwd": "packages/validation"
           }
         }
@@ -91,10 +217,56 @@
       "projectType": "library",
       "targets": {
         "build": {
-          "builder": "@nrwl/workspace:run-commands",
+          "executor": "@nrwl/workspace:run-commands",
           "options": {
             "command": "yarn build",
             "cwd": "packages/zeit"
+          }
+        },
+        "clean": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn clean",
+            "cwd": "packages/zeit"
+          }
+        },
+        "test": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "yarn test",
+            "cwd": "packages/zeit"
+          }
+        },
+        "echo": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "echo HUH",
+            "cwd": "packages/zeit"
+          }
+        }
+      }
+    },
+    "library": {
+      "root": "packages/library",
+      "sourceRoot": "packages/library/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "packages/library/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/packages/library"
+          ],
+          "options": {
+            "jestConfig": "packages/library/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }
