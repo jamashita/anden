@@ -24,9 +24,9 @@
     "test": "jest test"
   },
   "dependencies": {
-    "@jamashita/anden-error": "^3.12.0",
-    "@jamashita/anden-interface": "^3.12.0",
-    "@jamashita/anden-type": "^3.12.0",
+    "@jamashita/anden-error": "3.12.0",
+    "@jamashita/anden-interface": "3.12.0",
+    "@jamashita/anden-type": "3.12.0",
     "object-hash": "2.1.1"
   },
   "engines": {
