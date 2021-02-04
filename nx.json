@@ -49,6 +49,7 @@
       "tags": [],
       "implicitDependencies": [
         "error",
+        "helper",
         "interface",
         "type"
       ]

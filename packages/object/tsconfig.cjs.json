@@ -9,6 +9,9 @@
       "path": "../error/tsconfig.cjs.json"
     },
     {
+      "path": "../helper/tsconfig.cjs.json"
+    },
+    {
       "path": "../interface/tsconfig.cjs.json"
     },
     {

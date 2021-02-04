@@ -9,6 +9,9 @@
       "path": "../error/tsconfig.esm.json"
     },
     {
+      "path": "../helper/tsconfig.esm.json"
+    },
+    {
       "path": "../interface/tsconfig.esm.json"
     },
     {
