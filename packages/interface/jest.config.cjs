@@ -15,7 +15,7 @@ module.exports = {
     '^.+\\.tsx?$': 'ts-jest'
   },
   moduleNameMapper: {
-    '^@jamashita/anden-e(.*)$': '<rootDir>/../$1/src/index'
+    '^@jamashita/anden-(.*)$': '<rootDir>/../$1/src/index'
   },
   moduleFileExtensions: [
     'js',

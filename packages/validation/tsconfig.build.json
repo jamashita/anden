@@ -1,7 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src/"
+    "rootDir": "src/",
+    "paths": {
+      "@jamashita/anden-*": [
+        "node_modules/@jamashita/anden-*/src"
+      ]
+    }
   },
   "include": [
     "src"

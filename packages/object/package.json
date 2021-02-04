@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden-object",
-  "version": "3.12.0",
+  "version": "0.1.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -24,9 +24,9 @@
     "test": "jest test"
   },
   "dependencies": {
-    "@jamashita/anden-error": "3.12.0",
-    "@jamashita/anden-interface": "3.12.0",
-    "@jamashita/anden-type": "3.12.0",
+    "@jamashita/anden-error": "0.1.0",
+    "@jamashita/anden-interface": "0.1.0",
+    "@jamashita/anden-type": "0.1.0",
     "object-hash": "2.1.1"
   },
   "engines": {

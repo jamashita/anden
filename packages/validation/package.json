@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden-validation",
-  "version": "3.12.0",
+  "version": "0.1.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -24,8 +24,8 @@
     "test": "jest test"
   },
   "dependencies": {
-    "@jamashita/anden-error": "3.12.0",
-    "@jamashita/anden-type": "3.12.0",
+    "@jamashita/anden-error": "0.1.0",
+    "@jamashita/anden-type": "0.1.0",
     "reflect-metadata": "0.1.13"
   },
   "engines": {
