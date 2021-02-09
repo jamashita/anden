@@ -1,0 +1,24 @@
+name: 'CI'
+on:
+  push:
+    branches:
+      - '!feature/*'
+      - 'hotfix/*'
+      - '!release'
+jobs:
+  ci:
+    runs-on: 'ubuntu-latest'
+    timeout-minutes: 15
+    steps:
+      - name: 'Check out repository'
+        uses: 'actions/checkout@v2'
+      - name: 'Use Node.js 12.0'
+        uses: 'actions/setup-node@v2'
+        with:
+          node-version: '12.0'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@jamashita'
+      - name: 'Install dependencies'
+        run: 'yarn install --frozen-lockfile'
+      - name: 'Test'
+        run: 'yarn test'
