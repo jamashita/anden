@@ -22,10 +22,6 @@ Error.
 
 Class for type comparison.
 
-### `Reference`
-
-Check whether the object has circular reference.
-
 ## Type Definitions
 
 #### Function

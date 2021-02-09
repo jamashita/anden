@@ -20,3 +20,7 @@ Class for Entity for DDD. Concrete class for `Objet`.
 ### `ValueObject`
 
 Class for Value Object for DDD. Concrete class for `Objet`.
+
+### `Reference`
+
+Check whether the object has circular reference.
