@@ -6,6 +6,8 @@ This package enables you to use things in one class instance and the same interf
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
+![CI](https://github.com/jamashita/anden/workflows/CI/badge.svg)
+
 ## Requisite
 
 ```
@@ -25,24 +27,6 @@ v15.5.0
 > yarn -v
 1.22.20
 ```
-
-## Classes
-
-### Object
-
-Redefinition class for OOP programming.
-
-#### Objet
-
-Redefinition class for `Object`. Abstract class for standing for `Nominative`.
-
-#### Entity
-
-Class for `Entity` for DDD. Concrete class for `Objet`.
-
-#### ValueObject
-
-Class for `Value object` for DDD. Concrete class for `Objet`.
 
 ### Type
 
