@@ -23,7 +23,6 @@
     "clean": "rimraf dist && rimraf coverage"
   },
   "dependencies": {
-    "@jamashita/anden-interface": "0.1.0",
     "@jamashita/anden-type": "0.1.0",
     "make-error-cause": "2.3.0"
   },
