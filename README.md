@@ -28,40 +28,6 @@ v15.5.0
 1.22.20
 ```
 
-### Type
-
-Class for type definition.
-
-#### Clone
-
-Clone Object literal, when the object has circular reference, this operation will throw an Error.
-
-#### Equality
-
-Check the equality Object literal, when the object has circular reference, this operation will throw an Error.
-
-#### Function
-
-Function type definitions.
-
-#### Kind
-
-Class for type determination.
-
-#### Value
-
-Value type definitions.
-
-### Errors
-
-#### UUID
-
-Class for UUID.
-
-#### Zeit
-
-Class for Date and Time, using `dayjs`.
-
 ## Conventional commit
 
 ```
