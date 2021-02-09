@@ -8,6 +8,9 @@
   },
   "license": "MIT",
   "author": "jamashita <jamashita@arachnid.xyz>",
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "lerna run --parallel build",
     "clean": "rimraf coverage && lerna run --parallel clean",
