@@ -1,7 +1,8 @@
-# Lluvia
+# Anden
 
 This package enables you to use things in one class instance and the same interface.
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
@@ -25,55 +26,57 @@ v15.5.0
 1.22.20
 ```
 
-## Interfaces
-
-### Collection
-
-`Collection` interface that are totally wrapping `Array, Map, Set` in order to handle same signature and immutability.
-
-### Sequence
-
-Alias for `Array`. Implemented `Collection`.
-
-#### Project
-
-Alias for `Map`. Implemented `Collection`.
-
-#### Address
-
-Alias for `Set`. Implemented `Collection`.
-
 ## Classes
 
-### Sequence
+### Object
 
-* `ImmutableSequence`
-  
-  It does not change itself and its containing elements even if the element is going to be added or changed, will return new `Sequence` with an added element.
+Redefinition class for OOP programming.
 
-* `MutableSequence`
-  
-  As usual collection, it can add elements in this without creating a new instance.
+#### Objet
 
-#### Project
+Redefinition class for `Object`. Abstract class for standing for `Nominative`.
 
-* `ImmutableProject`
+#### Entity
 
-  It does not change itself and its containing elements even if the element is going to be added or changed, will return new `Project` with an added element.
+Class for `Entity` for DDD. Concrete class for `Objet`.
 
-* `MutableProject`
+#### ValueObject
 
-  As usual collection, it can add elements in this without creating a new instance.
+Class for `Value object` for DDD. Concrete class for `Objet`.
 
-#### Address
+### Type
 
-* `ImmutableAddress`
+Class for type definition.
 
-  It does not change itself and its containing elements even if the element is going to be added or changed, will return new `Address` with an added element.
+#### Clone
 
-* `MutableAddress`
+Clone Object literal, when the object has circular reference, this operation will throw an Error.
 
-  As usual collection, it can add elements in this without creating a new instance.
+#### Equality
+
+Check the equality Object literal, when the object has circular reference, this operation will throw an Error.
+
+#### Function
+
+Function type definitions.
+
+#### Kind
+
+Class for type determination.
+
+#### Value
+
+Value type definitions.
+
+### Errors
+
+#### UUID
+
+Class for UUID.
+
+#### Zeit
+
+Class for Date and Time, using `dayjs`.
 
 ## Conventional commit
 
