@@ -1,7 +1,7 @@
 {
   "name": "@jamashita/anden",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": "git@github.com:jamashita/anden.git"
