@@ -20,21 +20,18 @@
     "build": "yarn clean && concurrently \"npm:build:*\"",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "clean": "rimraf dist && rimraf coverage",
-    "test": "jest test"
+    "clean": "rimraf dist && rimraf coverage"
   },
   "dependencies": {
     "@jamashita/anden-error": "0.1.0",
     "@jamashita/anden-object": "0.1.0",
     "@jamashita/anden-type": "0.1.0",
     "@jamashita/anden-validation": "0.1.0",
-    "@types/jest": "26.0.20",
     "dayjs": "1.10.4",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "sinon": "9.2.4",
-    "ts-jest": "26.5.0"
+    "sinon": "9.2.4"
   },
   "engines": {
     "node": ">= 12.0.0",
