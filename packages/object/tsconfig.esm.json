@@ -12,9 +12,6 @@
       "path": "../helper/tsconfig.esm.json"
     },
     {
-      "path": "../interface/tsconfig.esm.json"
-    },
-    {
       "path": "../type/tsconfig.esm.json"
     }
   ]

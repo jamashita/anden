@@ -25,9 +25,7 @@
   },
   "dependencies": {
     "@jamashita/anden-error": "0.1.0",
-    "@jamashita/anden-interface": "0.1.0",
     "@jamashita/anden-type": "0.1.0",
-    "@types/jest": "26.0.20",
     "object-hash": "2.1.1"
   },
   "devDependencies": {
