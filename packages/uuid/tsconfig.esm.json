@@ -12,7 +12,7 @@
       "path": "../object/tsconfig.esm.json"
     },
     {
-      "path": "../validation/tsconfig.esm.json"
+      "path": "../type/tsconfig.esm.json"
     }
   ]
 }

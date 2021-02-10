@@ -12,7 +12,7 @@
       "path": "../object/tsconfig.cjs.json"
     },
     {
-      "path": "../validation/tsconfig.cjs.json"
+      "path": "../type/tsconfig.cjs.json"
     }
   ]
 }
