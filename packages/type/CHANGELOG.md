@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/jamashita/anden.git/packages/type/compare/@jamashita/anden-type@0.2.0...@jamashita/anden-type@0.2.1) (2021-02-10)
+
+**Note:** Version bump only for package @jamashita/anden-type
+
+
+
+
+
 # 0.2.0 (2021-02-10)
 
 
