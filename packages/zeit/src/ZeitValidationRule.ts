@@ -1,5 +1,4 @@
-import { Kind } from '@jamashita/anden-type';
-import { ValidationError, ValidationRule } from '@jamashita/anden-validation';
+import { Kind, ValidationRule } from '@jamashita/anden-type';
 import { Zeit } from './Zeit';
 
 export type ZeitValidationArgs = Readonly<{
@@ -15,10 +14,10 @@ export class ZeitValidationRule implements ValidationRule {
 
   public evaluate(_target: object, value: unknown): void {
     if (!Kind.isString(value)) {
-      throw new ValidationError('VALUE IS NOT STRING');
+      throw new TypeError('VALUE IS NOT STRING');
     }
     if (!Zeit.validate(value, this.format)) {
-      throw new ValidationError(`THIS STRING IS NOT SUITABLE FOR ZEIT. GIVEN: ${value} ${this.format}`);
+      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR ZEIT. GIVEN: ${value} ${this.format}`);
     }
   }
 }

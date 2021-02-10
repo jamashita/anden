@@ -1,4 +1,4 @@
-import { Validate, ValidationError } from '@jamashita/anden-validation';
+import { Validate } from '@jamashita/anden-type';
 import 'reflect-metadata';
 import { ZeitValidation } from '../ZeitValidation';
 
@@ -25,78 +25,78 @@ describe('ZeitValidation', () => {
 
       expect(() => {
         validation.act1('2000-01-01');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         validation.act1('2000-01-02');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         validation.act2('2000-01-01 01:02:03', '2000-01-02');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         validation.act2('2000-01-01 01:02:59', '2000-01-02');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
     });
 
-    it('throws ValidationError when non-string values given', () => {
+    it('throws TypeError when non-string values given', () => {
       expect.assertions(10);
 
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1(null);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(undefined);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(123);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(0);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(false);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(true);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(Symbol('p'));
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1(20n);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1({});
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1([]);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
     });
 
-    it('throws ValidationError when non-datetime string given', () => {
+    it('throws TypeError when non-datetime string given', () => {
       expect.assertions(6);
 
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1('2000-01-0x');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1('2000-01-y1');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act1('2000-01$01');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act2('2000-01-01 01:02:0x', '2000-01-02');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act2('2000-01-01 01:02:y3', '2000-01-02');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         validation.act2('2000-01-01 01:02$03', '2000-01-02');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
     });
   });
 });
