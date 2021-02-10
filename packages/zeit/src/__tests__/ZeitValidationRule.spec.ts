@@ -1,4 +1,3 @@
-import { ValidationError } from '@jamashita/anden-validation';
 import { ZeitValidationRule } from '../ZeitValidationRule';
 
 describe('ZeitValidationRule', () => {
@@ -15,19 +14,19 @@ describe('ZeitValidationRule', () => {
 
       expect(() => {
         rule1.evaluate({}, '2000-01-01');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule1.evaluate({}, '2000-01-02');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule2.evaluate({}, '2000-01-01 01:02:03');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule2.evaluate({}, '2000-01-01 01:02:59');
-      }).not.toThrow(ValidationError);
+      }).not.toThrow(TypeError);
     });
 
-    it('throws ValidationError when non-string values given', () => {
+    it('throws TypeError when non-string values given', () => {
       expect.assertions(10);
 
       const rule: ZeitValidationRule = new ZeitValidationRule({
@@ -36,37 +35,37 @@ describe('ZeitValidationRule', () => {
 
       expect(() => {
         rule.evaluate({}, null);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, undefined);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 123);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 0);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, false);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, true);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, Symbol('p'));
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 20n);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, {});
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, []);
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
     });
 
-    it('throws ValidationError when non-datetime string given', () => {
+    it('throws TypeError when non-datetime string given', () => {
       expect.assertions(3);
 
       const rule: ZeitValidationRule = new ZeitValidationRule({
@@ -75,13 +74,13 @@ describe('ZeitValidationRule', () => {
 
       expect(() => {
         rule.evaluate({}, '2000-01-0x');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, '2000-01-y1');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, '2000-01$01');
-      }).toThrow(ValidationError);
+      }).toThrow(TypeError);
     });
   });
 });

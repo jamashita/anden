@@ -20,13 +20,14 @@
     "build": "yarn clean && concurrently \"npm:build:*\"",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:esm": "tsc -p tsconfig.esm.json",
-    "clean": "rimraf dist && rimraf coverage"
+    "clean": "concurrently \"npm:clean:*\"",
+    "clean:converage": "rimraf coverage",
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "@jamashita/anden-error": "0.1.0",
     "@jamashita/anden-object": "0.1.0",
     "@jamashita/anden-type": "0.1.0",
-    "@jamashita/anden-validation": "0.1.0",
     "dayjs": "1.10.4",
     "reflect-metadata": "0.1.13"
   },

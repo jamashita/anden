@@ -11,12 +11,12 @@ Basic type definitions and type detection.
 
 ### `Clone`
 
-Clone Object literal. In case of the object has circular reference, this operation will throw an Error.
+Clone Object literal. This class does not check whether the given Object literal has circular references or not.
 
 ### `Equality`
 
-Check the equality between Object literals. In case of the object has circular reference, this operation will throw an
-Error.
+Check the equality between Object literals. This class does not check whether the given Object literal has circular
+references or not.
 
 ### `Kind`
 

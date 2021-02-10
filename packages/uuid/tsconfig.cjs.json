@@ -2,7 +2,7 @@
   "extends": "./tsconfig.build.json",
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "dist/cjs"
+    "outDir": "./dist/cjs"
   },
   "references": [
     {
@@ -12,7 +12,7 @@
       "path": "../object/tsconfig.cjs.json"
     },
     {
-      "path": "../validation/tsconfig.cjs.json"
+      "path": "../type/tsconfig.cjs.json"
     }
   ]
 }

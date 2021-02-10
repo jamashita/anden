@@ -1,4 +1,4 @@
-import { addRule } from '@jamashita/anden-validation';
+import { addRule } from '@jamashita/anden-type';
 import { UUIDValidationRule } from './UUIDValidationRule';
 
 export const UUIDValidation = (): ParameterDecorator => {

@@ -1,3 +1,5 @@
+export * from './Decorator';
+export * from './Rules';
 export * from './Clone';
 export * from './Cloneable';
 export * from './Equalable';
