@@ -1,14 +1,13 @@
-import { Kind } from '@jamashita/anden-type';
-import { ValidationError, ValidationRule } from '@jamashita/anden-validation';
+import { Kind, ValidationRule } from '@jamashita/anden-type';
 import { UUID } from './UUID';
 
 export class UUIDValidationRule implements ValidationRule {
   public evaluate(_target: object, value: unknown): void {
     if (!Kind.isString(value)) {
-      throw new ValidationError('VALUE IS NOT STRING');
+      throw new TypeError('VALUE IS NOT STRING');
     }
     if (!UUID.validate(value)) {
-      throw new ValidationError(`THIS STRING IS NOT SUITABLE FOR UUID. GIVEN: ${value}`);
+      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR UUID. GIVEN: ${value}`);
     }
   }
 }
