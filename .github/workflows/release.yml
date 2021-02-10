@@ -17,10 +17,10 @@ jobs:
           node-version: '12.0'
           registry-url: 'https://npm.pkg.github.com'
           scope: '@jamashita'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: 'Install dependencies'
         run: 'yarn install --frozen-lockfile'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: 'Compile'
         run: 'yarn build'
       - name: 'Release'
