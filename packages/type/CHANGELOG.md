@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.0.0...@jamashita/anden-type-v1.1.0) (2021-02-11)
+
+
+### Features
+
+* 🎸 i am looking for a solution ([fff80b5](https://github.com/jamashita/anden/commit/fff80b5ba7b12e2180aa42ed64023bbf675407f2))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
