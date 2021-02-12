@@ -22,7 +22,10 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "clean": "concurrently \"npm:clean:*\"",
     "clean:converage": "rimraf coverage",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "update": "yarn update:upgrade && yarn update:install && yarn setup",
+    "update:install": "yarn install && yarn upgrade",
+    "update:upgrade": "ncu --upgrade"
   },
   "dependencies": {
     "reflect-metadata": "0.1.13"
