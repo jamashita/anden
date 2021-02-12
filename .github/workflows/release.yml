@@ -15,17 +15,14 @@ jobs:
         uses: 'actions/setup-node@v2'
         with:
           node-version: '12.0'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@jamashita'
       - name: 'Set up'
         run: |
           yarn install --frozen-lockfile
           yarn setup
-        env:
-          NODE_AUTH_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: 'Compile'
         run: 'yarn build'
-      - name: 'Publish to GitHub Package Registry'
+      - name: 'Publish to NPM'
         run: 'yarn release'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
