@@ -2,9 +2,6 @@ import { Constructor, Primitive, Vague } from './Value';
 
 const NUMBER_REGEX: RegExp = /^[+-]?[0-9]+\.?[0-9]*$/su;
 
-// eslint-disable-next-line no-console
-console.log('HELP ME!');
-
 export class Kind {
   public static isUndefined(value: unknown): value is undefined {
     if (typeof value === 'undefined') {
