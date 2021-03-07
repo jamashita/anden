@@ -15,8 +15,7 @@
         "**/README.md"
       ],
       "conventionalCommits": true,
-      "message": "chore(release): publish %s",
-      "registry": "https://npm.pkg.github.com/"
+      "message": "chore(release): publish %s"
     },
     "version": {
       "push": false
