@@ -1,3 +1,10 @@
+# [@jamashita/anden-zeit-v1.2.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.1.0...@jamashita/anden-zeit-v1.2.0) (2021-03-07)
+
+
+### Features
+
+* 🎸 update ([b6e7986](https://github.com/jamashita/anden/commit/b6e7986abb78e1ba62c2efe834081595e6ca7af3))
+
 # [@jamashita/anden-zeit-v1.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.0.0...@jamashita/anden-zeit-v1.1.0) (2021-03-07)
 
 
