@@ -39,7 +39,7 @@ describe('Objet', () => {
 
         expect(Objet.identify(str)).toBe(str);
       });
-    }, 10000);
+    }, 10_000);
 
     it('describes symbol', () => {
       expect.assertions(100);
@@ -49,7 +49,7 @@ describe('Objet', () => {
 
         expect(Objet.identify(sym)).toBe(sym.toString());
       });
-    }, 10000);
+    }, 10_000);
 
     it('describes bigint', () => {
       expect.assertions(201);
@@ -73,7 +73,7 @@ describe('Objet', () => {
       });
 
       expect(Objet.identify(obj)).toBe('[object Object]');
-    }, 10000);
+    }, 10_000);
 
     it('describes object.create(null)', () => {
       expect.assertions(2);
@@ -89,7 +89,7 @@ describe('Objet', () => {
       });
 
       expect(Objet.identify(obj)).toBe('[object Object]');
-    }, 10000);
+    }, 10_000);
 
     it('returns itself when it has toString()', () => {
       expect.assertions(100);
@@ -103,6 +103,6 @@ describe('Objet', () => {
           }
         })).toBe(str);
       });
-    }, 10000);
+    }, 10_000);
   });
 });

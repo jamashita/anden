@@ -27,9 +27,9 @@ const random = (length: number): Promise<string> => {
 describe('ValueObject', () => {
   describe('hashCode', () => {
     it('generates same ones if all the properties are the same', async () => {
-      expect.assertions(10000);
+      expect.assertions(10_000);
 
-      const promises: Array<Promise<string>> = Array.from(Array(10000).keys()).map<Promise<string>>((i: number) => {
+      const promises: Array<Promise<string>> = Array.from(Array(10_000).keys()).map<Promise<string>>((i: number) => {
         return random(i);
       });
       const values: Array<string> = await Promise.all(promises);
