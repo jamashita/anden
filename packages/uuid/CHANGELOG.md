@@ -1,3 +1,10 @@
+# [@jamashita/anden-uuid-v1.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.0.0...@jamashita/anden-uuid-v1.1.0) (2021-03-07)
+
+
+### Features
+
+* 🎸 update repository url ([c6dade9](https://github.com/jamashita/anden/commit/c6dade9fd10eb259cda87b1b9c88ad196e28776d))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
