@@ -28,7 +28,7 @@
     "update:upgrade": "ncu --upgrade"
   },
   "dependencies": {
-    "@jamashita/anden-type": "^0.2.1",
+    "@jamashita/anden-type": "^1.2.0",
     "make-error-cause": "2.3.0"
   },
   "engines": {

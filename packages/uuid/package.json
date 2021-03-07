@@ -28,9 +28,9 @@
     "update:upgrade": "ncu --upgrade"
   },
   "dependencies": {
-    "@jamashita/anden-error": "^0.2.1",
-    "@jamashita/anden-object": "^0.2.1",
-    "@jamashita/anden-type": "^0.2.1",
+    "@jamashita/anden-error": "^1.1.0",
+    "@jamashita/anden-object": "^1.1.0",
+    "@jamashita/anden-type": "^1.2.0",
     "reflect-metadata": "0.1.13",
     "uuid": "8.3.2"
   },
