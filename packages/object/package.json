@@ -23,7 +23,10 @@
     "clean": "concurrently \"npm:clean:*\"",
     "clean:converage": "rimraf coverage",
     "clean:dist": "rimraf dist",
-    "test": "jest test"
+    "test": "jest test",
+    "update": "yarn update:upgrade && yarn update:install && yarn setup",
+    "update:install": "yarn install && yarn upgrade",
+    "update:upgrade": "ncu --upgrade"
   },
   "dependencies": {
     "@jamashita/anden-error": "^0.2.1",
