@@ -19,7 +19,8 @@
     "release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "setup": "lerna bootstrap && lerna link",
     "test": "jest test",
-    "update": "yarn setup && yarn update:upgrade && yarn update:install && lerna run --parallel update",
+    "//update": "yarn setup && yarn update:upgrade && yarn update:install && lerna run --parallel update",
+    "update": "yarn setup && yarn update:upgrade && yarn update:install",
     "update:install": "yarn install && yarn upgrade",
     "update:upgrade": "ncu --upgrade --timeout 600000"
   },
