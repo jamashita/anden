@@ -102,7 +102,8 @@ describe('Reference', () => {
         o: obj1
       };
 
-      obj1.o = obj2;
+      // eslint-disable-next-line @typescript-eslint/dot-notation
+      obj1['o'] = obj2;
 
       const arr: Array<PlainObject> = [];
       const obj: PlainObject = {

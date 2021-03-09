@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.3.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.2.0...@jamashita/anden-type-v1.3.0) (2021-03-07)
+
+
+### Features
+
+* 🎸 unnecessary conosole ([fce0e19](https://github.com/jamashita/anden/commit/fce0e1929f282952bf4ab46b8b6da73933fc3b62))
+
 # [@jamashita/anden-type-v1.2.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.1.0...@jamashita/anden-type-v1.2.0) (2021-03-07)
 
 
