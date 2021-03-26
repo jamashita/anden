@@ -8,7 +8,7 @@
     "tsconfigRootDir": "."
   },
   "extends": [
-    "@jamashita/eslint-config",
-    "@jamashita/eslint-config/jest"
+    "@jamashita",
+    "@jamashita/jest"
   ]
 }
