@@ -23,9 +23,7 @@
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
-    "update": "yarn update:upgrade && yarn update:install",
-    "update:install": "yarn install && yarn upgrade",
-    "update:upgrade": "ncu --upgrade --timeout 600000"
+    "update": "yarn install && yarn upgrade"
   },
   "dependencies": {
     "reflect-metadata": "0.1.13"
