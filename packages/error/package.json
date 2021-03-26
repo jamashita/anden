@@ -22,8 +22,7 @@
     "build:esm": "tsc -b tsconfig.esm.json",
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
-    "clean:dist": "rimraf dist",
-    "update": "yarn install && yarn upgrade"
+    "clean:dist": "rimraf dist"
   },
   "dependencies": {
     "@jamashita/anden-type": "^1.4.0",
