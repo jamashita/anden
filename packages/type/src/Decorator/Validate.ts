@@ -15,7 +15,7 @@ const getRules = (target: object, key: string | symbol): Ambiguous<Map<number, V
 };
 
 export const Validate = (): MethodDecorator => {
-  return <T>(target: object, key: string | symbol, descriptor: TypedPropertyDescriptor<T>): void => {
+  return <T>(target: object, key: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void => {
     const indice: Ambiguous<Set<number>> = getIndex(target, key);
 
     if (Kind.isUndefined(indice)) {
@@ -40,10 +40,10 @@ export const Validate = (): MethodDecorator => {
         const method: Function = descriptor.value;
 
         // @ts-expect-error
-        descriptor.value = (...args: Array<unknown>): unknown => {
+        descriptor.value = (...args: Array<unknown>): T | undefined => {
           rule.evaluate(target, args[i], key);
 
-          return method.apply(method, args);
+          return method.apply(method, args) as T;
         };
       });
     });
