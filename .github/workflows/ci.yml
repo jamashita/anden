@@ -4,9 +4,6 @@ on:
     branches:
       - 'main'
       - 'develop'
-    types:
-      - 'opened'
-      - 'reopened'
 jobs:
   ci:
     runs-on: 'ubuntu-latest'
