@@ -1,6 +1,5 @@
 {
-  "root": true,
   "extends": [
-    "@jamashita/eslint-config"
+    "plugin:@jamashita/recommended"
   ]
 }
