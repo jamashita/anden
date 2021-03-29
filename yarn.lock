@@ -497,10 +497,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jamashita/eslint-plugin@1.37.1":
-  version "1.37.1"
-  resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.37.1.tgz#e1983eaa62d2eeff1067a21ff08a9e0ff9cdb384"
-  integrity sha512-Pcl8P3YW66NiW7+XGIMFt1FNeqrCYzH52DqIXqfyrV7wCWSRWvxCgE6D4p9InuC3mD/1Ag/ZFieOZq7q+q0JaQ==
+"@jamashita/eslint-plugin@1.38.1":
+  version "1.38.1"
+  resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.38.1.tgz#6f5c49dddfd9d4a855a1316bd246985b447d634b"
+  integrity sha512-LzjkpmREZ9OFfGxWKDP7rVhmWAsvsD23ibjeV880utKbaRIvgS2XlFQEfSp16o8HY2ZnBeyNfnwTdmeWWSBCUg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4.19.0"
     "@typescript-eslint/parser" "4.19.0"
