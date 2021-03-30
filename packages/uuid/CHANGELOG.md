@@ -1,3 +1,10 @@
+# [@jamashita/anden-uuid-v1.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.4.0...@jamashita/anden-uuid-v1.5.0) (2021-03-30)
+
+
+### Features
+
+* 🎸 version updated ([4f335a5](https://github.com/jamashita/anden/commit/4f335a542a517369ceb7d041c315e5670475ece0))
+
 # [@jamashita/anden-uuid-v1.4.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.3.0...@jamashita/anden-uuid-v1.4.0) (2021-03-29)
 
 
