@@ -4,6 +4,11 @@ on:
     branches:
       - 'feature/**'
       - 'hotfix/**'
+    types:
+      - 'assigned'
+      - 'opened'
+      - 'synchronize'
+      - 'reopened'
 jobs:
   ci:
     runs-on: 'ubuntu-latest'
