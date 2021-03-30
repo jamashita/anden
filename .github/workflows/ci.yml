@@ -4,8 +4,11 @@ on:
     branches:
       - 'main'
       - 'develop'
+      - 'release'
     types:
+      - 'assigned'
       - 'opened'
+      - 'synchronize'
       - 'reopened'
 jobs:
   ci:
