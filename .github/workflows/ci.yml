@@ -1,9 +1,5 @@
 name: 'CI'
 on:
-  push:
-    branches:
-      - 'feature/**'
-      - 'hotfix/**'
   pull_request:
     branches:
       - 'feature/**'
