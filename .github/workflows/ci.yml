@@ -1,14 +1,14 @@
 name: 'CI'
 on:
-  push:
-    branches:
-      - 'feature/**'
   pull_request_target:
     branches:
       - 'main'
       - 'develop'
+      - 'release'
     types:
+      - 'assigned'
       - 'opened'
+      - 'synchronize'
       - 'reopened'
 jobs:
   ci:
