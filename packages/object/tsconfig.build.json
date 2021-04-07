@@ -8,5 +8,16 @@
     "node_modules",
     "dist",
     "*.spec.ts"
+  ],
+  "references": [
+    {
+      "path": "../error/tsconfig.build.json"
+    },
+    {
+      "path": "../helper/tsconfig.build.json"
+    },
+    {
+      "path": "../type/tsconfig.build.json"
+    }
   ]
 }
