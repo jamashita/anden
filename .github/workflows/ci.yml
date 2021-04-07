@@ -23,7 +23,7 @@ jobs:
           node-version: '15.0'
       - name: 'Set up'
         run: |
-          yarn install --frozen-lockfile
+          yarn install
           yarn setup
       - name: 'Test'
         run: 'yarn test'
