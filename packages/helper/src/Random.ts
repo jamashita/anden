@@ -11,3 +11,9 @@ export const random = (length: number): string => {
     return `${p}${chars[i % charLength]!}`;
   }, '');
 };
+
+export const asyncRandom = (length: number): Promise<string> => {
+  return new Promise<string>((resolve: (ret: string) => void): void => {
+    resolve(random(length));
+  });
+};
