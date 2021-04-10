@@ -1,6 +1,6 @@
 import { randomBytes } from 'crypto';
 
-const chars: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
+const chars: string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
 export const random = (length: number): string => {
   const charLength: number = chars.length;
