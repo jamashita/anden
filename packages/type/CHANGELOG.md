@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.7.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.0...@jamashita/anden-type-v1.7.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* 🐛 expose path ([f99f3f0](https://github.com/jamashita/anden/commit/f99f3f028747dc0269ee02a2dc1a3e922388d29b))
+
 # [@jamashita/anden-type-v1.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.6.0...@jamashita/anden-type-v1.7.0) (2021-04-12)
 
 
