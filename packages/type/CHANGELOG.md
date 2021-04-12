@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.7.2](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.1...@jamashita/anden-type-v1.7.2) (2021-04-12)
+
+
+### Bug Fixes
+
+* 🐛 void operator added ([08b37c8](https://github.com/jamashita/anden/commit/08b37c81f95495f2375711a67be8b5e1499c1ca0))
+
 # [@jamashita/anden-type-v1.7.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.0...@jamashita/anden-type-v1.7.1) (2021-04-12)
 
 
