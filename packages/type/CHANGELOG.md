@@ -1,3 +1,11 @@
+# [@jamashita/anden-type-v1.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.6.0...@jamashita/anden-type-v1.7.0) (2021-04-12)
+
+
+### Features
+
+* 🎸 Thenable done ([d0b0428](https://github.com/jamashita/anden/commit/d0b04285bd78409c627703b90ce1eba310024d7a))
+* 🎸 thenable implemented ([1217b46](https://github.com/jamashita/anden/commit/1217b4638a2a03e44e87e0d89d30669b386cbb5a))
+
 # [@jamashita/anden-type-v1.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.5.0...@jamashita/anden-type-v1.6.0) (2021-04-12)
 
 
