@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.5.0...@jamashita/anden-type-v1.6.0) (2021-04-12)
+
+
+### Features
+
+* 🎸 isPromiseLike -> isPromise ([561f58c](https://github.com/jamashita/anden/commit/561f58c91b5e2ab86ff380ddd13c673fbaba91e6))
+
 # [@jamashita/anden-type-v1.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.4.0...@jamashita/anden-type-v1.5.0) (2021-03-29)
 
 
