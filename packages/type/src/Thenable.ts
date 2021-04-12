@@ -6,7 +6,7 @@ export interface Thenable<T> extends PromiseLike<T> {
   then<T1 = T, T2 = never>(onfulfilled?: Suspicious<Resolve<T, T1>>, onrejected?: Suspicious<Reject<T2>>): PromiseLike<T1 | T2>;
 }
 
-export const isSerializable = <T>(n: unknown): n is Thenable<T> => {
+export const isThenable = <T>(n: unknown): n is Thenable<T> => {
   if (n instanceof Promise) {
     return true;
   }
