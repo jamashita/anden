@@ -282,7 +282,7 @@ describe('Kind', () => {
   });
 
   describe('isFunction', () => {
-    it('returns true only if the function given', () => {
+    it('returns true only if function given', () => {
       expect.assertions(17);
 
       expect(Kind.isFunction(null)).toBe(false);
@@ -310,7 +310,7 @@ describe('Kind', () => {
   });
 
   describe('isObject', () => {
-    it('returns true only if the array given', () => {
+    it('returns true only if object given', () => {
       expect.assertions(17);
 
       expect(Kind.isObject(null)).toBe(false);
@@ -338,7 +338,7 @@ describe('Kind', () => {
   });
 
   describe('isPromise', () => {
-    it('returns true only if the array given', () => {
+    it('returns true only if promise given', () => {
       expect.assertions(18);
 
       expect(Kind.isPromise(null)).toBe(false);
@@ -373,7 +373,7 @@ describe('Kind', () => {
   });
 
   describe('isArray', () => {
-    it('returns true only if the array given', () => {
+    it('returns true only if array given', () => {
       expect.assertions(16);
 
       expect(Kind.isArray(null)).toBe(false);
@@ -396,7 +396,7 @@ describe('Kind', () => {
   });
 
   describe('isClass', () => {
-    it('returns false if array given', () => {
+    it('returns true if class object given', () => {
       expect.assertions(6);
 
       expect(Kind.isClass({}, Object)).toBe(true);
