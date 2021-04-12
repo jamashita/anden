@@ -134,14 +134,8 @@ export class Kind {
     return true;
   }
 
-  public static isPromiseLike<T = unknown>(value: unknown): value is PromiseLike<T> {
+  public static isPromise<T = unknown>(value: unknown): value is Promise<T> {
     if (value instanceof Promise) {
-      return true;
-    }
-    if (!Kind.isObject<PromiseLike<unknown>>(value)) {
-      return false;
-    }
-    if (Kind.isFunction(value.then)) {
       return true;
     }
 
