@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.2...@jamashita/anden-type-v1.8.0) (2021-04-13)
+
+
+### Features
+
+* 🎸 removed Thenable ([1d844d4](https://github.com/jamashita/anden/commit/1d844d48ca0d6f53c110f29cd718d9331534746e))
+
 # [@jamashita/anden-type-v1.7.2](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.1...@jamashita/anden-type-v1.7.2) (2021-04-12)
 
 
