@@ -10,5 +10,4 @@ export * from './Kind';
 export * from './Nominative';
 export * from './Noun';
 export * from './Serializable';
-export * from './Thenable';
 export * from './Value';
