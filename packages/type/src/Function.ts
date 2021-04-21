@@ -11,5 +11,5 @@ export type Supplier<R> = () => R;
 export type Peek = () => Whatever;
 export type Enumerator<K, V> = (value: V, key: K) => Whatever;
 export type Mapper<A, R> = (value: A, index: number) => R;
-export type Resolve<T, T1 = T> = (value: T) => SyncAsync<T1>;
-export type Reject<T2 = unknown> = (reason: unknown) => SyncAsync<T2>;
+export type Resolve<T> = (arg: SyncAsync<T>) => Whatever;
+export type Reject<E = unknown> = (arg: E) => Whatever;

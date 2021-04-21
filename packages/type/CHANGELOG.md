@@ -1,3 +1,24 @@
+# [@jamashita/anden-type-v1.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.2...@jamashita/anden-type-v1.8.0) (2021-04-13)
+
+
+### Features
+
+* 🎸 removed Thenable ([1d844d4](https://github.com/jamashita/anden/commit/1d844d48ca0d6f53c110f29cd718d9331534746e))
+
+# [@jamashita/anden-type-v1.7.2](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.1...@jamashita/anden-type-v1.7.2) (2021-04-12)
+
+
+### Bug Fixes
+
+* 🐛 void operator added ([08b37c8](https://github.com/jamashita/anden/commit/08b37c81f95495f2375711a67be8b5e1499c1ca0))
+
+# [@jamashita/anden-type-v1.7.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.7.0...@jamashita/anden-type-v1.7.1) (2021-04-12)
+
+
+### Bug Fixes
+
+* 🐛 expose path ([f99f3f0](https://github.com/jamashita/anden/commit/f99f3f028747dc0269ee02a2dc1a3e922388d29b))
+
 # [@jamashita/anden-type-v1.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.6.0...@jamashita/anden-type-v1.7.0) (2021-04-12)
 
 
