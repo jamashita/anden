@@ -19,6 +19,7 @@
   "scripts": {
     "build": "yarn clean && concurrently \"npm:build:*\"",
     "build:cjs": "tsc -b tsconfig.cjs.json",
+    "test": "jest test",
     "build:esm": "tsc -b tsconfig.esm.json",
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
@@ -26,8 +27,8 @@
   },
   "dependencies": {
     "@jamashita/anden-error": "^1.5.0",
-    "@jamashita/anden-object": "^1.5.0",
-    "@jamashita/anden-type": "^1.5.0",
+    "@jamashita/anden-object": "^1.6.0",
+    "@jamashita/anden-type": "^1.8.0",
     "reflect-metadata": "0.1.13",
     "uuid": "8.3.2"
   },
