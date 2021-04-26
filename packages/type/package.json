@@ -17,6 +17,7 @@
     "src"
   ],
   "scripts": {
+    "test": "jest test",
     "build": "yarn clean && concurrently \"npm:build:*\"",
     "build:cjs": "tsc -b tsconfig.cjs.json",
     "build:esm": "tsc -b tsconfig.esm.json",
@@ -28,7 +29,7 @@
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@jamashita/anden-helper": "1.3.0"
+    "@jamashita/anden-helper": "1.5.0"
   },
   "engines": {
     "node": ">= 12.0.0",
