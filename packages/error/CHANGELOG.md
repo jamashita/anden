@@ -1,3 +1,11 @@
+# [@jamashita/anden-error-v1.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.6.0...@jamashita/anden-error-v1.7.0) (2021-04-29)
+
+
+### Features
+
+* 🎸 lintstaged ([6e71a72](https://github.com/jamashita/anden/commit/6e71a72c8c47b08166f22c02a881af51a5d6f84f))
+* 🎸 removed DataSourceError ([726ea35](https://github.com/jamashita/anden/commit/726ea35073f6019763649bb4eba5e30b7b410a3f))
+
 # [@jamashita/anden-error-v1.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.5.0...@jamashita/anden-error-v1.6.0) (2021-04-26)
 
 
