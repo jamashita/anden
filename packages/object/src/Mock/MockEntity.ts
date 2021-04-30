@@ -13,12 +13,12 @@ export class MockEntity<V> extends Entity<V, MockEntity<V>, 'MockEntity'> {
     this.other = other;
   }
 
-  public getIdentifier(): V {
-    return this.id;
-  }
-
   public duplicate(): MockEntity<V> {
     return new MockEntity<V>(this.id, this.other);
+  }
+
+  public getIdentifier(): V {
+    return this.id;
   }
 
   public serialize(): string {

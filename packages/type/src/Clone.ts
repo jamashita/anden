@@ -6,6 +6,12 @@ export class Clone {
     return Clone.copyInternal(obj) as T;
   }
 
+  private static copyArray(arr: Array<PlainObjectItem>): Array<PlainObjectItem> {
+    return arr.map<PlainObjectItem>((item: PlainObjectItem) => {
+      return Clone.copyInternal(item);
+    });
+  }
+
   private static copyInternal(obj: ObjectLiteral | PlainObjectItem): ObjectLiteral | PlainObjectItem {
     if (Kind.isArray<PlainObjectItem>(obj)) {
       return Clone.copyArray(obj);
@@ -25,11 +31,5 @@ export class Clone {
     });
 
     return p;
-  }
-
-  private static copyArray(arr: Array<PlainObjectItem>): Array<PlainObjectItem> {
-    return arr.map<PlainObjectItem>((item: PlainObjectItem) => {
-      return Clone.copyInternal(item);
-    });
   }
 }

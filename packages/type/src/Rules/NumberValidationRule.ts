@@ -58,32 +58,6 @@ export class NumberValidationRule implements ValidationRule {
     }
   }
 
-  private minCondition(value: number): void {
-    if (Kind.isUndefined(this.min)) {
-      return;
-    }
-
-    switch (this.min.condition) {
-      case 't': {
-        if (value < this.min.value) {
-          throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      case 'te': {
-        if (value <= this.min.value) {
-          throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      default: {
-        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.min.condition as string}`);
-      }
-    }
-  }
-
   private maxCondition(value: number): void {
     if (Kind.isUndefined(this.max)) {
       return;
@@ -106,6 +80,32 @@ export class NumberValidationRule implements ValidationRule {
       }
       default: {
         throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.max.condition as string}`);
+      }
+    }
+  }
+
+  private minCondition(value: number): void {
+    if (Kind.isUndefined(this.min)) {
+      return;
+    }
+
+    switch (this.min.condition) {
+      case 't': {
+        if (value < this.min.value) {
+          throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
+        }
+
+        return;
+      }
+      case 'te': {
+        if (value <= this.min.value) {
+          throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
+        }
+
+        return;
+      }
+      default: {
+        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.min.condition as string}`);
       }
     }
   }
