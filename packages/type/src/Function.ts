@@ -1,6 +1,5 @@
-import { SyncAsync } from './Value';
+import { SyncAsync, Whatever } from './Value';
 
-export type Whatever = unknown | void;
 export type UnaryFunction<A, R> = (arg: A) => R;
 export type BinaryFunction<A1, A2, R> = (arg1: A1, arg2: A2) => R;
 export type Predicate<A> = (arg: A) => boolean;
