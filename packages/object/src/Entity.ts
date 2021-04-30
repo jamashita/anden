@@ -6,8 +6,6 @@ export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = st
 
   public abstract duplicate(): T;
 
-  public abstract serialize(): string;
-
   public equals(other: unknown): boolean {
     if (this === other) {
       return true;
@@ -31,4 +29,6 @@ export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = st
 
     return Objet.identify(hash);
   }
+
+  public abstract serialize(): string;
 }

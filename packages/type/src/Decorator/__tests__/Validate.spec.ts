@@ -38,20 +38,20 @@ class Test1 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: false }) _arg1: unknown,
-    @TestValidation({ throwError: false }) arg2: unknown
-  ): unknown {
-    return arg2;
-  }
-
-  @Validate()
   public threeA(
     @TestValidation({ throwError: false }) _arg1: unknown,
     @TestValidation({ throwError: false }) _arg2: unknown,
     @TestValidation({ throwError: false }) arg3: unknown
   ): unknown {
     return arg3;
+  }
+
+  @Validate()
+  public twoA(
+    @TestValidation({ throwError: false }) _arg1: unknown,
+    @TestValidation({ throwError: false }) arg2: unknown
+  ): unknown {
+    return arg2;
   }
 }
 
@@ -64,20 +64,20 @@ class Test2 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: true }) _arg1: unknown,
-    @TestValidation({ throwError: false }) arg2: unknown
-  ): unknown {
-    return arg2;
-  }
-
-  @Validate()
   public threeA(
     @TestValidation({ throwError: true }) _arg1: unknown,
     @TestValidation({ throwError: false }) _arg2: unknown,
     @TestValidation({ throwError: false }) arg3: unknown
   ): unknown {
     return arg3;
+  }
+
+  @Validate()
+  public twoA(
+    @TestValidation({ throwError: true }) _arg1: unknown,
+    @TestValidation({ throwError: false }) arg2: unknown
+  ): unknown {
+    return arg2;
   }
 }
 
@@ -90,20 +90,20 @@ class Test3 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: false }) _arg1: unknown,
-    @TestValidation({ throwError: true }) arg2: unknown
-  ): unknown {
-    return arg2;
-  }
-
-  @Validate()
   public threeA(
     @TestValidation({ throwError: false }) _arg1: unknown,
     @TestValidation({ throwError: false }) _arg2: unknown,
     @TestValidation({ throwError: true }) arg3: unknown
   ): unknown {
     return arg3;
+  }
+
+  @Validate()
+  public twoA(
+    @TestValidation({ throwError: false }) _arg1: unknown,
+    @TestValidation({ throwError: true }) arg2: unknown
+  ): unknown {
+    return arg2;
   }
 }
 
@@ -116,20 +116,20 @@ class Test4 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: true }) _arg1: unknown,
-    @TestValidation({ throwError: true }) arg2: unknown
-  ): unknown {
-    return arg2;
-  }
-
-  @Validate()
   public threeA(
     @TestValidation({ throwError: true }) _arg1: unknown,
     @TestValidation({ throwError: true }) _arg2: unknown,
     @TestValidation({ throwError: true }) arg3: unknown
   ): unknown {
     return arg3;
+  }
+
+  @Validate()
+  public twoA(
+    @TestValidation({ throwError: true }) _arg1: unknown,
+    @TestValidation({ throwError: true }) arg2: unknown
+  ): unknown {
+    return arg2;
   }
 }
 
