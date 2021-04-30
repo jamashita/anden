@@ -3,46 +3,36 @@ import { Constructor, Primitive, Vague } from './Value';
 const NUMBER_REGEX: RegExp = /^[+-]?[0-9]+\.?[0-9]*$/su;
 
 export class Kind {
-  public static isUndefined(value: unknown): value is undefined {
-    if (typeof value === 'undefined') {
+  public static isArray<T = unknown>(value: unknown): value is Array<T> {
+    return Array.isArray(value);
+  }
+
+  public static isBigInt(value: unknown): value is bigint {
+    if (typeof value === 'bigint') {
       return true;
     }
 
     return false;
   }
 
-  public static isNull(value: unknown): value is null {
-    if (value === null) {
+  public static isBoolean(value: unknown): value is boolean {
+    if (typeof value === 'boolean') {
       return true;
     }
 
     return false;
   }
 
-  public static isString(value: unknown): value is string {
-    if (typeof value === 'string') {
+  public static isClass<T extends Constructor>(instance: unknown, klazz: T): instance is T {
+    if (instance instanceof klazz) {
       return true;
     }
 
     return false;
   }
 
-  public static isNumericalString(value: unknown): value is string {
-    if (!Kind.isString(value)) {
-      return false;
-    }
-    if (value.endsWith('.')) {
-      return false;
-    }
-    if (NUMBER_REGEX.test(value)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  public static isNumber(value: unknown): value is number {
-    if (typeof value === 'number') {
+  public static isFunction(value: unknown): value is Function {
+    if (typeof value === 'function') {
       return true;
     }
 
@@ -72,28 +62,45 @@ export class Kind {
     return false;
   }
 
-  public static isBoolean(value: unknown): value is boolean {
-    if (typeof value === 'boolean') {
+  public static isNull(value: unknown): value is null {
+    if (value === null) {
       return true;
     }
 
     return false;
   }
 
-  public static isSymbol(value: unknown): value is symbol {
-    if (typeof value === 'symbol') {
+  public static isNumber(value: unknown): value is number {
+    if (typeof value === 'number') {
       return true;
     }
 
     return false;
   }
 
-  public static isBigInt(value: unknown): value is bigint {
-    if (typeof value === 'bigint') {
+  public static isNumericalString(value: unknown): value is string {
+    if (!Kind.isString(value)) {
+      return false;
+    }
+    if (value.endsWith('.')) {
+      return false;
+    }
+    if (NUMBER_REGEX.test(value)) {
       return true;
     }
 
     return false;
+  }
+
+  public static isObject<T extends object = object>(value: unknown): value is Vague<T> {
+    if (typeof value !== 'object') {
+      return false;
+    }
+    if (Kind.isNull(value)) {
+      return false;
+    }
+
+    return true;
   }
 
   public static isPrimitive(value: unknown): value is Primitive {
@@ -115,25 +122,6 @@ export class Kind {
     }
   }
 
-  public static isFunction(value: unknown): value is Function {
-    if (typeof value === 'function') {
-      return true;
-    }
-
-    return false;
-  }
-
-  public static isObject<T extends object = object>(value: unknown): value is Vague<T> {
-    if (typeof value !== 'object') {
-      return false;
-    }
-    if (Kind.isNull(value)) {
-      return false;
-    }
-
-    return true;
-  }
-
   public static isPromiseLike<T = unknown>(value: unknown): value is PromiseLike<T> {
     if (value instanceof Promise) {
       return true;
@@ -148,12 +136,24 @@ export class Kind {
     return false;
   }
 
-  public static isArray<T = unknown>(value: unknown): value is Array<T> {
-    return Array.isArray(value);
+  public static isString(value: unknown): value is string {
+    if (typeof value === 'string') {
+      return true;
+    }
+
+    return false;
   }
 
-  public static isClass<T extends Constructor>(instance: unknown, klazz: T): instance is T {
-    if (instance instanceof klazz) {
+  public static isSymbol(value: unknown): value is symbol {
+    if (typeof value === 'symbol') {
+      return true;
+    }
+
+    return false;
+  }
+
+  public static isUndefined(value: unknown): value is undefined {
+    if (typeof value === 'undefined') {
       return true;
     }
 

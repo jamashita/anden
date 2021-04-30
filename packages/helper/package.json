@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden-helper",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
     "build:cjs": "tsc -b tsconfig.cjs.json",
     "build:esm": "tsc -b tsconfig.esm.json",
     "clean": "concurrently \"npm:clean:*\"",
+    "test": "jest test",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist"
   },

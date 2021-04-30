@@ -9,7 +9,7 @@ export type Consumer<A> = (arg: A) => Whatever;
 export type BinaryConsumer<A1, A2> = (arg1: A1, args2: A2) => Whatever;
 export type Supplier<R> = () => R;
 export type Peek = () => Whatever;
-export type Enumerator<K, V> = (value: V, key: K) => Whatever;
+export type Catalogue<K, V> = (value: V, key: K) => Whatever;
 export type Mapper<A, R> = (value: A, index: number) => R;
 export type Resolve<T> = (arg: SyncAsync<T>) => Whatever;
 export type Reject<E = unknown> = (arg: E) => Whatever;

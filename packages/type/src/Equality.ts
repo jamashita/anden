@@ -6,6 +6,16 @@ export class Equality {
     return Equality.sameInternal(n1, n2);
   }
 
+  private static sameArray(arr1: ReadonlyArray<PlainObjectItem>, arr2: ReadonlyArray<PlainObjectItem>): boolean {
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+
+    return arr1.every((item: PlainObjectItem, index: number) => {
+      return Equality.sameInternal(item, arr2[index]);
+    });
+  }
+
   private static sameInternal(n1: ObjectLiteral | Primitive, n2: ObjectLiteral | Primitive): boolean {
     if (Equality.sameReference(n1, n2)) {
       return true;
@@ -27,27 +37,6 @@ export class Equality {
     return false;
   }
 
-  private static sameReference(n1: PlainObjectItem, n2: PlainObjectItem): boolean {
-    if (n1 === n2) {
-      return true;
-    }
-    if (Kind.isNaN(n1) && Kind.isNaN(n2)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  private static sameArray(arr1: ReadonlyArray<PlainObjectItem>, arr2: ReadonlyArray<PlainObjectItem>): boolean {
-    if (arr1.length !== arr2.length) {
-      return false;
-    }
-
-    return arr1.every((item: PlainObjectItem, index: number) => {
-      return Equality.sameInternal(item, arr2[index]);
-    });
-  }
-
   private static sameObject(obj1: PlainObject, obj2: PlainObject): boolean {
     const keys1: Array<string> = Object.keys(obj1);
     const keys2: Array<string> = Object.keys(obj2);
@@ -63,6 +52,17 @@ export class Equality {
 
       return false;
     });
+  }
+
+  private static sameReference(n1: PlainObjectItem, n2: PlainObjectItem): boolean {
+    if (n1 === n2) {
+      return true;
+    }
+    if (Kind.isNaN(n1) && Kind.isNaN(n2)) {
+      return true;
+    }
+
+    return false;
   }
 
   private constructor() {
