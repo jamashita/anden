@@ -1,3 +1,15 @@
+# [@jamashita/anden-type-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.9.0...@jamashita/anden-type-v1.10.0) (2021-04-30)
+
+
+### Bug Fixes
+
+* 🐛 Enumerator -> Catalogue ([9650040](https://github.com/jamashita/anden/commit/96500406a6980a1ddf707cc32c046b4ed4c6a251))
+
+
+### Features
+
+* 🎸 update ([233335a](https://github.com/jamashita/anden/commit/233335a44b9e6c4015cfeb8578ba12d7cf253810))
+
 # [@jamashita/anden-type-v1.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.8.0...@jamashita/anden-type-v1.9.0) (2021-04-26)
 
 
