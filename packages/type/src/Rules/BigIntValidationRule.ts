@@ -33,34 +33,6 @@ export class BigIntValidationRule implements ValidationRule {
     this.maxCondition(value);
   }
 
-  private minCondition(value: bigint): void {
-    if (Kind.isUndefined(this.min)) {
-      return;
-    }
-
-    const minBigInt: bigint = BigInt(this.min.value);
-
-    switch (this.min.condition) {
-      case 't': {
-        if (value < minBigInt) {
-          throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      case 'te': {
-        if (value <= minBigInt) {
-          throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      default: {
-        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.min.condition as string}`);
-      }
-    }
-  }
-
   private maxCondition(value: bigint): void {
     if (Kind.isUndefined(this.max)) {
       return;
@@ -85,6 +57,34 @@ export class BigIntValidationRule implements ValidationRule {
       }
       default: {
         throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.max.condition as string}`);
+      }
+    }
+  }
+
+  private minCondition(value: bigint): void {
+    if (Kind.isUndefined(this.min)) {
+      return;
+    }
+
+    const minBigInt: bigint = BigInt(this.min.value);
+
+    switch (this.min.condition) {
+      case 't': {
+        if (value < minBigInt) {
+          throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
+        }
+
+        return;
+      }
+      case 'te': {
+        if (value <= minBigInt) {
+          throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
+        }
+
+        return;
+      }
+      default: {
+        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.min.condition as string}`);
       }
     }
   }

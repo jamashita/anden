@@ -22,11 +22,11 @@ export abstract class Objet<N extends string = string> implements Nominative<N> 
 
   public abstract equals(other: unknown): boolean;
 
-  public abstract serialize(): string;
-
   public hashCode(): string {
     return hash(this);
   }
+
+  public abstract serialize(): string;
 
   public toString(): string {
     return this.serialize();
