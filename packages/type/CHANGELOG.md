@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.10.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.10.0...@jamashita/anden-type-v1.10.1) (2021-04-30)
+
+
+### Bug Fixes
+
+* 🐛 Whatever is not function ([4332f8e](https://github.com/jamashita/anden/commit/4332f8e645a6f806c254a8f93d833bf831f73418))
+
 # [@jamashita/anden-type-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.9.0...@jamashita/anden-type-v1.10.0) (2021-04-30)
 
 
