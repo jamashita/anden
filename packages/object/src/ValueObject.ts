@@ -4,7 +4,7 @@ import { Objet } from './Objet';
 export abstract class ValueObject<N extends string = string> extends Objet<N> {
   private code?: string;
 
-  public hashCode(): string {
+  public override hashCode(): string {
     if (!Kind.isUndefined(this.code)) {
       return this.code;
     }
@@ -14,5 +14,5 @@ export abstract class ValueObject<N extends string = string> extends Objet<N> {
     return this.code;
   }
 
-  public abstract serialize(): string;
+  public abstract override serialize(): string;
 }

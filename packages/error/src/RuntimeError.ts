@@ -8,7 +8,7 @@ export abstract class RuntimeError<N extends string = string> extends BaseError 
     super(message, cause);
   }
 
-  public toString(): string {
+  public override toString(): string {
     return this.getStack();
   }
 
