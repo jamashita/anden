@@ -20,7 +20,7 @@ export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = st
     return false;
   }
 
-  public hashCode(): string {
+  public override hashCode(): string {
     const hash: I | string = this.hashor<I>(this.getIdentifier());
 
     if (Kind.isString(hash)) {
@@ -30,5 +30,5 @@ export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = st
     return Objet.identify(hash);
   }
 
-  public abstract serialize(): string;
+  public abstract override serialize(): string;
 }
