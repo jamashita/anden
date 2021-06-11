@@ -31,7 +31,7 @@ export class UUID extends ValueObject<'UUID'> {
 
   public static v5(): UUID {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-    return new UUID(v5('PUBLIKUM', '6740811d-e75f-4b29-aa7d-7ff91ac8198d'));
+    return new UUID(v5('ANDEN', '6740811d-e75f-4b29-aa7d-7ff91ac8198d'));
   }
 
   public static validate(str: string): boolean {

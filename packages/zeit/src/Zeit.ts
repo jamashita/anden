@@ -111,7 +111,7 @@ export class Zeit extends ValueObject<'Zeit'> {
     return this.zeit.format(format);
   }
 
-  public toString(format?: string): string {
+  public override toString(format?: string): string {
     return this.serialize(format);
   }
 

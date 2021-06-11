@@ -28,7 +28,7 @@ export class Errors<E extends Error> extends RuntimeError<'Errors'> implements I
     return this.errors[Symbol.iterator]();
   }
 
-  public getStack(): string {
+  public override getStack(): string {
     return this.errors.map<Ambiguous<string>>((error: E) => {
       if (error instanceof RuntimeError) {
         return error.getStack();
