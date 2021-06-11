@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v1.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.8.0...@jamashita/anden-error-v1.9.0) (2021-05-17)
+
+
+### Features
+
+* 🎸 update ([42aad92](https://github.com/jamashita/anden/commit/42aad92038213508827aa50287a9bdef153c7e97))
+
 # [@jamashita/anden-error-v1.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.7.0...@jamashita/anden-error-v1.8.0) (2021-04-30)
 
 
