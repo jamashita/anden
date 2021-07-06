@@ -26,10 +26,10 @@
     "clean:dist": "rimraf dist"
   },
   "dependencies": {
-    "@jamashita/anden-error": "^1.9.0",
-    "@jamashita/anden-object": "^1.9.0",
+    "@jamashita/anden-error": "^1.10.0",
+    "@jamashita/anden-object": "^1.10.0",
     "@jamashita/anden-type": "^1.10.1",
-    "dayjs": "1.10.5",
+    "dayjs": "1.10.6",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
