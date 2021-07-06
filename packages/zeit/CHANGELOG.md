@@ -1,3 +1,10 @@
+# [@jamashita/anden-zeit-v1.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.10.0...@jamashita/anden-zeit-v1.11.0) (2021-07-06)
+
+
+### Features
+
+* 🎸 udpate ([628f2a0](https://github.com/jamashita/anden/commit/628f2a06a8966a1712899ef582f6ea10a8e12286))
+
 # [@jamashita/anden-zeit-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.9.0...@jamashita/anden-zeit-v1.10.0) (2021-06-11)
 
 
