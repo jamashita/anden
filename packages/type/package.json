@@ -10,21 +10,32 @@
   "author": "jamashita <jamashita@arachnid.xyz>",
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
+  },
+  "main": "./dist/index.js",
+  "typesVersions": {
+    "*": {
+      "index.d.ts": [
+        "./dist/index.d.ts"
+      ],
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "test": "jest test",
-    "build": "yarn clean && concurrently \"npm:build:*\"",
-    "build:cjs": "tsc -b tsconfig.cjs.json",
-    "build:esm": "tsc -b tsconfig.esm.json",
+    "build": "yarn clean && tsc -b tsconfig.build.json",
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "clean:others": "rimraf *.log",
+    "test": "jest test"
   },
   "dependencies": {
     "reflect-metadata": "0.1.13"
@@ -33,7 +44,7 @@
     "@jamashita/anden-helper": "1.6.0"
   },
   "engines": {
-    "node": ">= 12.0.0",
+    "node": ">= 15.0.0",
     "npm": "npm is not supported"
   },
   "engineStrict": true,
