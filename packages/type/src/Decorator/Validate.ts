@@ -1,7 +1,7 @@
 import 'reflect-metadata';
-import { Kind } from '../Kind';
-import { ValidationRule } from '../Rules/Interface/ValidationRule';
-import { Ambiguous } from '../Value';
+import { Kind } from '../Kind.js';
+import { ValidationRule } from '../Rules/Interface/ValidationRule.js';
+import { Ambiguous } from '../Value.js';
 
 const INDEX_KEY: symbol = Symbol();
 const RULE_KEY: symbol = Symbol();

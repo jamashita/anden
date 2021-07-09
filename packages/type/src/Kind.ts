@@ -1,4 +1,4 @@
-import { Constructor, Primitive, Vague } from './Value';
+import { Constructor, Primitive, Vague } from './Value.js';
 
 const NUMBER_REGEX: RegExp = /^[+-]?[0-9]+\.?[0-9]*$/su;
 

@@ -1,7 +1,6 @@
-// eslint-disable-next-line max-classes-per-file
 import 'reflect-metadata';
-import { StringValidation } from '../StringValidation';
-import { Validate } from '../Validate';
+import { StringValidation } from '../StringValidation.js';
+import { Validate } from '../Validate.js';
 
 class MockValidation {
   @Validate()

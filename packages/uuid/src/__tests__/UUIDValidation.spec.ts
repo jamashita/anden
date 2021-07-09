@@ -1,6 +1,6 @@
 import { Validate } from '@jamashita/anden-type';
 import 'reflect-metadata';
-import { UUIDValidation } from '../UUIDValidation';
+import { UUIDValidation } from '../UUIDValidation.js';
 
 class MockValidation {
   @Validate()

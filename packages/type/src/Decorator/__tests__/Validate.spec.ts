@@ -1,7 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import { asyncRandom } from '@jamashita/anden-helper';
-import { ValidationRule } from '../../Rules/Interface/ValidationRule';
-import { addRule, Validate } from '../Validate';
+import { ValidationRule } from '../../Rules/Interface/ValidationRule.js';
+import { addRule, Validate } from '../Validate.js';
 
 type TestValidationArgs = Readonly<{
   throwError: boolean;
