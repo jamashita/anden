@@ -1,4 +1,4 @@
-import { NumberValidationRule } from '../NumberValidationRule';
+import { NumberValidationRule } from '../NumberValidationRule.js';
 
 describe('NumberValidationRule', () => {
   describe('evaluate', () => {

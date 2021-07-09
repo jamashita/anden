@@ -1,5 +1,5 @@
 import { Ambiguous, Kind } from '@jamashita/anden-type';
-import { RuntimeError } from './RuntimeError';
+import { RuntimeError } from './RuntimeError.js';
 
 export class Errors<E extends Error> extends RuntimeError<'Errors'> implements Iterable<E> {
   public readonly noun: 'Errors' = 'Errors';

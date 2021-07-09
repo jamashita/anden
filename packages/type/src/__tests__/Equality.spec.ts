@@ -1,4 +1,4 @@
-import { Equality } from '../Equality';
+import { Equality } from '../Equality.js';
 
 describe('Equality', () => {
   describe('same', () => {

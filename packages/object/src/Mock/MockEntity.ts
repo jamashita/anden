@@ -1,6 +1,6 @@
 import { ObjectLiteral } from '@jamashita/anden-type';
-import { Entity } from '../Entity';
-import { Objet } from '../Objet';
+import { Entity } from '../Entity.js';
+import { Objet } from '../Objet.js';
 
 export class MockEntity<V> extends Entity<V, MockEntity<V>, 'MockEntity'> {
   public readonly noun: 'MockEntity' = 'MockEntity';

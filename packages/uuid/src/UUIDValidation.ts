@@ -1,5 +1,5 @@
 import { addRule } from '@jamashita/anden-type';
-import { UUIDValidationRule } from './UUIDValidationRule';
+import { UUIDValidationRule } from './UUIDValidationRule.js';
 
 export const UUIDValidation = (): ParameterDecorator => {
   const v: UUIDValidationRule = new UUIDValidationRule();

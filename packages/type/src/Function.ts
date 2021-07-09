@@ -1,4 +1,4 @@
-import { SyncAsync, Whatever } from './Value';
+import { SyncAsync, Whatever } from './Value.js';
 
 export type UnaryFunction<A, R> = (arg: A) => R;
 export type BinaryFunction<A1, A2, R> = (arg1: A1, arg2: A2) => R;

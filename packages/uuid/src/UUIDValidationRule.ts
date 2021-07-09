@@ -1,5 +1,5 @@
 import { Kind, ValidationRule } from '@jamashita/anden-type';
-import { UUID } from './UUID';
+import { UUID } from './UUID.js';
 
 export class UUIDValidationRule implements ValidationRule {
   public evaluate(_target: object, value: unknown): void {

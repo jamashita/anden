@@ -1,4 +1,4 @@
-import { SymbolValidationRule } from '../SymbolValidationRule';
+import { SymbolValidationRule } from '../SymbolValidationRule.js';
 
 describe('SymbolValidationRule', () => {
   describe('of', () => {
