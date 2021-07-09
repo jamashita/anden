@@ -1,5 +1,5 @@
-import { Kind } from './Kind';
-import { ObjectLiteral, PlainObject, PlainObjectItem } from './Value';
+import { Kind } from './Kind.js';
+import { ObjectLiteral, PlainObject, PlainObjectItem } from './Value.js';
 
 export class Clone {
   public static copy<T extends ObjectLiteral>(obj: T): T {

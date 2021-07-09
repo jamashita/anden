@@ -1,5 +1,5 @@
-import { StringValidationArgs, StringValidationRule } from '../Rules/StringValidationRule';
-import { addRule } from './Validate';
+import { StringValidationArgs, StringValidationRule } from '../Rules/StringValidationRule.js';
+import { addRule } from './Validate.js';
 
 export const StringValidation = (args?: StringValidationArgs): ParameterDecorator => {
   const v: StringValidationRule = StringValidationRule.of(args);

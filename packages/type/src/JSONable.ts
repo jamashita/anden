@@ -1,5 +1,5 @@
-import { Kind } from './Kind';
-import { ObjectLiteral } from './Value';
+import { Kind } from './Kind.js';
+import { ObjectLiteral } from './Value.js';
 
 export interface JSONable<O extends ObjectLiteral = ObjectLiteral> {
   toJSON(): O;

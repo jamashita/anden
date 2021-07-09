@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "author": "jamashita <jamashita@arachnid.xyz>",
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],

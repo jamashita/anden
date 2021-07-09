@@ -1,4 +1,4 @@
-import { isNoun, Noun } from '../Noun';
+import { isNoun, Noun } from '../Noun.js';
 
 class MockNoun implements Noun {
   public readonly noun: string = 'popo';

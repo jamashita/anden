@@ -1,4 +1,4 @@
-import { StringValidationRule } from '../StringValidationRule';
+import { StringValidationRule } from '../StringValidationRule.js';
 
 describe('StringValidationRule', () => {
   describe('evaluate', () => {
