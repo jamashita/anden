@@ -74,7 +74,7 @@
     /* Base directory to resolve non-absolute module names. */
     "paths": {
       "@jamashita/anden-*": [
-        "./packages/*/src"
+        "./packages/*/src/index.js"
       ]
     },
     /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
