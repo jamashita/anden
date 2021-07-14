@@ -1,1 +1,1 @@
-export * from './MockRuntimeError';
+export * from './MockRuntimeError.js';
