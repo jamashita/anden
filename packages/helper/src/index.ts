@@ -1,3 +1,3 @@
-export * from './Random';
-export * from './SequencialArray';
-export * from './Wait';
+export * from './Random.js';
+export * from './SequencialArray.js';
+export * from './Wait.js';
