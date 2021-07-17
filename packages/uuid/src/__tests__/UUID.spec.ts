@@ -1,6 +1,6 @@
 import { MockValueObject } from '@jamashita/anden-object';
-import { UUIDError } from '../Error/UUIDError';
-import { UUID } from '../UUID';
+import { UUIDError } from '../Error/UUIDError.js';
+import { UUID } from '../UUID.js';
 
 const v4 = (): Promise<UUID> => {
   return new Promise<UUID>((resolve: (value: UUID) => void) => {

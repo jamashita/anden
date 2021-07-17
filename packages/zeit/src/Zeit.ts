@@ -3,7 +3,7 @@ import { Kind } from '@jamashita/anden-type';
 import dayjs from 'dayjs';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';
-import { ZeitError } from './Error/ZeitError';
+import { ZeitError } from './Error/ZeitError.js';
 
 dayjs.extend(utc);
 dayjs.extend(minMax);

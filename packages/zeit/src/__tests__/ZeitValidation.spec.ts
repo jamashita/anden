@@ -1,6 +1,6 @@
 import { Validate } from '@jamashita/anden-type';
 import 'reflect-metadata';
-import { ZeitValidation } from '../ZeitValidation';
+import { ZeitValidation } from '../ZeitValidation.js';
 
 class MockValidation {
   @Validate()

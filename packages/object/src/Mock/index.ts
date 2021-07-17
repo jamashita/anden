@@ -1,2 +1,2 @@
-export * from './MockEntity';
-export * from './MockValueObject';
+export * from './MockEntity.js';
+export * from './MockValueObject.js';

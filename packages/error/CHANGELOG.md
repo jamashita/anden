@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.9.0...@jamashita/anden-error-v1.10.0) (2021-06-11)
+
+
+### Features
+
+* 🎸 adopted for 4.3 ([3d4c756](https://github.com/jamashita/anden/commit/3d4c7560067d29ce94e6ea01fd79e171ccd764e5))
+
 # [@jamashita/anden-error-v1.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v1.8.0...@jamashita/anden-error-v1.9.0) (2021-05-17)
 
 

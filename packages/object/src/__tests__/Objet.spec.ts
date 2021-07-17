@@ -1,6 +1,6 @@
 import { asyncRandom, sequence } from '@jamashita/anden-helper';
 import { Inconnu } from '@jamashita/anden-type';
-import { Objet } from '../Objet';
+import { Objet } from '../Objet.js';
 
 describe('Objet', () => {
   describe('identify', () => {

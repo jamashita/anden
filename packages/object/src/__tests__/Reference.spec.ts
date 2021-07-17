@@ -1,5 +1,5 @@
 import { PlainObject, PlainObjectItem } from '@jamashita/anden-type';
-import { Reference } from '../Reference';
+import { Reference } from '../Reference.js';
 
 describe('Reference', () => {
   describe('isCircular', () => {

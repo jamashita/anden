@@ -1,5 +1,5 @@
-import { Objet } from '../Objet';
-import { ValueObject } from '../ValueObject';
+import { Objet } from '../Objet.js';
+import { ValueObject } from '../ValueObject.js';
 
 export class MockValueObject<V> extends ValueObject<'MockValueObject'> {
   public readonly noun: 'MockValueObject' = 'MockValueObject';

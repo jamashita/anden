@@ -1,8 +1,8 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
 import sinon, { SinonFakeTimers } from 'sinon';
-import { ZeitError } from '../Error/ZeitError';
-import { Zeit } from '../Zeit';
+import { ZeitError } from '../Error/ZeitError.js';
+import { Zeit } from '../Zeit.js';
 
 describe('Zeit', () => {
   describe('ofString', () => {

@@ -9,21 +9,23 @@
   "license": "MIT",
   "author": "jamashita <jamashita@arachnid.xyz>",
   "sideEffects": false,
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/esm/index.d.ts",
+  "type": "module",
+  "exports": {
+    "./*": "./dist/*.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "src"
   ],
   "scripts": {
-    "test": "jest test",
-    "build": "yarn clean && concurrently \"npm:build:*\"",
-    "build:cjs": "tsc -b tsconfig.cjs.json",
-    "build:esm": "tsc -b tsconfig.esm.json",
+    "build": "yarn clean && tsc -b tsconfig.build.json",
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
-    "clean:dist": "rimraf dist"
+    "clean:dist": "rimraf dist",
+    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo",
+    "test": "jest test"
   },
   "dependencies": {
     "reflect-metadata": "0.1.13"
@@ -32,7 +34,7 @@
     "@jamashita/anden-helper": "1.6.0"
   },
   "engines": {
-    "node": ">= 12.0.0",
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
     "npm": "npm is not supported"
   },
   "engineStrict": true,

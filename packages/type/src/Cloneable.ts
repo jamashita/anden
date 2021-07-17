@@ -1,4 +1,4 @@
-import { Kind } from './Kind';
+import { Kind } from './Kind.js';
 
 export interface Cloneable<T extends Cloneable<T>> {
   duplicate(): T;

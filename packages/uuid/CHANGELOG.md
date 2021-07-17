@@ -1,3 +1,25 @@
+# [@jamashita/anden-uuid-v1.12.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.11.0...@jamashita/anden-uuid-v1.12.0) (2021-07-09)
+
+
+### Features
+
+* 🎸 update ([9be4c36](https://github.com/jamashita/anden/commit/9be4c36159c1b2c754ac4bce3076c46fcd848600))
+
+# [@jamashita/anden-uuid-v1.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.10.0...@jamashita/anden-uuid-v1.11.0) (2021-07-06)
+
+
+### Features
+
+* 🎸 udpate ([628f2a0](https://github.com/jamashita/anden/commit/628f2a06a8966a1712899ef582f6ea10a8e12286))
+
+# [@jamashita/anden-uuid-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.9.0...@jamashita/anden-uuid-v1.10.0) (2021-06-11)
+
+
+### Features
+
+* 🎸 adopted for 4.3 ([3d4c756](https://github.com/jamashita/anden/commit/3d4c7560067d29ce94e6ea01fd79e171ccd764e5))
+* 🎸 update ([582d9b0](https://github.com/jamashita/anden/commit/582d9b05fe4bb476388dc4ea4b6f830078a55299))
+
 # [@jamashita/anden-uuid-v1.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v1.8.0...@jamashita/anden-uuid-v1.9.0) (2021-05-17)
 
 
