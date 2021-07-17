@@ -11,7 +11,7 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    "./*": "./dist/*.js"
+    ".": "./dist/index.js"
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -24,8 +24,7 @@
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
-    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo",
-    "test": "jest test"
+    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo"
   },
   "dependencies": {
     "@jamashita/anden-type": "^1.10.1",
