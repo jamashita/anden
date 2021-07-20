@@ -24,7 +24,7 @@ jobs:
       - name: 'Compile'
         run: 'yarn build'
       - name: 'Publish to NPM'
-        run: 'yarn release'
+        run: 'yarn force-release'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
