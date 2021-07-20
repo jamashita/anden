@@ -1,5 +1,5 @@
 import { Kind } from '../Kind.js';
-import { ValidationRule } from './Interface/ValidationRule.js';
+import { ValidationRule } from './ValidationRule.js';
 
 export class SymbolValidationRule implements ValidationRule {
   private static readonly INSTANCE: SymbolValidationRule = new SymbolValidationRule();

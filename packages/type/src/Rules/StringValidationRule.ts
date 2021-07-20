@@ -1,5 +1,5 @@
 import { Kind } from '../Kind.js';
-import { ValidationRule } from './Interface/ValidationRule.js';
+import { ValidationRule } from './ValidationRule.js';
 
 type NumericalStringPattern = Readonly<{
   type: 'numerical';
