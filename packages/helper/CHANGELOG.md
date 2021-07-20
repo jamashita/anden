@@ -1,3 +1,10 @@
+# [@jamashita/anden-helper-v1.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v1.6.0...@jamashita/anden-helper-v1.7.0) (2021-07-20)
+
+
+### Features
+
+* 🎸 remove commonJS callming method ([0c7e03d](https://github.com/jamashita/anden/commit/0c7e03d85b5cd7021c0ba6d5f36d33488e42e849))
+
 # [@jamashita/anden-helper-v1.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v1.5.0...@jamashita/anden-helper-v1.6.0) (2021-04-26)
 
 
