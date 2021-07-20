@@ -18,7 +18,7 @@
     "commit": "git cz",
     "format": "eslint --fix 'packages/*/src/**/*.{ts,tsx}'",
     "release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo",
-    "force-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --force-publish",
+    "force-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo --force-publish --branches force-release",
     "setup": "lerna bootstrap && lerna link",
     "test": "jest test",
     "update": "yarn setup && yarn update:upgrade && yarn update:install",
