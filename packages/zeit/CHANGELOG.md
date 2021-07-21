@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.12.2](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.13.0...@jamashita/anden-zeit@1.12.2) (2021-07-21)
+
+
+### Bug Fixes
+
+* 🐛 parse error, fixed by adding plugin ([409ce84](https://github.com/jamashita/anden.git/packages/zeit/commit/409ce8450d055220dc8c0839e8fdc182fa6ac254))
+
+
+
+
+
 # [1.13.0](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@0.2.1...@jamashita/anden-zeit@1.13.0) (2021-07-20)
 
 
