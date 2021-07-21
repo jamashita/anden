@@ -1,3 +1,10 @@
+# [@jamashita/anden-zeit-v1.12.1](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.12.0...@jamashita/anden-zeit-v1.12.1) (2021-07-21)
+
+
+### Bug Fixes
+
+* 🐛 parse error, fixed by adding plugin ([409ce84](https://github.com/jamashita/anden/commit/409ce8450d055220dc8c0839e8fdc182fa6ac254))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
