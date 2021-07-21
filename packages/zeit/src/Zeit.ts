@@ -1,12 +1,14 @@
 import { ValueObject } from '@jamashita/anden-object';
 import { Kind } from '@jamashita/anden-type';
 import dayjs from 'dayjs';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';
 import { ZeitError } from './Error/ZeitError.js';
 
-dayjs.extend(utc);
+dayjs.extend(customParseFormat);
 dayjs.extend(minMax);
+dayjs.extend(utc);
 
 export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'week' | 'year';
 
