@@ -1,5 +1,7 @@
+.husky/
 .github/
 .idea/
+coverage/
 .editorconfig
 .eslintignore
 .eslintrc
@@ -9,4 +11,8 @@ commitlint.config.cjs
 jest.config.cjs
 lerna.json
 tsconfig.json
+tsconfig.build.json
+tsconfig.build.tsbuildinfo
 **/*.spec.ts
+*.log
+*.md
