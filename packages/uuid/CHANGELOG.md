@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/jamashita/anden.git/packages/uuid/compare/@jamashita/anden-uuid@1.13.0...@jamashita/anden-uuid@2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 bump ([04243e8](https://github.com/jamashita/anden.git/packages/uuid/commit/04243e869e329b77ae07ba84513ed50c41389db4))
+
+
+
+
+
 # [1.14.0](https://github.com/jamashita/anden.git/packages/uuid/compare/@jamashita/anden-uuid@1.13.0...@jamashita/anden-uuid@1.14.0) (2021-07-22)
 
 **Note:** Version bump only for package @jamashita/anden-uuid
