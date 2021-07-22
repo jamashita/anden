@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/jamashita/anden.git/packages/object/compare/@jamashita/anden-object@1.12.1...@jamashita/anden-object@1.13.0) (2021-07-22)
+
+**Note:** Version bump only for package @jamashita/anden-object
+
+
+
+
+
 ## [1.12.1](https://github.com/jamashita/anden.git/packages/object/compare/@jamashita/anden-object@1.12.0...@jamashita/anden-object@1.12.1) (2021-07-21)
 
 **Note:** Version bump only for package @jamashita/anden-object
