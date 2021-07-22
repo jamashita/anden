@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v1.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.10.1...@jamashita/anden-type-v1.11.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 bump ([04243e8](https://github.com/jamashita/anden/commit/04243e869e329b77ae07ba84513ed50c41389db4))
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
