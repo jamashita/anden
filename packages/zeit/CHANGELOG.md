@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.13.0](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.12.2...@jamashita/anden-zeit@1.13.0) (2021-07-22)
+
+**Note:** Version bump only for package @jamashita/anden-zeit
+
+
+
+
+
 ## [1.12.2](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.13.0...@jamashita/anden-zeit@1.12.2) (2021-07-21)
 
 
