@@ -10,6 +10,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/jamashita/anden.git/packages/type/compare/@jamashita/anden-type@1.11.1...@jamashita/anden-type@2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 bump ([04243e8](https://github.com/jamashita/anden.git/packages/type/commit/04243e869e329b77ae07ba84513ed50c41389db4))
+
+
+
+
+
 # [1.12.0](https://github.com/jamashita/anden.git/packages/type/compare/@jamashita/anden-type@1.11.1...@jamashita/anden-type@1.12.0) (2021-07-22)
 
 **Note:** Version bump only for package @jamashita/anden-type
