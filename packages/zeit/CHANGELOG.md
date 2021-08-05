@@ -1,7 +1,39 @@
+# [@jamashita/anden-zeit-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.12.1...@jamashita/anden-zeit-v2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 bump ([04243e8](https://github.com/jamashita/anden/commit/04243e869e329b77ae07ba84513ed50c41389db4))
+* 🎸 ver up ([eba49f0](https://github.com/jamashita/anden/commit/eba49f0ff04f1695ff5f64c98d6ecf22be7ad236))
+
+
+### BREAKING CHANGES
+
+* 🧨 ver up
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [2.0.0](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.12.2...@jamashita/anden-zeit@2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 bump ([04243e8](https://github.com/jamashita/anden.git/packages/zeit/commit/04243e869e329b77ae07ba84513ed50c41389db4))
+
+
+
+
+
+# [1.13.0](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.12.2...@jamashita/anden-zeit@1.13.0) (2021-07-22)
+
+**Note:** Version bump only for package @jamashita/anden-zeit
+
+
+
+
 
 ## [1.12.2](https://github.com/jamashita/anden.git/packages/zeit/compare/@jamashita/anden-zeit@1.13.0...@jamashita/anden-zeit@1.12.2) (2021-07-21)
 
