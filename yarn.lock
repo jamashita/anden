@@ -728,7 +728,6 @@ __metadata:
     "@jamashita/anden-object": ^2.0.0
     "@jamashita/anden-type": ^2.0.0
     dayjs: 1.10.6
-    object-hash: 2.2.0
     reflect-metadata: 0.1.13
     sinon: 11.1.2
   languageName: unknown
