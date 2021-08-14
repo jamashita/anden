@@ -4,7 +4,7 @@ import { isNoun, Noun } from './Noun.js';
 import { isSerializable, Serializable } from './Serializable.js';
 
 export interface Nominative<N extends string = string> extends Equalable, Serializable, Noun<N> {
-  hashCode(): string;
+  hashCode(): number;
 }
 
 export const isNominative = <N extends string = string>(n: unknown): n is Nominative<N> => {
