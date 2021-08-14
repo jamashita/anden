@@ -1,3 +1,15 @@
+# [@jamashita/anden-object-v2.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.0.0...@jamashita/anden-object-v2.1.0) (2021-08-14)
+
+
+### Bug Fixes
+
+* 🐛 method ordering ([2f91dbf](https://github.com/jamashita/anden/commit/2f91dbfee87c77e847ea917a0ffa68eec3ff8753))
+
+
+### Features
+
+* 🎸 hashCode(): string -> hashCode(): number ([78a7487](https://github.com/jamashita/anden/commit/78a7487386cb13a7ceb12c8649439da9c5583edb))
+
 # [@jamashita/anden-object-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v1.11.0...@jamashita/anden-object-v2.0.0) (2021-07-22)
 
 

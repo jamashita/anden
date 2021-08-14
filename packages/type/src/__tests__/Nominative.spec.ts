@@ -7,8 +7,8 @@ class MockNominative implements Nominative<'mock'> {
     return this === other;
   }
 
-  public hashCode(): string {
-    return 'pio';
+  public hashCode(): number {
+    return -1;
   }
 
   public serialize(): string {
