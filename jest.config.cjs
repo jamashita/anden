@@ -26,7 +26,7 @@ module.exports = {
   },
   moduleNameMapper: {
     '^@jamashita/anden-(.*)$': '<rootDir>/packages/$1/src/index',
-    '^(\\.{1,2}/.*)\\.js$': '$1',
+    '^(\\.{1,2}/.*)\\.js$': '$1'
   },
   moduleFileExtensions: [
     'js',
