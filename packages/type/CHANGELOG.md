@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.0.0...@jamashita/anden-type-v2.1.0) (2021-08-14)
+
+
+### Features
+
+* 🎸 hashCode(): string -> hashCode(): number ([c02b0e0](https://github.com/jamashita/anden/commit/c02b0e01837a1b046a9e5b1f9afc90dca4a34ad7))
+
 # [@jamashita/anden-type-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.11.0...@jamashita/anden-type-v2.0.0) (2021-07-22)
 
 
