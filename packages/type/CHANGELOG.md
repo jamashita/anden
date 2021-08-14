@@ -1,3 +1,15 @@
+# [@jamashita/anden-type-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.11.0...@jamashita/anden-type-v2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 ver up ([eba49f0](https://github.com/jamashita/anden/commit/eba49f0ff04f1695ff5f64c98d6ecf22be7ad236))
+
+
+### BREAKING CHANGES
+
+* 🧨 ver up
+
 # [@jamashita/anden-type-v1.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v1.10.1...@jamashita/anden-type-v1.11.0) (2021-07-22)
 
 

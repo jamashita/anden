@@ -1,3 +1,15 @@
+# [@jamashita/anden-helper-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v1.8.0...@jamashita/anden-helper-v2.0.0) (2021-07-22)
+
+
+### Features
+
+* 🎸 ver up ([eba49f0](https://github.com/jamashita/anden/commit/eba49f0ff04f1695ff5f64c98d6ecf22be7ad236))
+
+
+### BREAKING CHANGES
+
+* 🧨 ver up
+
 # [@jamashita/anden-helper-v1.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v1.7.0...@jamashita/anden-helper-v1.8.0) (2021-07-22)
 
 

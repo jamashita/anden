@@ -1,10 +1,13 @@
 import { Cloneable, Kind } from '@jamashita/anden-type';
+import hash from 'hash-it';
 import { Objet } from './Objet.js';
 
 export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = string> extends Objet<N> implements Cloneable<T> {
   public abstract getIdentifier(): I;
 
   public abstract duplicate(): T;
+
+  public abstract override serialize(): string;
 
   public equals(other: unknown): boolean {
     if (this === other) {
@@ -20,15 +23,13 @@ export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = st
     return false;
   }
 
-  public override hashCode(): string {
-    const hash: I | string = this.hashor<I>(this.getIdentifier());
+  public override hashCode(): number {
+    const h: I | number = this.hashor<I>(this.getIdentifier());
 
-    if (Kind.isString(hash)) {
-      return hash;
+    if (Kind.isNumber(h)) {
+      return h;
     }
 
-    return Objet.identify(hash);
+    return hash(Objet.identify(h));
   }
-
-  public abstract override serialize(): string;
 }

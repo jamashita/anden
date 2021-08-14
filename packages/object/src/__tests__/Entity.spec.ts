@@ -56,16 +56,16 @@ describe('Entity', () => {
       const vo: MockValueObject<null> = new MockValueObject<null>(null);
 
       const entity: MockEntity<MockValueObject<null>> = new MockEntity<MockValueObject<null>>(vo, {});
-      const code1: string = entity.hashCode();
+      const code1: number = entity.hashCode();
 
       entity.setObject({ code1 });
-      const code2: string = entity.hashCode();
+      const code2: number = entity.hashCode();
 
       entity.setObject({
         code1,
         code2
       });
-      const code3: string = entity.hashCode();
+      const code3: number = entity.hashCode();
 
       entity.setObject({
         code1,

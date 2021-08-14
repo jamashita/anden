@@ -1,5 +1,5 @@
 import { isNominative, Kind, Nominative } from '@jamashita/anden-type';
-import hash from 'object-hash';
+import hash from 'hash-it';
 
 export abstract class Objet<N extends string = string> implements Nominative<N> {
   public abstract readonly noun: N;
@@ -22,17 +22,18 @@ export abstract class Objet<N extends string = string> implements Nominative<N> 
 
   public abstract equals(other: unknown): boolean;
 
-  public hashCode(): string {
+  public abstract serialize(): string;
+
+  public hashCode(): number {
     return hash(this);
   }
 
-  public abstract serialize(): string;
 
   public toString(): string {
     return this.serialize();
   }
 
-  protected hashor<T>(value: T): T | string {
+  protected hashor<T>(value: T): T | number {
     if (isNominative(value)) {
       return value.hashCode();
     }
