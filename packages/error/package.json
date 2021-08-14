@@ -1,6 +1,7 @@
 {
   "name": "@jamashita/anden-error",
   "version": "2.0.0",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "git@github.com:jamashita/anden.git/packages/error"
