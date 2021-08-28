@@ -1,4 +1,4 @@
-import { Clone } from '../Clone.js';
+import { Clone } from '../Clone';
 
 describe('Clone', () => {
   describe('copy', () => {

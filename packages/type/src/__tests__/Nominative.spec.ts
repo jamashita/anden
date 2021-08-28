@@ -1,4 +1,4 @@
-import { isNominative, Nominative } from '../Nominative.js';
+import { isNominative, Nominative } from '../Nominative';
 
 class MockNominative implements Nominative<'mock'> {
   public readonly noun: 'mock' = 'mock';

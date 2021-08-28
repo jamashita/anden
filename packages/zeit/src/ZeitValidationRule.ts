@@ -1,5 +1,5 @@
 import { Kind, ValidationRule } from '@jamashita/anden-type';
-import { Zeit } from './Zeit.js';
+import { Zeit } from './Zeit';
 
 export type ZeitValidationArgs = Readonly<{
   format: string;

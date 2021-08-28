@@ -1,4 +1,4 @@
-import { Cloneable, isCloneable } from '../Cloneable.js';
+import { Cloneable, isCloneable } from '../Cloneable';
 
 class MockCloneable implements Cloneable<MockCloneable> {
   public duplicate(): MockCloneable {

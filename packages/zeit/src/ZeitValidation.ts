@@ -1,5 +1,5 @@
 import { addRule } from '@jamashita/anden-type';
-import { ZeitValidationArgs, ZeitValidationRule } from './ZeitValidationRule.js';
+import { ZeitValidationArgs, ZeitValidationRule } from './ZeitValidationRule';
 
 export const ZeitValidation = (args: ZeitValidationArgs): ParameterDecorator => {
   const v: ZeitValidationRule = new ZeitValidationRule(args);

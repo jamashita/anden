@@ -1,5 +1,5 @@
-import { Kind } from '../Kind.js';
-import { ValidationRule } from './ValidationRule.js';
+import { Kind } from '../Kind';
+import { ValidationRule } from './ValidationRule';
 
 type NumberCondition = Readonly<{
   condition: 't' | 'te';
@@ -15,8 +15,8 @@ export type NumberValidationArgs = Partial<Readonly<{
 }>>;
 
 export class NumberValidationRule implements ValidationRule {
-  private readonly min?: NumberCondition;
-  private readonly max?: NumberCondition;
+  private readonly min: NumberCondition | undefined;
+  private readonly max: NumberCondition | undefined;
   private readonly int: boolean;
   private readonly noNaN: boolean;
   private readonly noInfinity: boolean;
@@ -25,7 +25,13 @@ export class NumberValidationRule implements ValidationRule {
     return new NumberValidationRule(args);
   }
 
-  protected constructor({ min, max, int = false, noNaN = false, noInfinity = false }: NumberValidationArgs) {
+  protected constructor({
+    min = undefined,
+    max = undefined,
+    int = false,
+    noNaN = false,
+    noInfinity = false
+  }: NumberValidationArgs) {
     this.min = min;
     this.max = max;
     this.int = int;

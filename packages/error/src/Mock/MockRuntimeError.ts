@@ -1,4 +1,4 @@
-import { RuntimeError } from '../RuntimeError.js';
+import { RuntimeError } from '../RuntimeError';
 
 export class MockRuntimeError extends RuntimeError<'MockRuntimeError'> {
   public readonly noun: 'MockRuntimeError' = 'MockRuntimeError';

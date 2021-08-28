@@ -1,4 +1,4 @@
-import { UUIDValidationRule } from '../UUIDValidationRule.js';
+import { UUIDValidationRule } from '../UUIDValidationRule';
 
 describe('UUIDValidationRule', () => {
   describe('evaluate', () => {

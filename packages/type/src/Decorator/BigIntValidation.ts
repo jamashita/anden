@@ -1,5 +1,5 @@
-import { BigIntValidationArgs, BigIntValidationRule } from '../Rules/BigIntValidationRule.js';
-import { addRule } from './Validate.js';
+import { BigIntValidationArgs, BigIntValidationRule } from '../Rules/BigIntValidationRule';
+import { addRule } from './Validate';
 
 export const BigIntValidation = (args: BigIntValidationArgs = {}): ParameterDecorator => {
   const v: BigIntValidationRule = BigIntValidationRule.of(args);
