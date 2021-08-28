@@ -1,4 +1,4 @@
-import { Equalable, isEqualable } from '../Equalable.js';
+import { Equalable, isEqualable } from '../Equalable';
 
 class MockEqualable implements Equalable {
   public equals(other: unknown): boolean {

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { BooleanValidation } from '../BooleanValidation.js';
-import { Validate } from '../Validate.js';
+import { BooleanValidation } from '../BooleanValidation';
+import { Validate } from '../Validate';
 
 class MockValidation {
   @Validate()

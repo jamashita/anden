@@ -1,3 +1,3 @@
-export * from './Error/ZeitError.js';
-export * from './Zeit.js';
-export * from './ZeitValidation.js';
+export * from './Error/ZeitError';
+export * from './Zeit';
+export * from './ZeitValidation';

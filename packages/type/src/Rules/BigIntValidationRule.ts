@@ -1,5 +1,5 @@
-import { Kind } from '../Kind.js';
-import { ValidationRule } from './ValidationRule.js';
+import { Kind } from '../Kind';
+import { ValidationRule } from './ValidationRule';
 
 type NumberCondition = Readonly<{
   condition: 't' | 'te';
@@ -12,14 +12,14 @@ export type BigIntValidationArgs = Partial<Readonly<{
 }>>;
 
 export class BigIntValidationRule implements ValidationRule {
-  private readonly min?: NumberCondition;
-  private readonly max?: NumberCondition;
+  private readonly min: NumberCondition | undefined;
+  private readonly max: NumberCondition | undefined;
 
   public static of(args: BigIntValidationArgs = {}): BigIntValidationRule {
     return new BigIntValidationRule(args);
   }
 
-  protected constructor({ min, max }: BigIntValidationArgs) {
+  protected constructor({ min = undefined, max = undefined }: BigIntValidationArgs) {
     this.min = min;
     this.max = max;
   }

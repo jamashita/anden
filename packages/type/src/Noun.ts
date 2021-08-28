@@ -1,4 +1,4 @@
-import { Kind } from './Kind.js';
+import { Kind } from './Kind';
 
 export interface Noun<N extends string = string> {
   readonly noun: N;

@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { SymbolValidation } from '../SymbolValidation.js';
-import { Validate } from '../Validate.js';
+import { SymbolValidation } from '../SymbolValidation';
+import { Validate } from '../Validate';
 
 class MockValidation {
   @Validate()

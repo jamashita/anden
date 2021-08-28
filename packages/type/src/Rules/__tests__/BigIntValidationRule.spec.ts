@@ -1,4 +1,4 @@
-import { BigIntValidationRule } from '../BigIntValidationRule.js';
+import { BigIntValidationRule } from '../BigIntValidationRule';
 
 describe('BigIntValidationRule', () => {
   describe('evaluate', () => {

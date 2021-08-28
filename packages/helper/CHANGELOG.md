@@ -1,3 +1,17 @@
+# [@jamashita/anden-helper-v2.0.2](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v2.0.1...@jamashita/anden-helper-v2.0.2) (2021-08-28)
+
+
+### Bug Fixes
+
+* 🐛 build output module fixed ([8ca55a8](https://github.com/jamashita/anden/commit/8ca55a84119c3b0e1a3d3fed5ba3f416f827910e))
+
+# [@jamashita/anden-helper-v2.0.1](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v2.0.0...@jamashita/anden-helper-v2.0.1) (2021-08-28)
+
+
+### Bug Fixes
+
+* 🐛 import/export path adopted to dual package ([9dbdd48](https://github.com/jamashita/anden/commit/9dbdd4877ccc5996da69bca73b58e2bdcc436880))
+
 # [@jamashita/anden-helper-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v1.8.0...@jamashita/anden-helper-v2.0.0) (2021-07-22)
 
 

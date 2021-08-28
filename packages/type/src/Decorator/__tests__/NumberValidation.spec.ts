@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { NumberValidation } from '../NumberValidation.js';
-import { Validate } from '../Validate.js';
+import { NumberValidation } from '../NumberValidation';
+import { Validate } from '../Validate';
 
 class MockValidation {
   @Validate()

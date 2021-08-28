@@ -1,5 +1,5 @@
-import { Kind } from './Kind.js';
-import { ObjectLiteral, PlainObject, PlainObjectItem, Primitive } from './Value.js';
+import { Kind } from './Kind';
+import { ObjectLiteral, PlainObject, PlainObjectItem, Primitive } from './Value';
 
 export class Equality {
   public static same(n1: ObjectLiteral, n2: ObjectLiteral): boolean {
