@@ -1,5 +1,5 @@
-import { MockEntity } from '../Mock/MockEntity.js';
-import { MockValueObject } from '../Mock/MockValueObject.js';
+import { MockEntity } from '../Mock/MockEntity';
+import { MockValueObject } from '../Mock/MockValueObject';
 
 describe('Entity', () => {
   describe('equals', () => {

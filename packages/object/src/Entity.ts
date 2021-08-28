@@ -1,6 +1,6 @@
 import { Cloneable, Kind } from '@jamashita/anden-type';
 import hash from 'hash-it';
-import { Objet } from './Objet.js';
+import { Objet } from './Objet';
 
 export abstract class Entity<I, T extends Entity<I, T, N>, N extends string = string> extends Objet<N> implements Cloneable<T> {
   public abstract getIdentifier(): I;

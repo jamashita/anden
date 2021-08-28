@@ -1,5 +1,5 @@
-import { isJSONable, JSONable } from '../JSONable.js';
-import { ObjectLiteral } from '../Value.js';
+import { isJSONable, JSONable } from '../JSONable';
+import { ObjectLiteral } from '../Value';
 
 class MockJSONable implements JSONable {
   public toJSON(): ObjectLiteral {

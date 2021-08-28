@@ -1,4 +1,4 @@
-import { BooleanValidationRule } from '../BooleanValidationRule.js';
+import { BooleanValidationRule } from '../BooleanValidationRule';
 
 describe('BooleanValidationRule', () => {
   describe('of', () => {

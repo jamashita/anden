@@ -1,5 +1,5 @@
-import { BooleanValidationRule } from '../Rules/BooleanValidationRule.js';
-import { addRule } from './Validate.js';
+import { BooleanValidationRule } from '../Rules/BooleanValidationRule';
+import { addRule } from './Validate';
 
 export const BooleanValidation = (): ParameterDecorator => {
   const v: BooleanValidationRule = BooleanValidationRule.of();
