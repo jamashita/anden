@@ -1,3 +1,10 @@
+# [@jamashita/anden-object-v2.2.1](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.2.0...@jamashita/anden-object-v2.2.1) (2021-08-28)
+
+
+### Bug Fixes
+
+* 🐛 build output module fixed ([8ca55a8](https://github.com/jamashita/anden/commit/8ca55a84119c3b0e1a3d3fed5ba3f416f827910e))
+
 # [@jamashita/anden-object-v2.2.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.1.0...@jamashita/anden-object-v2.2.0) (2021-08-28)
 
 
