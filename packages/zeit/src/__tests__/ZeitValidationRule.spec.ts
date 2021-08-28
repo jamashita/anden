@@ -1,4 +1,4 @@
-import { ZeitValidationRule } from '../ZeitValidationRule.js';
+import { ZeitValidationRule } from '../ZeitValidationRule';
 
 describe('ZeitValidationRule', () => {
   describe('evaluate', () => {

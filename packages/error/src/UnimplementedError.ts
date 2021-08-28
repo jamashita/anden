@@ -1,4 +1,4 @@
-import { RuntimeError } from './RuntimeError.js';
+import { RuntimeError } from './RuntimeError';
 
 export class UnimplementedError extends RuntimeError<'UnimplementedError'> {
   public readonly noun: 'UnimplementedError' = 'UnimplementedError';

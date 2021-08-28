@@ -1,4 +1,4 @@
-import { Kind } from '../Kind.js';
+import { Kind } from '../Kind';
 
 class MockError extends Error {
   // NOOP

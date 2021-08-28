@@ -1,5 +1,5 @@
-import { Kind } from '../Kind.js';
-import { ValidationRule } from './ValidationRule.js';
+import { Kind } from '../Kind';
+import { ValidationRule } from './ValidationRule';
 
 export class BooleanValidationRule implements ValidationRule {
   private static readonly INSTANCE: BooleanValidationRule = new BooleanValidationRule();

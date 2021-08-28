@@ -1,7 +1,7 @@
-import { Equalable, isEqualable } from './Equalable.js';
-import { Kind } from './Kind.js';
-import { isNoun, Noun } from './Noun.js';
-import { isSerializable, Serializable } from './Serializable.js';
+import { Equalable, isEqualable } from './Equalable';
+import { Kind } from './Kind';
+import { isNoun, Noun } from './Noun';
+import { isSerializable, Serializable } from './Serializable';
 
 export interface Nominative<N extends string = string> extends Equalable, Serializable, Noun<N> {
   hashCode(): number;

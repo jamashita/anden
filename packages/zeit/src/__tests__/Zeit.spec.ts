@@ -1,8 +1,8 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
-import sinon from 'sinon';
-import { ZeitError } from '../Error/ZeitError.js';
-import { Zeit } from '../Zeit.js';
+import { SinonFakeTimers, useFakeTimers } from 'sinon';
+import { ZeitError } from '../Error/ZeitError';
+import { Zeit } from '../Zeit';
 
 describe('Zeit', () => {
   describe('ofString', () => {
@@ -33,7 +33,7 @@ describe('Zeit', () => {
     it('returns current timestamp', () => {
       expect.assertions(1);
 
-      const clock: sinon.SinonFakeTimers = sinon.useFakeTimers(946684800000);
+      const clock: SinonFakeTimers = useFakeTimers(946684800000);
 
       expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
 
