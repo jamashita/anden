@@ -1,3 +1,22 @@
+# [@jamashita/anden-zeit-v2.2.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.1.0...@jamashita/anden-zeit-v2.2.0) (2021-08-28)
+
+
+### Bug Fixes
+
+* 🐛 import/export path adopted to dual package ([9dbdd48](https://github.com/jamashita/anden/commit/9dbdd4877ccc5996da69bca73b58e2bdcc436880))
+
+
+### Features
+
+* 🎸 update ([5d3a2c6](https://github.com/jamashita/anden/commit/5d3a2c69a6c5902abb7cb1be800fae9847e0846e))
+
+# [@jamashita/anden-zeit-v2.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.0.0...@jamashita/anden-zeit-v2.1.0) (2021-08-14)
+
+
+### Features
+
+* 🎸 update ([171857f](https://github.com/jamashita/anden/commit/171857f31fd2f11600fec0faf5bb330584fac7dc))
+
 # [@jamashita/anden-zeit-v2.0.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v1.12.1...@jamashita/anden-zeit-v2.0.0) (2021-07-22)
 
 
