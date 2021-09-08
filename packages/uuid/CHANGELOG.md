@@ -1,3 +1,10 @@
+# [@jamashita/anden-uuid-v2.1.2](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.1.1...@jamashita/anden-uuid-v2.1.2) (2021-09-08)
+
+
+### Bug Fixes
+
+* 🐛 add first and end condition ([910cdad](https://github.com/jamashita/anden/commit/910cdad62e732a916018ce9bf7a01ad1b50e059e))
+
 # [@jamashita/anden-uuid-v2.1.1](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.1.0...@jamashita/anden-uuid-v2.1.1) (2021-08-28)
 
 
