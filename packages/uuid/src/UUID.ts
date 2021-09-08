@@ -2,7 +2,7 @@ import { ValueObject } from '@jamashita/anden-object';
 import { v4, v5 } from 'uuid';
 import { UUIDError } from './Error/UUIDError';
 
-const REGEX: RegExp = /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/u;
+const REGEX: RegExp = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/u;
 
 export class UUID extends ValueObject<'UUID'> {
   public readonly noun: 'UUID' = 'UUID';
