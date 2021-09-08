@@ -2,7 +2,7 @@ import { ValueObject } from '@jamashita/anden-object';
 import { ulid } from 'ulid';
 import { ULIDError } from './Error/ULIDError';
 
-const REGEX: RegExp = /[0-9A-Z]{26}/u;
+const REGEX: RegExp = /^[0-9A-Z]{26}$/u;
 
 export class ULID extends ValueObject<'ULID'> {
   public readonly noun: 'ULID' = 'ULID';

@@ -27,6 +27,20 @@ describe('ULID', () => {
         ULID.of('cinq');
       }).toThrow(ULIDError);
     });
+
+    it('throws ULIDError when the argument length is not 26', () => {
+      expect.assertions(3);
+
+      expect(() => {
+        ULID.of('01FF2GJM51QP6DYKQFHQ1EAAR');
+      }).toThrow(ULIDError);
+      expect(() => {
+        ULID.of('01FF2GJXXNB4Y71Q2WGP4KGPTRA');
+      }).toThrow(ULIDError);
+      expect(() => {
+        ULID.of('01FF2GK982W2K1GBJMBRF78BBC');
+      }).not.toThrow(ULIDError);
+    });
   });
 
   describe('size', () => {
