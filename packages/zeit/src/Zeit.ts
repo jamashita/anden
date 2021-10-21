@@ -65,6 +65,12 @@ export class Zeit extends ValueObject<'Zeit'> {
     return new Zeit(zeit, format);
   }
 
+  public static ofDate(date: Date, format: string): Zeit {
+    const zeit: dayjs.Dayjs = dayjs(date);
+
+    return Zeit.of(zeit, format);
+  }
+
   public static ofString(str: string, format: string): Zeit {
     const zeit: dayjs.Dayjs = dayjs.utc(str, format);
 

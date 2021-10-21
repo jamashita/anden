@@ -7,13 +7,15 @@ import { Zeit } from '../Zeit';
 describe('Zeit', () => {
   describe('ofString', () => {
     it('returns instance', () => {
-      expect.assertions(2);
+      expect.assertions(4);
 
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss');
 
       expect(zeit1.isValid()).toBe(true);
       expect(zeit2.isValid()).toBe(true);
+      expect(zeit1.toString()).toBe('2000-01-01');
+      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
     });
 
     it('throws ZeitError when the format is incorrect', () => {
@@ -26,6 +28,23 @@ describe('Zeit', () => {
       expect(() => {
         Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD');
       }).toThrow(ZeitError);
+    });
+  });
+
+  describe('ofDate', () => {
+    it('returns instance', () => {
+      expect.assertions(4);
+
+      const date1: Date = new Date(2000, 0, 1, 1, 2, 3);
+      const date2: Date = new Date(2000, 0, 1, 1, 2, 3);
+
+      const zeit1: Zeit = Zeit.ofDate(date1, 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofDate(date2, 'YYYY-MM-DD HH:mm:ss');
+
+      expect(zeit1.isValid()).toBe(true);
+      expect(zeit2.isValid()).toBe(true);
+      expect(zeit1.toString()).toBe('2000-01-01');
+      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
     });
   });
 
