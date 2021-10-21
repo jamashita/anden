@@ -1,3 +1,10 @@
+# [@jamashita/anden-zeit-v2.3.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.2.1...@jamashita/anden-zeit-v2.3.0) (2021-10-21)
+
+
+### Features
+
+* 🎸 Zeit.ofDate() ([9b29697](https://github.com/jamashita/anden/commit/9b29697849d376e93f8ac79e8f011e2e724aaafb))
+
 # [@jamashita/anden-zeit-v2.2.1](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.2.0...@jamashita/anden-zeit-v2.2.1) (2021-08-28)
 
 
