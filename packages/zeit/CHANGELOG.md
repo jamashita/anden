@@ -1,3 +1,12 @@
+# [@jamashita/anden-zeit-v2.3.1](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.3.0...@jamashita/anden-zeit-v2.3.1) (2021-10-25)
+
+
+### Bug Fixes
+
+* 🐛 zeit.ofDate() ([be2ba28](https://github.com/jamashita/anden/commit/be2ba28cb456efa5021376882779765ccca44b17))
+* 🐛 Zeit.ofDate() ([703110d](https://github.com/jamashita/anden/commit/703110d9ef78289c76f553bdf0eb37fa5963f1af))
+* 🐛 Zeit.ofDate() ([caebc93](https://github.com/jamashita/anden/commit/caebc934fda8cf8a286ae99bc13b09930efdda34))
+
 # [@jamashita/anden-zeit-v2.3.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.2.1...@jamashita/anden-zeit-v2.3.0) (2021-10-21)
 
 
