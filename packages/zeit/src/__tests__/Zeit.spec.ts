@@ -43,8 +43,8 @@ describe('Zeit', () => {
 
       expect(zeit1.isValid()).toBe(true);
       expect(zeit2.isValid()).toBe(true);
-      expect(zeit1.toString()).toBe('1999-12-31');
-      expect(zeit2.toString()).toBe('1999-12-31 16:02:03');
+      expect(zeit1.toString()).toBe(`${date1.getUTCFullYear()}-${date1.getUTCMonth() + 1}-${date1.getUTCDate()}`);
+      expect(zeit2.toString()).toBe(`${date2.getUTCFullYear()}-${date2.getUTCMonth() + 1}-${date2.getUTCDate()} ${date2.getUTCHours().toString().padStart(2, '0')}:${date2.getUTCMinutes().toString().padStart(2, '0')}:${date2.getUTCSeconds().toString().padStart(2, '0')}`);
     });
   });
 
