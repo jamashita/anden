@@ -43,8 +43,8 @@ describe('Zeit', () => {
 
       expect(zeit1.isValid()).toBe(true);
       expect(zeit2.isValid()).toBe(true);
-      expect(zeit1.toString()).toBe('2000-01-01');
-      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
+      expect(zeit1.toString()).toBe('1999-12-31');
+      expect(zeit2.toString()).toBe('1999-12-31 16:02:03');
     });
   });
 
