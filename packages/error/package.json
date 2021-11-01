@@ -26,7 +26,7 @@
     "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo"
   },
   "dependencies": {
-    "@jamashita/anden-type": "^2.1.0",
+    "@jamashita/anden-type": "^2.1.2",
     "make-error-cause": "2.3.0"
   },
   "engines": {
