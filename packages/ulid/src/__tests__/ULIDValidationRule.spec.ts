@@ -3,9 +3,7 @@ import { ULIDValidationRule } from '../ULIDValidationRule';
 describe('ULIDValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      expect.assertions(2);
-
-      const rule: ULIDValidationRule = new ULIDValidationRule();
+            const rule: ULIDValidationRule = new ULIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, '01FETGX8ZHF4MGGQE438H7WFSD');
@@ -16,9 +14,7 @@ describe('ULIDValidationRule', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(13);
-
-      const rule: ULIDValidationRule = new ULIDValidationRule();
+            const rule: ULIDValidationRule = new ULIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -62,9 +58,7 @@ describe('ULIDValidationRule', () => {
     });
 
     it('throws TypeError when non-ULID string given', () => {
-      expect.assertions(3);
-
-      const rule: ULIDValidationRule = new ULIDValidationRule();
+            const rule: ULIDValidationRule = new ULIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, '1894948e-d16d-4bfd-9247-acf621e12aa7');

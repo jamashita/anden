@@ -13,9 +13,7 @@ class MockValidation {
 describe('UUIDValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(2);
-
-      const validation: MockValidation = new MockValidation();
+            const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act('f3b7dca2-e07f-47bb-bfac-53efc8abc4e8');
@@ -26,9 +24,7 @@ describe('UUIDValidation', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(10);
-
-      const validation: MockValidation = new MockValidation();
+            const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act(null);
@@ -63,9 +59,7 @@ describe('UUIDValidation', () => {
     });
 
     it('throws TypeError when non-uuid string given', () => {
-      expect.assertions(5);
-
-      const validation: MockValidation = new MockValidation();
+            const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act('7d03c8c9-8ca1-4616-9285-5125c814a82');
