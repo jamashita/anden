@@ -4,8 +4,7 @@ import { UUIDError } from './Error/UUIDError';
 
 const REGEX: RegExp = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/u;
 
-export class UUID extends ValueObject<'UUID'> {
-  public readonly noun: 'UUID' = 'UUID';
+export class UUID extends ValueObject {
   private readonly id: string;
 
   public static of(id: string): UUID {
@@ -25,12 +24,10 @@ export class UUID extends ValueObject<'UUID'> {
   }
 
   public static v4(): UUID {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     return new UUID(v4());
   }
 
   public static v5(): UUID {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     return new UUID(v5('ANDEN', '6740811d-e75f-4b29-aa7d-7ff91ac8198d'));
   }
 

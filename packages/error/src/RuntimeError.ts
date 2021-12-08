@@ -1,9 +1,6 @@
-import { Noun } from '@jamashita/anden-type';
 import { BaseError, fullStack } from 'make-error-cause';
 
-export abstract class RuntimeError<N extends string = string> extends BaseError implements Noun<N> {
-  public abstract readonly noun: N;
-
+export abstract class RuntimeError extends BaseError {
   protected constructor(message: string, cause?: Error) {
     super(message, cause);
   }
