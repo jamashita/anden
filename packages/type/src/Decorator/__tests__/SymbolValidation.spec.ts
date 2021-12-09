@@ -13,8 +13,6 @@ class MockValidation {
 describe('SymbolValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(1);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -23,8 +21,6 @@ describe('SymbolValidation', () => {
     });
 
     it('throws TypeError when non-symbol values given', () => {
-      expect.assertions(12);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

@@ -4,8 +4,6 @@ import { Reference } from '../Reference';
 describe('Reference', () => {
   describe('isCircular', () => {
     it('returns false if given objects do not have recursive reference', () => {
-      expect.assertions(18);
-
       expect(Reference.isCircular({})).toBe(false);
       expect(
         Reference.isCircular({
@@ -92,8 +90,6 @@ describe('Reference', () => {
     });
 
     it('returns true if objects have recursive references', () => {
-      expect.assertions(6);
-
       const obj1: PlainObject = {
         a: 'noi'
       };

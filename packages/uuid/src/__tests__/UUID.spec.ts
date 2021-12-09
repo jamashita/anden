@@ -21,16 +21,12 @@ const v5 = (): Promise<UUID> => {
 describe('UUID', () => {
   describe('of', () => {
     it('returns instance', () => {
-      expect.assertions(1);
-
       const uuid: string = '998106de-b2e7-4981-9643-22cd30cd74de';
 
       expect(UUID.of(uuid).get()).toBe(uuid);
     });
 
     it('throws UUIDError when the argument is not satisfied UUID format', () => {
-      expect.assertions(1);
-
       expect(() => {
         UUID.of('cinq');
       }).toThrow(UUIDError);
@@ -39,24 +35,18 @@ describe('UUID', () => {
 
   describe('size', () => {
     it('returns 36', () => {
-      expect.assertions(1);
-
       expect(UUID.size()).toStrictEqual(36);
     });
   });
 
   describe('validate', () => {
     it('returns true if given string is not violated to uuid format', () => {
-      expect.assertions(1);
-
       const uuid: string = '998106de-b2e7-4981-9643-22cd30cd74de';
 
       expect(UUID.validate(uuid)).toBe(true);
     });
 
     it('generates UUID that must pass', async () => {
-      expect.assertions(200);
-
       const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map<Promise<[UUID, UUID]>>(async () => {
         const v4id: UUID = await v4();
         const v5id: UUID = await v5();
@@ -74,8 +64,6 @@ describe('UUID', () => {
 
   describe('v4', () => {
     it('always generates 36 length string', async () => {
-      expect.assertions(100);
-
       const promises: Array<Promise<UUID>> = Array.from(Array(100)).map<Promise<UUID>>(() => {
         return v4();
       });
@@ -89,8 +77,6 @@ describe('UUID', () => {
 
   describe('v5', () => {
     it('always generates 36 length string', async () => {
-      expect.assertions(100);
-
       const promises: Array<Promise<UUID>> = Array.from(Array(100)).map<Promise<UUID>>(() => {
         return v5();
       });
@@ -104,24 +90,18 @@ describe('UUID', () => {
 
   describe('equals', () => {
     it('returns true if the same instance given', () => {
-      expect.assertions(1);
-
       const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
 
       expect(uuid1.equals(uuid1)).toBe(true);
     });
 
     it('returns false if different class instance given', () => {
-      expect.assertions(1);
-
       const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
 
       expect(uuid1.equals(new MockValueObject('998106de-b2e7-4981-9643-22cd30cd74de'))).toBe(false);
     });
 
     it('returns true if the property is the same', () => {
-      expect.assertions(2);
-
       const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
       const uuid2: UUID = UUID.of('ee49aef0-b515-4fd8-9c4b-5ad9740ef4f9');
       const uuid3: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
@@ -133,8 +113,6 @@ describe('UUID', () => {
 
   describe('toString', () => {
     it('returns the original string', () => {
-      expect.assertions(1);
-
       const id: string = '998106de-b2e7-4981-9643-22cd30cd74de';
       const uuid: UUID = UUID.of(id);
 

@@ -1,10 +1,8 @@
 import { Kind } from '@jamashita/anden-type';
 import { Objet } from './Objet';
 
-export abstract class ValueObject<N extends string = string> extends Objet<N> {
+export abstract class ValueObject extends Objet {
   private code?: number;
-
-  public abstract override serialize(): string;
 
   public override hashCode(): number {
     if (!Kind.isUndefined(this.code)) {
@@ -15,4 +13,6 @@ export abstract class ValueObject<N extends string = string> extends Objet<N> {
 
     return this.code;
   }
+
+  public abstract override serialize(): string;
 }

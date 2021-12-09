@@ -13,8 +13,6 @@ class MockValidation {
 describe('ULIDValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(2);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -26,8 +24,6 @@ describe('ULIDValidation', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(10);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -63,8 +59,6 @@ describe('ULIDValidation', () => {
     });
 
     it('throws TypeError when non-ULID string given', () => {
-      expect.assertions(2);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

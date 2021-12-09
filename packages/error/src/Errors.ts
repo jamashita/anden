@@ -1,22 +1,21 @@
 import { Ambiguous, Kind } from '@jamashita/anden-type';
 import { RuntimeError } from './RuntimeError';
 
-export class Errors<E extends Error> extends RuntimeError<'Errors'> implements Iterable<E> {
-  public readonly noun: 'Errors' = 'Errors';
+export class Errors<E extends Error> extends RuntimeError implements Iterable<E> {
   private readonly errors: ReadonlyArray<E>;
 
-  private static getMessage<ET extends Error>(errors: ReadonlyArray<ET>): string {
+  private static getMessage<E extends Error>(errors: ReadonlyArray<E>): string {
     return errors.map<string>((error: Error) => {
       return error.message;
     }).join('\n');
   }
 
-  public static of<ET extends Error>(errors: Iterable<ET>): Errors<ET> {
-    return new Errors<ET>([...errors]);
+  public static of<E extends Error>(errors: Iterable<E>): Errors<E> {
+    return new Errors<E>([...errors]);
   }
 
-  public static ofSpread<ET extends Error>(...errors: ReadonlyArray<ET>): Errors<ET> {
-    return Errors.of<ET>(errors);
+  public static ofSpread<E extends Error>(...errors: ReadonlyArray<E>): Errors<E> {
+    return Errors.of<E>(errors);
   }
 
   public constructor(errors: ReadonlyArray<E>) {
