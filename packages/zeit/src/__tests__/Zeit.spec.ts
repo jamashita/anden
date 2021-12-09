@@ -1,14 +1,11 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
-import { SinonFakeTimers, useFakeTimers } from 'sinon';
 import { ZeitError } from '../Error/ZeitError';
 import { Zeit } from '../Zeit';
 
 describe('Zeit', () => {
   describe('ofString', () => {
     it('returns instance', () => {
-      expect.assertions(4);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss');
 
@@ -19,8 +16,6 @@ describe('Zeit', () => {
     });
 
     it('throws ZeitError when the format is incorrect', () => {
-      expect.assertions(2);
-
       expect(() => {
         Zeit.ofString('2000-01-01', 'YYYY-MM-DD HH:mm:ss');
       }).toThrow(ZeitError);
@@ -33,8 +28,6 @@ describe('Zeit', () => {
 
   describe('ofDate', () => {
     it('returns instance', () => {
-      expect.assertions(4);
-
       const date1: Date = new Date(2000, 0, 1, 1, 2, 3);
       const date2: Date = new Date(2000, 0, 1, 1, 2, 3);
 
@@ -50,20 +43,16 @@ describe('Zeit', () => {
 
   describe('now', () => {
     it('returns current timestamp', () => {
-      expect.assertions(1);
-
-      const clock: SinonFakeTimers = useFakeTimers(946684800000);
+      jest.useFakeTimers().setSystemTime(946684800000);
 
       expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
 
-      clock.restore();
+      jest.useRealTimers();
     });
   });
 
   describe('max', () => {
     it('returns maximum Zeit', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [
         Zeit.ofString('2000-01-03', format),
@@ -78,8 +67,6 @@ describe('Zeit', () => {
     });
 
     it('returns itself when the only one Zeit given', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [Zeit.ofString('2000-01-01', format)];
 
@@ -89,8 +76,6 @@ describe('Zeit', () => {
     });
 
     it('throws ZeitError when empty array given', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [];
 
@@ -102,8 +87,6 @@ describe('Zeit', () => {
 
   describe('min', () => {
     it('returns minimum Zeit', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [
         Zeit.ofString('2000-01-03', format),
@@ -118,8 +101,6 @@ describe('Zeit', () => {
     });
 
     it('returns itself when the only one Zeit given', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [Zeit.ofString('2000-01-01', format)];
 
@@ -129,8 +110,6 @@ describe('Zeit', () => {
     });
 
     it('throws ZeitError when empty array given', () => {
-      expect.assertions(1);
-
       const format: string = 'YYYY-MM-DD';
       const zeiten: Array<Zeit> = [];
 
@@ -142,15 +121,11 @@ describe('Zeit', () => {
 
   describe('validate', () => {
     it('returns true when the string is suitable date for format', () => {
-      expect.assertions(2);
-
       expect(Zeit.validate('2000-01-01', 'YYYY-MM-DD')).toBe(true);
       expect(Zeit.validate('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss')).toBe(true);
     });
 
     it('returns false when the string is not suitable for format', () => {
-      expect.assertions(2);
-
       expect(Zeit.validate('2000-01-01', 'YYYY-MM-DD HH:mm:ss')).toBe(false);
       expect(Zeit.validate('2000-01-01 01:02:03', 'YYYY-MM-DD')).toBe(false);
     });
@@ -158,8 +133,6 @@ describe('Zeit', () => {
 
   describe('isValid', () => {
     it('returns dayjs result itself', () => {
-      expect.assertions(3);
-
       expect(Zeit.ofString('2000-01-01', 'YYYY-MM-DD').isValid()).toBe(true);
       expect(Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss').isValid()).toBe(true);
       expect(Zeit.of(dayjs('2000-YY-01 YY:02:03', 'YYYY-MM-DD', true), 'YYYY-MM-DD').isValid()).toBe(false);
@@ -168,8 +141,6 @@ describe('Zeit', () => {
 
   describe('isBefore', () => {
     it('returns true if the value is before than the other', () => {
-      expect.assertions(3);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
       const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
@@ -182,8 +153,6 @@ describe('Zeit', () => {
 
   describe('isAfter', () => {
     it('returns true if the value is after than the other', () => {
-      expect.assertions(3);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
       const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
@@ -196,8 +165,6 @@ describe('Zeit', () => {
 
   describe('past', () => {
     it('goes back by second', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'second');
 
@@ -206,8 +173,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by minute', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'minute');
 
@@ -216,8 +181,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by hour', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'hour');
 
@@ -226,8 +189,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by day', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'day');
 
@@ -236,8 +197,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by week', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'week');
 
@@ -246,8 +205,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by month', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'month');
 
@@ -256,8 +213,6 @@ describe('Zeit', () => {
     });
 
     it('goes back by year', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.past(5, 'year');
 
@@ -268,8 +223,6 @@ describe('Zeit', () => {
 
   describe('future', () => {
     it('goes forward by second', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'second');
 
@@ -278,8 +231,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by minute', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'minute');
 
@@ -288,8 +239,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by hour', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'hour');
 
@@ -298,8 +247,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by day', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'day');
 
@@ -308,8 +255,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by week', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'week');
 
@@ -318,8 +263,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by month', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'month');
 
@@ -328,8 +271,6 @@ describe('Zeit', () => {
     });
 
     it('goes forward by year', () => {
-      expect.assertions(2);
-
       const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
       const newZeit: Zeit = zeit.future(5, 'year');
 
@@ -340,24 +281,18 @@ describe('Zeit', () => {
 
   describe('equals', () => {
     it('returns true if they are the same instance', () => {
-      expect.assertions(1);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
 
       expect(zeit1.equals(zeit1)).toBe(true);
     });
 
     it('returns false if different instance given', () => {
-      expect.assertions(1);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
 
       expect(zeit1.equals(new MockValueObject('2000-01-01'))).toBe(false);
     });
 
     it('returns true if all the properties are the same', () => {
-      expect.assertions(2);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
       const zeit3: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
@@ -367,8 +302,6 @@ describe('Zeit', () => {
     });
 
     it('returns false if the formats are not the same', () => {
-      expect.assertions(2);
-
       const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
       const zeit2: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
 
@@ -379,8 +312,6 @@ describe('Zeit', () => {
 
   describe('toString', () => {
     it('would like with shorthand format', () => {
-      expect.assertions(4);
-
       expect(Zeit.ofString('2000-01-01', 'YYYY-MM-DD').toString()).toBe('2000-01-01');
       expect(Zeit.ofString('2001-01-01', 'YYYY-MM-DD').toString()).toBe('2001-01-01');
       expect(Zeit.ofString('2000-02-01', 'YYYY-MM-DD').toString()).toBe('2000-02-01');
@@ -388,8 +319,6 @@ describe('Zeit', () => {
     });
 
     it('would like with longhand format', () => {
-      expect.assertions(6);
-
       expect(Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
       expect(Zeit.ofString('3000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString()).toBe('3000-01-01 00:00:00');
       expect(Zeit.ofString('2000-01-05 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-05 00:00:00');
@@ -399,8 +328,6 @@ describe('Zeit', () => {
     });
 
     it('would like shorthand format when it is going to be string', () => {
-      expect.assertions(6);
-
       expect(Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString('YYYY-MM-DD')).toBe('2000-01-01');
       expect(Zeit.ofString('3000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString('YYYY-MM-DD')).toBe('3000-01-01');
       expect(Zeit.ofString('2000-01-05 00:00:00', 'YYYY-MM-DD HH:mm:ss').toString('YYYY-MM-DD')).toBe('2000-01-05');
@@ -410,8 +337,6 @@ describe('Zeit', () => {
     });
 
     it('would like longhand format when it is going to be string', () => {
-      expect.assertions(4);
-
       expect(Zeit.ofString('2000-01-01', 'YYYY-MM-DD').toString('YYYY-MM-DD HH:mm:ss')).toBe('2000-01-01 00:00:00');
       expect(Zeit.ofString('2001-01-01', 'YYYY-MM-DD').toString('YYYY-MM-DD HH:mm:ss')).toBe('2001-01-01 00:00:00');
       expect(Zeit.ofString('2000-02-01', 'YYYY-MM-DD').toString('YYYY-MM-DD HH:mm:ss')).toBe('2000-02-01 00:00:00');

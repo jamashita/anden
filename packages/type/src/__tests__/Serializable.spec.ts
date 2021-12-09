@@ -9,8 +9,6 @@ class MockSerializable implements Serializable {
 describe('Serializable', () => {
   describe('isSerializable', () => {
     it('returns true if the object has serialize() and toString()', () => {
-      expect.assertions(15);
-
       expect(isSerializable(null)).toBe(false);
       expect(isSerializable(undefined)).toBe(false);
       expect(isSerializable('')).toBe(false);

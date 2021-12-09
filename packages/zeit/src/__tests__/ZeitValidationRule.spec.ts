@@ -3,8 +3,6 @@ import { ZeitValidationRule } from '../ZeitValidationRule';
 describe('ZeitValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      expect.assertions(4);
-
       const rule1: ZeitValidationRule = new ZeitValidationRule({
         format: 'YYYY-MM-DD'
       });
@@ -27,8 +25,6 @@ describe('ZeitValidationRule', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(10);
-
       const rule: ZeitValidationRule = new ZeitValidationRule({
         format: 'YYYY-MM-DD'
       });
@@ -66,8 +62,6 @@ describe('ZeitValidationRule', () => {
     });
 
     it('throws TypeError when non-datetime string given', () => {
-      expect.assertions(3);
-
       const rule: ZeitValidationRule = new ZeitValidationRule({
         format: 'YYYY-MM-DD'
       });

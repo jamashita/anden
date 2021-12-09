@@ -3,9 +3,7 @@ import { BigIntValidationRule } from '../BigIntValidationRule';
 describe('BigIntValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      expect.assertions(3);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of();
+            const rule: BigIntValidationRule = BigIntValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, 20n);
@@ -19,9 +17,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when non-bigint values given', () => {
-      expect.assertions(12);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of();
+            const rule: BigIntValidationRule = BigIntValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -62,9 +58,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than min', () => {
-      expect.assertions(6);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
+            const rule: BigIntValidationRule = BigIntValidationRule.of({
         min: {
           condition: 't',
           value: 4
@@ -92,9 +86,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than or equals to min', () => {
-      expect.assertions(7);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
+            const rule: BigIntValidationRule = BigIntValidationRule.of({
         min: {
           condition: 'te',
           value: 4
@@ -125,9 +117,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is greater than max', () => {
-      expect.assertions(5);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
+            const rule: BigIntValidationRule = BigIntValidationRule.of({
         max: {
           condition: 't',
           value: 4
@@ -152,9 +142,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is greater than or equals to min', () => {
-      expect.assertions(6);
-
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
+            const rule: BigIntValidationRule = BigIntValidationRule.of({
         max: {
           condition: 'te',
           value: 4

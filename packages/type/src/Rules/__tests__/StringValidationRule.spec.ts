@@ -3,9 +3,7 @@ import { StringValidationRule } from '../StringValidationRule';
 describe('StringValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      expect.assertions(1);
-
-      const rule: StringValidationRule = StringValidationRule.of();
+            const rule: StringValidationRule = StringValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, '');
@@ -13,9 +11,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(10);
-
-      const rule: StringValidationRule = StringValidationRule.of();
+            const rule: StringValidationRule = StringValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -50,9 +46,7 @@ describe('StringValidationRule', () => {
     });
 
     it('does not throw any Error when given string can be converted to number', () => {
-      expect.assertions(4);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'numerical'
       });
 
@@ -71,9 +65,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when given string cannot be converted to number', () => {
-      expect.assertions(6);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'numerical'
       });
 
@@ -98,9 +90,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when string pattern does not match', () => {
-      expect.assertions(8);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'pattern',
         pattern: /^a.*b$/iu
       });
@@ -132,9 +122,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than min string length given', () => {
-      expect.assertions(5);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4
       });
@@ -157,9 +145,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when given value is greater than max string length given', () => {
-      expect.assertions(5);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         max: 4
       });
@@ -182,9 +168,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than min and greater than max string length given', () => {
-      expect.assertions(7);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4,
         max: 6
@@ -214,9 +198,7 @@ describe('StringValidationRule', () => {
     });
 
     it('does not throw any Error when given string is contained by array', () => {
-      expect.assertions(4);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'contain',
         samples: [
           'po',
@@ -241,9 +223,7 @@ describe('StringValidationRule', () => {
     });
 
     it('throws TypeError when given string is not contained by array', () => {
-      expect.assertions(1);
-
-      const rule: StringValidationRule = StringValidationRule.of({
+            const rule: StringValidationRule = StringValidationRule.of({
         type: 'contain',
         samples: [
           'po',

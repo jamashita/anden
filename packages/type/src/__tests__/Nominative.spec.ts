@@ -1,8 +1,6 @@
 import { isNominative, Nominative } from '../Nominative';
 
-class MockNominative implements Nominative<'mock'> {
-  public readonly noun: 'mock' = 'mock';
-
+class MockNominative implements Nominative {
   public equals(other: unknown): boolean {
     return this === other;
   }
@@ -18,9 +16,7 @@ class MockNominative implements Nominative<'mock'> {
 
 describe('Nominative', () => {
   describe('isNominative', () => {
-    it('returns true if the object has noun, hashCode(), equals(), serialize() and toString()', () => {
-      expect.assertions(18);
-
+    it('returns true if the object has hashCode(), equals(), serialize() and toString()', () => {
       expect(isNominative(null)).toBe(false);
       expect(isNominative(undefined)).toBe(false);
       expect(isNominative('')).toBe(false);
@@ -59,18 +55,6 @@ describe('Nominative', () => {
           equals() {
             // NOOP
           },
-          noun: 'que'
-        })
-      ).toBe(false);
-      expect(
-        isNominative({
-          hashCode() {
-            // NOOP
-          },
-          equals() {
-            // NOOP
-          },
-          noun: 'que',
           serialize() {
             // NOOP
           }

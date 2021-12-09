@@ -3,8 +3,6 @@ import { UUIDValidationRule } from '../UUIDValidationRule';
 describe('UUIDValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      expect.assertions(2);
-
       const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {
@@ -16,8 +14,6 @@ describe('UUIDValidationRule', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(13);
-
       const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {
@@ -62,8 +58,6 @@ describe('UUIDValidationRule', () => {
     });
 
     it('throws TypeError when non-uuid string given', () => {
-      expect.assertions(5);
-
       const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {

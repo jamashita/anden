@@ -12,8 +12,7 @@ dayjs.extend(utc);
 
 export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'week' | 'year';
 
-export class Zeit extends ValueObject<'Zeit'> {
-  public readonly noun: 'Zeit' = 'Zeit';
+export class Zeit extends ValueObject {
   private readonly zeit: dayjs.Dayjs;
   private readonly format: string;
 

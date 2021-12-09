@@ -8,6 +8,5 @@ export * from './Function';
 export * from './JSONable';
 export * from './Kind';
 export * from './Nominative';
-export * from './Noun';
 export * from './Serializable';
 export * from './Value';

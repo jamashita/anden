@@ -4,8 +4,6 @@ import { MockValueObject } from '../Mock/MockValueObject';
 describe('Entity', () => {
   describe('equals', () => {
     it('returns true when the same instance given', () => {
-      expect.assertions(1);
-
       const vo: MockValueObject<boolean> = new MockValueObject<boolean>(true);
 
       const entity: MockEntity<MockValueObject<boolean>> = new MockEntity<MockValueObject<boolean>>(vo, {});
@@ -14,8 +12,6 @@ describe('Entity', () => {
     });
 
     it('returns false when the different class instance given', () => {
-      expect.assertions(1);
-
       const vo: MockValueObject<boolean> = new MockValueObject<boolean>(true);
 
       const entity: MockEntity<MockValueObject<boolean>> = new MockEntity<MockValueObject<boolean>>(vo, {});
@@ -24,8 +20,6 @@ describe('Entity', () => {
     });
 
     it('returns true when the ids equal', () => {
-      expect.assertions(2);
-
       const vo1: MockValueObject<boolean> = new MockValueObject<boolean>(true);
       const vo2: MockValueObject<boolean> = new MockValueObject<boolean>(false);
       const vo3: MockValueObject<boolean> = new MockValueObject<boolean>(true);
@@ -41,8 +35,6 @@ describe('Entity', () => {
 
   describe('hashCode', () => {
     it('returns same value of the hashCode of id', () => {
-      expect.assertions(1);
-
       const vo: MockValueObject<undefined> = new MockValueObject<undefined>(undefined);
 
       const entity: MockEntity<MockValueObject<undefined>> = new MockEntity<MockValueObject<undefined>>(vo, {});
@@ -51,8 +43,6 @@ describe('Entity', () => {
     });
 
     it('only depends on the id value, even if the other values are changed, returns same hashCode', () => {
-      expect.assertions(2);
-
       const vo: MockValueObject<null> = new MockValueObject<null>(null);
 
       const entity: MockEntity<MockValueObject<null>> = new MockEntity<MockValueObject<null>>(vo, {});

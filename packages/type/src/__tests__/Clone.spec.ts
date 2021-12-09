@@ -3,8 +3,6 @@ import { Clone } from '../Clone';
 describe('Clone', () => {
   describe('copy', () => {
     it('can copy ObjectLiterals', () => {
-      expect.assertions(18);
-
       expect(Clone.copy({})).toStrictEqual({});
       expect(
         Clone.copy({
