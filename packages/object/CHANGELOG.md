@@ -1,3 +1,10 @@
+# [@jamashita/anden-object-v2.4.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.3.0...@jamashita/anden-object-v2.4.0) (2021-12-09)
+
+
+### Features
+
+* 🎸 packages updated ([bca97e9](https://github.com/jamashita/anden/commit/bca97e94d4f336504cb041cd8609663f862c97b6))
+
 # [@jamashita/anden-object-v2.3.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.2.1...@jamashita/anden-object-v2.3.0) (2021-11-01)
 
 
