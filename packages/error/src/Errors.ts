@@ -27,6 +27,10 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
     return this.errors[Symbol.iterator]();
   }
 
+  public getErrors(): Array<E> {
+    return [...this.errors];
+  }
+
   public override getStack(): string {
     return this.errors.map<Ambiguous<string>>((error: E) => {
       if (error instanceof RuntimeError) {
@@ -37,9 +41,5 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
     }).filter((stack: Ambiguous<string>): stack is string => {
       return !Kind.isUndefined(stack);
     }).join('\n');
-  }
-
-  public getErrors(): Array<E> {
-    return [...this.errors];
   }
 }

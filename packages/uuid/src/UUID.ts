@@ -54,11 +54,11 @@ export class UUID extends ValueObject {
     return false;
   }
 
-  public serialize(): string {
+  public get(): string {
     return this.id;
   }
 
-  public get(): string {
+  public serialize(): string {
     return this.id;
   }
 }
