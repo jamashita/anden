@@ -77,8 +77,6 @@ class MockValidation {
 describe('StringValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(8);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -108,8 +106,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when non-number values given', () => {
-      expect.assertions(11);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -148,8 +144,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given value is less than min', () => {
-      expect.assertions(9);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -182,8 +176,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given value is less than or equals min', () => {
-      expect.assertions(9);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -216,8 +208,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given value is greater than max', () => {
-      expect.assertions(8);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -247,8 +237,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given value is greater than or equals max', () => {
-      expect.assertions(8);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -278,8 +266,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when decimal number given if int is set to true', () => {
-      expect.assertions(4);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -297,8 +283,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when NaN given if noNaN is set to true', () => {
-      expect.assertions(4);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -316,8 +300,6 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when Infinity of -Infinity given if noInfinity is set to true', () => {
-      expect.assertions(5);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
