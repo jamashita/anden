@@ -55,12 +55,13 @@ describe('Objet', () => {
       const obj: Inconnu = {};
 
       const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async (i: number) => {
-        const [key, value]: [string, string] = await Promise.all<string, string>([
+        const [key, value]: Array<string> = await Promise.all<string>([
           asyncRandom(i),
           asyncRandom(i)
         ]);
 
-        obj[key] = value;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        obj[key!] = value;
       });
 
       await Promise.all<void>(dones);
@@ -74,12 +75,13 @@ describe('Objet', () => {
       const obj: Inconnu = {};
 
       const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async (i: number) => {
-        const [key, value]: [string, string] = await Promise.all<string, string>([
+        const [key, value]: Array<string> = await Promise.all<string>([
           asyncRandom(i),
           asyncRandom(i)
         ]);
 
-        obj[key] = value;
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        obj[key!] = value;
       });
 
       await Promise.all<void>(dones);
