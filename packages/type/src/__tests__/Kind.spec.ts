@@ -427,4 +427,25 @@ describe('Kind', () => {
       expect(Kind.isClass(new MockError(), MockError)).toBe(true);
     });
   });
+
+  describe('isNone', () => {
+    it('returns true when null or undefined given', () => {
+      expect(Kind.isNone(null)).toBe(true);
+      expect(Kind.isNone(undefined)).toBe(true);
+      expect(Kind.isNone('')).toBe(false);
+      expect(Kind.isNone('123')).toBe(false);
+      expect(Kind.isNone('abcd')).toBe(false);
+      expect(Kind.isNone(123)).toBe(false);
+      expect(Kind.isNone(0)).toBe(false);
+      expect(Kind.isNone(-12)).toBe(false);
+      expect(Kind.isNone(0.3)).toBe(false);
+      expect(Kind.isNone(false)).toBe(false);
+      expect(Kind.isNone(true)).toBe(false);
+      expect(Kind.isNone(Symbol('p'))).toBe(false);
+      expect(Kind.isNone(20n)).toBe(false);
+      expect(Kind.isNone({})).toBe(false);
+      expect(Kind.isNone([])).toBe(false);
+      expect(Kind.isNone(Object.create(null))).toBe(false);
+    });
+  });
 });

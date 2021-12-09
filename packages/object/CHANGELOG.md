@@ -1,3 +1,10 @@
+# [@jamashita/anden-object-v2.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.5.0...@jamashita/anden-object-v2.6.0) (2021-12-09)
+
+
+### Features
+
+* 🎸 methods ordering ([d5b9d85](https://github.com/jamashita/anden/commit/d5b9d85d800713cc0084d9ef6f8ab5e802c03c60))
+
 # [@jamashita/anden-object-v2.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.4.0...@jamashita/anden-object-v2.5.0) (2021-12-09)
 
 

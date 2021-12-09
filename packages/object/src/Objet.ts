@@ -20,14 +20,10 @@ export abstract class Objet implements Nominative {
 
   public abstract equals(other: unknown): boolean;
 
-  public hashCode(): number {
-    return hash(this);
-  }
-
   public abstract serialize(): string;
 
-  public toString(): string {
-    return this.serialize();
+  public hashCode(): number {
+    return hash(this);
   }
 
   protected hashor<T>(value: T): T | number {
@@ -36,5 +32,9 @@ export abstract class Objet implements Nominative {
     }
 
     return value;
+  }
+
+  public toString(): string {
+    return this.serialize();
   }
 }
