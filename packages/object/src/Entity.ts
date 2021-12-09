@@ -3,9 +3,11 @@ import hash from 'hash-it';
 import { Objet } from './Objet';
 
 export abstract class Entity<I, T extends Entity<I, T>> extends Objet implements Cloneable<T> {
+  public abstract duplicate(): T;
+
   public abstract getIdentifier(): I;
 
-  public abstract duplicate(): T;
+  public abstract override serialize(): string;
 
   public equals(other: unknown): boolean {
     if (this === other) {
@@ -30,6 +32,4 @@ export abstract class Entity<I, T extends Entity<I, T>> extends Objet implements
 
     return hash(Objet.identify(h));
   }
-
-  public abstract override serialize(): string;
 }
