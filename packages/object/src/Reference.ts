@@ -1,4 +1,4 @@
-import { Inconnu } from '@jamashita/anden-type';
+import { Inconnu, Kind } from '@jamashita/anden-type';
 
 export class Reference {
   public static isCircular(value: unknown): boolean {
@@ -6,14 +6,7 @@ export class Reference {
   }
 
   private static isObject(value: unknown): value is Inconnu {
-    if (typeof value !== 'object') {
-      return false;
-    }
-    if (value === null) {
-      return false;
-    }
-
-    return true;
+    return Kind.isObject(value);
   }
 
   private static isSerializable(value: unknown, visitStack: WeakSet<object>): boolean {

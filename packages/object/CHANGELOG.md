@@ -1,3 +1,10 @@
+# [@jamashita/anden-object-v2.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.4.0...@jamashita/anden-object-v2.5.0) (2021-12-09)
+
+
+### Features
+
+* 🎸 removed packages ([4b621a8](https://github.com/jamashita/anden/commit/4b621a88c4d039deeddfc0d06a3e72e4faf3b1b5))
+
 # [@jamashita/anden-object-v2.4.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.3.0...@jamashita/anden-object-v2.4.0) (2021-12-09)
 
 

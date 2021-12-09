@@ -62,6 +62,17 @@ export class Kind {
     return false;
   }
 
+  public static isNone(value: unknown): value is null | undefined {
+    if (Kind.isNull(value)) {
+      return true;
+    }
+    if (Kind.isUndefined(value)) {
+      return true;
+    }
+
+    return false;
+  }
+
   public static isNull(value: unknown): value is null {
     if (value === null) {
       return true;
