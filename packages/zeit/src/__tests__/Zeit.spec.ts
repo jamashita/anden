@@ -1,6 +1,5 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
-import { SinonFakeTimers, useFakeTimers } from 'sinon';
 import { ZeitError } from '../Error/ZeitError';
 import { Zeit } from '../Zeit';
 
@@ -44,11 +43,11 @@ describe('Zeit', () => {
 
   describe('now', () => {
     it('returns current timestamp', () => {
-      const clock: SinonFakeTimers = useFakeTimers(946684800000);
+      jest.useFakeTimers().setSystemTime(946684800000);
 
       expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
 
-      clock.restore();
+      jest.useRealTimers();
     });
   });
 
