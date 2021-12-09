@@ -57,7 +57,7 @@ class MockValidation {
 describe('BigIntValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1(20n);
@@ -65,7 +65,7 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when non-bigint values given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1(null);
@@ -106,7 +106,7 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is less than min', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act2(-1n);
@@ -129,7 +129,7 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is less than or equals to min', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act3(-1n);
@@ -152,7 +152,7 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is greater than min', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act4(8n);
@@ -172,7 +172,7 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is greater than or equals to min', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act5(8n);

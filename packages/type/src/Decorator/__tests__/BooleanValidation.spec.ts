@@ -13,7 +13,7 @@ class MockValidation {
 describe('BooleanValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act(false);
@@ -24,7 +24,7 @@ describe('BooleanValidation', () => {
     });
 
     it('throws TypeError when non-boolean values given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act(null);

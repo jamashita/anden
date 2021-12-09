@@ -58,7 +58,7 @@ class MockValidation {
 describe('StringValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1('');
@@ -66,7 +66,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1(null);
@@ -101,7 +101,7 @@ describe('StringValidation', () => {
     });
 
     it('does not throw any Error when given string can be converted to number', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act2('123');
@@ -118,7 +118,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given string cannot be converted to number', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act2('1.2.3');
@@ -144,7 +144,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when string pattern does not match', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act3('a');
@@ -173,7 +173,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when less than min string length given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act4('');
@@ -193,7 +193,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when greater than max string length given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act5('pqwo1029');
@@ -213,7 +213,7 @@ describe('StringValidation', () => {
     });
 
     it('throws TypeError when given value is less than min and greater than max string length given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act6('pq');

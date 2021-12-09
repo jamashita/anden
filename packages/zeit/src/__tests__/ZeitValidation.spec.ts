@@ -19,7 +19,7 @@ class MockValidation {
 describe('ZeitValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1('2000-01-01');
@@ -36,7 +36,7 @@ describe('ZeitValidation', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1(null);
@@ -71,7 +71,7 @@ describe('ZeitValidation', () => {
     });
 
     it('throws TypeError when non-datetime string given', () => {
-            const validation: MockValidation = new MockValidation();
+      const validation: MockValidation = new MockValidation();
 
       expect(() => {
         validation.act1('2000-01-0x');

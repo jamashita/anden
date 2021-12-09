@@ -3,7 +3,7 @@ import { UUIDValidationRule } from '../UUIDValidationRule';
 describe('UUIDValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-            const rule: UUIDValidationRule = new UUIDValidationRule();
+      const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, 'f3b7dca2-e07f-47bb-bfac-53efc8abc4e8');
@@ -14,7 +14,7 @@ describe('UUIDValidationRule', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-            const rule: UUIDValidationRule = new UUIDValidationRule();
+      const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -58,7 +58,7 @@ describe('UUIDValidationRule', () => {
     });
 
     it('throws TypeError when non-uuid string given', () => {
-            const rule: UUIDValidationRule = new UUIDValidationRule();
+      const rule: UUIDValidationRule = new UUIDValidationRule();
 
       expect(() => {
         rule.evaluate({}, '7d03c8c9-8ca1-4616-9285-5125c814a82');
