@@ -19,8 +19,6 @@ class MockValidation {
 describe('ZeitValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(4);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -38,8 +36,6 @@ describe('ZeitValidation', () => {
     });
 
     it('throws TypeError when non-string values given', () => {
-      expect.assertions(10);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -75,8 +71,6 @@ describe('ZeitValidation', () => {
     });
 
     it('throws TypeError when non-datetime string given', () => {
-      expect.assertions(6);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

@@ -1,8 +1,7 @@
 import { Objet } from '../Objet';
 import { ValueObject } from '../ValueObject';
 
-export class MockValueObject<V> extends ValueObject<'MockValueObject'> {
-  public readonly noun: 'MockValueObject' = 'MockValueObject';
+export class MockValueObject<V> extends ValueObject {
   private readonly value: V;
 
   public constructor(value: V) {

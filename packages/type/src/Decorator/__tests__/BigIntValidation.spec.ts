@@ -57,8 +57,6 @@ class MockValidation {
 describe('BigIntValidation', () => {
   describe('decorator', () => {
     it('does not throw any Error', () => {
-      expect.assertions(1);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -67,8 +65,6 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when non-bigint values given', () => {
-      expect.assertions(12);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -110,8 +106,6 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is less than min', () => {
-      expect.assertions(6);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -135,8 +129,6 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is less than or equals to min', () => {
-      expect.assertions(6);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -160,8 +152,6 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is greater than min', () => {
-      expect.assertions(5);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -182,8 +172,6 @@ describe('BigIntValidation', () => {
     });
 
     it('throws TypeError when given value is greater than or equals to min', () => {
-      expect.assertions(5);
-
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

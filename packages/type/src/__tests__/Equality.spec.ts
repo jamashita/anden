@@ -3,8 +3,6 @@ import { Equality } from '../Equality';
 describe('Equality', () => {
   describe('same', () => {
     it('can compare given two objects are the same', () => {
-      expect.assertions(18);
-
       expect(Equality.same({}, {})).toBe(true);
       expect(
         Equality.same(
@@ -174,8 +172,6 @@ describe('Equality', () => {
     });
 
     it('returns false when the different two objects are given', () => {
-      expect.assertions(11);
-
       expect(Equality.same({}, [])).toBe(false);
       expect(
         Equality.same(

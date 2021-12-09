@@ -135,8 +135,6 @@ class Test4 {
 
 describe('Validate', () => {
   it('will not throw ValueError when any decorated args are not set to throw ValueError', () => {
-    expect.assertions(3);
-
     const test: Test1 = new Test1();
 
     expect(() => {
@@ -151,9 +149,7 @@ describe('Validate', () => {
   });
 
   it('returns the same value of its original return value', async () => {
-    expect.assertions(3);
-
-    const [r1, r2, r3]: [string, string, string] = await Promise.all<string, string, string>([
+    const [r1, r2, r3]: Array<string> = await Promise.all<string>([
       asyncRandom(200),
       asyncRandom(300),
       asyncRandom(400)
@@ -167,8 +163,6 @@ describe('Validate', () => {
   });
 
   it('will throw ValueError when each first decorated arg is set to throw ValueError', () => {
-    expect.assertions(3);
-
     const test: Test2 = new Test2();
 
     expect(() => {
@@ -183,8 +177,6 @@ describe('Validate', () => {
   });
 
   it('will throw ValueError when each last decorated arg is set to throw ValueError', () => {
-    expect.assertions(3);
-
     const test: Test3 = new Test3();
 
     expect(() => {
@@ -199,8 +191,6 @@ describe('Validate', () => {
   });
 
   it('will throw ValueError when all decorated args are set to throw ValueError', () => {
-    expect.assertions(3);
-
     const test: Test4 = new Test4();
 
     expect(() => {
