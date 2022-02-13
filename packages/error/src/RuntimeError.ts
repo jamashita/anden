@@ -5,11 +5,11 @@ export abstract class RuntimeError extends BaseError {
     super(message, cause);
   }
 
-  public override toString(): string {
-    return this.getStack();
-  }
-
   public getStack(): string {
     return fullStack(this);
+  }
+
+  public override toString(): string {
+    return this.getStack();
   }
 }

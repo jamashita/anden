@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.3.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.2.0...@jamashita/anden-type-v2.3.0) (2021-12-09)
+
+
+### Features
+
+* 🎸 Kind.isNone() ([0d93d4f](https://github.com/jamashita/anden/commit/0d93d4f312ffe2784ff5456c475d06b481425a56))
+
 # [@jamashita/anden-type-v2.2.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.1.2...@jamashita/anden-type-v2.2.0) (2021-11-01)
 
 

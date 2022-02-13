@@ -3,13 +3,13 @@ import { SymbolValidationRule } from '../SymbolValidationRule';
 describe('SymbolValidationRule', () => {
   describe('of', () => {
     it('returns singleton instance', () => {
-            expect(SymbolValidationRule.of()).toBe(SymbolValidationRule.of());
+      expect(SymbolValidationRule.of()).toBe(SymbolValidationRule.of());
     });
   });
 
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-            const rule: SymbolValidationRule = SymbolValidationRule.of();
+      const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, Symbol());
@@ -23,7 +23,7 @@ describe('SymbolValidationRule', () => {
     });
 
     it('throws TypeError when non-symbol values given', () => {
-            const rule: SymbolValidationRule = SymbolValidationRule.of();
+      const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);

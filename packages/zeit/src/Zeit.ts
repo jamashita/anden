@@ -110,18 +110,6 @@ export class Zeit extends ValueObject {
     return this.zeit.isSame(other.zeit);
   }
 
-  public serialize(format?: string): string {
-    if (Kind.isUndefined(format)) {
-      return this.zeit.format(this.format);
-    }
-
-    return this.zeit.format(format);
-  }
-
-  public override toString(format?: string): string {
-    return this.serialize(format);
-  }
-
   public future(value: number, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.add(value, unit), this.format);
   }
@@ -144,5 +132,17 @@ export class Zeit extends ValueObject {
 
   public past(value: number, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.subtract(value, unit), this.format);
+  }
+
+  public serialize(format?: string): string {
+    if (Kind.isUndefined(format)) {
+      return this.zeit.format(this.format);
+    }
+
+    return this.zeit.format(format);
+  }
+
+  public override toString(format?: string): string {
+    return this.serialize(format);
   }
 }
