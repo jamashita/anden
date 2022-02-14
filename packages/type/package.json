@@ -23,7 +23,8 @@
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
-    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo"
+    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo",
+    "release": "semantic-release"
   },
   "dependencies": {
     "reflect-metadata": "0.1.13"
