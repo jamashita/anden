@@ -23,8 +23,7 @@
     "clean": "concurrently \"npm:clean:*\"",
     "clean:coverage": "rimraf coverage",
     "clean:dist": "rimraf dist",
-    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo",
-    "release": "semantic-release"
+    "clean:others": "rimraf *.log && rimraf tsconfig.build.tsbuildinfo"
   },
   "engines": {
     "node": ">=14.0.0",
