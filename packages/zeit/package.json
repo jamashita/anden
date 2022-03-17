@@ -29,7 +29,7 @@
     "@jamashita/anden-error": "^2.3.0",
     "@jamashita/anden-object": "^2.6.0",
     "@jamashita/anden-type": "^2.3.0",
-    "dayjs": "1.10.7",
+    "dayjs": "1.11.0",
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {},
