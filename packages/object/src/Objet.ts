@@ -1,4 +1,4 @@
-import { isNominative, Kind, Nominative } from '@jamashita/anden-type';
+import { Kind, Nominative } from '@jamashita/anden-type';
 import hash from 'hash-it';
 
 export abstract class Objet implements Nominative {
@@ -24,14 +24,6 @@ export abstract class Objet implements Nominative {
 
   public hashCode(): number {
     return hash(this);
-  }
-
-  protected hashor<T>(value: T): T | number {
-    if (isNominative(value)) {
-      return value.hashCode();
-    }
-
-    return value;
   }
 
   public toString(): string {

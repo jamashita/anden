@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';
-import { ZeitError } from './Error/ZeitError';
+import { ZeitError } from './ZeitError';
 
 dayjs.extend(customParseFormat);
 dayjs.extend(minMax);

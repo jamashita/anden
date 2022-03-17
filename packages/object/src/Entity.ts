@@ -1,5 +1,4 @@
-import { Cloneable, Kind } from '@jamashita/anden-type';
-import hash from 'hash-it';
+import { Cloneable, isEqualable } from '@jamashita/anden-type';
 import { Objet } from './Objet';
 
 export abstract class Entity<I, T extends Entity<I, T>> extends Objet implements Cloneable<T> {
@@ -16,20 +15,16 @@ export abstract class Entity<I, T extends Entity<I, T>> extends Objet implements
     if (!(other instanceof Entity)) {
       return false;
     }
-    if (this.hashCode() === other.hashCode()) {
+
+    const identifier: I = this.getIdentifier();
+
+    if (identifier === other.getIdentifier()) {
       return true;
+    }
+    if (isEqualable(identifier)) {
+      return identifier.equals(other.getIdentifier());
     }
 
     return false;
-  }
-
-  public override hashCode(): number {
-    const h: I | number = this.hashor<I>(this.getIdentifier());
-
-    if (Kind.isNumber(h)) {
-      return h;
-    }
-
-    return hash(Objet.identify(h));
   }
 }

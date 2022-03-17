@@ -1,6 +1,6 @@
 import { ValueObject } from '@jamashita/anden-object';
 import { ulid } from 'ulid';
-import { ULIDError } from './Error/ULIDError';
+import { ULIDError } from './ULIDError';
 
 const REGEX: RegExp = /^[0-9A-Z]{26}$/u;
 
@@ -28,7 +28,7 @@ export class ULID extends ValueObject {
   }
 
   public static validate(str: string): boolean {
-    return ULID.regex().test(str);
+    return REGEX.test(str);
   }
 
   private constructor(id: string) {
@@ -43,11 +43,8 @@ export class ULID extends ValueObject {
     if (!(other instanceof ULID)) {
       return false;
     }
-    if (this.id === other.id) {
-      return true;
-    }
 
-    return false;
+    return this.id === other.id;
   }
 
   public get(): string {
