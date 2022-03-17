@@ -1,5 +1,5 @@
 import { asyncRandom, sequence } from '@jamashita/anden-helper';
-import { MockValueObject } from '../Mock/MockValueObject';
+import { MockValueObject } from '../mock/MockValueObject';
 
 describe('ValueObject', () => {
   describe('hashCode', () => {

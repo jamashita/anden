@@ -1,5 +1,5 @@
 import { MockValueObject } from '@jamashita/anden-object';
-import { UUIDError } from '../Error/UUIDError';
+import { UUIDError } from '../UUIDError';
 import { UUID } from '../UUID';
 
 const v4 = (): Promise<UUID> => {

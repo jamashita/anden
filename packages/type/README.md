@@ -24,10 +24,10 @@ Class for type comparison.
 
 ## Type Definitions
 
-#### Function
+### `Function`
 
 Function type definitions.
 
-#### Value
+### `Value`
 
 Value type definitions.

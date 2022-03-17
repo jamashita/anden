@@ -1,5 +1,5 @@
 import { MockValueObject } from '@jamashita/anden-object';
-import { ULIDError } from '../Error/ULIDError';
+import { ULIDError } from '../ULIDError';
 import { ULID } from '../ULID';
 
 const generate = (): Promise<ULID> => {
