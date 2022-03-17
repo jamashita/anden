@@ -13,10 +13,6 @@ Error wrapper and its collection.
 
 Basic error, it is able to contain other `Error` instance.
 
-### `DataSourceError`
-
-(TODO: move this), Error class for data access, extends `RuntimeError`.
-
 ### `Errors`
 
 This Error can hold multiple `Error`s at the same time, also extends `RuntimeError`.
