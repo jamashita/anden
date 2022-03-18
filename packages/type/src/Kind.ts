@@ -8,46 +8,27 @@ export class Kind {
   }
 
   public static isBigInt(value: unknown): value is bigint {
-    if (typeof value === 'bigint') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'bigint';
   }
 
   public static isBoolean(value: unknown): value is boolean {
-    if (typeof value === 'boolean') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'boolean';
   }
 
   public static isClass<T extends Constructor>(instance: unknown, klazz: T): instance is T {
-    if (instance instanceof klazz) {
-      return true;
-    }
-
-    return false;
+    return instance instanceof klazz;
   }
 
   public static isFunction(value: unknown): value is Function {
-    if (typeof value === 'function') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'function';
   }
 
   public static isInteger(value: unknown): boolean {
     if (!Kind.isNumber(value)) {
       return false;
     }
-    if (value % 1 === 0) {
-      return true;
-    }
 
-    return false;
+    return value % 1 === 0;
   }
 
   public static isNaN(value: unknown): boolean {
@@ -55,11 +36,7 @@ export class Kind {
       return false;
     }
     // eslint-disable-next-line no-self-compare
-    if (value !== value) {
-      return true;
-    }
-
-    return false;
+    return value !== value;
   }
 
   public static isNone(value: unknown): value is null | undefined {
@@ -74,19 +51,11 @@ export class Kind {
   }
 
   public static isNull(value: unknown): value is null {
-    if (value === null) {
-      return true;
-    }
-
-    return false;
+    return value === null;
   }
 
   public static isNumber(value: unknown): value is number {
-    if (typeof value === 'number') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'number';
   }
 
   public static isNumericalString(value: unknown): value is string {
@@ -107,11 +76,8 @@ export class Kind {
     if (typeof value !== 'object') {
       return false;
     }
-    if (Kind.isNull(value)) {
-      return false;
-    }
 
-    return true;
+    return !Kind.isNull(value);
   }
 
   public static isPrimitive(value: unknown): value is Primitive {
@@ -148,27 +114,15 @@ export class Kind {
   }
 
   public static isString(value: unknown): value is string {
-    if (typeof value === 'string') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'string';
   }
 
   public static isSymbol(value: unknown): value is symbol {
-    if (typeof value === 'symbol') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'symbol';
   }
 
   public static isUndefined(value: unknown): value is undefined {
-    if (typeof value === 'undefined') {
-      return true;
-    }
-
-    return false;
+    return typeof value === 'undefined';
   }
 
   private constructor() {

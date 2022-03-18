@@ -47,7 +47,7 @@ export class Zeit extends ValueObject {
       return z[0]!;
     }
 
-    const dates: Array<dayjs.Dayjs> = z.map<dayjs.Dayjs>((zeit: Zeit) => {
+    const dates: Array<dayjs.Dayjs> = z.map((zeit: Zeit): dayjs.Dayjs => {
       return zeit.get();
     });
 
