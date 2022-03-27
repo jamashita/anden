@@ -1,3 +1,17 @@
+# [@jamashita/anden-zeit-v2.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.5.0...@jamashita/anden-zeit-v2.6.0) (2022-03-27)
+
+
+### Bug Fixes
+
+* 🐛 remvoe unnecessary generics ([b1c2a20](https://github.com/jamashita/anden/commit/b1c2a2068c8aa9d28de8b458f3e22125e109a792))
+
+
+### Features
+
+* 🎸 packages updated ([1e548c1](https://github.com/jamashita/anden/commit/1e548c1ddbbc1587f11c1351c73b2bb4a2344ec6))
+* 🎸 packages updated ([597832a](https://github.com/jamashita/anden/commit/597832ab87672be36f59af50683c99e210143866))
+* 🎸 release flow changed ([758bb94](https://github.com/jamashita/anden/commit/758bb94e49fc3b150297bf9dcfa5d93448c8a26a))
+
 # [@jamashita/anden-zeit-v2.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.4.0...@jamashita/anden-zeit-v2.5.0) (2021-12-09)
 
 
