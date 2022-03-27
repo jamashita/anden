@@ -1,9 +1,9 @@
 import { MockValueObject } from '@jamashita/anden-object';
-import { UUIDError } from '../UUIDError';
 import { UUID } from '../UUID';
+import { UUIDError } from '../UUIDError';
 
 const v4 = (): Promise<UUID> => {
-  return new Promise<UUID>((resolve: (value: UUID) => void) => {
+  return new Promise((resolve: (value: UUID) => void) => {
     setImmediate(() => {
       resolve(UUID.v4());
     });
@@ -11,7 +11,7 @@ const v4 = (): Promise<UUID> => {
 };
 
 const v5 = (): Promise<UUID> => {
-  return new Promise<UUID>((resolve: (value: UUID) => void) => {
+  return new Promise((resolve: (value: UUID) => void) => {
     setImmediate(() => {
       resolve(UUID.v5());
     });
@@ -47,7 +47,7 @@ describe('UUID', () => {
     });
 
     it('generates UUID that must pass', async () => {
-      const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map<Promise<[UUID, UUID]>>(async () => {
+      const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map(async (): Promise<[UUID, UUID]> => {
         const v4id: UUID = await v4();
         const v5id: UUID = await v5();
 
@@ -64,7 +64,7 @@ describe('UUID', () => {
 
   describe('v4', () => {
     it('always generates 36 length string', async () => {
-      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map<Promise<UUID>>(() => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map((): Promise<UUID> => {
         return v4();
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
@@ -77,7 +77,7 @@ describe('UUID', () => {
 
   describe('v5', () => {
     it('always generates 36 length string', async () => {
-      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map<Promise<UUID>>(() => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map((): Promise<UUID> => {
         return v5();
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
