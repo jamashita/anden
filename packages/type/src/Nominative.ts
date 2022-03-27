@@ -1,6 +1,6 @@
-import { Equalable, isEqualable } from './Equalable';
+import { Equalable } from './Equalable';
 import { Kind } from './Kind';
-import { isSerializable, Serializable } from './Serializable';
+import { Serializable } from './Serializable';
 
 export interface Nominative extends Equalable, Serializable {
   hashCode(): number;
@@ -13,10 +13,10 @@ export const isNominative = (n: unknown): n is Nominative => {
   if (!Kind.isFunction(n.hashCode)) {
     return false;
   }
-  if (!isEqualable(n)) {
+  if (!Kind.isFunction(n.equals)) {
     return false;
   }
-  if (!isSerializable(n)) {
+  if (!Kind.isFunction(n.serialize)) {
     return false;
   }
 
