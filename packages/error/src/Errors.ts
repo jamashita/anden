@@ -5,17 +5,17 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
   private readonly errors: ReadonlyArray<E>;
 
   private static getMessage<E extends Error>(errors: ReadonlyArray<E>): string {
-    return errors.map<string>((error: Error) => {
+    return errors.map((error: Error): string => {
       return error.message;
     }).join('\n');
   }
 
   public static of<E extends Error>(errors: Iterable<E>): Errors<E> {
-    return new Errors<E>([...errors]);
+    return new Errors([...errors]);
   }
 
   public static ofSpread<E extends Error>(...errors: ReadonlyArray<E>): Errors<E> {
-    return Errors.of<E>(errors);
+    return Errors.of(errors);
   }
 
   public constructor(errors: ReadonlyArray<E>) {
@@ -27,8 +27,12 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
     return this.errors[Symbol.iterator]();
   }
 
+  public getErrors(): Array<E> {
+    return [...this.errors];
+  }
+
   public override getStack(): string {
-    return this.errors.map<Ambiguous<string>>((error: E) => {
+    return this.errors.map((error: E): Ambiguous<string> => {
       if (error instanceof RuntimeError) {
         return error.getStack();
       }
@@ -37,9 +41,5 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
     }).filter((stack: Ambiguous<string>): stack is string => {
       return !Kind.isUndefined(stack);
     }).join('\n');
-  }
-
-  public getErrors(): Array<E> {
-    return [...this.errors];
   }
 }

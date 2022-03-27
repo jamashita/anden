@@ -9,6 +9,6 @@ Time Class as Value Object.
 
 ## Class
 
-### Zeit
+### `Zeit`
 
-Class for Date and Time, extends `ValueObject`.
+Class for DateTime, extends `ValueObject`.

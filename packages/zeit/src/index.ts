@@ -1,3 +1,3 @@
-export * from './Error/ZeitError';
 export * from './Zeit';
+export * from './ZeitError';
 export * from './ZeitValidation';

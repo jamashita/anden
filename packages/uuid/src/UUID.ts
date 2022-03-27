@@ -1,6 +1,6 @@
 import { ValueObject } from '@jamashita/anden-object';
 import { v4, v5 } from 'uuid';
-import { UUIDError } from './Error/UUIDError';
+import { UUIDError } from './UUIDError';
 
 const REGEX: RegExp = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/u;
 
@@ -32,7 +32,7 @@ export class UUID extends ValueObject {
   }
 
   public static validate(str: string): boolean {
-    return UUID.regex().test(str);
+    return REGEX.test(str);
   }
 
   private constructor(id: string) {
@@ -47,18 +47,15 @@ export class UUID extends ValueObject {
     if (!(other instanceof UUID)) {
       return false;
     }
-    if (this.id === other.id) {
-      return true;
-    }
 
-    return false;
-  }
-
-  public serialize(): string {
-    return this.id;
+    return this.id === other.id;
   }
 
   public get(): string {
+    return this.id;
+  }
+
+  public serialize(): string {
     return this.id;
   }
 }

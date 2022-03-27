@@ -24,7 +24,7 @@ describe('Objet', () => {
     });
 
     it('describes string', () => {
-      const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async () => {
+      const dones: Array<Promise<void>> = sequence(100).map(async (): Promise<void> => {
         const str: string = await asyncRandom(40);
 
         expect(Objet.identify(str)).toBe(str);
@@ -34,7 +34,7 @@ describe('Objet', () => {
     }, 10_000);
 
     it('describes symbol', () => {
-      const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async () => {
+      const dones: Array<Promise<void>> = sequence(100).map(async (): Promise<void> => {
         const sym: symbol = Symbol(await asyncRandom(40));
 
         expect(Objet.identify(sym)).toBe(sym.toString());
@@ -54,7 +54,7 @@ describe('Objet', () => {
 
       const obj: Inconnu = {};
 
-      const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async (i: number) => {
+      const dones: Array<Promise<void>> = sequence(100).map(async (i: number): Promise<void> => {
         const [key, value]: Array<string> = await Promise.all<string>([
           asyncRandom(i),
           asyncRandom(i)
@@ -74,7 +74,7 @@ describe('Objet', () => {
 
       const obj: Inconnu = {};
 
-      const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async (i: number) => {
+      const dones: Array<Promise<void>> = sequence(100).map(async (i: number): Promise<void> => {
         const [key, value]: Array<string> = await Promise.all<string>([
           asyncRandom(i),
           asyncRandom(i)
@@ -90,7 +90,7 @@ describe('Objet', () => {
     }, 10_000);
 
     it('returns itself when it has toString()', () => {
-      const dones: Array<Promise<void>> = sequence(100).map<Promise<void>>(async () => {
+      const dones: Array<Promise<void>> = sequence(100).map(async (): Promise<void> => {
         const str: string = await asyncRandom(40);
 
         expect(Objet.identify({

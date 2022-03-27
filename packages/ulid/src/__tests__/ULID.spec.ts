@@ -1,9 +1,9 @@
 import { MockValueObject } from '@jamashita/anden-object';
-import { ULIDError } from '../Error/ULIDError';
 import { ULID } from '../ULID';
+import { ULIDError } from '../ULIDError';
 
 const generate = (): Promise<ULID> => {
-  return new Promise<ULID>((resolve: (value: ULID) => void) => {
+  return new Promise((resolve: (value: ULID) => void) => {
     setImmediate(() => {
       resolve(ULID.generate());
     });
@@ -51,7 +51,7 @@ describe('ULID', () => {
     });
 
     it('generates ULID that must pass', async () => {
-      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map<Promise<ULID>>(() => {
+      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map((): Promise<ULID> => {
         return generate();
       });
       const ids: Array<ULID> = await Promise.all<ULID>(promises);
@@ -64,7 +64,7 @@ describe('ULID', () => {
 
   describe('generate', () => {
     it('always generates 26 length string', async () => {
-      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map<Promise<ULID>>(() => {
+      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map((): Promise<ULID> => {
         return generate();
       });
       const ids: Array<ULID> = await Promise.all<ULID>(promises);

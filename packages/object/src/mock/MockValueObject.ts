@@ -20,11 +20,11 @@ export class MockValueObject<V> extends ValueObject {
     return this.value === other.value;
   }
 
-  public serialize(): string {
-    return Objet.identify(this.value);
-  }
-
   public get(): V {
     return this.value;
+  }
+
+  public serialize(): string {
+    return Objet.identify(this.value);
   }
 }

@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 import minMax from 'dayjs/plugin/minMax';
 import utc from 'dayjs/plugin/utc';
-import { ZeitError } from './Error/ZeitError';
+import { ZeitError } from './ZeitError';
 
 dayjs.extend(customParseFormat);
 dayjs.extend(minMax);
@@ -47,7 +47,7 @@ export class Zeit extends ValueObject {
       return z[0]!;
     }
 
-    const dates: Array<dayjs.Dayjs> = z.map<dayjs.Dayjs>((zeit: Zeit) => {
+    const dates: Array<dayjs.Dayjs> = z.map((zeit: Zeit): dayjs.Dayjs => {
       return zeit.get();
     });
 
@@ -110,18 +110,6 @@ export class Zeit extends ValueObject {
     return this.zeit.isSame(other.zeit);
   }
 
-  public serialize(format?: string): string {
-    if (Kind.isUndefined(format)) {
-      return this.zeit.format(this.format);
-    }
-
-    return this.zeit.format(format);
-  }
-
-  public override toString(format?: string): string {
-    return this.serialize(format);
-  }
-
   public future(value: number, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.add(value, unit), this.format);
   }
@@ -144,5 +132,17 @@ export class Zeit extends ValueObject {
 
   public past(value: number, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.subtract(value, unit), this.format);
+  }
+
+  public serialize(format?: string): string {
+    if (Kind.isUndefined(format)) {
+      return this.zeit.format(this.format);
+    }
+
+    return this.zeit.format(format);
+  }
+
+  public override toString(format?: string): string {
+    return this.serialize(format);
   }
 }

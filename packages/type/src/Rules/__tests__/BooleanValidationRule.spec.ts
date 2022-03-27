@@ -3,13 +3,13 @@ import { BooleanValidationRule } from '../BooleanValidationRule';
 describe('BooleanValidationRule', () => {
   describe('of', () => {
     it('returns singleton instance', () => {
-            expect(BooleanValidationRule.of()).toBe(BooleanValidationRule.of());
+      expect(BooleanValidationRule.of()).toBe(BooleanValidationRule.of());
     });
   });
 
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-            const rule: BooleanValidationRule = BooleanValidationRule.of();
+      const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, false);
@@ -20,7 +20,7 @@ describe('BooleanValidationRule', () => {
     });
 
     it('throws TypeError when non-boolean values given', () => {
-            const rule: BooleanValidationRule = BooleanValidationRule.of();
+      const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);

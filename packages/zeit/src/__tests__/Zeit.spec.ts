@@ -1,6 +1,6 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
-import { ZeitError } from '../Error/ZeitError';
+import { ZeitError } from '../ZeitError';
 import { Zeit } from '../Zeit';
 
 describe('Zeit', () => {
