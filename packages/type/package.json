@@ -28,7 +28,7 @@
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@jamashita/anden-helper": "^2.0.2"
+    "@jamashita/anden-helper": "^2.1.0"
   },
   "engines": {
     "node": ">=14.0.0",
