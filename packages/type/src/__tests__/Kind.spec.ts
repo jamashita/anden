@@ -5,21 +5,162 @@ class MockError extends Error {
 }
 
 describe('Kind', () => {
-  describe('isUndefined', () => {
+  describe('isArray', () => {
+    it('returns true only if array given', () => {
+      expect(Kind.isArray(null)).toBe(false);
+      expect(Kind.isArray(undefined)).toBe(false);
+      expect(Kind.isArray('')).toBe(false);
+      expect(Kind.isArray('123')).toBe(false);
+      expect(Kind.isArray('abcd')).toBe(false);
+      expect(Kind.isArray(123)).toBe(false);
+      expect(Kind.isArray(0)).toBe(false);
+      expect(Kind.isArray(-12)).toBe(false);
+      expect(Kind.isArray(0.3)).toBe(false);
+      expect(Kind.isArray(false)).toBe(false);
+      expect(Kind.isArray(true)).toBe(false);
+      expect(Kind.isArray(Symbol('p'))).toBe(false);
+      expect(Kind.isArray(20n)).toBe(false);
+      expect(Kind.isArray({})).toBe(false);
+      expect(Kind.isArray([])).toBe(true);
+      expect(Kind.isArray(Object.create(null))).toBe(false);
+    });
+  });
+
+  describe('isBigInt', () => {
     it('returns true only the value is undefined', () => {
-      expect(Kind.isUndefined(null)).toBe(false);
-      expect(Kind.isUndefined(undefined)).toBe(true);
-      expect(Kind.isUndefined('')).toBe(false);
-      expect(Kind.isUndefined('123')).toBe(false);
-      expect(Kind.isUndefined('abcd')).toBe(false);
-      expect(Kind.isUndefined(123)).toBe(false);
-      expect(Kind.isUndefined(0)).toBe(false);
-      expect(Kind.isUndefined(false)).toBe(false);
-      expect(Kind.isUndefined(true)).toBe(false);
-      expect(Kind.isUndefined(Symbol('p'))).toBe(false);
-      expect(Kind.isUndefined(20n)).toBe(false);
-      expect(Kind.isUndefined({})).toBe(false);
-      expect(Kind.isUndefined([])).toBe(false);
+      expect(Kind.isBigInt(null)).toBe(false);
+      expect(Kind.isBigInt(undefined)).toBe(false);
+      expect(Kind.isBigInt('')).toBe(false);
+      expect(Kind.isBigInt('123')).toBe(false);
+      expect(Kind.isBigInt('abcd')).toBe(false);
+      expect(Kind.isBigInt(123)).toBe(false);
+      expect(Kind.isBigInt(0)).toBe(false);
+      expect(Kind.isBigInt(false)).toBe(false);
+      expect(Kind.isBigInt(true)).toBe(false);
+      expect(Kind.isBigInt(Symbol('p'))).toBe(false);
+      expect(Kind.isBigInt(20n)).toBe(true);
+      expect(Kind.isBigInt({})).toBe(false);
+      expect(Kind.isBigInt([])).toBe(false);
+    });
+  });
+
+  describe('isBoolean', () => {
+    it('returns true when true and false are given', () => {
+      expect(Kind.isBoolean(null)).toBe(false);
+      expect(Kind.isBoolean(undefined)).toBe(false);
+      expect(Kind.isBoolean('')).toBe(false);
+      expect(Kind.isBoolean('123')).toBe(false);
+      expect(Kind.isBoolean('abcd')).toBe(false);
+      expect(Kind.isBoolean(123)).toBe(false);
+      expect(Kind.isBoolean(0)).toBe(false);
+      expect(Kind.isBoolean(-12)).toBe(false);
+      expect(Kind.isBoolean(0.3)).toBe(false);
+      expect(Kind.isBoolean(false)).toBe(true);
+      expect(Kind.isBoolean(true)).toBe(true);
+      expect(Kind.isBoolean(Symbol('p'))).toBe(false);
+      expect(Kind.isBoolean(20n)).toBe(false);
+      expect(Kind.isBoolean({})).toBe(false);
+      expect(Kind.isBoolean([])).toBe(false);
+    });
+  });
+
+  describe('isClass', () => {
+    it('returns true if class object given', () => {
+      expect(Kind.isClass({}, Object)).toBe(true);
+      expect(Kind.isClass([], Array)).toBe(true);
+      expect(Kind.isClass(Object.create(null), Object)).toBe(false);
+      expect(Kind.isClass(new Error(), Error)).toBe(true);
+      expect(Kind.isClass(new MockError(), Error)).toBe(true);
+      expect(Kind.isClass(new MockError(), MockError)).toBe(true);
+    });
+  });
+
+  describe('isFunction', () => {
+    it('returns true only if function given', () => {
+      expect(Kind.isFunction(null)).toBe(false);
+      expect(Kind.isFunction(undefined)).toBe(false);
+      expect(Kind.isFunction('')).toBe(false);
+      expect(Kind.isFunction('123')).toBe(false);
+      expect(Kind.isFunction('abcd')).toBe(false);
+      expect(Kind.isFunction(123)).toBe(false);
+      expect(Kind.isFunction(0)).toBe(false);
+      expect(Kind.isFunction(-12)).toBe(false);
+      expect(Kind.isFunction(0.3)).toBe(false);
+      expect(Kind.isFunction(false)).toBe(false);
+      expect(Kind.isFunction(true)).toBe(false);
+      expect(Kind.isFunction(Symbol('p'))).toBe(false);
+      expect(Kind.isFunction(20n)).toBe(false);
+      expect(Kind.isFunction({})).toBe(false);
+      expect(Kind.isFunction([])).toBe(false);
+      expect(Kind.isFunction(Object.create(null))).toBe(false);
+      expect(
+        Kind.isFunction(() => {
+          // NOOP
+        })
+      ).toBe(true);
+    });
+  });
+
+  describe('isInteger', () => {
+    it('returns false when the double values are given', () => {
+      expect(Kind.isInteger(null)).toBe(false);
+      expect(Kind.isInteger(undefined)).toBe(false);
+      expect(Kind.isInteger('')).toBe(false);
+      expect(Kind.isInteger('123')).toBe(false);
+      expect(Kind.isInteger('abcd')).toBe(false);
+      expect(Kind.isInteger(123)).toBe(true);
+      expect(Kind.isInteger(0)).toBe(true);
+      expect(Kind.isInteger(-12)).toBe(true);
+      expect(Kind.isInteger(0.3)).toBe(false);
+      expect(Kind.isInteger(NaN)).toBe(false);
+      expect(Kind.isInteger(false)).toBe(false);
+      expect(Kind.isInteger(true)).toBe(false);
+      expect(Kind.isInteger(Symbol('p'))).toBe(false);
+      expect(Kind.isInteger(20n)).toBe(false);
+      expect(Kind.isInteger({})).toBe(false);
+      expect(Kind.isInteger([])).toBe(false);
+    });
+  });
+
+  describe('isNaN', () => {
+    it('returns true when only the value is NaN', () => {
+      expect(Kind.isNaN(null)).toBe(false);
+      expect(Kind.isNaN(undefined)).toBe(false);
+      expect(Kind.isNaN('')).toBe(false);
+      expect(Kind.isNaN('123')).toBe(false);
+      expect(Kind.isNaN('abcd')).toBe(false);
+      expect(Kind.isNaN(123)).toBe(false);
+      expect(Kind.isNaN(0)).toBe(false);
+      expect(Kind.isNaN(-12)).toBe(false);
+      expect(Kind.isNaN(0.3)).toBe(false);
+      expect(Kind.isNaN(NaN)).toBe(true);
+      expect(Kind.isNaN(false)).toBe(false);
+      expect(Kind.isNaN(true)).toBe(false);
+      expect(Kind.isNaN(Symbol('p'))).toBe(false);
+      expect(Kind.isNaN(20n)).toBe(false);
+      expect(Kind.isNaN({})).toBe(false);
+      expect(Kind.isNaN([])).toBe(false);
+    });
+  });
+
+  describe('isNone', () => {
+    it('returns true when null or undefined given', () => {
+      expect(Kind.isNone(null)).toBe(true);
+      expect(Kind.isNone(undefined)).toBe(true);
+      expect(Kind.isNone('')).toBe(false);
+      expect(Kind.isNone('123')).toBe(false);
+      expect(Kind.isNone('abcd')).toBe(false);
+      expect(Kind.isNone(123)).toBe(false);
+      expect(Kind.isNone(0)).toBe(false);
+      expect(Kind.isNone(-12)).toBe(false);
+      expect(Kind.isNone(0.3)).toBe(false);
+      expect(Kind.isNone(false)).toBe(false);
+      expect(Kind.isNone(true)).toBe(false);
+      expect(Kind.isNone(Symbol('p'))).toBe(false);
+      expect(Kind.isNone(20n)).toBe(false);
+      expect(Kind.isNone({})).toBe(false);
+      expect(Kind.isNone([])).toBe(false);
+      expect(Kind.isNone(Object.create(null))).toBe(false);
     });
   });
 
@@ -41,21 +182,23 @@ describe('Kind', () => {
     });
   });
 
-  describe('isString', () => {
-    it('return true even if numerical strings given', () => {
-      expect(Kind.isString(null)).toBe(false);
-      expect(Kind.isString(undefined)).toBe(false);
-      expect(Kind.isString('')).toBe(true);
-      expect(Kind.isString('123')).toBe(true);
-      expect(Kind.isString('abcd')).toBe(true);
-      expect(Kind.isString(123)).toBe(false);
-      expect(Kind.isString(0)).toBe(false);
-      expect(Kind.isString(false)).toBe(false);
-      expect(Kind.isString(true)).toBe(false);
-      expect(Kind.isString(Symbol('p'))).toBe(false);
-      expect(Kind.isString(20n)).toBe(false);
-      expect(Kind.isString({})).toBe(false);
-      expect(Kind.isString([])).toBe(false);
+  describe('isNumber', () => {
+    it('returns true even if double values are provided', () => {
+      expect(Kind.isNumber(null)).toBe(false);
+      expect(Kind.isNumber(undefined)).toBe(false);
+      expect(Kind.isNumber('')).toBe(false);
+      expect(Kind.isNumber('123')).toBe(false);
+      expect(Kind.isNumber('abcd')).toBe(false);
+      expect(Kind.isNumber(123)).toBe(true);
+      expect(Kind.isNumber(0)).toBe(true);
+      expect(Kind.isNumber(-12)).toBe(true);
+      expect(Kind.isNumber(0.3)).toBe(true);
+      expect(Kind.isNumber(NaN)).toBe(true);
+      expect(Kind.isNumber(false)).toBe(false);
+      expect(Kind.isNumber(true)).toBe(false);
+      expect(Kind.isNumber(Symbol('p'))).toBe(false);
+      expect(Kind.isNumber({})).toBe(false);
+      expect(Kind.isNumber([])).toBe(false);
     });
   });
 
@@ -116,121 +259,29 @@ describe('Kind', () => {
     });
   });
 
-  describe('isNumber', () => {
-    it('returns true even if double values are provided', () => {
-      expect(Kind.isNumber(null)).toBe(false);
-      expect(Kind.isNumber(undefined)).toBe(false);
-      expect(Kind.isNumber('')).toBe(false);
-      expect(Kind.isNumber('123')).toBe(false);
-      expect(Kind.isNumber('abcd')).toBe(false);
-      expect(Kind.isNumber(123)).toBe(true);
-      expect(Kind.isNumber(0)).toBe(true);
-      expect(Kind.isNumber(-12)).toBe(true);
-      expect(Kind.isNumber(0.3)).toBe(true);
-      expect(Kind.isNumber(NaN)).toBe(true);
-      expect(Kind.isNumber(false)).toBe(false);
-      expect(Kind.isNumber(true)).toBe(false);
-      expect(Kind.isNumber(Symbol('p'))).toBe(false);
-      expect(Kind.isNumber({})).toBe(false);
-      expect(Kind.isNumber([])).toBe(false);
-    });
-  });
-
-  describe('isInteger', () => {
-    it('returns false when the double values are given', () => {
-      expect(Kind.isInteger(null)).toBe(false);
-      expect(Kind.isInteger(undefined)).toBe(false);
-      expect(Kind.isInteger('')).toBe(false);
-      expect(Kind.isInteger('123')).toBe(false);
-      expect(Kind.isInteger('abcd')).toBe(false);
-      expect(Kind.isInteger(123)).toBe(true);
-      expect(Kind.isInteger(0)).toBe(true);
-      expect(Kind.isInteger(-12)).toBe(true);
-      expect(Kind.isInteger(0.3)).toBe(false);
-      expect(Kind.isInteger(NaN)).toBe(false);
-      expect(Kind.isInteger(false)).toBe(false);
-      expect(Kind.isInteger(true)).toBe(false);
-      expect(Kind.isInteger(Symbol('p'))).toBe(false);
-      expect(Kind.isInteger(20n)).toBe(false);
-      expect(Kind.isInteger({})).toBe(false);
-      expect(Kind.isInteger([])).toBe(false);
-    });
-  });
-
-  describe('isNaN', () => {
-    it('returns true when only the value is NaN', () => {
-      expect(Kind.isNaN(null)).toBe(false);
-      expect(Kind.isNaN(undefined)).toBe(false);
-      expect(Kind.isNaN('')).toBe(false);
-      expect(Kind.isNaN('123')).toBe(false);
-      expect(Kind.isNaN('abcd')).toBe(false);
-      expect(Kind.isNaN(123)).toBe(false);
-      expect(Kind.isNaN(0)).toBe(false);
-      expect(Kind.isNaN(-12)).toBe(false);
-      expect(Kind.isNaN(0.3)).toBe(false);
-      expect(Kind.isNaN(NaN)).toBe(true);
-      expect(Kind.isNaN(false)).toBe(false);
-      expect(Kind.isNaN(true)).toBe(false);
-      expect(Kind.isNaN(Symbol('p'))).toBe(false);
-      expect(Kind.isNaN(20n)).toBe(false);
-      expect(Kind.isNaN({})).toBe(false);
-      expect(Kind.isNaN([])).toBe(false);
-    });
-  });
-
-  describe('isBoolean', () => {
-    it('returns true when true and false are given', () => {
-      expect(Kind.isBoolean(null)).toBe(false);
-      expect(Kind.isBoolean(undefined)).toBe(false);
-      expect(Kind.isBoolean('')).toBe(false);
-      expect(Kind.isBoolean('123')).toBe(false);
-      expect(Kind.isBoolean('abcd')).toBe(false);
-      expect(Kind.isBoolean(123)).toBe(false);
-      expect(Kind.isBoolean(0)).toBe(false);
-      expect(Kind.isBoolean(-12)).toBe(false);
-      expect(Kind.isBoolean(0.3)).toBe(false);
-      expect(Kind.isBoolean(false)).toBe(true);
-      expect(Kind.isBoolean(true)).toBe(true);
-      expect(Kind.isBoolean(Symbol('p'))).toBe(false);
-      expect(Kind.isBoolean(20n)).toBe(false);
-      expect(Kind.isBoolean({})).toBe(false);
-      expect(Kind.isBoolean([])).toBe(false);
-    });
-  });
-
-  describe('isSymbol', () => {
-    it('returns true only the value is undefined', () => {
-      expect(Kind.isSymbol(null)).toBe(false);
-      expect(Kind.isSymbol(undefined)).toBe(false);
-      expect(Kind.isSymbol('')).toBe(false);
-      expect(Kind.isSymbol('123')).toBe(false);
-      expect(Kind.isSymbol('abcd')).toBe(false);
-      expect(Kind.isSymbol(123)).toBe(false);
-      expect(Kind.isSymbol(0)).toBe(false);
-      expect(Kind.isSymbol(false)).toBe(false);
-      expect(Kind.isSymbol(true)).toBe(false);
-      expect(Kind.isSymbol(Symbol('p'))).toBe(true);
-      expect(Kind.isSymbol(20n)).toBe(false);
-      expect(Kind.isSymbol({})).toBe(false);
-      expect(Kind.isSymbol([])).toBe(false);
-    });
-  });
-
-  describe('isBigInt', () => {
-    it('returns true only the value is undefined', () => {
-      expect(Kind.isBigInt(null)).toBe(false);
-      expect(Kind.isBigInt(undefined)).toBe(false);
-      expect(Kind.isBigInt('')).toBe(false);
-      expect(Kind.isBigInt('123')).toBe(false);
-      expect(Kind.isBigInt('abcd')).toBe(false);
-      expect(Kind.isBigInt(123)).toBe(false);
-      expect(Kind.isBigInt(0)).toBe(false);
-      expect(Kind.isBigInt(false)).toBe(false);
-      expect(Kind.isBigInt(true)).toBe(false);
-      expect(Kind.isBigInt(Symbol('p'))).toBe(false);
-      expect(Kind.isBigInt(20n)).toBe(true);
-      expect(Kind.isBigInt({})).toBe(false);
-      expect(Kind.isBigInt([])).toBe(false);
+  describe('isObject', () => {
+    it('returns true only if object given', () => {
+      expect(Kind.isObject(null)).toBe(false);
+      expect(Kind.isObject(undefined)).toBe(false);
+      expect(Kind.isObject('')).toBe(false);
+      expect(Kind.isObject('123')).toBe(false);
+      expect(Kind.isObject('abcd')).toBe(false);
+      expect(Kind.isObject(123)).toBe(false);
+      expect(Kind.isObject(0)).toBe(false);
+      expect(Kind.isObject(-12)).toBe(false);
+      expect(Kind.isObject(0.3)).toBe(false);
+      expect(Kind.isObject(false)).toBe(false);
+      expect(Kind.isObject(true)).toBe(false);
+      expect(Kind.isObject(Symbol('p'))).toBe(false);
+      expect(Kind.isObject(20n)).toBe(false);
+      expect(Kind.isObject({})).toBe(true);
+      expect(Kind.isObject([])).toBe(true);
+      expect(Kind.isObject(Object.create(null))).toBe(true);
+      expect(
+        Kind.isObject(() => {
+          // NOOP
+        })
+      ).toBe(false);
     });
   });
 
@@ -256,58 +307,6 @@ describe('Kind', () => {
       expect(Kind.isPrimitive({ key: null })).toBe(false);
       expect(Kind.isPrimitive({ key: undefined })).toBe(false);
       expect(Kind.isPrimitive(Object.create(null))).toBe(false);
-    });
-  });
-
-  describe('isFunction', () => {
-    it('returns true only if function given', () => {
-      expect(Kind.isFunction(null)).toBe(false);
-      expect(Kind.isFunction(undefined)).toBe(false);
-      expect(Kind.isFunction('')).toBe(false);
-      expect(Kind.isFunction('123')).toBe(false);
-      expect(Kind.isFunction('abcd')).toBe(false);
-      expect(Kind.isFunction(123)).toBe(false);
-      expect(Kind.isFunction(0)).toBe(false);
-      expect(Kind.isFunction(-12)).toBe(false);
-      expect(Kind.isFunction(0.3)).toBe(false);
-      expect(Kind.isFunction(false)).toBe(false);
-      expect(Kind.isFunction(true)).toBe(false);
-      expect(Kind.isFunction(Symbol('p'))).toBe(false);
-      expect(Kind.isFunction(20n)).toBe(false);
-      expect(Kind.isFunction({})).toBe(false);
-      expect(Kind.isFunction([])).toBe(false);
-      expect(Kind.isFunction(Object.create(null))).toBe(false);
-      expect(
-        Kind.isFunction(() => {
-          // NOOP
-        })
-      ).toBe(true);
-    });
-  });
-
-  describe('isObject', () => {
-    it('returns true only if object given', () => {
-      expect(Kind.isObject(null)).toBe(false);
-      expect(Kind.isObject(undefined)).toBe(false);
-      expect(Kind.isObject('')).toBe(false);
-      expect(Kind.isObject('123')).toBe(false);
-      expect(Kind.isObject('abcd')).toBe(false);
-      expect(Kind.isObject(123)).toBe(false);
-      expect(Kind.isObject(0)).toBe(false);
-      expect(Kind.isObject(-12)).toBe(false);
-      expect(Kind.isObject(0.3)).toBe(false);
-      expect(Kind.isObject(false)).toBe(false);
-      expect(Kind.isObject(true)).toBe(false);
-      expect(Kind.isObject(Symbol('p'))).toBe(false);
-      expect(Kind.isObject(20n)).toBe(false);
-      expect(Kind.isObject({})).toBe(true);
-      expect(Kind.isObject([])).toBe(true);
-      expect(Kind.isObject(Object.create(null))).toBe(true);
-      expect(
-        Kind.isObject(() => {
-          // NOOP
-        })
-      ).toBe(false);
     });
   });
 
@@ -396,56 +395,57 @@ describe('Kind', () => {
     });
   });
 
-  describe('isArray', () => {
-    it('returns true only if array given', () => {
-      expect(Kind.isArray(null)).toBe(false);
-      expect(Kind.isArray(undefined)).toBe(false);
-      expect(Kind.isArray('')).toBe(false);
-      expect(Kind.isArray('123')).toBe(false);
-      expect(Kind.isArray('abcd')).toBe(false);
-      expect(Kind.isArray(123)).toBe(false);
-      expect(Kind.isArray(0)).toBe(false);
-      expect(Kind.isArray(-12)).toBe(false);
-      expect(Kind.isArray(0.3)).toBe(false);
-      expect(Kind.isArray(false)).toBe(false);
-      expect(Kind.isArray(true)).toBe(false);
-      expect(Kind.isArray(Symbol('p'))).toBe(false);
-      expect(Kind.isArray(20n)).toBe(false);
-      expect(Kind.isArray({})).toBe(false);
-      expect(Kind.isArray([])).toBe(true);
-      expect(Kind.isArray(Object.create(null))).toBe(false);
+  describe('isString', () => {
+    it('return true even if numerical strings given', () => {
+      expect(Kind.isString(null)).toBe(false);
+      expect(Kind.isString(undefined)).toBe(false);
+      expect(Kind.isString('')).toBe(true);
+      expect(Kind.isString('123')).toBe(true);
+      expect(Kind.isString('abcd')).toBe(true);
+      expect(Kind.isString(123)).toBe(false);
+      expect(Kind.isString(0)).toBe(false);
+      expect(Kind.isString(false)).toBe(false);
+      expect(Kind.isString(true)).toBe(false);
+      expect(Kind.isString(Symbol('p'))).toBe(false);
+      expect(Kind.isString(20n)).toBe(false);
+      expect(Kind.isString({})).toBe(false);
+      expect(Kind.isString([])).toBe(false);
     });
   });
 
-  describe('isClass', () => {
-    it('returns true if class object given', () => {
-      expect(Kind.isClass({}, Object)).toBe(true);
-      expect(Kind.isClass([], Array)).toBe(true);
-      expect(Kind.isClass(Object.create(null), Object)).toBe(false);
-      expect(Kind.isClass(new Error(), Error)).toBe(true);
-      expect(Kind.isClass(new MockError(), Error)).toBe(true);
-      expect(Kind.isClass(new MockError(), MockError)).toBe(true);
+  describe('isSymbol', () => {
+    it('returns true only the value is undefined', () => {
+      expect(Kind.isSymbol(null)).toBe(false);
+      expect(Kind.isSymbol(undefined)).toBe(false);
+      expect(Kind.isSymbol('')).toBe(false);
+      expect(Kind.isSymbol('123')).toBe(false);
+      expect(Kind.isSymbol('abcd')).toBe(false);
+      expect(Kind.isSymbol(123)).toBe(false);
+      expect(Kind.isSymbol(0)).toBe(false);
+      expect(Kind.isSymbol(false)).toBe(false);
+      expect(Kind.isSymbol(true)).toBe(false);
+      expect(Kind.isSymbol(Symbol('p'))).toBe(true);
+      expect(Kind.isSymbol(20n)).toBe(false);
+      expect(Kind.isSymbol({})).toBe(false);
+      expect(Kind.isSymbol([])).toBe(false);
     });
   });
 
-  describe('isNone', () => {
-    it('returns true when null or undefined given', () => {
-      expect(Kind.isNone(null)).toBe(true);
-      expect(Kind.isNone(undefined)).toBe(true);
-      expect(Kind.isNone('')).toBe(false);
-      expect(Kind.isNone('123')).toBe(false);
-      expect(Kind.isNone('abcd')).toBe(false);
-      expect(Kind.isNone(123)).toBe(false);
-      expect(Kind.isNone(0)).toBe(false);
-      expect(Kind.isNone(-12)).toBe(false);
-      expect(Kind.isNone(0.3)).toBe(false);
-      expect(Kind.isNone(false)).toBe(false);
-      expect(Kind.isNone(true)).toBe(false);
-      expect(Kind.isNone(Symbol('p'))).toBe(false);
-      expect(Kind.isNone(20n)).toBe(false);
-      expect(Kind.isNone({})).toBe(false);
-      expect(Kind.isNone([])).toBe(false);
-      expect(Kind.isNone(Object.create(null))).toBe(false);
+  describe('isUndefined', () => {
+    it('returns true only the value is undefined', () => {
+      expect(Kind.isUndefined(null)).toBe(false);
+      expect(Kind.isUndefined(undefined)).toBe(true);
+      expect(Kind.isUndefined('')).toBe(false);
+      expect(Kind.isUndefined('123')).toBe(false);
+      expect(Kind.isUndefined('abcd')).toBe(false);
+      expect(Kind.isUndefined(123)).toBe(false);
+      expect(Kind.isUndefined(0)).toBe(false);
+      expect(Kind.isUndefined(false)).toBe(false);
+      expect(Kind.isUndefined(true)).toBe(false);
+      expect(Kind.isUndefined(Symbol('p'))).toBe(false);
+      expect(Kind.isUndefined(20n)).toBe(false);
+      expect(Kind.isUndefined({})).toBe(false);
+      expect(Kind.isUndefined([])).toBe(false);
     });
   });
 });

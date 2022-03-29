@@ -11,6 +11,19 @@ const generate = (): Promise<ULID> => {
 };
 
 describe('ULID', () => {
+  describe('generate', () => {
+    it('always generates 26 length string', async () => {
+      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map((): Promise<ULID> => {
+        return generate();
+      });
+      const ids: Array<ULID> = await Promise.all<ULID>(promises);
+
+      ids.forEach((id: ULID) => {
+        expect(id.get()).toHaveLength(ULID.size());
+      });
+    });
+  });
+
   describe('of', () => {
     it('returns instance', () => {
       const ulid: string = '01FETH4MENT39GREQDE4FNRMQ7';
@@ -58,19 +71,6 @@ describe('ULID', () => {
 
       ids.forEach((id: ULID) => {
         expect(ULID.validate(id.get())).toBe(true);
-      });
-    });
-  });
-
-  describe('generate', () => {
-    it('always generates 26 length string', async () => {
-      const promises: Array<Promise<ULID>> = Array.from(Array(100)).map((): Promise<ULID> => {
-        return generate();
-      });
-      const ids: Array<ULID> = await Promise.all<ULID>(promises);
-
-      ids.forEach((id: ULID) => {
-        expect(id.get()).toHaveLength(ULID.size());
       });
     });
   });

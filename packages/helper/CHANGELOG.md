@@ -1,3 +1,15 @@
+# [@jamashita/anden-helper-v2.1.0](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v2.0.2...@jamashita/anden-helper-v2.1.0) (2022-03-27)
+
+
+### Bug Fixes
+
+* 🐛 remvoe unnecessary generics ([b1c2a20](https://github.com/jamashita/anden/commit/b1c2a2068c8aa9d28de8b458f3e22125e109a792))
+
+
+### Features
+
+* 🎸 release flow changed ([758bb94](https://github.com/jamashita/anden/commit/758bb94e49fc3b150297bf9dcfa5d93448c8a26a))
+
 # [@jamashita/anden-helper-v2.0.2](https://github.com/jamashita/anden/compare/@jamashita/anden-helper-v2.0.1...@jamashita/anden-helper-v2.0.2) (2021-08-28)
 
 
