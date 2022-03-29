@@ -1,56 +1,9 @@
 import { MockValueObject } from '@jamashita/anden-object';
 import dayjs from 'dayjs';
-import { ZeitError } from '../ZeitError';
 import { Zeit } from '../Zeit';
+import { ZeitError } from '../ZeitError';
 
 describe('Zeit', () => {
-  describe('ofString', () => {
-    it('returns instance', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss');
-
-      expect(zeit1.isValid()).toBe(true);
-      expect(zeit2.isValid()).toBe(true);
-      expect(zeit1.toString()).toBe('2000-01-01');
-      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
-    });
-
-    it('throws ZeitError when the format is incorrect', () => {
-      expect(() => {
-        Zeit.ofString('2000-01-01', 'YYYY-MM-DD HH:mm:ss');
-      }).toThrow(ZeitError);
-
-      expect(() => {
-        Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD');
-      }).toThrow(ZeitError);
-    });
-  });
-
-  describe('ofDate', () => {
-    it('returns instance', () => {
-      const date1: Date = new Date(2000, 0, 1, 1, 2, 3);
-      const date2: Date = new Date(2000, 0, 1, 1, 2, 3);
-
-      const zeit1: Zeit = Zeit.ofDate(date1, 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofDate(date2, 'YYYY-MM-DD HH:mm:ss');
-
-      expect(zeit1.isValid()).toBe(true);
-      expect(zeit2.isValid()).toBe(true);
-      expect(zeit1.toString()).toBe(`${date1.getUTCFullYear()}-${(date1.getUTCMonth() + 1).toString().padStart(2, '0')}-${date1.getUTCDate().toString().padStart(2, '0')}`);
-      expect(zeit2.toString()).toBe(`${date2.getUTCFullYear()}-${(date2.getUTCMonth() + 1).toString().padStart(2, '0')}-${date2.getUTCDate().toString().padStart(2, '0')} ${date2.getUTCHours().toString().padStart(2, '0')}:${date2.getUTCMinutes().toString().padStart(2, '0')}:${date2.getUTCSeconds().toString().padStart(2, '0')}`);
-    });
-  });
-
-  describe('now', () => {
-    it('returns current timestamp', () => {
-      jest.useFakeTimers().setSystemTime(946684800000);
-
-      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
-
-      jest.useRealTimers();
-    });
-  });
-
   describe('max', () => {
     it('returns maximum Zeit', () => {
       const format: string = 'YYYY-MM-DD';
@@ -119,6 +72,53 @@ describe('Zeit', () => {
     });
   });
 
+  describe('now', () => {
+    it('returns current timestamp', () => {
+      jest.useFakeTimers().setSystemTime(946684800000);
+
+      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
+
+      jest.useRealTimers();
+    });
+  });
+
+  describe('ofDate', () => {
+    it('returns instance', () => {
+      const date1: Date = new Date(2000, 0, 1, 1, 2, 3);
+      const date2: Date = new Date(2000, 0, 1, 1, 2, 3);
+
+      const zeit1: Zeit = Zeit.ofDate(date1, 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofDate(date2, 'YYYY-MM-DD HH:mm:ss');
+
+      expect(zeit1.isValid()).toBe(true);
+      expect(zeit2.isValid()).toBe(true);
+      expect(zeit1.toString()).toBe(`${date1.getUTCFullYear()}-${(date1.getUTCMonth() + 1).toString().padStart(2, '0')}-${date1.getUTCDate().toString().padStart(2, '0')}`);
+      expect(zeit2.toString()).toBe(`${date2.getUTCFullYear()}-${(date2.getUTCMonth() + 1).toString().padStart(2, '0')}-${date2.getUTCDate().toString().padStart(2, '0')} ${date2.getUTCHours().toString().padStart(2, '0')}:${date2.getUTCMinutes().toString().padStart(2, '0')}:${date2.getUTCSeconds().toString().padStart(2, '0')}`);
+    });
+  });
+
+  describe('ofString', () => {
+    it('returns instance', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss');
+
+      expect(zeit1.isValid()).toBe(true);
+      expect(zeit2.isValid()).toBe(true);
+      expect(zeit1.toString()).toBe('2000-01-01');
+      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
+    });
+
+    it('throws ZeitError when the format is incorrect', () => {
+      expect(() => {
+        Zeit.ofString('2000-01-01', 'YYYY-MM-DD HH:mm:ss');
+      }).toThrow(ZeitError);
+
+      expect(() => {
+        Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD');
+      }).toThrow(ZeitError);
+    });
+  });
+
   describe('validate', () => {
     it('returns true when the string is suitable date for format', () => {
       expect(Zeit.validate('2000-01-01', 'YYYY-MM-DD')).toBe(true);
@@ -131,93 +131,34 @@ describe('Zeit', () => {
     });
   });
 
-  describe('isValid', () => {
-    it('returns dayjs result itself', () => {
-      expect(Zeit.ofString('2000-01-01', 'YYYY-MM-DD').isValid()).toBe(true);
-      expect(Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss').isValid()).toBe(true);
-      expect(Zeit.of(dayjs('2000-YY-01 YY:02:03', 'YYYY-MM-DD', true), 'YYYY-MM-DD').isValid()).toBe(false);
-    });
-  });
+  describe('equals', () => {
+    it('returns true if they are the same instance', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
 
-  describe('isBefore', () => {
-    it('returns true if the value is before than the other', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
-      const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
-
-      expect(zeit2.isBefore(zeit1)).toBe(false);
-      expect(zeit2.isBefore(zeit2)).toBe(false);
-      expect(zeit2.isBefore(zeit3)).toBe(true);
-    });
-  });
-
-  describe('isAfter', () => {
-    it('returns true if the value is after than the other', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
-      const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
-
-      expect(zeit2.isAfter(zeit1)).toBe(true);
-      expect(zeit2.isAfter(zeit2)).toBe(false);
-      expect(zeit2.isAfter(zeit3)).toBe(false);
-    });
-  });
-
-  describe('past', () => {
-    it('goes back by second', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'second');
-
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-12-31 23:59:55');
+      expect(zeit1.equals(zeit1)).toBe(true);
     });
 
-    it('goes back by minute', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'minute');
+    it('returns false if different instance given', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
 
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-12-31 23:55:00');
+      expect(zeit1.equals(new MockValueObject('2000-01-01'))).toBe(false);
     });
 
-    it('goes back by hour', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'hour');
+    it('returns true if all the properties are the same', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
+      const zeit3: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
 
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-12-31 19:00:00');
+      expect(zeit1.equals(zeit2)).toBe(false);
+      expect(zeit1.equals(zeit3)).toBe(true);
     });
 
-    it('goes back by day', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'day');
+    it('returns false if the formats are not the same', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
 
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-12-27 00:00:00');
-    });
-
-    it('goes back by week', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'week');
-
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-11-27 00:00:00');
-    });
-
-    it('goes back by month', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'month');
-
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1999-08-01 00:00:00');
-    });
-
-    it('goes back by year', () => {
-      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
-      const newZeit: Zeit = zeit.past(5, 'year');
-
-      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
-      expect(newZeit.toString()).toBe('1995-01-01 00:00:00');
+      expect(zeit1.equals(zeit1)).toBe(true);
+      expect(zeit1.equals(zeit2)).toBe(false);
     });
   });
 
@@ -279,34 +220,93 @@ describe('Zeit', () => {
     });
   });
 
-  describe('equals', () => {
-    it('returns true if they are the same instance', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+  describe('isAfter', () => {
+    it('returns true if the value is after than the other', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
+      const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
 
-      expect(zeit1.equals(zeit1)).toBe(true);
+      expect(zeit2.isAfter(zeit1)).toBe(true);
+      expect(zeit2.isAfter(zeit2)).toBe(false);
+      expect(zeit2.isAfter(zeit3)).toBe(false);
+    });
+  });
+
+  describe('isBefore', () => {
+    it('returns true if the value is before than the other', () => {
+      const zeit1: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
+      const zeit2: Zeit = Zeit.ofString('2000-01-03', 'YYYY-MM-DD');
+      const zeit3: Zeit = Zeit.ofString('2000-01-04', 'YYYY-MM-DD');
+
+      expect(zeit2.isBefore(zeit1)).toBe(false);
+      expect(zeit2.isBefore(zeit2)).toBe(false);
+      expect(zeit2.isBefore(zeit3)).toBe(true);
+    });
+  });
+
+  describe('isValid', () => {
+    it('returns dayjs result itself', () => {
+      expect(Zeit.ofString('2000-01-01', 'YYYY-MM-DD').isValid()).toBe(true);
+      expect(Zeit.ofString('2000-01-01 01:02:03', 'YYYY-MM-DD HH:mm:ss').isValid()).toBe(true);
+      expect(Zeit.of(dayjs('2000-YY-01 YY:02:03', 'YYYY-MM-DD', true), 'YYYY-MM-DD').isValid()).toBe(false);
+    });
+  });
+
+  describe('past', () => {
+    it('goes back by second', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'second');
+
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-12-31 23:59:55');
     });
 
-    it('returns false if different instance given', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+    it('goes back by minute', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'minute');
 
-      expect(zeit1.equals(new MockValueObject('2000-01-01'))).toBe(false);
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-12-31 23:55:00');
     });
 
-    it('returns true if all the properties are the same', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofString('2000-01-02', 'YYYY-MM-DD');
-      const zeit3: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
+    it('goes back by hour', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'hour');
 
-      expect(zeit1.equals(zeit2)).toBe(false);
-      expect(zeit1.equals(zeit3)).toBe(true);
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-12-31 19:00:00');
     });
 
-    it('returns false if the formats are not the same', () => {
-      const zeit1: Zeit = Zeit.ofString('2000-01-01', 'YYYY-MM-DD');
-      const zeit2: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+    it('goes back by day', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'day');
 
-      expect(zeit1.equals(zeit1)).toBe(true);
-      expect(zeit1.equals(zeit2)).toBe(false);
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-12-27 00:00:00');
+    });
+
+    it('goes back by week', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'week');
+
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-11-27 00:00:00');
+    });
+
+    it('goes back by month', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'month');
+
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1999-08-01 00:00:00');
+    });
+
+    it('goes back by year', () => {
+      const zeit: Zeit = Zeit.ofString('2000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss');
+      const newZeit: Zeit = zeit.past(5, 'year');
+
+      expect(zeit.toString()).toBe('2000-01-01 00:00:00');
+      expect(newZeit.toString()).toBe('1995-01-01 00:00:00');
     });
   });
 
