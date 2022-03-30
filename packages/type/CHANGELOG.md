@@ -1,3 +1,15 @@
+# [@jamashita/anden-type-v2.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.4.0...@jamashita/anden-type-v2.5.0) (2022-03-29)
+
+
+### Bug Fixes
+
+* 🐛 eslint overriding types ([7caea54](https://github.com/jamashita/anden/commit/7caea542ccb1b02b0c111d97bac72a5f7430b461))
+
+
+### Features
+
+* 🎸 packages updated ([cd0726c](https://github.com/jamashita/anden/commit/cd0726cc160e479271f57b5856a99a9a43de0b2a))
+
 # [@jamashita/anden-type-v2.4.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.3.0...@jamashita/anden-type-v2.4.0) (2022-03-27)
 
 
