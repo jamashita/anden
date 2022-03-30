@@ -39,29 +39,6 @@ describe('UUID', () => {
     });
   });
 
-  describe('validate', () => {
-    it('returns true if given string is not violated to uuid format', () => {
-      const uuid: string = '998106de-b2e7-4981-9643-22cd30cd74de';
-
-      expect(UUID.validate(uuid)).toBe(true);
-    });
-
-    it('generates UUID that must pass', async () => {
-      const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map(async (): Promise<[UUID, UUID]> => {
-        const v4id: UUID = await v4();
-        const v5id: UUID = await v5();
-
-        return [v4id, v5id];
-      });
-      const ids: Array<[UUID, UUID]> = await Promise.all<[UUID, UUID]>(promises);
-
-      ids.forEach(([v4id, v5id]: [UUID, UUID]) => {
-        expect(UUID.validate(v4id.get())).toBe(true);
-        expect(UUID.validate(v5id.get())).toBe(true);
-      });
-    });
-  });
-
   describe('v4', () => {
     it('always generates 36 length string', async () => {
       const promises: Array<Promise<UUID>> = Array.from(Array(100)).map((): Promise<UUID> => {
@@ -84,6 +61,29 @@ describe('UUID', () => {
 
       ids.forEach((id: UUID) => {
         expect(id.get()).toHaveLength(UUID.size());
+      });
+    });
+  });
+
+  describe('validate', () => {
+    it('returns true if given string is not violated to uuid format', () => {
+      const uuid: string = '998106de-b2e7-4981-9643-22cd30cd74de';
+
+      expect(UUID.validate(uuid)).toBe(true);
+    });
+
+    it('generates UUID that must pass', async () => {
+      const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map(async (): Promise<[UUID, UUID]> => {
+        const v4id: UUID = await v4();
+        const v5id: UUID = await v5();
+
+        return [v4id, v5id];
+      });
+      const ids: Array<[UUID, UUID]> = await Promise.all<[UUID, UUID]>(promises);
+
+      ids.forEach(([v4id, v5id]: [UUID, UUID]) => {
+        expect(UUID.validate(v4id.get())).toBe(true);
+        expect(UUID.validate(v5id.get())).toBe(true);
       });
     });
   });

@@ -4,8 +4,6 @@ import { MockValueObject } from '../mock/MockValueObject';
 describe('ValueObject', () => {
   describe('hashCode', () => {
     it('generates same ones if all the properties are the same', () => {
-      expect.assertions(1_000);
-
       const dones: Array<Promise<void>> = sequence(1_000).map(async (i: number): Promise<void> => {
         const str: string = await asyncRandom(i);
 
