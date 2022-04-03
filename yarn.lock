@@ -532,10 +532,10 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jamashita/eslint-plugin@1.63.0":
-  version "1.63.0"
-  resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.63.0.tgz#c78167b6f5d372c175ef9b684c4a0a8f0ae15831"
-  integrity sha512-MQ5lC5y5b0cG/F8LGHTYf/p8DJcJ2Ce0Tg+q7zz103nGkfwERkdxBIqqganVmnZvxX6E6AzX1p2TGb5RVEvRLw==
+"@jamashita/eslint-plugin@1.62.0":
+  version "1.62.0"
+  resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.62.0.tgz#f3d82098b0d60d860a7076b3a78f06768d4f2d5e"
+  integrity sha512-GmlId/D8yRIAWY+7DUz961GZH+amHHh7hRA6Rv37Zrg4jQnJjnPtqCHjknEVzRy7AK3OCuQiPaND5brU+k3hlg==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.17.0"
     "@typescript-eslint/parser" "5.17.0"
@@ -544,7 +544,7 @@
     eslint-plugin-jsx-a11y "6.5.1"
     eslint-plugin-node "11.1.0"
     eslint-plugin-react "7.29.4"
-    eslint-plugin-react-hooks "4.4.0"
+    eslint-plugin-react-hooks "4.3.0"
 
 "@jest/console@^27.5.1":
   version "27.5.1"
@@ -3744,10 +3744,10 @@ eslint-plugin-node@11.1.0:
     resolve "^1.10.1"
     semver "^6.1.0"
 
-eslint-plugin-react-hooks@4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.4.0.tgz#71c39e528764c848d8253e1aa2c7024ed505f6c4"
-  integrity sha512-U3RVIfdzJaeKDQKEJbz5p3NW8/L80PCATJAfuojwbaEL+gBjfGdhUcGde+WGUW46Q5sr/NgxevsIiDtNXrvZaQ==
+eslint-plugin-react-hooks@4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
+  integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
 
 eslint-plugin-react@7.29.4:
   version "7.29.4"
