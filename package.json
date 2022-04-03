@@ -37,7 +37,7 @@
     "@types/jest": "27.4.1",
     "@types/object-hash": "2.2.1",
     "@types/uuid": "8.3.4",
-    "concurrently": "7.0.0",
+    "concurrently": "7.1.0",
     "eslint": "8.12.0",
     "git-cz": "4.8.0",
     "husky": "7.0.4",
