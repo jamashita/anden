@@ -532,15 +532,6 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jamashita/anden-object@^2.10.0":
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/@jamashita/anden-object/-/anden-object-2.10.0.tgz#9f0ba24d2f9b832d003aafcb7f921b0f39948760"
-  integrity sha512-ViFrJdUaKYr+y3L3AwS7ZUau8+VfB6bKvjsfG/sBFuDhqxujTvg+DbR7CP2fruYepyfcIGsKprIj8iHxN9+Drw==
-  dependencies:
-    "@jamashita/anden-error" "^2.6.0"
-    "@jamashita/anden-type" "^2.5.0"
-    hash-it "5.0.2"
-
 "@jamashita/eslint-plugin@1.63.0":
   version "1.63.0"
   resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.63.0.tgz#c78167b6f5d372c175ef9b684c4a0a8f0ae15831"
