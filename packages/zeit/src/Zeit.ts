@@ -83,11 +83,7 @@ export class Zeit extends ValueObject {
   public static validate(str: string, format: string): boolean {
     const zeit: dayjs.Dayjs = dayjs.utc(str, format);
 
-    if (zeit.format(format) === str) {
-      return true;
-    }
-
-    return false;
+    return zeit.format(format) === str;
   }
 
   private constructor(zeit: dayjs.Dayjs, format: string) {
