@@ -1,5 +1,3 @@
-import { SyncAsync } from './Value';
-
 export type UnaryFunction<A, R> = (arg: A) => R;
 export type BinaryFunction<A1, A2, R> = (arg1: A1, arg2: A2) => R;
 export type Predicate<A> = (arg: A) => boolean;
@@ -10,5 +8,5 @@ export type Supplier<R> = () => R;
 export type Peek = () => unknown;
 export type Catalogue<K, V> = (value: V, key: K) => unknown;
 export type Mapper<A, R> = (value: A, index: number) => R;
-export type Resolve<T> = (arg: SyncAsync<T>) => unknown;
+export type Resolve<T> = (arg: PromiseLike<T> | T) => unknown;
 export type Reject<E = unknown> = (arg: E) => unknown;

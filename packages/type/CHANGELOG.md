@@ -1,3 +1,15 @@
+# [@jamashita/anden-type-v2.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.5.0...@jamashita/anden-type-v2.6.0) (2022-04-04)
+
+
+### Bug Fixes
+
+* 🐛 new regexp ([4325635](https://github.com/jamashita/anden/commit/43256353db472598d61559b01dc3a9516f2c531a))
+
+
+### Features
+
+* 🎸 some logics updated ([2e7e66b](https://github.com/jamashita/anden/commit/2e7e66b53beeab8352d5ff9341eef5a9020bfdd9))
+
 # [@jamashita/anden-type-v2.5.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.4.0...@jamashita/anden-type-v2.5.0) (2022-03-29)
 
 
