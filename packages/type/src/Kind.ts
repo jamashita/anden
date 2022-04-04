@@ -1,6 +1,7 @@
 import { Constructor, Primitive, Vague } from './Value';
 
-const NUMBER_REGEX: RegExp = /^[+-]?\d+\.?\d*$/su;
+const INTEGER_REGEX: RegExp = /^[+-]?\d+$/su;
+const DECIMAL_REGEX: RegExp = /^[+-]?\d+\.\d+$/su;
 
 export class Kind {
   public static isArray<T = unknown>(value: unknown): value is Array<T> {
@@ -65,8 +66,14 @@ export class Kind {
     if (value.endsWith('.')) {
       return false;
     }
+    if (INTEGER_REGEX.test(value)) {
+      return true;
+    }
+    if (DECIMAL_REGEX.test(value)) {
+      return true;
+    }
 
-    return NUMBER_REGEX.test(value);
+    return false;
   }
 
   public static isObject<T extends object = object>(value: unknown): value is Vague<T> {
