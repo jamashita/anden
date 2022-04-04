@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.6.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.6.0...@jamashita/anden-type-v2.6.1) (2022-04-04)
+
+
+### Bug Fixes
+
+* 🐛 Resolve<T> simplified ([0da18b4](https://github.com/jamashita/anden/commit/0da18b41f011a12e9168cf3244ca5ee2b3268f6d))
+
 # [@jamashita/anden-type-v2.6.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.5.0...@jamashita/anden-type-v2.6.0) (2022-04-04)
 
 
