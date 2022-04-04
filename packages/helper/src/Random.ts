@@ -3,6 +3,10 @@ import crypto from 'crypto';
 const chars: string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ234567';
 
 export const random = (length: number): string => {
+  if (length <= 0) {
+    return '';
+  }
+
   const charLength: number = chars.length;
 
   const buf: Buffer = crypto.randomBytes(length);

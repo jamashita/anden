@@ -28,7 +28,7 @@ export class UUID extends ValueObject {
   }
 
   public static v5(): UUID {
-    return new UUID(v5('ANDEN', '6740811d-e75f-4b29-aa7d-7ff91ac8198d'));
+    return new UUID(v5('ANDEN', '1cf42063-b9c7-4bca-aff9-759dd62995d9'));
   }
 
   public static validate(str: string): boolean {

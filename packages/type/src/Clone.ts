@@ -2,7 +2,7 @@ import { Kind } from './Kind';
 import { ObjectLiteral, PlainObject, PlainObjectItem } from './Value';
 
 export class Clone {
-  public static copy<T extends ObjectLiteral>(obj: T): T {
+  public static copy<T extends ObjectLiteral = ObjectLiteral>(obj: T): T {
     return Clone.copyInternal(obj) as T;
   }
 

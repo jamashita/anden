@@ -8,9 +8,6 @@ export const isEqualable = (n: unknown): n is Equalable => {
   if (!Kind.isObject<Equalable>(n)) {
     return false;
   }
-  if (!Kind.isFunction(n.equals)) {
-    return false;
-  }
 
-  return true;
+  return Kind.isFunction(n.equals);
 };
