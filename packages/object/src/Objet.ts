@@ -1,5 +1,5 @@
 import { Kind, Nominative } from '@jamashita/anden-type';
-import hash from 'hash-it';
+import hash from 'object-hash';
 
 export abstract class Objet implements Nominative {
   public static identify(n: unknown): string {
@@ -22,7 +22,7 @@ export abstract class Objet implements Nominative {
 
   public abstract serialize(): string;
 
-  public hashCode(): number {
+  public hashCode(): string {
     return hash(this);
   }
 

@@ -65,11 +65,8 @@ export class Kind {
     if (value.endsWith('.')) {
       return false;
     }
-    if (NUMBER_REGEX.test(value)) {
-      return true;
-    }
 
-    return false;
+    return NUMBER_REGEX.test(value);
   }
 
   public static isObject<T extends object = object>(value: unknown): value is Vague<T> {
@@ -103,7 +100,7 @@ export class Kind {
     if (value instanceof Promise) {
       return true;
     }
-    if (!Kind.isObject<PromiseLike<unknown>>(value)) {
+    if (!Kind.isObject<PromiseLike<T>>(value)) {
       return false;
     }
     if (Kind.isFunction(value.then)) {

@@ -2,17 +2,17 @@ import { Kind } from '@jamashita/anden-type';
 import { Objet } from './Objet';
 
 export abstract class ValueObject extends Objet {
-  private code?: number;
+  private hash?: string;
 
   public abstract override serialize(): string;
 
-  public override hashCode(): number {
-    if (!Kind.isUndefined(this.code)) {
-      return this.code;
+  public override hashCode(): string {
+    if (!Kind.isUndefined(this.hash)) {
+      return this.hash;
     }
 
-    this.code = super.hashCode();
+    this.hash = super.hashCode();
 
-    return this.code;
+    return this.hash;
   }
 }

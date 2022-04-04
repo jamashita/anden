@@ -1,7 +1,7 @@
 import { Ambiguous, Kind } from '@jamashita/anden-type';
 import { RuntimeError } from './RuntimeError';
 
-export class Errors<E extends Error> extends RuntimeError implements Iterable<E> {
+export class Errors<E extends Error = Error> extends RuntimeError implements Iterable<E> {
   private readonly errors: ReadonlyArray<E>;
 
   private static getMessage<E extends Error>(errors: ReadonlyArray<E>): string {
@@ -10,11 +10,11 @@ export class Errors<E extends Error> extends RuntimeError implements Iterable<E>
     }).join('\n');
   }
 
-  public static of<E extends Error>(errors: Iterable<E>): Errors<E> {
+  public static of<E extends Error = Error>(errors: Iterable<E>): Errors<E> {
     return new Errors([...errors]);
   }
 
-  public static ofSpread<E extends Error>(...errors: ReadonlyArray<E>): Errors<E> {
+  public static ofSpread<E extends Error = Error>(...errors: ReadonlyArray<E>): Errors<E> {
     return Errors.of(errors);
   }
 
