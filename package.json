@@ -22,7 +22,7 @@
     "test": "jest test",
     "update": "yarn setup && yarn update:upgrade && yarn update:install",
     "update:install": "yarn install && yarn upgrade && yarn audit fix --force",
-    "update:upgrade": "ncu --packageManager yarn --upgrade"
+    "update:upgrade": "ncu --packageManager yarn --deep --upgrade"
   },
   "devDependencies": {
     "@commitlint/cli": "16.2.3",
