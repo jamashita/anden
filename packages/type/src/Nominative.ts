@@ -3,7 +3,7 @@ import { Kind } from './Kind';
 import { Serializable } from './Serializable';
 
 export interface Nominative extends Equalable, Serializable {
-  hashCode(): number;
+  hashCode(): string;
 }
 
 export const isNominative = (n: unknown): n is Nominative => {

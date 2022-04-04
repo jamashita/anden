@@ -5,8 +5,8 @@ class MockNominative implements Nominative {
     return this === other;
   }
 
-  public hashCode(): number {
-    return -1;
+  public hashCode(): string {
+    return '';
   }
 
   public serialize(): string {
