@@ -59,11 +59,8 @@ export class Equality {
     if (n1 === n2) {
       return true;
     }
-    if (Kind.isNaN(n1) && Kind.isNaN(n2)) {
-      return true;
-    }
 
-    return false;
+    return Kind.isNaN(n1) && Kind.isNaN(n2);
   }
 
   private constructor() {
