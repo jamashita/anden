@@ -1,4 +1,4 @@
-import { BooleanValidationRule } from '../Rules/BooleanValidationRule';
+import { BooleanValidationRule } from '../Rules';
 import { addRule } from './Validate';
 
 export const BooleanValidation = (): ParameterDecorator => {

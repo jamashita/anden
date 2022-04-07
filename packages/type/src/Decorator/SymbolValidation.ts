@@ -1,4 +1,4 @@
-import { SymbolValidationRule } from '../Rules/SymbolValidationRule';
+import { SymbolValidationRule } from '../Rules';
 import { addRule } from './Validate';
 
 export const SymbolValidation = (): ParameterDecorator => {

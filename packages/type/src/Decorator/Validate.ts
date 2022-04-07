@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Kind } from '../Kind';
-import { ValidationRule } from '../Rules/ValidationRule';
+import { ValidationRule } from '../Rules';
 import { Ambiguous } from '../Value';
 
 const INDEX_KEY: symbol = Symbol();
@@ -16,9 +16,9 @@ const getRules = (target: object, key: string | symbol): Ambiguous<Map<number, V
 
 export const Validate = (): MethodDecorator => {
   return <T>(target: object, key: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void => {
-    const indice: Ambiguous<Set<number>> = getIndex(target, key);
+    const indices: Ambiguous<Set<number>> = getIndex(target, key);
 
-    if (Kind.isUndefined(indice)) {
+    if (Kind.isUndefined(indices)) {
       return;
     }
 
@@ -28,7 +28,7 @@ export const Validate = (): MethodDecorator => {
       return;
     }
 
-    indice.forEach((index: number) => {
+    indices.forEach((index: number) => {
       rules.forEach((rule: ValidationRule, i: number) => {
         if (index !== i) {
           return;
@@ -51,10 +51,10 @@ export const Validate = (): MethodDecorator => {
 };
 
 export const addRule = (target: object, key: string | symbol, index: number, rule: ValidationRule): void => {
-  const indice: Ambiguous<Set<number>> = getIndex(target, key);
+  const indices: Ambiguous<Set<number>> = getIndex(target, key);
   const rules: Ambiguous<Map<number, ValidationRule>> = getRules(target, key);
 
-  if (Kind.isUndefined(indice)) {
+  if (Kind.isUndefined(indices)) {
     const s: Set<number> = new Set<number>();
 
     s.add(index);
@@ -62,7 +62,7 @@ export const addRule = (target: object, key: string | symbol, index: number, rul
     Reflect.defineMetadata(INDEX_KEY, s, target, key);
   }
   else {
-    indice.add(index);
+    indices.add(index);
   }
 
   if (Kind.isUndefined(rules)) {
