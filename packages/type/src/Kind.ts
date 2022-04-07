@@ -40,7 +40,7 @@ export class Kind {
     return value !== value;
   }
 
-  public static isNone(value: unknown): value is null | undefined {
+  public static isNone(value: unknown): value is null | undefined | void {
     if (Kind.isNull(value)) {
       return true;
     }

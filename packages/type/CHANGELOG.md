@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.7.0...@jamashita/anden-type-v2.8.0) (2022-04-07)
+
+
+### Features
+
+* 🎸 type guard for isNone() ([adc512d](https://github.com/jamashita/anden/commit/adc512d4d964d7c6c9c3e5cedfff5a9b5b3739ac))
+
 # [@jamashita/anden-type-v2.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.6.1...@jamashita/anden-type-v2.7.0) (2022-04-07)
 
 
