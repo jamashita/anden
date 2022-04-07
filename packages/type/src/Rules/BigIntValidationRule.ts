@@ -1,19 +1,20 @@
 import { Kind } from '../Kind';
+import { Ambiguous } from '../Value';
 import { ValidationRule } from './ValidationRule';
 
-type NumberCondition = Readonly<{
+type BigInCondition = Readonly<{
   condition: 't' | 'te';
-  value: number;
+  value: bigint;
 }>;
 
 export type BigIntValidationArgs = Partial<Readonly<{
-  min: NumberCondition;
-  max: NumberCondition;
+  min: BigInCondition;
+  max: BigInCondition;
 }>>;
 
 export class BigIntValidationRule implements ValidationRule {
-  private readonly min: NumberCondition | undefined;
-  private readonly max: NumberCondition | undefined;
+  private readonly min: Ambiguous<BigInCondition>;
+  private readonly max: Ambiguous<BigInCondition>;
 
   public static of(args: BigIntValidationArgs = {}): BigIntValidationRule {
     return new BigIntValidationRule(args);
@@ -38,18 +39,16 @@ export class BigIntValidationRule implements ValidationRule {
       return;
     }
 
-    const maxBigInt: bigint = BigInt(this.max.value);
-
     switch (this.max.condition) {
       case 't': {
-        if (maxBigInt < value) {
+        if (this.max.value < value) {
           throw new TypeError(`VALUE IS LONGER THAN max. GIVEN: ${value}`);
         }
 
         return;
       }
       case 'te': {
-        if (maxBigInt <= value) {
+        if (this.max.value <= value) {
           throw new TypeError(`VALUE IS LONGER THAN OR EQUALS TO max. GIVEN: ${value}`);
         }
 
@@ -66,18 +65,16 @@ export class BigIntValidationRule implements ValidationRule {
       return;
     }
 
-    const minBigInt: bigint = BigInt(this.min.value);
-
     switch (this.min.condition) {
       case 't': {
-        if (value < minBigInt) {
+        if (value < this.min.value) {
           throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
         }
 
         return;
       }
       case 'te': {
-        if (value <= minBigInt) {
+        if (value <= this.min.value) {
           throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
         }
 

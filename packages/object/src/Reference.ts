@@ -5,12 +5,8 @@ export class Reference {
     return !Reference.isSerializable(value, new WeakSet<object>());
   }
 
-  private static isObject(value: unknown): value is Inconnu {
-    return Kind.isObject(value);
-  }
-
   private static isSerializable(value: unknown, visitStack: WeakSet<object>): boolean {
-    if (!Reference.isObject(value)) {
+    if (!Kind.isObject<Inconnu>(value)) {
       return true;
     }
     if (visitStack.has(value)) {

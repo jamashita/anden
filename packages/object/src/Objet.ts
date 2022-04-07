@@ -22,6 +22,10 @@ export abstract class Objet implements Nominative {
 
   public abstract serialize(): string;
 
+  public [Symbol.toStringTag](): string {
+    return this.constructor.name;
+  }
+
   public hashCode(): string {
     return hash(this);
   }

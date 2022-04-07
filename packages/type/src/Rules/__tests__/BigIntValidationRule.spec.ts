@@ -3,7 +3,7 @@ import { BigIntValidationRule } from '../BigIntValidationRule';
 describe('BigIntValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of();
+      const rule: BigIntValidationRule = BigIntValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, 20n);
@@ -17,7 +17,7 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when non-bigint values given', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of();
+      const rule: BigIntValidationRule = BigIntValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -58,10 +58,10 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than min', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of({
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
         min: {
           condition: 't',
-          value: 4
+          value: 4n
         }
       });
 
@@ -86,10 +86,10 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is less than or equals to min', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of({
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
         min: {
           condition: 'te',
-          value: 4
+          value: 4n
         }
       });
 
@@ -117,10 +117,10 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is greater than max', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of({
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
         max: {
           condition: 't',
-          value: 4
+          value: 4n
         }
       });
 
@@ -142,10 +142,10 @@ describe('BigIntValidationRule', () => {
     });
 
     it('throws TypeError when given value is greater than or equals to min', () => {
-            const rule: BigIntValidationRule = BigIntValidationRule.of({
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
         max: {
           condition: 'te',
-          value: 4
+          value: 4n
         }
       });
 

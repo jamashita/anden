@@ -1,4 +1,5 @@
 import { Kind } from '../Kind';
+import { Ambiguous } from '../Value';
 import { ValidationRule } from './ValidationRule';
 
 type NumberCondition = Readonly<{
@@ -15,8 +16,8 @@ export type NumberValidationArgs = Partial<Readonly<{
 }>>;
 
 export class NumberValidationRule implements ValidationRule {
-  private readonly min: NumberCondition | undefined;
-  private readonly max: NumberCondition | undefined;
+  private readonly min: Ambiguous<NumberCondition>;
+  private readonly max: Ambiguous<NumberCondition>;
   private readonly int: boolean;
   private readonly noNaN: boolean;
   private readonly noInfinity: boolean;
