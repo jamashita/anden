@@ -1,4 +1,4 @@
-import { BigIntValidationArgs, BigIntValidationRule } from '../Rules/BigIntValidationRule';
+import { BigIntValidationArgs, BigIntValidationRule } from '../Rules';
 import { addRule } from './Validate';
 
 export const BigIntValidation = (args: BigIntValidationArgs = {}): ParameterDecorator => {

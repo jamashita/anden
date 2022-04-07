@@ -1,3 +1,11 @@
+# [@jamashita/anden-type-v2.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.6.1...@jamashita/anden-type-v2.7.0) (2022-04-07)
+
+
+### Features
+
+* 🎸 code optimized ([80d7256](https://github.com/jamashita/anden/commit/80d7256b2470eea15f190ae60bb470d77878e003))
+* 🎸 packages updated ([ba5adfa](https://github.com/jamashita/anden/commit/ba5adfa533f076a2b3499f90ab425db5a3ba29ea))
+
 # [@jamashita/anden-type-v2.6.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.6.0...@jamashita/anden-type-v2.6.1) (2022-04-04)
 
 

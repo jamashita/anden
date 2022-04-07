@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v2.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.7.0...@jamashita/anden-error-v2.8.0) (2022-04-07)
+
+
+### Features
+
+* 🎸 packages updated ([ba5adfa](https://github.com/jamashita/anden/commit/ba5adfa533f076a2b3499f90ab425db5a3ba29ea))
+
 # [@jamashita/anden-error-v2.7.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.6.0...@jamashita/anden-error-v2.7.0) (2022-04-04)
 
 

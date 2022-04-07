@@ -13,7 +13,7 @@ class MockValidation {
   public act2(@BigIntValidation({
     min: {
       condition: 't',
-      value: 4
+      value: 4n
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
@@ -24,7 +24,7 @@ class MockValidation {
   public act3(@BigIntValidation({
     min: {
       condition: 'te',
-      value: 4
+      value: 4n
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
@@ -35,7 +35,7 @@ class MockValidation {
   public act4(@BigIntValidation({
     max: {
       condition: 't',
-      value: 4
+      value: 4n
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
@@ -46,7 +46,7 @@ class MockValidation {
   public act5(@BigIntValidation({
     max: {
       condition: 'te',
-      value: 4
+      value: 4n
     }
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
