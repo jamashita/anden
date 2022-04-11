@@ -4,22 +4,12 @@ import { RuntimeError } from './RuntimeError';
 export class Errors<E extends Error = Error> extends RuntimeError implements Iterable<E> {
   private readonly errors: ReadonlyArray<E>;
 
-  private static getMessage<E extends Error>(errors: ReadonlyArray<E>): string {
-    return errors.map((error: Error): string => {
+  public constructor(...errors: ReadonlyArray<E>) {
+    const message: string = errors.map((error: Error): string => {
       return error.message;
     }).join('\n');
-  }
 
-  public static of<E extends Error = Error>(errors: Iterable<E>): Errors<E> {
-    return new Errors([...errors]);
-  }
-
-  public static ofSpread<E extends Error = Error>(...errors: ReadonlyArray<E>): Errors<E> {
-    return Errors.of(errors);
-  }
-
-  public constructor(errors: ReadonlyArray<E>) {
-    super(Errors.getMessage(errors));
+    super(message);
     this.errors = errors;
   }
 
