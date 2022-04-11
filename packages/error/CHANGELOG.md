@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v2.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.8.0...@jamashita/anden-error-v2.9.0) (2022-04-11)
+
+
+### Features
+
+* 🎸 remove of and ofSpread ([ed5977a](https://github.com/jamashita/anden/commit/ed5977a415650b69356ec9f47c7de5869dafba9e))
+
 # [@jamashita/anden-error-v2.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.7.0...@jamashita/anden-error-v2.8.0) (2022-04-07)
 
 
