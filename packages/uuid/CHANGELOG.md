@@ -1,3 +1,10 @@
+# [@jamashita/anden-uuid-v2.13.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.12.0...@jamashita/anden-uuid-v2.13.0) (2022-04-13)
+
+
+### Features
+
+* 🎸 packages updated ([b574020](https://github.com/jamashita/anden/commit/b5740205780fc17114c64391a348d5b9cffd4002))
+
 # [@jamashita/anden-uuid-v2.12.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.11.0...@jamashita/anden-uuid-v2.12.0) (2022-04-13)
 
 
