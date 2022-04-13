@@ -1,3 +1,10 @@
+# [@jamashita/anden-ulid-v1.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-ulid-v1.9.0...@jamashita/anden-ulid-v1.10.0) (2022-04-13)
+
+
+### Features
+
+* 🎸 make error inside ([4bb05e9](https://github.com/jamashita/anden/commit/4bb05e9cbababbe3b209be2c796f9c0ff7c48e57))
+
 # [@jamashita/anden-ulid-v1.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-ulid-v1.8.0...@jamashita/anden-ulid-v1.9.0) (2022-04-13)
 
 
