@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v2.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.9.0...@jamashita/anden-error-v2.10.0) (2022-04-13)
+
+
+### Features
+
+* 🎸 modification for exactOptionalPropertyTypes ([463d322](https://github.com/jamashita/anden/commit/463d3228c76177a59172b54a8a641d502ba59f80))
+
 # [@jamashita/anden-error-v2.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.8.0...@jamashita/anden-error-v2.9.0) (2022-04-11)
 
 
