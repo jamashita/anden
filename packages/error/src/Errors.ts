@@ -21,12 +21,8 @@ export class Errors<E extends Error = Error> extends RuntimeError implements Ite
     return [...this.errors];
   }
 
-  public override getStack(): string {
+  public override get stack(): string {
     return this.errors.map((error: E): Ambiguous<string> => {
-      if (error instanceof RuntimeError) {
-        return error.getStack();
-      }
-
       return error.stack;
     }).filter((stack: Ambiguous<string>): stack is string => {
       return !Kind.isUndefined(stack);
