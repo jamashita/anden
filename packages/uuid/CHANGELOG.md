@@ -1,3 +1,11 @@
+# [@jamashita/anden-uuid-v2.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.10.0...@jamashita/anden-uuid-v2.11.0) (2022-04-13)
+
+
+### Features
+
+* 🎸 ?: Error -> : Ambiguous<Error> ([8c984c9](https://github.com/jamashita/anden/commit/8c984c98ee26fbe9cabec8d60b8f0eb4bdef3336))
+* 🎸 packages updated ([8c31ddf](https://github.com/jamashita/anden/commit/8c31ddf92dc53ff83274e5b8fb7b36b1d8762209))
+
 # [@jamashita/anden-uuid-v2.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.9.0...@jamashita/anden-uuid-v2.10.0) (2022-04-07)
 
 
