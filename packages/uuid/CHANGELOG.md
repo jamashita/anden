@@ -1,3 +1,10 @@
+# [@jamashita/anden-uuid-v2.12.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.11.0...@jamashita/anden-uuid-v2.12.0) (2022-04-13)
+
+
+### Features
+
+* 🎸 make error inside ([4bb05e9](https://github.com/jamashita/anden/commit/4bb05e9cbababbe3b209be2c796f9c0ff7c48e57))
+
 # [@jamashita/anden-uuid-v2.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.10.0...@jamashita/anden-uuid-v2.11.0) (2022-04-13)
 
 
