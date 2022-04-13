@@ -18,7 +18,7 @@ v16.6.0
 7.19.1
 
 > yarn -v
-1.22.11
+1.22.18
 ```
 
 ## Conventional commit
