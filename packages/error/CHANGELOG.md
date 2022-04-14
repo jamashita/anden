@@ -1,3 +1,10 @@
+# [@jamashita/anden-error-v2.14.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.13.0...@jamashita/anden-error-v2.14.0) (2022-04-14)
+
+
+### Features
+
+* 🎸 make Runtimeerror public ([5d70aee](https://github.com/jamashita/anden/commit/5d70aeee6c6742e8ee00efbfba991aebd50bfae4))
+
 # [@jamashita/anden-error-v2.13.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.12.0...@jamashita/anden-error-v2.13.0) (2022-04-13)
 
 
