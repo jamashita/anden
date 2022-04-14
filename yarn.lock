@@ -524,6 +524,22 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
+"@jamashita/anden-error@^2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@jamashita/anden-error/-/anden-error-2.13.0.tgz#886911873b51162a75f51485b8ad95f3abd356fd"
+  integrity sha512-T+RVSBVNYisDlUrr7OvBoy5Fj6RcdyD71ZFVTjzmuOXFE7SPyj5tUDxM2mKmCBw9Ayn2nIMLW3rQjrKP0vdNMw==
+  dependencies:
+    "@jamashita/anden-type" "^2.8.0"
+
+"@jamashita/anden-object@^2.15.0":
+  version "2.15.0"
+  resolved "https://registry.yarnpkg.com/@jamashita/anden-object/-/anden-object-2.15.0.tgz#f3f79e6bd19aef4c75f11d958fb05e4bb6e56d9a"
+  integrity sha512-Ixcdt8vOkRt2l/LH/m5gFnNgyEGpHJGegYKUx1E8KastgbQHNh5+BBKH7LsbmFH8R1utwL/8C8yXsZMOPG142Q==
+  dependencies:
+    "@jamashita/anden-error" "^2.12.0"
+    "@jamashita/anden-type" "^2.8.0"
+    object-hash "3.0.0"
+
 "@jamashita/eslint-plugin@1.64.0":
   version "1.64.0"
   resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.64.0.tgz#3dab834aa7d5caa7f2114ccd48da13718d56388e"

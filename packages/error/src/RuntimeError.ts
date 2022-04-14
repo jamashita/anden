@@ -2,8 +2,8 @@ import { Ambiguous, Kind } from '@jamashita/anden-type';
 
 const SEPARATOR_TEXT: string = '\nCaused by';
 
-export abstract class RuntimeError extends Error {
-  protected constructor(message: string, cause?: Error) {
+export class RuntimeError extends Error {
+  public constructor(message: string, cause?: Error) {
     if (Kind.isUndefined(cause)) {
       super(message);
       return;
