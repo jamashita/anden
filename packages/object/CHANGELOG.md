@@ -1,3 +1,12 @@
+# [@jamashita/anden-object-v2.17.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.16.0...@jamashita/anden-object-v2.17.0) (2022-04-15)
+
+
+### Features
+
+* 🎸 no constructor ([b68d8f5](https://github.com/jamashita/anden/commit/b68d8f51eb9f27411b680028b0cfee962ac8b719))
+* 🎸 packages updated ([3012191](https://github.com/jamashita/anden/commit/3012191f5a951e676464f63de278dd8af3c70a94))
+* 🎸 tostring ([c1e2ff1](https://github.com/jamashita/anden/commit/c1e2ff1543a04eea93c58c900aa26d7530b2fa0a))
+
 # [@jamashita/anden-object-v2.16.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.15.0...@jamashita/anden-object-v2.16.0) (2022-04-14)
 
 
