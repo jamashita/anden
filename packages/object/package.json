@@ -25,7 +25,7 @@
     "clean:dist": "rimraf dist"
   },
   "dependencies": {
-    "@jamashita/anden-error": "^2.13.0",
+    "@jamashita/anden-error": "^2.14.0",
     "@jamashita/anden-type": "^2.8.0",
     "object-hash": "3.0.0"
   },
