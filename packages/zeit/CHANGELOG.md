@@ -1,3 +1,11 @@
+# [@jamashita/anden-zeit-v2.17.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.16.0...@jamashita/anden-zeit-v2.17.0) (2022-04-15)
+
+
+### Features
+
+* 🎸 no constructor ([b68d8f5](https://github.com/jamashita/anden/commit/b68d8f51eb9f27411b680028b0cfee962ac8b719))
+* 🎸 packages updated ([3012191](https://github.com/jamashita/anden/commit/3012191f5a951e676464f63de278dd8af3c70a94))
+
 # [@jamashita/anden-zeit-v2.16.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.15.0...@jamashita/anden-zeit-v2.16.0) (2022-04-14)
 
 
