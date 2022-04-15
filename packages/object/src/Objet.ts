@@ -29,8 +29,4 @@ export abstract class Objet implements Nominative {
   public toString(): string {
     return this.serialize();
   }
-
-  public get [Symbol.toStringTag](): string {
-    return this.constructor.name;
-  }
 }

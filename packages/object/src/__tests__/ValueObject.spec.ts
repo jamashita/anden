@@ -7,10 +7,13 @@ describe('ValueObject', () => {
       const dones: Array<Promise<void>> = sequence(1_000).map(async (i: number): Promise<void> => {
         const str: string = await asyncRandom(i);
 
-        expect(new MockValueObject(str).hashCode()).toBe(new MockValueObject(str).hashCode());
+        const v1: MockValueObject<string> = new MockValueObject(str);
+        const v2: MockValueObject<string> = new MockValueObject(str);
+
+        expect(v1.hashCode()).toBe(v2.hashCode());
       });
 
-      return Promise.all<void>(dones);
+      return Promise.all(dones);
     }, 30_000);
   });
 });
