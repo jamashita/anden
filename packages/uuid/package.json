@@ -25,8 +25,8 @@
     "clean:dist": "rimraf dist"
   },
   "dependencies": {
-    "@jamashita/anden-error": "^2.13.0",
-    "@jamashita/anden-object": "^2.15.0",
+    "@jamashita/anden-error": "^2.14.0",
+    "@jamashita/anden-object": "^2.16.0",
     "@jamashita/anden-type": "^2.8.0",
     "reflect-metadata": "0.1.13",
     "uuid": "8.3.2"
