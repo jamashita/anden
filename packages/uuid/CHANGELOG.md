@@ -1,3 +1,11 @@
+# [@jamashita/anden-uuid-v2.15.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.14.0...@jamashita/anden-uuid-v2.15.0) (2022-04-15)
+
+
+### Features
+
+* 🎸 no constructor ([b68d8f5](https://github.com/jamashita/anden/commit/b68d8f51eb9f27411b680028b0cfee962ac8b719))
+* 🎸 packages updated ([3012191](https://github.com/jamashita/anden/commit/3012191f5a951e676464f63de278dd8af3c70a94))
+
 # [@jamashita/anden-uuid-v2.14.0](https://github.com/jamashita/anden/compare/@jamashita/anden-uuid-v2.13.0...@jamashita/anden-uuid-v2.14.0) (2022-04-14)
 
 

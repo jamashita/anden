@@ -26,6 +26,10 @@ export class RuntimeError extends Error {
     return this.stack;
   }
 
+  public get [Symbol.toStringTag](): string {
+    return this.constructor.name;
+  }
+
   public override get name(): string {
     return this.constructor.name;
   }
