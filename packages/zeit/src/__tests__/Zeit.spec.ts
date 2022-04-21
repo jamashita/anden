@@ -76,7 +76,7 @@ describe('Zeit', () => {
     it('returns current timestamp', () => {
       jest.useFakeTimers().setSystemTime(946684800000);
 
-      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
+      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 09:00:00');
 
       jest.useRealTimers();
     });
@@ -92,8 +92,8 @@ describe('Zeit', () => {
 
       expect(zeit1.isValid()).toBe(true);
       expect(zeit2.isValid()).toBe(true);
-      expect(zeit1.toString()).toBe(`${date1.getUTCFullYear()}-${(date1.getUTCMonth() + 1).toString().padStart(2, '0')}-${date1.getUTCDate().toString().padStart(2, '0')}`);
-      expect(zeit2.toString()).toBe(`${date2.getUTCFullYear()}-${(date2.getUTCMonth() + 1).toString().padStart(2, '0')}-${date2.getUTCDate().toString().padStart(2, '0')} ${date2.getUTCHours().toString().padStart(2, '0')}:${date2.getUTCMinutes().toString().padStart(2, '0')}:${date2.getUTCSeconds().toString().padStart(2, '0')}`);
+      expect(zeit1.toString()).toBe('2000-01-01');
+      expect(zeit2.toString()).toBe('2000-01-01 01:02:03');
     });
   });
 

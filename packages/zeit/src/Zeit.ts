@@ -57,7 +57,7 @@ export class Zeit extends ValueObject {
   }
 
   public static now(format: string): Zeit {
-    return Zeit.of(dayjs.utc(), format);
+    return Zeit.of(dayjs().utc(true), format);
   }
 
   public static of(zeit: dayjs.Dayjs, format: string): Zeit {
@@ -65,13 +65,13 @@ export class Zeit extends ValueObject {
   }
 
   public static ofDate(date: Date, format: string): Zeit {
-    const zeit: dayjs.Dayjs = dayjs.utc(date);
+    const zeit: dayjs.Dayjs = dayjs(date).utc(true);
 
     return Zeit.of(zeit, format);
   }
 
   public static ofString(str: string, format: string): Zeit {
-    const zeit: dayjs.Dayjs = dayjs.utc(str, format);
+    const zeit: dayjs.Dayjs = dayjs(str, format).utc(true);
 
     if (zeit.format(format) === str) {
       return Zeit.of(zeit, format);
@@ -81,7 +81,7 @@ export class Zeit extends ValueObject {
   }
 
   public static validate(str: string, format: string): boolean {
-    const zeit: dayjs.Dayjs = dayjs.utc(str, format);
+    const zeit: dayjs.Dayjs = dayjs(str, format).utc(true);
 
     return zeit.format(format) === str;
   }
