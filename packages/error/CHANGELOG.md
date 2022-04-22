@@ -1,3 +1,11 @@
+# [@jamashita/anden-error-v2.15.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.14.0...@jamashita/anden-error-v2.15.0) (2022-04-15)
+
+
+### Features
+
+* 🎸 no constructor ([b68d8f5](https://github.com/jamashita/anden/commit/b68d8f51eb9f27411b680028b0cfee962ac8b719))
+* 🎸 tostring ([c1e2ff1](https://github.com/jamashita/anden/commit/c1e2ff1543a04eea93c58c900aa26d7530b2fa0a))
+
 # [@jamashita/anden-error-v2.14.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.13.0...@jamashita/anden-error-v2.14.0) (2022-04-14)
 
 
