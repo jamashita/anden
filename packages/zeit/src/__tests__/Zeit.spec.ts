@@ -76,7 +76,7 @@ describe('Zeit', () => {
     it('returns current timestamp', () => {
       jest.useFakeTimers().setSystemTime(946684800000);
 
-      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 09:00:00');
+      expect(Zeit.now('YYYY-MM-DD HH:mm:ss').toString()).toBe('2000-01-01 00:00:00');
 
       jest.useRealTimers();
     });
