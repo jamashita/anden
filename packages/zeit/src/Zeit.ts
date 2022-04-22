@@ -31,7 +31,7 @@ export class Zeit extends ValueObject {
       return zeit.get();
     });
 
-    const max: dayjs.Dayjs = dayjs.max(dates);
+    const max: dayjs.Dayjs = dayjs.max(dates).utc(true);
 
     return Zeit.of(max, format);
   }
@@ -51,29 +51,29 @@ export class Zeit extends ValueObject {
       return zeit.get();
     });
 
-    const min: dayjs.Dayjs = dayjs.min(dates);
+    const min: dayjs.Dayjs = dayjs.min(dates).utc(true);
 
     return Zeit.of(min, format);
   }
 
   public static now(format: string): Zeit {
-    return Zeit.of(dayjs.utc(), format);
+    return Zeit.of(dayjs().utc(false), format);
   }
 
   public static of(zeit: dayjs.Dayjs, format: string): Zeit {
-    return new Zeit(zeit, format);
+    return new Zeit(zeit.utc(true), format);
   }
 
   public static ofDate(date: Date, format: string): Zeit {
-    const zeit: dayjs.Dayjs = dayjs.utc(date);
+    const zeit: dayjs.Dayjs = dayjs(date).utc(true);
 
     return Zeit.of(zeit, format);
   }
 
   public static ofString(str: string, format: string): Zeit {
-    const zeit: dayjs.Dayjs = dayjs.utc(str, format);
+    const zeit: dayjs.Dayjs = dayjs(str, format, true).utc(true);
 
-    if (zeit.format(format) === str) {
+    if (zeit.isValid()) {
       return Zeit.of(zeit, format);
     }
 
@@ -81,9 +81,9 @@ export class Zeit extends ValueObject {
   }
 
   public static validate(str: string, format: string): boolean {
-    const zeit: dayjs.Dayjs = dayjs.utc(str, format);
+    const zeit: dayjs.Dayjs = dayjs(str, format, true).utc(true);
 
-    return zeit.format(format) === str;
+    return zeit.isValid();
   }
 
   private constructor(zeit: dayjs.Dayjs, format: string) {
