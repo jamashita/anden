@@ -1,3 +1,12 @@
+# [@jamashita/anden-zeit-v2.18.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.17.0...@jamashita/anden-zeit-v2.18.0) (2022-04-22)
+
+
+### Features
+
+* 🎸 packages updated ([76c5092](https://github.com/jamashita/anden/commit/76c5092198be419ab3c05550031d2ae859afa447))
+* 🎸 use local time to generate integrated hashcode ([1223be9](https://github.com/jamashita/anden/commit/1223be998215501b811e214d7039fa370996979f))
+* 🎸 zeiet update ([b76e958](https://github.com/jamashita/anden/commit/b76e9582c7ddf54abcc555b0a831736b2d27f32b))
+
 # [@jamashita/anden-zeit-v2.17.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.16.0...@jamashita/anden-zeit-v2.17.0) (2022-04-15)
 
 

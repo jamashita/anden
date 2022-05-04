@@ -1,3 +1,11 @@
+# [@jamashita/anden-object-v2.18.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.17.0...@jamashita/anden-object-v2.18.0) (2022-04-22)
+
+
+### Features
+
+* 🎸 packages updated ([76c5092](https://github.com/jamashita/anden/commit/76c5092198be419ab3c05550031d2ae859afa447))
+* 🎸 var name updated because of avoiding to use the same na ([2d51fde](https://github.com/jamashita/anden/commit/2d51fdebf1fbf94040a1a56fb1db4c543cafaa19))
+
 # [@jamashita/anden-object-v2.17.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.16.0...@jamashita/anden-object-v2.17.0) (2022-04-15)
 
 
