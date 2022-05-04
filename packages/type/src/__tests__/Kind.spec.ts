@@ -211,6 +211,8 @@ describe('Kind', () => {
       expect(Kind.isNumericalString(-12)).toBe(false);
       expect(Kind.isNumericalString(0.3)).toBe(false);
       expect(Kind.isNumericalString(NaN)).toBe(false);
+      expect(Kind.isNumericalString(Infinity)).toBe(false);
+      expect(Kind.isNumericalString(-Infinity)).toBe(false);
       expect(Kind.isNumericalString(false)).toBe(false);
       expect(Kind.isNumericalString(true)).toBe(false);
       expect(Kind.isNumericalString(Symbol('p'))).toBe(false);
@@ -256,6 +258,9 @@ describe('Kind', () => {
       expect(Kind.isNumericalString('001.0.')).toBe(false);
       expect(Kind.isNumericalString('+001.0.')).toBe(false);
       expect(Kind.isNumericalString('-001.0.')).toBe(false);
+      expect(Kind.isNumericalString('NaN')).toBe(false);
+      expect(Kind.isNumericalString('Infinity')).toBe(false);
+      expect(Kind.isNumericalString('-Infinity')).toBe(false);
     });
   });
 
