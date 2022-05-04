@@ -1,4 +1,5 @@
 export type JSONPrimitive = boolean | number | string | null | undefined;
+export type NumericalString = `${number}`;
 export type Primitive = JSONPrimitive | bigint | symbol;
 export type Nullable<T> = T | null;
 export type Ambiguous<T> = T | undefined;
