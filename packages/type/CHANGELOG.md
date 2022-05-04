@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.8.0...@jamashita/anden-type-v2.9.0) (2022-05-04)
+
+
+### Features
+
+* 🎸 new type NumericalString ([8cfabde](https://github.com/jamashita/anden/commit/8cfabde63f2ec14b2d93ecc12cd62d1f8ded0e3f))
+
 # [@jamashita/anden-type-v2.8.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.7.0...@jamashita/anden-type-v2.8.0) (2022-04-07)
 
 

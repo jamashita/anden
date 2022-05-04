@@ -1,4 +1,4 @@
-import { Constructor, Primitive, Vague } from './Value';
+import { Constructor, NumericalString, Primitive, Vague } from './Value';
 
 const INTEGER_REGEX: RegExp = /^[+-]?\d+$/su;
 const DECIMAL_REGEX: RegExp = /^[+-]?\d+\.\d+$/su;
@@ -59,7 +59,7 @@ export class Kind {
     return typeof value === 'number';
   }
 
-  public static isNumericalString(value: unknown): value is string {
+  public static isNumericalString(value: unknown): value is NumericalString {
     if (!Kind.isString(value)) {
       return false;
     }
