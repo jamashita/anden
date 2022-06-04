@@ -1,4 +1,4 @@
-import { NumberValidationArgs, NumberValidationRule } from '../Rules';
+import { NumberValidationArgs, NumberValidationRule } from '../Rules/NumberValidationRule';
 import { addRule } from './Validate';
 
 export const NumberValidation = (args: NumberValidationArgs = {}): ParameterDecorator => {
