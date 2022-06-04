@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Kind } from '../Kind';
-import { ValidationRule } from '../Rules';
+import { ValidationRule } from '../Rules/ValidationRule';
 import { Ambiguous } from '../Value';
 
 const INDEX_KEY: symbol = Symbol();
