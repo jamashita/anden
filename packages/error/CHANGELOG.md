@@ -1,3 +1,11 @@
+# [@jamashita/anden-error-v2.16.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.15.0...@jamashita/anden-error-v2.16.0) (2022-06-04)
+
+
+### Features
+
+* 🎸 nonvariance ([795a1eb](https://github.com/jamashita/anden/commit/795a1eb05b79912ea21a1842ea06aa6b5a6d3f4f))
+* 🎸 packages updated ([e32651c](https://github.com/jamashita/anden/commit/e32651cdf0664977356d1cf31cd7df7b55c7a901))
+
 # [@jamashita/anden-error-v2.15.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.14.0...@jamashita/anden-error-v2.15.0) (2022-04-15)
 
 

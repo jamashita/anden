@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.9.0...@jamashita/anden-type-v2.10.0) (2022-06-04)
+
+
+### Features
+
+* 🎸 import path ([29c9dc0](https://github.com/jamashita/anden/commit/29c9dc045bf4b1df8a7c0e4f8038d8d4bea70207))
+
 # [@jamashita/anden-type-v2.9.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.8.0...@jamashita/anden-type-v2.9.0) (2022-05-04)
 
 
