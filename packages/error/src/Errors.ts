@@ -1,7 +1,7 @@
 import { Ambiguous, Kind } from '@jamashita/anden-type';
 import { RuntimeError } from './RuntimeError';
 
-export class Errors<E extends Error = Error> extends RuntimeError implements Iterable<E> {
+export class Errors<in out E extends Error = Error> extends RuntimeError implements Iterable<E> {
   private readonly errors: ReadonlyArray<E>;
 
   public constructor(...errors: ReadonlyArray<E>) {
