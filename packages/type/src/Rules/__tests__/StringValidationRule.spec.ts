@@ -47,7 +47,7 @@ describe('StringValidationRule', () => {
 
     it('does not throw any Error when given string can be converted to number', () => {
       const rule: StringValidationRule = StringValidationRule.of({
-        type: 'numerical'
+        type: 'numeric'
       });
 
       expect(() => {
@@ -66,7 +66,7 @@ describe('StringValidationRule', () => {
 
     it('throws TypeError when given string cannot be converted to number', () => {
       const rule: StringValidationRule = StringValidationRule.of({
-        type: 'numerical'
+        type: 'numeric'
       });
 
       expect(() => {
