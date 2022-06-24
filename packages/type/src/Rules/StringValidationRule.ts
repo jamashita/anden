@@ -2,7 +2,7 @@ import { Kind } from '../Kind';
 import { ValidationRule } from './ValidationRule';
 
 type NumericalStringPattern = Readonly<{
-  type: 'numerical';
+  type: 'numeric';
 }>;
 type RegExpPattern = Readonly<{
   type: 'pattern';
@@ -42,11 +42,10 @@ export class StringValidationRule implements ValidationRule {
     if (!Kind.isString(value)) {
       throw new TypeError('VALUE IS NOT STRING');
     }
-
     switch (this.args.type) {
-      case 'numerical': {
+      case 'numeric': {
         if (!Kind.isNumericalString(value)) {
-          throw new TypeError(`VALUE IS NOT NUMERICAL STRING. GIVEN: ${value as string}`);
+          throw new TypeError(`VALUE IS NOT NUMERICAL STRING. GIVEN: ${value}`);
         }
 
         return;
@@ -77,14 +76,12 @@ export class StringValidationRule implements ValidationRule {
           throw new TypeError(`THIS VALUE IS NOT CONTAINED IN SAMPLES. GIVEN: ${value}`);
         }
 
+        // eslint-disable-next-line no-useless-return
         return;
       }
-      case 'none': {
-        return;
-      }
+      case 'none':
       default: {
-        // @ts-expect-error
-        throw new TypeError(`THIS TYPE IN NOT UNDEFINED. GIVEN: ${this.args.type as string}`);
+        // NOOP
       }
     }
   }

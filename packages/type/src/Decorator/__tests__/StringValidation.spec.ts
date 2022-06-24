@@ -11,7 +11,7 @@ class MockValidation {
 
   @Validate()
   public act2(@StringValidation({
-    type: 'numerical'
+    type: 'numeric'
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
     // NOOP
