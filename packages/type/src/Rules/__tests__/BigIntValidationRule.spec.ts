@@ -57,12 +57,77 @@ describe('BigIntValidationRule', () => {
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min', () => {
+    it('throws TypeError when given value is greater than value', () => {
       const rule: BigIntValidationRule = BigIntValidationRule.of({
-        min: {
-          condition: 't',
-          value: 4n
-        }
+        conditions: [
+          {
+            operator: '<',
+            value: 4n
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, -1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 0n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 2n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 3n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4n);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is greater than or equal to value', () => {
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
+        conditions: [
+          {
+            operator: '<=',
+            value: 4n
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, -1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 0n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 2n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 3n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5n);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is not equal to value', () => {
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
+        conditions: [
+          {
+            operator: '=',
+            value: 4n
+          }
+        ]
       });
 
       expect(() => {
@@ -83,89 +148,98 @@ describe('BigIntValidationRule', () => {
       expect(() => {
         rule.evaluate({}, 4n);
       }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5n);
+      }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than or equals to min', () => {
+    it('throws TypeError when given value is less than value', () => {
       const rule: BigIntValidationRule = BigIntValidationRule.of({
-        min: {
-          condition: 'te',
-          value: 4n
-        }
+        conditions: [
+          {
+            operator: '>',
+            value: 4n
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, 8n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 6n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4n);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is less than or equal to value', () => {
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
+        conditions: [
+          {
+            operator: '>=',
+            value: 4n
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, 8n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 6n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 3n);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is equal to value', () => {
+      const rule: BigIntValidationRule = BigIntValidationRule.of({
+        conditions: [
+          {
+            operator: '!=',
+            value: 4n
+          }
+        ]
       });
 
       expect(() => {
         rule.evaluate({}, -1n);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 0n);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 1n);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 2n);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 3n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 4n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 5n);
       }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is greater than max', () => {
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
-        max: {
-          condition: 't',
-          value: 4n
-        }
-      });
-
-      expect(() => {
-        rule.evaluate({}, 8n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 7n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 6n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 5n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 4n);
-      }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is greater than or equals to min', () => {
-      const rule: BigIntValidationRule = BigIntValidationRule.of({
-        max: {
-          condition: 'te',
-          value: 4n
-        }
-      });
-
-      expect(() => {
-        rule.evaluate({}, 8n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 7n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 6n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 5n);
-      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 4n);
       }).toThrow(TypeError);
       expect(() => {
-        rule.evaluate({}, 3n);
+        rule.evaluate({}, 5n);
       }).not.toThrow(TypeError);
     });
   });
