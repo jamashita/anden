@@ -1,3 +1,12 @@
+# [@jamashita/anden-type-v2.11.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.10.0...@jamashita/anden-type-v2.11.0) (2022-06-24)
+
+
+### Features
+
+* 🎸 improvement ([f0a32cf](https://github.com/jamashita/anden/commit/f0a32cfc9c6e5c8a766cf826316f04097e5fd4fd))
+* 🎸 packages updated ([ab9d43a](https://github.com/jamashita/anden/commit/ab9d43af2f47370c4352a4558875afd991cfbb0b))
+* 🎸 vaidation operators changed ([0cb37ba](https://github.com/jamashita/anden/commit/0cb37ba5e2934ea4b6ee81fca2a63506e86549d1))
+
 # [@jamashita/anden-type-v2.10.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.9.0...@jamashita/anden-type-v2.10.0) (2022-06-04)
 
 
