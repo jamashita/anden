@@ -2,86 +2,59 @@ import { Kind } from '../Kind';
 import { Ambiguous } from '../Value';
 import { ValidationRule } from './ValidationRule';
 
-type BigInCondition = Readonly<{
-  condition: 't' | 'te';
+type BigIntCondition = Readonly<{
+  operator: '!=' | '<' | '<=' | '=' | '>' | '>=';
   value: bigint;
 }>;
 
 export type BigIntValidationArgs = Partial<Readonly<{
-  min: BigInCondition;
-  max: BigInCondition;
+  conditions: Array<BigIntCondition>;
 }>>;
 
 export class BigIntValidationRule implements ValidationRule {
-  private readonly min: Ambiguous<BigInCondition>;
-  private readonly max: Ambiguous<BigInCondition>;
+  private readonly conditions: Ambiguous<Array<BigIntCondition>>;
 
-  public static of(args: BigIntValidationArgs = {}): BigIntValidationRule {
+  public static of(args?: BigIntValidationArgs): BigIntValidationRule {
     return new BigIntValidationRule(args);
   }
 
-  protected constructor({ min = undefined, max = undefined }: BigIntValidationArgs) {
-    this.min = min;
-    this.max = max;
+  protected constructor({ conditions = undefined }: BigIntValidationArgs = {}) {
+    this.conditions = conditions;
   }
 
   public evaluate(_target: object, value: unknown): void {
     if (!Kind.isBigInt(value)) {
       throw new TypeError('VALUE IS NOT BIGINT');
     }
-
-    this.minCondition(value);
-    this.maxCondition(value);
-  }
-
-  private maxCondition(value: bigint): void {
-    if (Kind.isUndefined(this.max)) {
-      return;
-    }
-
-    switch (this.max.condition) {
-      case 't': {
-        if (this.max.value < value) {
-          throw new TypeError(`VALUE IS LONGER THAN max. GIVEN: ${value}`);
+    if (!Kind.isUndefined(this.conditions)) {
+      const satisfied: boolean = this.conditions.every((c: BigIntCondition) => {
+        switch (c.operator) {
+          case '!=': {
+            return value !== c.value;
+          }
+          case '<': {
+            return value < c.value;
+          }
+          case '<=': {
+            return value <= c.value;
+          }
+          case '=': {
+            return value === c.value;
+          }
+          case '>': {
+            return value > c.value;
+          }
+          case '>=': {
+            return value >= c.value;
+          }
+          default: {
+            return false;
+          }
         }
+      });
 
-        return;
-      }
-      case 'te': {
-        if (this.max.value <= value) {
-          throw new TypeError(`VALUE IS LONGER THAN OR EQUALS TO max. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      default: {
-        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.max.condition as string}`);
-      }
-    }
-  }
-
-  private minCondition(value: bigint): void {
-    if (Kind.isUndefined(this.min)) {
-      return;
-    }
-
-    switch (this.min.condition) {
-      case 't': {
-        if (value < this.min.value) {
-          throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      case 'te': {
-        if (value <= this.min.value) {
-          throw new TypeError(`VALUE IS SHORTER THAN OR EQUALS TO min. GIVEN: ${value}`);
-        }
-
-        return;
-      }
-      default: {
-        throw new TypeError(`THIS CONDITION IN NOT UNDEFINED. GIVEN: ${this.min.condition as string}`);
+      if (!satisfied) {
+        throw new TypeError(`VALUE IS NOT SATISFIED GIVEN CONDITIONS. GIVEN: ${value}`);
       }
     }
   }

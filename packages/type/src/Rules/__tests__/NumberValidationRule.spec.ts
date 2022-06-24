@@ -3,7 +3,7 @@ import { NumberValidationRule } from '../NumberValidationRule';
 describe('NumberValidationRule', () => {
   describe('evaluate', () => {
     it('does not throw any Error', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({});
+      const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, -1);
@@ -26,7 +26,7 @@ describe('NumberValidationRule', () => {
     });
 
     it('throws TypeError when non-number values given', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({});
+      const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, null);
@@ -63,89 +63,95 @@ describe('NumberValidationRule', () => {
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min', () => {
+    it('throws TypeError when given value is greater than value', () => {
       const rule: NumberValidationRule = NumberValidationRule.of({
-        min: {
-          condition: 't',
-          value: 4
-        }
+        conditions: [
+          {
+            operator: '<',
+            value: 4
+          }
+        ]
       });
 
       expect(() => {
         rule.evaluate({}, -Infinity);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, -1);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, -0.1);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 0);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 1);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 2);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 3);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 3.5);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4);
       }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is greater than or equal to value', () => {
+      const rule: NumberValidationRule = NumberValidationRule.of({
+        conditions: [
+          {
+            operator: '<=',
+            value: 4
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, -Infinity);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, -1);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, -0.1);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 0);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 1);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 2);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 3);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 3.5);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 4);
       }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is less than or equals to min', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({
-        min: {
-          condition: 'te',
-          value: 4
-        }
-      });
-
-      expect(() => {
-        rule.evaluate({}, -Infinity);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, -1);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, -0.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 0);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 1);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 2);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 3);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 3.5);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 4);
-      }).toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 5);
-      }).not.toThrow(TypeError);
+      }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is greater than max', () => {
+    it('throws TypeError when given value is not equal to value', () => {
       const rule: NumberValidationRule = NumberValidationRule.of({
-        max: {
-          condition: 't',
-          value: 4
-        }
+        conditions: [
+          {
+            operator: '=',
+            value: 4
+          }
+        ]
       });
 
       expect(() => {
@@ -174,41 +180,115 @@ describe('NumberValidationRule', () => {
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is greater than or equals to max', () => {
+    it('throws TypeError when given value is less than value', () => {
       const rule: NumberValidationRule = NumberValidationRule.of({
-        max: {
-          condition: 'te',
-          value: 4
-        }
+        conditions: [
+          {
+            operator: '>',
+            value: 4
+          }
+        ]
       });
 
       expect(() => {
         rule.evaluate({}, Infinity);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 8);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 7.1);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 7);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 6);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 5);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 4.4);
-      }).toThrow(TypeError);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 4);
       }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is less than or equal to value', () => {
+      const rule: NumberValidationRule = NumberValidationRule.of({
+        conditions: [
+          {
+            operator: '>=',
+            value: 4
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, Infinity);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 8);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7.1);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 6);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4.4);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4);
+      }).not.toThrow(TypeError);
       expect(() => {
         rule.evaluate({}, 3);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is equal to value', () => {
+      const rule: NumberValidationRule = NumberValidationRule.of({
+        conditions: [
+          {
+            operator: '!=',
+            value: 4
+          }
+        ]
+      });
+
+      expect(() => {
+        rule.evaluate({}, Infinity);
       }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 8);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7.1);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 7);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 6);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 5);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4.4);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        rule.evaluate({}, 4);
+      }).toThrow(TypeError);
     });
 
     it('throws TypeError when decimal number given if int is set to true', () => {
@@ -250,7 +330,7 @@ describe('NumberValidationRule', () => {
     });
 
     it('will throw the same response if omitted in case of int is set to false', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({});
+      const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, 1.1);
@@ -296,7 +376,7 @@ describe('NumberValidationRule', () => {
     });
 
     it('will throw the same response if omitted in case of noNaN is set to false', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({});
+      const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, NaN);
@@ -339,7 +419,7 @@ describe('NumberValidationRule', () => {
     });
 
     it('will throw the same response if omitted in case of noInfinity is set to false', () => {
-      const rule: NumberValidationRule = NumberValidationRule.of({});
+      const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
         rule.evaluate({}, Infinity);

@@ -11,10 +11,12 @@ class MockValidation {
 
   @Validate()
   public act2(@BigIntValidation({
-    min: {
-      condition: 't',
-      value: 4n
-    }
+    conditions: [
+      {
+        operator: '>',
+        value: 4n
+      }
+    ]
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
     // NOOP
@@ -22,10 +24,12 @@ class MockValidation {
 
   @Validate()
   public act3(@BigIntValidation({
-    min: {
-      condition: 'te',
-      value: 4n
-    }
+    conditions: [
+      {
+        operator: '>=',
+        value: 4n
+      }
+    ]
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
     // NOOP
@@ -33,10 +37,12 @@ class MockValidation {
 
   @Validate()
   public act4(@BigIntValidation({
-    max: {
-      condition: 't',
-      value: 4n
-    }
+    conditions: [
+      {
+        operator: '<',
+        value: 4n
+      }
+    ]
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
     // NOOP
@@ -44,10 +50,38 @@ class MockValidation {
 
   @Validate()
   public act5(@BigIntValidation({
-    max: {
-      condition: 'te',
-      value: 4n
-    }
+    conditions: [
+      {
+        operator: '<=',
+        value: 4n
+      }
+    ]
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  }) _s: unknown): void {
+    // NOOP
+  }
+
+  @Validate()
+  public act6(@BigIntValidation({
+    conditions: [
+      {
+        operator: '=',
+        value: 4n
+      }
+    ]
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  }) _s: unknown): void {
+    // NOOP
+  }
+
+  @Validate()
+  public act7(@BigIntValidation({
+    conditions: [
+      {
+        operator: '!=',
+        value: 4n
+      }
+    ]
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
   }) _s: unknown): void {
     // NOOP
@@ -105,7 +139,7 @@ describe('BigIntValidation', () => {
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min', () => {
+    it('throws TypeError when given value is less than value', () => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -125,10 +159,22 @@ describe('BigIntValidation', () => {
       }).toThrow(TypeError);
       expect(() => {
         validation.act2(4n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act2(5n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act2(6n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act2(7n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act2(8n);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than or equals to min', () => {
+    it('throws TypeError when given value is less than or equal to value', () => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
@@ -147,48 +193,160 @@ describe('BigIntValidation', () => {
         validation.act3(3n);
       }).toThrow(TypeError);
       expect(() => {
-        validation.act3(4);
-      }).toThrow(TypeError);
+        validation.act3(4n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act3(5n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act3(6n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act3(7n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act3(8n);
+      }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is greater than min', () => {
+    it('throws TypeError when given value is greater than value', () => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act4(8n);
-      }).toThrow(TypeError);
+        validation.act4(-1n);
+      }).not.toThrow(TypeError);
       expect(() => {
-        validation.act4(7n);
-      }).toThrow(TypeError);
+        validation.act4(0n);
+      }).not.toThrow(TypeError);
       expect(() => {
-        validation.act4(6n);
+        validation.act4(1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act4(2n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act4(3n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act4(4n);
       }).toThrow(TypeError);
       expect(() => {
         validation.act4(5n);
       }).toThrow(TypeError);
       expect(() => {
-        validation.act4(4n);
-      }).not.toThrow(TypeError);
+        validation.act4(6n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act4(7n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act4(8n);
+      }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is greater than or equals to min', () => {
+    it('throws TypeError when given value is greater than or equal to value', () => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act5(8n);
-      }).toThrow(TypeError);
+        validation.act5(-1n);
+      }).not.toThrow(TypeError);
       expect(() => {
-        validation.act5(7n);
+        validation.act5(0n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act5(1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act5(2n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act5(3n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act5(4n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act5(5n);
       }).toThrow(TypeError);
       expect(() => {
         validation.act5(6n);
       }).toThrow(TypeError);
       expect(() => {
-        validation.act5(5n);
+        validation.act5(7n);
       }).toThrow(TypeError);
       expect(() => {
-        validation.act5(4n);
+        validation.act5(8n);
       }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is not equal to value', () => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act6(-1n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(0n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(1n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(2n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(3n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(4n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act6(5n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(6n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(7n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act6(8n);
+      }).toThrow(TypeError);
+    });
+
+    it('throws TypeError when given value is equal to value', () => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act7(-1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(0n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(1n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(2n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(3n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(4n);
+      }).toThrow(TypeError);
+      expect(() => {
+        validation.act7(5n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(6n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(7n);
+      }).not.toThrow(TypeError);
+      expect(() => {
+        validation.act7(8n);
+      }).not.toThrow(TypeError);
     });
   });
 });
