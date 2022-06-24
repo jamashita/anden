@@ -46,8 +46,7 @@ export class Equality {
     }
 
     return keys1.every((key: string) => {
-      // eslint-disable-next-line prefer-object-has-own
-      if (Object.prototype.hasOwnProperty.call(obj2, key)) {
+      if (Object.hasOwn(obj2, key)) {
         return Equality.sameInternal(obj1[key], obj2[key]);
       }
 
