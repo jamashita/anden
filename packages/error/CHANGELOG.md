@@ -1,3 +1,11 @@
+# [@jamashita/anden-error-v2.17.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.16.0...@jamashita/anden-error-v2.17.0) (2022-06-24)
+
+
+### Features
+
+* 🎸 covariant ([1000894](https://github.com/jamashita/anden/commit/10008945858330d2e6152f050b41910e516fad94))
+* 🎸 packages updated ([ab9d43a](https://github.com/jamashita/anden/commit/ab9d43af2f47370c4352a4558875afd991cfbb0b))
+
 # [@jamashita/anden-error-v2.16.0](https://github.com/jamashita/anden/compare/@jamashita/anden-error-v2.15.0...@jamashita/anden-error-v2.16.0) (2022-06-04)
 
 
