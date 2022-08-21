@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden-type",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
     "reflect-metadata": "0.1.13"
   },
   "devDependencies": {
-    "@jamashita/anden-helper": "^2.2.0"
+    "@jamashita/anden-helper": "^2.3.0"
   },
   "engines": {
     "node": ">=16.0.0"
