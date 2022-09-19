@@ -15,10 +15,8 @@ export class RuntimeError extends Error {
   private stackErrors(error: Error, chain: Array<Error>): void {
     chain.push(error);
 
-    if (error instanceof RuntimeError) {
-      if (!Kind.isUndefined(error.cause)) {
-        this.stackErrors(error.cause, chain);
-      }
+    if (error.cause instanceof Error) {
+      this.stackErrors(error.cause, chain);
     }
   }
 
