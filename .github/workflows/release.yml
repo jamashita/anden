@@ -25,6 +25,8 @@ jobs:
         run: |
           yarn install --frozen-lockfile
           yarn setup
+        env:
+          NODE_AUTH_TOKEN: '${{ secrets.GPR_AUTH_TOKEN }}'
       - name: 'Compile'
         run: 'yarn build'
       - name: 'Publish to GPR'
