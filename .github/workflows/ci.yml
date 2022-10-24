@@ -15,9 +15,13 @@ jobs:
         uses: 'actions/setup-node@v2'
         with:
           node-version: '18.0'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@jamashita'
       - name: 'Set up'
         run: |
           yarn install --frozen-lockfile
           yarn setup
+        env:
+          NODE_AUTH_TOKEN: '${{ secrets.GPR_AUTH_TOKEN }}'
       - name: 'Test'
         run: 'yarn test'
