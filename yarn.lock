@@ -544,13 +544,14 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.3.tgz#e45e384e4b8ec16bce2fd903af78450f6bf7ec98"
   integrity sha512-ZXRY4jNvVgSVQ8DL3LTcakaAtXwTVUxE81hslsyD2AtoXW/wVob10HkOJ1X/pAlcI7D+2YoZKg5do8G/w6RYgA==
 
-"@jamashita/eslint-plugin@1.71.0":
-  version "1.71.0"
-  resolved "https://npm.pkg.github.com/download/@jamashita/eslint-plugin/1.71.0/c2b8989489112f64bfef6c6cedee665f82c6014a#c2b8989489112f64bfef6c6cedee665f82c6014a"
-  integrity sha512-RnSW8dXcanWnIV0pYcJNTqaaOaZtespCQXwic3k6koPBsk5b5KgQcLbJXv6iYT2dA7i4tCHdQfDaRjNmn0J69A==
+"@jamashita/eslint-plugin@1.75.0":
+  version "1.75.0"
+  resolved "https://registry.yarnpkg.com/@jamashita/eslint-plugin/-/eslint-plugin-1.75.0.tgz#7bc90302175b1d9e5340435f7cd8ba1f0794cbb3"
+  integrity sha512-QQcuZKOHoU+lnVYR4/20uIpSrgAi16YyGN5cuMGWnJK6F/lGgmuzlWTtZL9F+ud1RCNQZW/rnQUhgG3cZvv2wQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.40.1"
     "@typescript-eslint/parser" "5.40.1"
+    eslint "8.26.0"
     eslint-plugin-import "2.26.0"
     eslint-plugin-jsx-a11y "6.6.1"
     eslint-plugin-node "11.1.0"
