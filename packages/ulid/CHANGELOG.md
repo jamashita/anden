@@ -1,3 +1,10 @@
+# [@jamashita/anden-ulid-v1.21.0](https://github.com/jamashita/anden/compare/@jamashita/anden-ulid-v1.20.0...@jamashita/anden-ulid-v1.21.0) (2022-11-29)
+
+
+### Features
+
+* 🎸 packages updated ([1f0c9c1](https://github.com/jamashita/anden/commit/1f0c9c10f5f5160664175b4ab7658c0f1b5c4c15))
+
 # [@jamashita/anden-ulid-v1.20.0](https://github.com/jamashita/anden/compare/@jamashita/anden-ulid-v1.19.0...@jamashita/anden-ulid-v1.20.0) (2022-10-24)
 
 
