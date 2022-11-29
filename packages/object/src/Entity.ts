@@ -1,9 +1,7 @@
-import { Cloneable, isEqualable } from '@jamashita/anden-type';
+import { isEqualable } from '@jamashita/anden-type';
 import { Objet } from './Objet';
 
-export abstract class Entity<I, T extends Entity<I, T>> extends Objet implements Cloneable<T> {
-  public abstract duplicate(): T;
-
+export abstract class Entity<I> extends Objet {
   public abstract getIdentifier(): I;
 
   public abstract override serialize(): string;
