@@ -2,7 +2,7 @@ import { ObjectLiteral } from '@jamashita/anden-type';
 import { Entity } from '../Entity';
 import { Objet } from '../Objet';
 
-export class MockEntity<V> extends Entity<V, MockEntity<V>> {
+export class MockEntity<V> extends Entity<V> {
   private readonly id: V;
   private other: ObjectLiteral;
 
@@ -10,10 +10,6 @@ export class MockEntity<V> extends Entity<V, MockEntity<V>> {
     super();
     this.id = id;
     this.other = other;
-  }
-
-  public duplicate(): MockEntity<V> {
-    return new MockEntity<V>(this.id, this.other);
   }
 
   public getIdentifier(): V {
