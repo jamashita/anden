@@ -1,3 +1,15 @@
+# [@jamashita/anden-object-v2.24.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.23.0...@jamashita/anden-object-v2.24.0) (2022-11-29)
+
+
+### Features
+
+* 🎸 remove second generic ([6cc5176](https://github.com/jamashita/anden/commit/6cc51766b95b221918166f4113a2fc8dc00da0e8))
+
+
+### Performance Improvements
+
+* ⚡️ method behaviour updated ([0b79ead](https://github.com/jamashita/anden/commit/0b79eadbaed82bf5954191ca70b87ab6b0027d93))
+
 # [@jamashita/anden-object-v2.23.0](https://github.com/jamashita/anden/compare/@jamashita/anden-object-v2.22.0...@jamashita/anden-object-v2.23.0) (2022-10-24)
 
 
