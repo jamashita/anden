@@ -1,3 +1,10 @@
+# [@jamashita/anden-zeit-v2.25.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.24.0...@jamashita/anden-zeit-v2.25.0) (2022-11-29)
+
+
+### Features
+
+* 🎸 packages updated ([1f0c9c1](https://github.com/jamashita/anden/commit/1f0c9c10f5f5160664175b4ab7658c0f1b5c4c15))
+
 # [@jamashita/anden-zeit-v2.24.0](https://github.com/jamashita/anden/compare/@jamashita/anden-zeit-v2.23.0...@jamashita/anden-zeit-v2.24.0) (2022-10-24)
 
 

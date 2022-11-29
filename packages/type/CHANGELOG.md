@@ -1,3 +1,10 @@
+# [@jamashita/anden-type-v2.12.1](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.12.0...@jamashita/anden-type-v2.12.1) (2022-11-29)
+
+
+### Performance Improvements
+
+* ⚡️ method behaviour updated ([0b79ead](https://github.com/jamashita/anden/commit/0b79eadbaed82bf5954191ca70b87ab6b0027d93))
+
 # [@jamashita/anden-type-v2.12.0](https://github.com/jamashita/anden/compare/@jamashita/anden-type-v2.11.0...@jamashita/anden-type-v2.12.0) (2022-08-21)
 
 

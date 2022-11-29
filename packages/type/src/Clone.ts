@@ -26,8 +26,8 @@ export class Clone {
   private static copyObject(obj: PlainObject): PlainObject {
     const p: PlainObject = {};
 
-    Object.keys(obj).forEach((key: string) => {
-      p[key] = Clone.copyInternal(obj[key]);
+    Object.entries(obj).forEach(([key, value]: [string, PlainObjectItem]) => {
+      p[key] = Clone.copyInternal(value);
     });
 
     return p;

@@ -23,7 +23,13 @@ export abstract class Objet implements Nominative {
   public abstract serialize(): string;
 
   public hashCode(): string {
-    return hash(this);
+    const obj: Record<string, unknown> = {};
+
+    Object.entries(this).forEach(([k, v]: [string, unknown]) => {
+      obj[k] = v;
+    });
+
+    return hash(obj);
   }
 
   public toString(): string {
