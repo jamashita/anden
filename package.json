@@ -15,6 +15,48 @@
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
       }
+    },
+    "./error": {
+      "import": {
+        "types": "./dist/error/index.d.ts",
+        "default": "./dist/error/index.js"
+      }
+    },
+    "./helper": {
+      "import": {
+        "types": "./dist/helper/index.d.ts",
+        "default": "./dist/helper/index.js"
+      }
+    },
+    "./object": {
+      "import": {
+        "types": "./dist/object/index.d.ts",
+        "default": "./dist/object/index.js"
+      }
+    },
+    "./type": {
+      "import": {
+        "types": "./dist/type/index.d.ts",
+        "default": "./dist/type/index.js"
+      }
+    },
+    "./ulid": {
+      "import": {
+        "types": "./dist/ulid/index.d.ts",
+        "default": "./dist/ulid/index.js"
+      }
+    },
+    "./uuid": {
+      "import": {
+        "types": "./dist/uuid/index.d.ts",
+        "default": "./dist/uuid/index.js"
+      }
+    },
+    "./zeit": {
+      "import": {
+        "types": "./dist/zeit/index.d.ts",
+        "default": "./dist/zeit/index.js"
+      }
     }
   },
   "scripts": {
