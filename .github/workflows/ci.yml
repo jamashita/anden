@@ -16,8 +16,6 @@ jobs:
         with:
           node-version: '18.0'
       - name: 'Set up'
-        run: |
-          yarn install --frozen-lockfile
-          yarn setup
+        run: 'yarn install --frozen-lockfile'
       - name: 'Test'
         run: 'yarn test'
