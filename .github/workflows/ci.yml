@@ -19,5 +19,7 @@ jobs:
           scope: '@jamashita'
       - name: 'Set up'
         run: 'yarn install --frozen-lockfile'
+        env:
+          NODE_AUTH_TOKEN: '${{ secrets.GPR_AUTH_TOKEN }}'
       - name: 'Test'
         run: 'yarn test'
