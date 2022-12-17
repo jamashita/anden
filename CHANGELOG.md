@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jamashita/anden/compare/v1.0.0...v1.1.0) (2022-12-17)
+
+
+### Features
+
+* 🎸 pull eslint plugin from GPR ([007d473](https://github.com/jamashita/anden/commit/007d473dd67ab76103460572fce0f285c129461d))
+
 # 1.0.0 (2022-12-17)
 
 
