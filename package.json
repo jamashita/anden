@@ -8,6 +8,7 @@
   },
   "license": "MIT",
   "author": "jamashita <jamashita@arachnid.xyz>",
+  "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
@@ -59,6 +60,9 @@
       }
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "yarn clean && tsc -b tsconfig.compilation.json",
     "clean": "rimraf dist",

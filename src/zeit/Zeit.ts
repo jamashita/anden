@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import customParseFormat from 'dayjs/plugin/customParseFormat';
-import minMax from 'dayjs/plugin/minMax';
-import utc from 'dayjs/plugin/utc';
+import customParseFormat from 'dayjs/plugin/customParseFormat.js';
+import minMax from 'dayjs/plugin/minMax.js';
+import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
 import { Kind } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
