@@ -63,6 +63,10 @@
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "yarn clean && tsc -b tsconfig.compilation.json",
     "clean": "rimraf dist",
