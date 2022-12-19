@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/jamashita/anden/compare/v1.1.1...v1.2.0) (2022-12-19)
+
+
+### Features
+
+* 🎸 zeit does not require format ([a4a8480](https://github.com/jamashita/anden/commit/a4a848091044966598c2374dcf92faba2182d2b5))
+
 ## [1.1.1](https://github.com/jamashita/anden/compare/v1.1.0...v1.1.1) (2022-12-18)
 
 
