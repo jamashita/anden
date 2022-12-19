@@ -3,7 +3,6 @@ import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
-import { Kind } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
 dayjs.extend(customParseFormat);
@@ -14,9 +13,8 @@ export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'wee
 
 export class Zeit extends ValueObject {
   private readonly zeit: dayjs.Dayjs;
-  private readonly format: string;
 
-  public static max(zeiten: Iterable<Zeit>, format: string): Zeit {
+  public static max(zeiten: Iterable<Zeit>): Zeit {
     const z: Array<Zeit> = [...zeiten];
 
     if (z.length === 0) {
@@ -33,10 +31,10 @@ export class Zeit extends ValueObject {
 
     const max: dayjs.Dayjs = dayjs.max(dates).utc(true);
 
-    return Zeit.of(max, format);
+    return Zeit.of(max);
   }
 
-  public static min(zeiten: Iterable<Zeit>, format: string): Zeit {
+  public static min(zeiten: Iterable<Zeit>): Zeit {
     const z: Array<Zeit> = [...zeiten];
 
     if (z.length === 0) {
@@ -53,28 +51,28 @@ export class Zeit extends ValueObject {
 
     const min: dayjs.Dayjs = dayjs.min(dates).utc(true);
 
-    return Zeit.of(min, format);
+    return Zeit.of(min);
   }
 
-  public static now(format: string): Zeit {
-    return Zeit.of(dayjs().utc(false), format);
+  public static now(): Zeit {
+    return Zeit.of(dayjs().utc(false));
   }
 
-  public static of(zeit: dayjs.Dayjs, format: string): Zeit {
-    return new Zeit(zeit.utc(true), format);
+  public static of(zeit: dayjs.Dayjs): Zeit {
+    return new Zeit(zeit.utc(true));
   }
 
-  public static ofDate(date: Date, format: string): Zeit {
+  public static ofDate(date: Date): Zeit {
     const zeit: dayjs.Dayjs = dayjs(date).utc(true);
 
-    return Zeit.of(zeit, format);
+    return Zeit.of(zeit);
   }
 
   public static ofString(str: string, format: string): Zeit {
     const zeit: dayjs.Dayjs = dayjs(str, format, true).utc(true);
 
     if (zeit.isValid()) {
-      return Zeit.of(zeit, format);
+      return Zeit.of(zeit);
     }
 
     throw new ZeitError(`ILLEGAL ZEIT SPECIFIED: ${str}`);
@@ -86,10 +84,9 @@ export class Zeit extends ValueObject {
     return zeit.isValid();
   }
 
-  private constructor(zeit: dayjs.Dayjs, format: string) {
+  private constructor(zeit: dayjs.Dayjs) {
     super();
     this.zeit = zeit;
-    this.format = format;
   }
 
   public equals(other: unknown): boolean {
@@ -99,15 +96,12 @@ export class Zeit extends ValueObject {
     if (!(other instanceof Zeit)) {
       return false;
     }
-    if (this.format !== other.format) {
-      return false;
-    }
 
     return this.zeit.isSame(other.zeit);
   }
 
   public future(value: number, unit: ZeitUnitType): Zeit {
-    return Zeit.of(this.zeit.add(value, unit), this.format);
+    return Zeit.of(this.zeit.add(value, unit));
   }
 
   public get(): dayjs.Dayjs {
@@ -127,14 +121,10 @@ export class Zeit extends ValueObject {
   }
 
   public past(value: number, unit: ZeitUnitType): Zeit {
-    return Zeit.of(this.zeit.subtract(value, unit), this.format);
+    return Zeit.of(this.zeit.subtract(value, unit));
   }
 
   public serialize(format?: string): string {
-    if (Kind.isUndefined(format)) {
-      return this.zeit.format(this.format);
-    }
-
     return this.zeit.format(format);
   }
 
