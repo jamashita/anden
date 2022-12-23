@@ -26,6 +26,71 @@ v18.0.0
 git cz
 ```
 
+# Error classes
+
+## RuntimeError
+
+Basic error, it is able to contain other `Error` instance.
+
+## Errors
+
+This Error can hold multiple `Errors` at the same time, also extends `RuntimeError`.
+
+## UnimplementedError
+
+Mainly used for Mock classes, extends `RuntimeError`.
+
+# Object classes
+
+## Objet
+
+Redefinition class for Object.
+
+## Entity
+
+Class for Entity for DDD. Concrete class for `Objet`.
+
+## ValueObject
+
+Class for Value Object of DDD. Concrete class for `Objet`.
+
+## Reference
+
+Check if the object has circular reference.
+
+# Type classes
+
+## Clone
+
+Clone Object literal. This class does not check whether the given Object literal has circular references or not.
+
+## Equality
+
+Check the equality between Object literals. This class does not check whether the given Object literal has circular
+references or not.
+
+## Kind
+
+Class for type narrowing.
+
+# ULID class
+
+## ULID
+
+Class for ULID, extends `ValueObject`.
+
+# UUID class
+
+## UUID
+
+Class for UUID, extends `ValueObject`.
+
+# Zeit class
+
+## Zeit
+
+Class for date and time, extends `ValueObject`.
+
 ## License
 
 [MIT](LICENSE)
