@@ -1,6 +1,9 @@
 import crypto from 'crypto';
 
-const chars: string = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const small: string = 'abcdefghijklmnopqrstuvwxyz';
+const large: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const digit: string = '0123456789';
+const chars: string = `${small}${large}${digit}`;
 
 export const random = (length: number): string => {
   if (length <= 0) {
