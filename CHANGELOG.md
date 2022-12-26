@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/jamashita/anden/compare/v1.3.0...v1.4.0) (2022-12-26)
+
+
+### Features
+
+* 🎸 Objet.genHashCode() ([7b02ce8](https://github.com/jamashita/anden/commit/7b02ce80c0a7c289a3b8df18d1df4839f9cd4ed6))
+
 # [1.3.0](https://github.com/jamashita/anden/compare/v1.2.0...v1.3.0) (2022-12-26)
 
 
