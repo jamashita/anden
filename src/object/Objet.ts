@@ -2,7 +2,7 @@ import hash from 'object-hash';
 import { Kind, Nominative } from '../type/index.js';
 
 export abstract class Objet implements Nominative {
-  public static genHashCode(obj: Objet): string {
+  public static genHashCode(obj: object): string {
     return hash(obj);
   }
 
