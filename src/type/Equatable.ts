@@ -1,11 +1,11 @@
 import { Kind } from './Kind.js';
 
-export interface Equalable {
+export interface Equatable {
   equals(other: unknown): boolean;
 }
 
-export const isEqualable = (n: unknown): n is Equalable => {
-  if (!Kind.isObject<Equalable>(n)) {
+export const isEquatable = (n: unknown): n is Equatable => {
+  if (!Kind.isObject<Equatable>(n)) {
     return false;
   }
 
