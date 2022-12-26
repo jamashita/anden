@@ -1,4 +1,4 @@
-import { isEqualable } from '../type/index.js';
+import { isEquatable } from '../type/index.js';
 import { Objet } from './Objet.js';
 
 export abstract class Entity<I> extends Objet {
@@ -19,7 +19,7 @@ export abstract class Entity<I> extends Objet {
     if (identifier === other.getIdentifier()) {
       return true;
     }
-    if (isEqualable(identifier)) {
+    if (isEquatable(identifier)) {
       return identifier.equals(other.getIdentifier());
     }
 
