@@ -1,5 +1,5 @@
 import hash from 'object-hash';
-import { Kind, Nominative } from '../type/index.js';
+import { Inconnu, Kind, Nominative } from '../type/index.js';
 
 export abstract class Objet implements Nominative {
   public static identify(n: unknown): string {
@@ -23,7 +23,7 @@ export abstract class Objet implements Nominative {
   public abstract serialize(): string;
 
   public hashCode(): string {
-    const obj: Record<string, unknown> = {};
+    const obj: Inconnu = {};
 
     Object.entries(this).forEach(([k, v]: [string, unknown]) => {
       obj[k] = v;

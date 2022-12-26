@@ -4,11 +4,6 @@ const SEPARATOR_TEXT: string = '\nCaused by';
 
 export class RuntimeError extends Error {
   public constructor(message: string, cause?: Error) {
-    if (Kind.isUndefined(cause)) {
-      super(message);
-      return;
-    }
-
     super(message, { cause });
   }
 
@@ -22,14 +17,6 @@ export class RuntimeError extends Error {
 
   public override toString(): string {
     return this.stack;
-  }
-
-  public get [Symbol.toStringTag](): string {
-    return this.constructor.name;
-  }
-
-  public override get name(): string {
-    return this.constructor.name;
   }
 
   public override get stack(): string {

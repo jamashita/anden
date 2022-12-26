@@ -1,8 +1,8 @@
-import { Equalable } from './Equalable.js';
+import { Equatable } from './Equatable.js';
 import { Kind } from './Kind.js';
 import { Serializable } from './Serializable.js';
 
-export interface Nominative extends Equalable, Serializable {
+export interface Nominative extends Equatable, Serializable {
   hashCode(): string;
 }
 
