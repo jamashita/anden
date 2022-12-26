@@ -1,3 +1,21 @@
+# [1.3.0](https://github.com/jamashita/anden/compare/v1.2.0...v1.3.0) (2022-12-26)
+
+
+### Features
+
+* 🎸 equalable -> equatable ([419544d](https://github.com/jamashita/anden/commit/419544de65a8d4153262a8b197b5b3b81bbbc481))
+* 🎸 generates string candidates update ([b283ceb](https://github.com/jamashita/anden/commit/b283ceba282d3184f7ddaf70f6d987999459e85a))
+* 🎸 RuntimeError implements ValueObject ([12a02e4](https://github.com/jamashita/anden/commit/12a02e4d0761080c50144e83033e7ef64bd29e2c))
+* 🎸 runtimeerror reverted ([4a4d127](https://github.com/jamashita/anden/commit/4a4d1272575d1534e1df84db7c5e3ebae41c3fcc))
+* 🎸 update packages ([1a8ab62](https://github.com/jamashita/anden/commit/1a8ab62d267142693c17149437c354407bf09c2e))
+
+# [1.2.0](https://github.com/jamashita/anden/compare/v1.1.1...v1.2.0) (2022-12-19)
+
+
+### Features
+
+* 🎸 zeit does not require format ([a4a8480](https://github.com/jamashita/anden/commit/a4a848091044966598c2374dcf92faba2182d2b5))
+
 ## [1.1.1](https://github.com/jamashita/anden/compare/v1.1.0...v1.1.1) (2022-12-18)
 
 

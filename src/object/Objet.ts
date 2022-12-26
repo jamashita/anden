@@ -1,7 +1,11 @@
 import hash from 'object-hash';
-import { Inconnu, Kind, Nominative } from '../type/index.js';
+import { Kind, Nominative } from '../type/index.js';
 
 export abstract class Objet implements Nominative {
+  public static genHashCode(obj: Objet): string {
+    return hash(obj);
+  }
+
   public static identify(n: unknown): string {
     if (Kind.isObject<Object>(n)) {
       if (Kind.isFunction(n.toString)) {
@@ -23,13 +27,7 @@ export abstract class Objet implements Nominative {
   public abstract serialize(): string;
 
   public hashCode(): string {
-    const obj: Inconnu = {};
-
-    Object.entries(this).forEach(([k, v]: [string, unknown]) => {
-      obj[k] = v;
-    });
-
-    return hash(obj);
+    return Objet.genHashCode(this);
   }
 
   public toString(): string {
