@@ -1,3 +1,11 @@
+# [1.5.0](https://github.com/jamashita/anden/compare/v1.4.1...v1.5.0) (2022-12-31)
+
+
+### Features
+
+* 🎸 new types ([223a85c](https://github.com/jamashita/anden/commit/223a85c73c48c2861dcd0616a482a7024508d507))
+* 🎸 packages updated ([e79a10b](https://github.com/jamashita/anden/commit/e79a10b5b05e5492195a89717e55d247f77c1188))
+
 ## [1.4.1](https://github.com/jamashita/anden/compare/v1.4.0...v1.4.1) (2022-12-26)
 
 
