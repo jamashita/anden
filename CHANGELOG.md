@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/jamashita/anden/compare/v1.4.0...v1.4.1) (2022-12-26)
+
+
+### Bug Fixes
+
+* 🐛 type fixed ([4834333](https://github.com/jamashita/anden/commit/4834333e77a18e67329428e22cac084f63e0c43f))
+
 # [1.4.0](https://github.com/jamashita/anden/compare/v1.3.0...v1.4.0) (2022-12-26)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "private": false,
   "repository": {
     "type": "git",
@@ -89,14 +89,14 @@
   "devDependencies": {
     "@commitlint/cli": "17.3.0",
     "@commitlint/config-conventional": "17.3.0",
-    "@jamashita/eslint-plugin": "1.80.0",
+    "@jamashita/eslint-plugin": "1.81.0",
     "@semantic-release/changelog": "6.0.2",
     "@semantic-release/commit-analyzer": "9.0.2",
     "@semantic-release/git": "10.0.1",
     "@semantic-release/github": "8.0.7",
     "@semantic-release/npm": "9.0.1",
     "@semantic-release/release-notes-generator": "10.0.3",
-    "@types/node": "18.11.17",
+    "@types/node": "18.11.18",
     "@types/object-hash": "3.0.2",
     "@types/uuid": "9.0.0",
     "git-cz": "4.9.0",
