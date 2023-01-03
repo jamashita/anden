@@ -36,7 +36,7 @@ export class ULID extends ValueObject {
     this.id = id;
   }
 
-  public equals(other: unknown): boolean {
+  public override equals(other: unknown): boolean {
     if (this === other) {
       return true;
     }
