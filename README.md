@@ -64,14 +64,14 @@ same hashcode.
 Convert it to a string. If it has `toString()` method, return the result of calling that method. Otherwise,
 return the result of `String(n)`.
 
-### (abstract) `objet.equals(other: unknown): boolean`
-
-Returns `true` if this hashcode is the same as the given one.
-
 ### (abstract) `objet.serialize(): string`
 
 This method is used in `objet.toString()` to avoid displaying `[object Object]`. It is strongly recommended to implement
 this method.
+
+### `objet.equals(other: unknown): boolean`
+
+Returns `true` if the hashcodes of this object and the given instance are the same.
 
 ### `objet.hashCode(): string`
 
@@ -89,7 +89,7 @@ A class for entities in Domain-Driven Design (DDD). It is a concrete class for `
 
 Returns the identifier. It is used in the `entity.equals(other: unknown): boolean`.
 
-### `entity.getIdentifier(): I`
+### (override) `entity.equals(other: unknown): boolean`
 
 Returns `true` if the identifier of this object is the same as the identifier of `other`. This method should not be
 overridden.
@@ -97,10 +97,6 @@ overridden.
 ## ValueObject
 
 A class for value objects in Domain-Driven Design (DDD). It is a concrete class for `Objet`.
-
-### (abstract) `valueObject.equals(other: unknown): boolean`
-
-Returns `true` if the hashcodes of this object and the given instance are the same.
 
 ## Reference
 
