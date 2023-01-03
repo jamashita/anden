@@ -90,7 +90,7 @@ export class Zeit extends ValueObject {
   }
 
   public advance(value: number, unit: ZeitUnitType): Zeit {
-    return Zeit.of(this.zeit.add(value, unit));
+    return Zeit.of(this.zeit.subtract(value, unit));
   }
 
   public override equals(other: unknown): boolean {
@@ -120,8 +120,8 @@ export class Zeit extends ValueObject {
     return this.zeit.isValid();
   }
 
-  public rewind(value: number, unit: ZeitUnitType): Zeit {
-    return Zeit.of(this.zeit.subtract(value, unit));
+  public postpone(value: number, unit: ZeitUnitType): Zeit {
+    return Zeit.of(this.zeit.add(value, unit));
   }
 
   public serialize(format?: string): string {
