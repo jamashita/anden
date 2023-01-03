@@ -5,7 +5,7 @@ export * from './Cloneable.js';
 export * from './Equality.js';
 export * from './Equatable.js';
 export * from './Function.js';
-export * from './JSONable.js';
+export * from './JSONifiable.js';
 export * from './Kind.js';
 export * from './Nominative.js';
 export * from './Serializable.js';
