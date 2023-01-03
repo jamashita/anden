@@ -22,9 +22,18 @@ export abstract class Objet implements Nominative {
     // NOOP
   }
 
-  public abstract equals(other: unknown): boolean;
-
   public abstract serialize(): string;
+
+  public equals(other: unknown): boolean {
+    if (this === other) {
+      return true;
+    }
+    if (!(other instanceof Objet)) {
+      return false;
+    }
+
+    return this.hashCode() === other.hashCode();
+  }
 
   public hashCode(): string {
     return Objet.genHashCode(this);
