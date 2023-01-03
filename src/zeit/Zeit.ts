@@ -3,7 +3,6 @@ import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
-import { Integer } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
 dayjs.extend(customParseFormat);
@@ -15,27 +14,7 @@ export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'wee
 export class Zeit extends ValueObject {
   private readonly zeit: dayjs.Dayjs;
 
-  public static max(zeiten: Iterable<Zeit>): Zeit {
-    const z: Array<Zeit> = [...zeiten];
-
-    if (z.length === 0) {
-      throw new ZeitError('ZEITEN ARE EMPTY');
-    }
-    if (z.length === 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      return z[0]!;
-    }
-
-    const dates: Array<dayjs.Dayjs> = z.map<dayjs.Dayjs>((zeit: Zeit) => {
-      return zeit.get();
-    });
-
-    const max: dayjs.Dayjs = dayjs.max(dates).utc(true);
-
-    return Zeit.of(max);
-  }
-
-  public static min(zeiten: Iterable<Zeit>): Zeit {
+  public static earliest(zeiten: Iterable<Zeit>): Zeit {
     const z: Array<Zeit> = [...zeiten];
 
     if (z.length === 0) {
@@ -53,6 +32,26 @@ export class Zeit extends ValueObject {
     const min: dayjs.Dayjs = dayjs.min(dates).utc(true);
 
     return Zeit.of(min);
+  }
+
+  public static latest(zeiten: Iterable<Zeit>): Zeit {
+    const z: Array<Zeit> = [...zeiten];
+
+    if (z.length === 0) {
+      throw new ZeitError('ZEITEN ARE EMPTY');
+    }
+    if (z.length === 1) {
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      return z[0]!;
+    }
+
+    const dates: Array<dayjs.Dayjs> = z.map((zeit: Zeit): dayjs.Dayjs => {
+      return zeit.get();
+    });
+
+    const max: dayjs.Dayjs = dayjs.max(dates).utc(true);
+
+    return Zeit.of(max);
   }
 
   public static now(): Zeit {
@@ -90,6 +89,10 @@ export class Zeit extends ValueObject {
     this.zeit = zeit;
   }
 
+  public advance(value: number, unit: ZeitUnitType): Zeit {
+    return Zeit.of(this.zeit.add(value, unit));
+  }
+
   public override equals(other: unknown): boolean {
     if (this === other) {
       return true;
@@ -99,10 +102,6 @@ export class Zeit extends ValueObject {
     }
 
     return this.zeit.isSame(other.zeit);
-  }
-
-  public future(value: Integer, unit: ZeitUnitType): Zeit {
-    return Zeit.of(this.zeit.add(value, unit));
   }
 
   public get(): dayjs.Dayjs {
@@ -121,7 +120,7 @@ export class Zeit extends ValueObject {
     return this.zeit.isValid();
   }
 
-  public past(value: Integer, unit: ZeitUnitType): Zeit {
+  public rewind(value: number, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.subtract(value, unit));
   }
 
