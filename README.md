@@ -453,6 +453,21 @@ console.log(zeit2.toString());
 
 ### (override) `zeit.toString(format?: string): boolean`
 
+### ZeitValidation
+
+Used for methods. If given value violates this rule, `TypeError` will be thrown.
+
+```ts
+class Klazz {
+  @ZeitValidation({
+    format: 'YYYY-MM-DD'
+  })
+  public doSomething(n1: string): void {
+    //
+  }
+}
+```
+
 ## License
 
 [MIT](LICENSE)
