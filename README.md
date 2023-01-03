@@ -421,14 +421,14 @@ Returns `true` when given `str` can be converted by given `format`.
 
 ### `zeit.advance(value: number, unit: ZeitUnitType): Zeit`
 
-Return `Zeit` instance that is `value` `unit` later this instance.
+Return `Zeit` instance that is `value` `unit` earlier this instance.
 
 ```ts
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
-const zeit2: Zeit = zeit1.future(1, 'day')
+const zeit2: Zeit = zeit1.advance(1, 'day')
 
 console.log(zeit2.toString());
-// '2000-04-03'
+// '2000-04-01'
 ```
 
 ### `zeit.isAfter(other: Zeit): boolean`
@@ -443,16 +443,16 @@ Returns `true` if this is before than `other`.
 
 Returns `true` if this is valid date and time.
 
-### `zeit.rewind(value: number, unit: ZeitUnitType): Zeit`
+### `zeit.postpone(value: number, unit: ZeitUnitType): Zeit`
 
-Return `Zeit` instance that is `value` `unit` earlier this instance.
+Return `Zeit` instance that is `value` `unit` later this instance.
 
 ```ts
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
-const zeit2: Zeit = zeit1.past(1, 'day')
+const zeit2: Zeit = zeit1.postpone(1, 'day')
 
 console.log(zeit2.toString());
-// '2000-04-01'
+// '2000-04-03'
 ```
 
 ### (override) `zeit.toString(format?: string): boolean`
