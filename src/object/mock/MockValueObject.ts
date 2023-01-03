@@ -9,7 +9,7 @@ export class MockValueObject<V> extends ValueObject {
     this.value = value;
   }
 
-  public equals(other: unknown): boolean {
+  public override equals(other: unknown): boolean {
     if (this === other) {
       return true;
     }
