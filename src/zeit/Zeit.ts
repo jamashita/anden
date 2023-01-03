@@ -3,6 +3,7 @@ import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
+import { Integer } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
 dayjs.extend(customParseFormat);
@@ -89,7 +90,7 @@ export class Zeit extends ValueObject {
     this.zeit = zeit;
   }
 
-  public equals(other: unknown): boolean {
+  public override equals(other: unknown): boolean {
     if (this === other) {
       return true;
     }
@@ -100,7 +101,7 @@ export class Zeit extends ValueObject {
     return this.zeit.isSame(other.zeit);
   }
 
-  public future(value: number, unit: ZeitUnitType): Zeit {
+  public future(value: Integer, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.add(value, unit));
   }
 
@@ -120,7 +121,7 @@ export class Zeit extends ValueObject {
     return this.zeit.isValid();
   }
 
-  public past(value: number, unit: ZeitUnitType): Zeit {
+  public past(value: Integer, unit: ZeitUnitType): Zeit {
     return Zeit.of(this.zeit.subtract(value, unit));
   }
 

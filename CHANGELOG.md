@@ -1,3 +1,15 @@
+# [1.7.0](https://github.com/jamashita/anden/compare/v1.6.0...v1.7.0) (2023-01-03)
+
+
+### Bug Fixes
+
+* 🐛 add overrride modifier ([518bc88](https://github.com/jamashita/anden/commit/518bc88a9f1de6823cdca9629dfaecc86c299aae))
+
+
+### Features
+
+* 🎸 equals implemented in ValueObject ([768495e](https://github.com/jamashita/anden/commit/768495e513ff10a04bfb9af0245924e968ab12fb))
+
 # [1.6.0](https://github.com/jamashita/anden/compare/v1.5.0...v1.6.0) (2023-01-03)
 
 
