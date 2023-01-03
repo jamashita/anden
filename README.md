@@ -11,13 +11,13 @@ This package enables you to use things in one class instance and the same interf
 
 ```
 > node -v
-v18.0.0
+v18.9.1
 
 > npm -v
-8.6.0
+8.19.1
 
 > yarn -v
-1.22.18
+1.22.19
 ```
 
 ## Conventional commit
@@ -239,13 +239,13 @@ Returns `true` if given two object literals are the same.
 
 Should return `true` if this and given object are the same.
 
-## (interface) JSONable\<O extends ObjectLiteral\>
+## (interface) JSONifiable\<O extends ObjectLiteral\>
 
 ### `jsonable.toJSON(): O`
 
 Return the jsonified value of this instance.
 
-### `isJSONable(n: unknown): n is JSONable<O>`
+### `isJSONifiable(n: unknown): n is JSONifiable<O>`
 
 Returns `true` if `n` has `toJSON` method.
 
