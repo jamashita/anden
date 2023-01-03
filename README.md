@@ -391,13 +391,13 @@ class Klazz {
 
 Class for date and time, extends `ValueObject`.
 
-### `Zeit.max(zeiten: Iterable<Zeit>): Zeit`
-
-Returns the latest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
-
-### `Zeit.min(zeiten: Iterable<Zeit>): Zeit`
+### `Zeit.earliest(zeiten: Iterable<Zeit>): Zeit`
 
 Returns the earliest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
+
+### `Zeit.latest(zeiten: Iterable<Zeit>): Zeit`
+
+Returns the latest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
 
 ### `Zeit.now(): Zeit`
 
@@ -419,7 +419,7 @@ Returns `Zeit` instance. May throw `ZeitError` when given `str` cannot be conver
 
 Returns `true` when given `str` can be converted by given `format`.
 
-### `zeit.future(value: Integer, unit: ZeitUnitType): Zeit`
+### `zeit.advance(value: number, unit: ZeitUnitType): Zeit`
 
 Return `Zeit` instance that is `value` `unit` later this instance.
 
@@ -443,7 +443,7 @@ Returns `true` if this is before than `other`.
 
 Returns `true` if this is valid date and time.
 
-### `zeit.past(value: Integer, unit: ZeitUnitType): Zeit`
+### `zeit.rewind(value: number, unit: ZeitUnitType): Zeit`
 
 Return `Zeit` instance that is `value` `unit` earlier this instance.
 
