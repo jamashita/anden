@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/jamashita/anden/compare/v1.7.2...v1.7.3) (2023-01-03)
+
+
+### Bug Fixes
+
+* 🐛 renamed ([f3f1625](https://github.com/jamashita/anden/commit/f3f162503ba9a35efedee5958301ddb1934fb42e))
+
 ## [1.7.2](https://github.com/jamashita/anden/compare/v1.7.1...v1.7.2) (2023-01-03)
 
 
