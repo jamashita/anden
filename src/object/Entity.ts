@@ -6,7 +6,7 @@ export abstract class Entity<I> extends Objet {
 
   public abstract override serialize(): string;
 
-  public equals(other: unknown): boolean {
+  public override equals(other: unknown): boolean {
     if (this === other) {
       return true;
     }

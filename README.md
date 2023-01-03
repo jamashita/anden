@@ -1,6 +1,6 @@
 # Anden
 
-This package enables you to use things in one class instance and the same interface.
+This package allows you to represent many classes using a unified interface.
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
@@ -56,22 +56,22 @@ A class that redefines the `Object`.
 
 ### `Objet.genHashCode(obj: object): string`
 
-Generates a hashcode for the given `obj`. If the object's properties have the same values, this method returns the same
-value.
+Generates a hashcode for the given `obj`. If the object's properties have the same values, this method will return the
+same hashcode.
 
 ### `Objet.identify(n: unknown): string`
 
 Convert it to a string. If it has `toString()` method, return the result of calling that method. Otherwise,
-return `String(n)`.
-
-### (abstract) `objet.equals(other: unknown): boolean`
-
-Returns `true` if this hashcode is the same as the given one.
+return the result of `String(n)`.
 
 ### (abstract) `objet.serialize(): string`
 
 This method is used in `objet.toString()` to avoid displaying `[object Object]`. It is strongly recommended to implement
 this method.
+
+### `objet.equals(other: unknown): boolean`
+
+Returns `true` if the hashcodes of this object and the given instance are the same.
 
 ### `objet.hashCode(): string`
 
@@ -89,7 +89,7 @@ A class for entities in Domain-Driven Design (DDD). It is a concrete class for `
 
 Returns the identifier. It is used in the `entity.equals(other: unknown): boolean`.
 
-### `entity.getIdentifier(): I`
+### (override) `entity.equals(other: unknown): boolean`
 
 Returns `true` if the identifier of this object is the same as the identifier of `other`. This method should not be
 overridden.
@@ -97,10 +97,6 @@ overridden.
 ## ValueObject
 
 A class for value objects in Domain-Driven Design (DDD). It is a concrete class for `Objet`.
-
-### (abstract) `valueObject.equals(other: unknown): boolean`
-
-Returns `true` if the hashcodes of this object and the given instance are the same.
 
 ## Reference
 
@@ -114,7 +110,7 @@ Returns `true` if `value` has circular references.
 
 ### BigIntValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -138,7 +134,7 @@ class Klazz {
 
 ### BooleanValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -151,7 +147,7 @@ class Klazz {
 
 ### NumberValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -178,7 +174,7 @@ class Klazz {
 
 ### StringValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -195,7 +191,7 @@ class Klazz {
 
 ### SymbolValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -331,7 +327,7 @@ Returns `true` if it does not violate ULID format.
 
 ### ULIDValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -374,7 +370,7 @@ Returns `true` if it does not violate UUID format.
 
 ### UUIDValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
@@ -413,11 +409,11 @@ Returns `Zeit` instance.
 
 ### `Zeit.ofString(str: string, format: string): Zeit`
 
-Returns `Zeit` instance. May throw `ZeitError` when given `str` cannot be converted by given `format`.
+Returns `Zeit` instance. May throw `ZeitError` if the given `str` cannot be parsed using the given format."
 
 ### `Zeit.validate(str: string, format: string): boolean`
 
-Returns `true` when given `str` can be converted by given `format`.
+Returns `true` if the given `str` can be parsed using the given `format`.
 
 ### `zeit.advance(value: number, unit: ZeitUnitType): Zeit`
 
@@ -427,7 +423,7 @@ Return `Zeit` instance that is `value` `unit` earlier this instance.
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
 const zeit2: Zeit = zeit1.advance(1, 'day')
 
-console.log(zeit2.toString());
+console.log(zeit2.toString('YYYY-MM-DD'));
 // '2000-04-01'
 ```
 
@@ -451,7 +447,7 @@ Return `Zeit` instance that is `value` `unit` later this instance.
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
 const zeit2: Zeit = zeit1.postpone(1, 'day')
 
-console.log(zeit2.toString());
+console.log(zeit2.toString('YYYY-MM-DD'));
 // '2000-04-03'
 ```
 
@@ -459,7 +455,7 @@ console.log(zeit2.toString());
 
 ### ZeitValidation
 
-Used for methods. If given value violates this rule, `TypeError` will be thrown.
+Used for methods. If the given value does not meet this requirement, `TypeError` will be thrown.
 
 ```ts
 class Klazz {
