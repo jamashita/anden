@@ -1,4 +1,4 @@
-import { PlainObject, PlainObjectItem } from '@jamashita/anden-type';
+import { PlainObject, PlainObjectItem } from '../../type/index.js';
 import { Reference } from '../Reference.js';
 
 describe('Reference', () => {
