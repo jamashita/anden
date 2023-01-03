@@ -30,7 +30,7 @@ git cz
 
 ## RuntimeError
 
-Basic error, it is able to contain other `Error` instance. This extends `Error` class.
+A basic error class that can contain other `Error` instances. It extends `Error`.
 
 ```ts
 throw new RuntimeError('AN ERROR OCCURED.', error);
@@ -38,7 +38,7 @@ throw new RuntimeError('AN ERROR OCCURED.', error);
 
 ## Errors\<E extends Error\>
 
-This Error can hold multiple `Error`s at once, also extends `RuntimeError`.
+This error class can hold multiple `Error` instances at once and extends the `RuntimeError`.
 
 ```ts
 throw new Errors(new Error(), new Error(), new Error());
@@ -46,57 +46,61 @@ throw new Errors(new Error(), new Error(), new Error());
 
 ## UnimplementedError
 
-Mainly used for unimplemented methods, extends `RuntimeError`.
+This error class is mainly used for unimplemented methods and extends the `RuntimeError`.
 
 # Object classes
 
 ## Objet
 
-Redefinition class for Object.
+A class that redefines the `Object`.
 
 ### `Objet.genHashCode(obj: object): string`
 
-Generates hashcode of given object. returns the same value if its proeprties are the same values.
+Generates a hashcode for the given `obj`. If the object's properties have the same values, this method returns the same
+value.
 
 ### `Objet.identify(n: unknown): string`
 
-Make it to string. if it implements `toString()`, returns it, otherwise, returns `String(n)`.
+Convert it to a string. If it has `toString()` method, return the result of calling that method. Otherwise,
+return `String(n)`.
 
 ### (abstract) `objet.equals(other: unknown): boolean`
 
-Returns true if this hashcode and given one is the same.
+Returns `true` if this hashcode is the same as the given one.
 
 ### (abstract) `objet.serialize(): string`
 
-Used in `objet.toString()`, to avoid displaying [object Object], strongly recommend to implement this method.
+This method is used in `objet.toString()` to avoid displaying `[object Object]`. It is strongly recommended to implement
+this method.
 
 ### `objet.hashCode(): string`
 
-Returns its hashcode, if the properties are the same, it will return the same hashCode.
+Returns its hashcode. If the properties have the same values, this method returns the same hashcode.
 
 ### `objet.toString(): string`
 
-Delegates and returns `objet.serialize(): string`.
+Delegates to and returns `objet.serialize(): string`.
 
 ## Entity\<I\>
 
-Class for Entity for DDD. Concrete class for `Objet`. `I` is Identifier class.
+A class for entities in Domain-Driven Design (DDD). It is a concrete class for `Objet` and `I` is an identifier class.
 
 ### (abstract) `entity.getIdentifier(): I`
 
-Returns the Identifier. Used in `entity.equals(other: unknown): boolean`.
+Returns the identifier. It is used in the `entity.equals(other: unknown): boolean`.
 
 ### `entity.getIdentifier(): I`
 
-Returns true if its identifier is the same with `other`'s identifier. This method should not be overridden.
+Returns `true` if the identifier of this object is the same as the identifier of `other`. This method should not be
+overridden.
 
 ## ValueObject
 
-Class for Value Object of DDD. Concrete class for `Objet`.
+A class for value objects in Domain-Driven Design (DDD). It is a concrete class for `Objet`.
 
 ### (abstract) `valueObject.equals(other: unknown): boolean`
 
-Returns true if the hashcodes are the same of this and given instance.
+Returns `true` if the hashcodes of this object and the given instance are the same.
 
 ## Reference
 
@@ -104,7 +108,7 @@ Check if the object has circular reference.
 
 ### `Reference.isCircular(value: unknown): boolean`
 
-returns true if `value` has circular references.
+Returns `true` if `value` has circular references.
 
 # Type classes
 
@@ -204,7 +208,7 @@ class Klazz {
 
 ## Clone
 
-Clone Object literal. This class does not check whether the given Object literal has circular references or not.
+Clone an object literal. This class does not check whether the given object literal has circular references or not.
 
 ### `Copy.copy<T extends ObjectLiteral>(obj: T): T`
 
@@ -218,32 +222,32 @@ Should return cloned itself.
 
 ### `isCloneable(n: unknown): n is Cloneable<T>`
 
-returns true if `n` has `duplicate` method.
+Returns `true` if `n` has `duplicate` method.
 
 ## Equality
 
-Check the equality between Object literals. This class does not check whether the given Object literal has circular
+Check the equality between object literals. This class does not check whether the given object literal has circular
 references or not.
 
 ### `Equality.same(n1: ObjectLiteral, n2: ObjectLiteral): boolean`
 
-Returns true if given two object literals are the same.
+Returns `true` if given two object literals are the same.
 
 ## (interface) Equatable
 
 ### `equatable.equals(other: unknown): boolean`
 
-Should return true if this and given object are the same.
+Should return `true` if this and given object are the same.
 
 ## (interface) JSONable\<O extends ObjectLiteral\>
 
 ### `jsonable.toJSON(): O`
 
-returns object literal of its class.
+Return the jsonified value of this instance.
 
 ### `isJSONable(n: unknown): n is JSONable<O>`
 
-returns true if `n` has `toJSON` method.
+Returns `true` if `n` has `toJSON` method.
 
 ## Kind
 
@@ -307,11 +311,11 @@ Class for ULID, extends `ValueObject`.
 
 ### `ULID.generate(): ULID`
 
-Returns ULID class instance which has randomly generated ulid value.
+Returns ULID instance which has randomly generated ulid value.
 
 ### `ULID.of(id: string): ULID`
 
-Returns ULID class instance. May throw `ULIDError` when given `id` has malformed ULID.
+Returns ULID instance. May throw `ULIDError` when given `id` has malformed ULID.
 
 ### `ULID.regex(): RegExp`
 
@@ -323,7 +327,7 @@ Returns ULID length.
 
 ### `ULID.validate(str: string): boolean`
 
-Returns true if it does not violate ULID format.
+Returns `true` if it does not violate ULID format.
 
 ### ULIDValidation
 
@@ -346,7 +350,7 @@ Class for UUID, extends `ValueObject`.
 
 ### `UUID.of(id: string): UUID`
 
-Returns UUID class instance. May throw `UUIDError` when given `id` has malformed UUID.
+Returns UUID instance. May throw `UUIDError` when given `id` has malformed UUID.
 
 ### `UUID.regex(): RegExp`
 
@@ -366,7 +370,7 @@ Returns v5 UUID instance.
 
 ### `UUID.validation(str: string): boolean`
 
-Returns true if it does not violate UUID format.
+Returns `true` if it does not violate UUID format.
 
 ### UUIDValidation
 
@@ -413,11 +417,11 @@ Returns `Zeit` instance. May throw `ZeitError` when given `str` cannot be conver
 
 ### `Zeit.validate(str: string, format: string): boolean`
 
-Returns true when given `str` can be converted by given `format`.
+Returns `true` when given `str` can be converted by given `format`.
 
 ### `zeit.future(value: Integer, unit: ZeitUnitType): Zeit`
 
-returns `value` `unit` later `Zeit`.
+Return `Zeit` instance that is `value` `unit` later this instance.
 
 ```ts
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
@@ -429,19 +433,19 @@ console.log(zeit2.toString());
 
 ### `zeit.isAfter(other: Zeit): boolean`
 
-Returns true if this is after than `other`.
+Returns `true` if this is after than `other`.
 
 ### `zeit.isBefore(other: Zeit): boolean`
 
-Returns true if this is before than `other`.
+Returns `true` if this is before than `other`.
 
 ### `zeit.isValid(): boolean`
 
-Returns true if this is valid date and time.
+Returns `true` if this is valid date and time.
 
 ### `zeit.past(value: Integer, unit: ZeitUnitType): Zeit`
 
-returns `value` `unit` earlier `Zeit`.
+Return `Zeit` instance that is `value` `unit` earlier this instance.
 
 ```ts
 const zeit1: Zeit = Zeit.ofString('2000-04-02');
