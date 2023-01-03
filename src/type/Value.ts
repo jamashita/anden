@@ -22,7 +22,7 @@ export type Vague<T extends object = object> = {
 export type Inconnu = Record<string, unknown>;
 // eslint-disable-next-line @typescript-eslint/consistent-indexed-object-style
 export type PlainObject = {
-  [key: string]: PlainObjectItem;
+  readonly [key: string]: PlainObjectItem;
 };
 export type ObjectLiteral = PlainObject | ReadonlyArray<PlainObjectItem>;
 export type PlainObjectItem = ObjectLiteral | Primitive;
