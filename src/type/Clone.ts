@@ -1,5 +1,5 @@
 import { Kind } from './Kind.js';
-import { ObjectLiteral, PlainObject, PlainObjectItem } from './Value.js';
+import { Inconnu, ObjectLiteral, PlainObject, PlainObjectItem } from './Value.js';
 
 export class Clone {
   public static copy<T extends ObjectLiteral = ObjectLiteral>(obj: T): T {
@@ -24,12 +24,12 @@ export class Clone {
   }
 
   private static copyObject(obj: PlainObject): PlainObject {
-    const p: PlainObject = {};
+    const p: Inconnu = {};
 
     Object.entries(obj).forEach(([key, value]: [string, PlainObjectItem]) => {
       p[key] = Clone.copyInternal(value);
     });
 
-    return p;
+    return p as PlainObject;
   }
 }
