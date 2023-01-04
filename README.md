@@ -114,19 +114,19 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @BigIntValidation({
+  @Validate()
+  public doSomething(@BigIntValidation({
     conditions: [
       {
-        operator: '<=',
+        operator: '>=',
         value: 3n
       },
       {
-        operator: '>=',
+        operator: '<=',
         value: 5n
       }
     ]
-  })
-  public doSomething(n1: bigint): void {
+  }) n1: bigint): void {
     //
   }
 }
@@ -138,8 +138,8 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @BooleanValidation()
-  public doSomething(n1: boolean): void {
+  @Validate()
+  public doSomething(@BooleanValidation() n1: boolean): void {
     //
   }
 }
@@ -151,22 +151,22 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @NumberValidation({
+  @Validate()
+  public doSomething(@NumberValidation({
     conditions: [
       {
-        operator: '<=',
+        operator: '>=',
         value: 3
       },
       {
-        operator: '>=',
+        operator: '<=',
         value: 5
       }
     ],
     int: false,
     noNaN: true,
     noInfinity: true
-  })
-  public doSomething(n1: number): void {
+  }) n1: number): void {
     //
   }
 }
@@ -178,12 +178,12 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @StringValidation({
+  @Validate()
+  public doSomething(@StringValidation({
     type: 'length',
     min: 1,
     max: 100
-  })
-  public doSomething(n1: string): void {
+  }) n1: string): void {
     //
   }
 }
@@ -195,8 +195,8 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @SymbolValidation()
-  public doSomething(n1: symbol): void {
+  @Validate()
+  public doSomething(@SymbolValidation() n1: symbol): void {
     //
   }
 }
@@ -331,8 +331,8 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @ULIDValidation()
-  public doSomething(n1: string): void {
+  @Validate()
+  public doSomething(@ULIDValidation() n1: string): void {
     //
   }
 }
@@ -374,8 +374,8 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @UUIDValidation()
-  public doSomething(n1: string): void {
+  @Validate()
+  public doSomething(@UUIDValidation() n1: string): void {
     //
   }
 }
@@ -459,10 +459,10 @@ Used for methods. If the given value does not meet this requirement, `TypeError`
 
 ```ts
 class Klazz {
-  @ZeitValidation({
+  @Validate()
+  public doSomething(@ZeitValidation({
     format: 'YYYY-MM-DD'
-  })
-  public doSomething(n1: string): void {
+  }) n1: string): void {
     //
   }
 }

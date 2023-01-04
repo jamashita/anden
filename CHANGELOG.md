@@ -1,3 +1,10 @@
+## [1.7.4](https://github.com/jamashita/anden/compare/v1.7.3...v1.7.4) (2023-01-03)
+
+
+### Bug Fixes
+
+* 🐛 method arrangements ([3833832](https://github.com/jamashita/anden/commit/3833832e262a2e299070a6276e8ee848f5e7a7be))
+
 ## [1.7.3](https://github.com/jamashita/anden/compare/v1.7.2...v1.7.3) (2023-01-03)
 
 
