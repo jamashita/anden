@@ -1,3 +1,10 @@
+## [1.7.5](https://github.com/jamashita/anden/compare/v1.7.4...v1.7.5) (2023-01-04)
+
+
+### Bug Fixes
+
+* 🐛 type mismatch resolved ([05e3f27](https://github.com/jamashita/anden/commit/05e3f2742a91f63e59a05e34bf623368a00feee5))
+
 ## [1.7.4](https://github.com/jamashita/anden/compare/v1.7.3...v1.7.4) (2023-01-03)
 
 
