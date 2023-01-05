@@ -2,8 +2,6 @@ import { v4, v5 } from 'uuid';
 import { ValueObject } from '../object/index.js';
 import { UUIDError } from './UUIDError.js';
 
-const REGEX: RegExp = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/u;
-
 export class UUID extends ValueObject {
   private readonly id: string;
 
@@ -16,7 +14,7 @@ export class UUID extends ValueObject {
   }
 
   public static regex(): RegExp {
-    return REGEX;
+    return /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/u;
   }
 
   public static size(): number {
@@ -32,7 +30,7 @@ export class UUID extends ValueObject {
   }
 
   public static validate(str: string): boolean {
-    return REGEX.test(str);
+    return UUID.regex().test(str);
   }
 
   private constructor(id: string) {
