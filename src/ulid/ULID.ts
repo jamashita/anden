@@ -2,8 +2,6 @@ import { ulid } from 'ulid';
 import { ValueObject } from '../object/index.js';
 import { ULIDError } from './ULIDError.js';
 
-const REGEX: RegExp = /^[0-9A-Z]{26}$/u;
-
 export class ULID extends ValueObject {
   private readonly id: string;
 
@@ -20,7 +18,7 @@ export class ULID extends ValueObject {
   }
 
   public static regex(): RegExp {
-    return REGEX;
+    return /^[0-9A-Z]{26}$/u;
   }
 
   public static size(): number {
@@ -28,7 +26,7 @@ export class ULID extends ValueObject {
   }
 
   public static validate(str: string): boolean {
-    return REGEX.test(str);
+    return ULID.regex().test(str);
   }
 
   private constructor(id: string) {
