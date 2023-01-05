@@ -1,3 +1,10 @@
+## [1.7.6](https://github.com/jamashita/anden/compare/v1.7.5...v1.7.6) (2023-01-05)
+
+
+### Bug Fixes
+
+* 🐛 do not use the same instance again ([e36026d](https://github.com/jamashita/anden/commit/e36026db07e4563edb7f526a3906efbd82e42578))
+
 ## [1.7.5](https://github.com/jamashita/anden/compare/v1.7.4...v1.7.5) (2023-01-04)
 
 
