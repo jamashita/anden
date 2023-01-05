@@ -56,7 +56,7 @@ A class that redefines the `Object`.
 
 ### `Objet.genHashCode(obj: object): string`
 
-Generates a hashcode for the given `obj`. If the object's properties have the same values, this method will return the
+Generate a hashcode for the given `obj`. If the object's properties have the same values, this method will return the
 same hashcode.
 
 ### `Objet.identify(n: unknown): string`
@@ -71,11 +71,11 @@ this method.
 
 ### `objet.equals(other: unknown): boolean`
 
-Returns `true` if the hashcodes of this object and the given instance are the same.
+Return `true` if the hashcodes of this object and the given instance are the same.
 
 ### `objet.hashCode(): string`
 
-Returns its hashcode. If the properties have the same values, this method returns the same hashcode.
+Return its hashcode. If the properties have the same values, this method returns the same hashcode.
 
 ### `objet.toString(): string`
 
@@ -87,11 +87,11 @@ A class for entities in Domain-Driven Design (DDD). It is a concrete class for `
 
 ### (abstract) `entity.getIdentifier(): I`
 
-Returns the identifier. It is used in the `entity.equals(other: unknown): boolean`.
+Return the identifier. It is used in the `entity.equals(other: unknown): boolean`.
 
 ### (override) `entity.equals(other: unknown): boolean`
 
-Returns `true` if the identifier of this object is the same as the identifier of `other`. This method should not be
+Return `true` if the identifier of this object is the same as the identifier of `other`. This method should not be
 overridden.
 
 ## ValueObject
@@ -104,7 +104,7 @@ Check if the object has circular reference.
 
 ### `Reference.isCircular(value: unknown): boolean`
 
-Returns `true` if `value` has circular references.
+Return `true` if `value` has circular references.
 
 # Type classes
 
@@ -208,7 +208,7 @@ Clone an object literal. This class does not check whether the given object lite
 
 ### `Copy.copy<T extends ObjectLiteral>(obj: T): T`
 
-Deeply copies given object literal.
+Deeply copies the given object literal.
 
 ## (interface) Cloneable\<T\>
 
@@ -218,7 +218,7 @@ Should return cloned itself.
 
 ### `isCloneable(n: unknown): n is Cloneable<T>`
 
-Returns `true` if `n` has `duplicate` method.
+Return `true` if `n` has `duplicate` method.
 
 ## Equality
 
@@ -227,7 +227,7 @@ references or not.
 
 ### `Equality.same(n1: ObjectLiteral, n2: ObjectLiteral): boolean`
 
-Returns `true` if given two object literals are the same.
+Return `true` if given two object literals are the same.
 
 ## (interface) Equatable
 
@@ -243,7 +243,7 @@ Return the jsonified value of this instance.
 
 ### `isJSONifiable(n: unknown): n is JSONifiable<O>`
 
-Returns `true` if `n` has `toJSON` method.
+Return `true` if `n` has `toJSON` method.
 
 ## Kind
 
@@ -285,11 +285,11 @@ Class for type narrowing.
 
 ## (interface) Nominative
 
-This interfaces extends `Equatable` and `Serializable`.
+This interface extends `Equatable` and `Serializable`.
 
 ### `nominative.hashCode(): string`
 
-Returns hashcode of this instance.
+Return hashcode of this instance.
 
 ## (interface) Serializable
 
@@ -297,7 +297,7 @@ An interface for `toString()`.
 
 ### `serializable.serialize(): string`
 
-Returns string that describes this instance.
+Return string that describes this instance.
 
 # ULID class
 
@@ -307,23 +307,23 @@ Class for ULID, extends `ValueObject`.
 
 ### `ULID.generate(): ULID`
 
-Returns ULID instance which has randomly generated ulid value.
+Return ULID instance which has randomly generated ulid value.
 
 ### `ULID.of(id: string): ULID`
 
-Returns ULID instance. May throw `ULIDError` when given `id` has malformed ULID.
+Return ULID instance. May throw `ULIDError` when given `id` has malformed ULID.
 
 ### `ULID.regex(): RegExp`
 
-Returns regexp of ULID.
+Return regexp of ULID.
 
 ### `ULID.size(): number`
 
-Returns ULID length.
+Return ULID length.
 
 ### `ULID.validate(str: string): boolean`
 
-Returns `true` if it does not violate ULID format.
+Return `true` if it does not violate ULID format.
 
 ### ULIDValidation
 
@@ -346,27 +346,27 @@ Class for UUID, extends `ValueObject`.
 
 ### `UUID.of(id: string): UUID`
 
-Returns UUID instance. May throw `UUIDError` when given `id` has malformed UUID.
+Return UUID instance. May throw `UUIDError` when given `id` has malformed UUID.
 
 ### `UUID.regex(): RegExp`
 
-Returns regexp of UUID.
+Return regexp of UUID.
 
 ### `UUID.size(): number`
 
-Returns UUID length.
+Return UUID length.
 
 ### `UUID.v4(): UUID`
 
-Returns v4 UUID instance.
+Return v4 UUID instance.
 
 ### `UUID.v5(): UUID`
 
-Returns v5 UUID instance.
+Return v5 UUID instance.
 
 ### `UUID.validation(str: string): boolean`
 
-Returns `true` if it does not violate UUID format.
+Return `true` if it does not violate UUID format.
 
 ### UUIDValidation
 
@@ -389,31 +389,31 @@ Class for date and time, extends `ValueObject`.
 
 ### `Zeit.earliest(zeiten: Iterable<Zeit>): Zeit`
 
-Returns the earliest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
+Return the earliest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
 
 ### `Zeit.latest(zeiten: Iterable<Zeit>): Zeit`
 
-Returns the latest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
+Return the latest `Zeit` instance. May throw `ZeitError` when empty `zeiten` given.
 
 ### `Zeit.now(): Zeit`
 
-Returns `Zeit` instance of current date and time.
+Return `Zeit` instance of current date and time.
 
 ### `Zeit.of(zeit: dayjs.Dayjs): Zeit`
 
-Returns `Zeit` instance.
+Return `Zeit` instance.
 
 ### `Zeit.ofDate(date: Date): Zeit`
 
-Returns `Zeit` instance.
+Return `Zeit` instance.
 
 ### `Zeit.ofString(str: string, format: string): Zeit`
 
-Returns `Zeit` instance. May throw `ZeitError` if the given `str` cannot be parsed using the given format."
+Return `Zeit` instance. May throw `ZeitError` if the given `str` cannot be parsed using the given format."
 
 ### `Zeit.validate(str: string, format: string): boolean`
 
-Returns `true` if the given `str` can be parsed using the given `format`.
+Return `true` if the given `str` can be parsed using the given `format`.
 
 ### `zeit.advance(value: number, unit: ZeitUnitType): Zeit`
 
@@ -429,15 +429,15 @@ console.log(zeit2.toString('YYYY-MM-DD'));
 
 ### `zeit.isAfter(other: Zeit): boolean`
 
-Returns `true` if this is after than `other`.
+Return `true` if this is after than `other`.
 
 ### `zeit.isBefore(other: Zeit): boolean`
 
-Returns `true` if this is before than `other`.
+Return `true` if this is before than `other`.
 
 ### `zeit.isValid(): boolean`
 
-Returns `true` if this is valid date and time.
+Return `true` if this is valid date and time.
 
 ### `zeit.postpone(value: number, unit: ZeitUnitType): Zeit`
 
