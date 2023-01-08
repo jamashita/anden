@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/jamashita/anden/compare/v1.7.6...v1.8.0) (2023-01-08)
+
+
+### Features
+
+* 🎸 new Constructor definition ([c517c67](https://github.com/jamashita/anden/commit/c517c6769425fb339787a69d100ee0023178c300))
+
 ## [1.7.6](https://github.com/jamashita/anden/compare/v1.7.5...v1.7.6) (2023-01-05)
 
 
