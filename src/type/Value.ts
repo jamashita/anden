@@ -12,7 +12,9 @@ export type Retain<T, U extends T> = Extract<T, U>;
 export type Sync<T> = T extends PromiseLike<infer O> ? O : T;
 export type SyncAsync<T> = PromiseLike<T> | T;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type Constructor<C extends object = object> = new(...args: Array<any>) => C;
+export type Constructor<C extends object = object> = Function & {
+  prototype: C;
+};
 export type Freeze<T extends object> = {
   readonly [P in keyof T]: T[P] extends object ? Freeze<T[P]> : T[P];
 };
