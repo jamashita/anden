@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/jamashita/anden/compare/v1.8.0...v1.9.0) (2023-01-14)
+
+
+### Features
+
+* 🎸 packages updated ([13b36d5](https://github.com/jamashita/anden/commit/13b36d578bc299313e5708980187259dcd04d322))
+
 # [1.8.0](https://github.com/jamashita/anden/compare/v1.7.6...v1.8.0) (2023-01-08)
 
 
