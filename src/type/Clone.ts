@@ -7,7 +7,7 @@ export class Clone {
   }
 
   private static copyArray(arr: Array<PlainObjectItem>): Array<PlainObjectItem> {
-    return arr.map((item: PlainObjectItem): PlainObjectItem => {
+    return arr.map((item: PlainObjectItem) => {
       return Clone.copyInternal(item);
     });
   }

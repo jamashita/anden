@@ -1,4 +1,4 @@
-import { v4, v5 } from 'uuid';
+import { v4, v5, validate } from 'uuid';
 import { ValueObject } from '../object/index.js';
 import { UUIDError } from './UUIDError.js';
 
@@ -30,7 +30,7 @@ export class UUID extends ValueObject {
   }
 
   public static validate(str: string): boolean {
-    return UUID.regex().test(str);
+    return validate(str);
   }
 
   private constructor(id: string) {
