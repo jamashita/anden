@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/jamashita/anden/compare/v1.9.0...v1.10.0) (2023-01-31)
+
+
+### Features
+
+* 🎸 pakcagesu pdated ([3b48dc8](https://github.com/jamashita/anden/commit/3b48dc871fba8eee8b895e54b4039fa1057c46c2))
+* 🎸 vitest downgraded ([e55d54c](https://github.com/jamashita/anden/commit/e55d54c2ed137933386b003e845c4f67b096800f))
+
 # [1.9.0](https://github.com/jamashita/anden/compare/v1.8.0...v1.9.0) (2023-01-14)
 
 
