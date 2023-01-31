@@ -41,7 +41,7 @@ describe('UUID', () => {
 
   describe('v4', () => {
     it('always generates 36 length string', async () => {
-      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map((): Promise<UUID> => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map(() => {
         return v4();
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
@@ -54,7 +54,7 @@ describe('UUID', () => {
 
   describe('v5', () => {
     it('always generates 36 length string', async () => {
-      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map((): Promise<UUID> => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map(() => {
         return v5();
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
