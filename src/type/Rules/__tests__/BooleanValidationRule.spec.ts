@@ -8,52 +8,36 @@ describe('BooleanValidationRule', () => {
   });
 
   describe('evaluate', () => {
-    it('does not throw any Error', () => {
+    it.each`
+    value
+    ${false}
+    ${true}
+    `('does not throw any Error', ({ value }: { value: boolean; }) => {
       const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {
-        rule.evaluate({}, false);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, true);
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-boolean values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${Symbol()}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when non-boolean $value given', ({ value }: { value: unknown; }) => {
       const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {
-        rule.evaluate({}, null);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '123');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'abcd');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 123);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 0);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, {});
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, []);
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
     });
   });

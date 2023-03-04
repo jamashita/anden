@@ -10,164 +10,163 @@ describe('StringValidationRule', () => {
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-string values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol('p')}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when non-string $value given', ({ value }: { value: unknown; }) => {
       const rule: StringValidationRule = StringValidationRule.of();
 
       expect(() => {
-        rule.evaluate({}, null);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 123);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 0);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, false);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, true);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, {});
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, []);
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
     });
 
-    it('does not throw any Error when given string can be converted to number', () => {
+    it.each`
+    value
+    ${'123'}
+    ${'-123'}
+    ${'0'}
+    ${'0.18'}
+    `('does not throw any Error when given string can be converted to number', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'numeric'
       });
 
       expect(() => {
-        rule.evaluate({}, '123');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '-123');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '0');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '0.18');
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given string cannot be converted to number', () => {
+    it.each`
+    value
+    ${'1.2.3'}
+    ${'0..'}
+    ${'0..10'}
+    ${'a'}
+    ${'-Infinity'}
+    ${'NaN'}
+    `('throws TypeError when given string cannot be converted to number', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'numeric'
       });
 
       expect(() => {
-        rule.evaluate({}, '1.2.3');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '0..');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '0..18');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'a');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '-Infinity');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'NaN');
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when string pattern does not match', () => {
+    it.each`
+    value
+    ${'a'}
+    ${'b'}
+    ${'ba'}
+    `('throws TypeError when string pattern does not match', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'pattern',
         pattern: /^a.*b$/iu
       });
 
       expect(() => {
-        rule.evaluate({}, 'a');
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'ab'}
+    ${'aab'}
+    ${'abb'}
+    ${'acb'}
+    ${'abcab'}
+    `('does not throw any Error when string pattern matches', ({ value }: { value: string; }) => {
+      const rule: StringValidationRule = StringValidationRule.of({
+        type: 'pattern',
+        pattern: /^a.*b$/iu
+      });
+
       expect(() => {
-        rule.evaluate({}, 'b');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'ab');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'ba');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'aab');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'abb');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'acb');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'abcab');
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min string length given', () => {
+    it.each`
+    value
+    ${''}
+    ${'p'}
+    ${'pq'}
+    ${'pqw'}
+    `('throws TypeError when given value is less than min string length given', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4
       });
 
       expect(() => {
-        rule.evaluate({}, '');
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pqwo'}
+    `('does not throw any Error when given value is greater than min string length given', ({ value }: { value: string; }) => {
+      const rule: StringValidationRule = StringValidationRule.of({
+        type: 'length',
+        min: 4
+      });
+
       expect(() => {
-        rule.evaluate({}, 'p');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pq');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqw');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo');
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is greater than max string length given', () => {
+    it.each`
+    value
+    ${'pqwo1029'}
+    ${'pqwo102'}
+    ${'pqwo10'}
+    ${'pqwo1'}
+    `('throws TypeError when given value is greater than max string length given', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         max: 4
       });
 
       expect(() => {
-        rule.evaluate({}, 'pqwo1029');
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pqwo'}
+    `('does not throw any Error when given value is less than max string length given', ({ value }: { value: string; }) => {
+      const rule: StringValidationRule = StringValidationRule.of({
+        type: 'length',
+        max: 4
+      });
+
       expect(() => {
-        rule.evaluate({}, 'pqwo102');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo10');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo1');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo');
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min and greater than max string length given', () => {
+    it.each`
+    value
+    ${'pq'}
+    ${'pqw'}
+    ${'pqwo102'}
+    ${'pqwo1029'}
+    `('throws TypeError when given value is less than min and greater than max string length given', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4,
@@ -175,29 +174,34 @@ describe('StringValidationRule', () => {
       });
 
       expect(() => {
-        rule.evaluate({}, 'pq');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqw');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo1');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo10');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo102');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pqwo1029');
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
     });
 
-    it('does not throw any Error when given string is contained by array', () => {
+    it.each`
+    value
+    ${'pqwo'}
+    ${'pqwo1'}
+    ${'pqwo10'}
+    `('does not throw any Error when given value is greater than min and less than max string length given', ({ value }: { value: string; }) => {
+      const rule: StringValidationRule = StringValidationRule.of({
+        type: 'length',
+        min: 4,
+        max: 6
+      });
+
+      expect(() => {
+        rule.evaluate({}, value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pi'}
+    ${'pu'}
+    ${'po'}
+    ${'pe'}
+    `('does not throw any Error when given string is contained by array', ({ value }: { value: string; }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'contain',
         samples: [
@@ -209,16 +213,7 @@ describe('StringValidationRule', () => {
       });
 
       expect(() => {
-        rule.evaluate({}, 'pi');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pu');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'po');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'pe');
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 

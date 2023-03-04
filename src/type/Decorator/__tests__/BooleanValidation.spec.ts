@@ -12,52 +12,36 @@ class MockValidation {
 
 describe('BooleanValidation', () => {
   describe('decorator', () => {
-    it('does not throw any Error', () => {
+    it.each`
+    value
+    ${false}
+    ${true}
+    `('does not throw when $value given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act(false);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act(true);
+        validation.act(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-boolean values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${Symbol()}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('123');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('abcd');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(123);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act([]);
+        validation.act(value);
       }).toThrow(TypeError);
     });
   });

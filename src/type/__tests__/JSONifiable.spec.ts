@@ -9,20 +9,26 @@ class MockJSONifiable implements JSONifiable {
 
 describe('JSONifiable', () => {
   describe('isJSONifiable', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol()}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+      expect(isJSONifiable(value)).toBe(false);
+    });
+
     it('returns true if the object has toJSON()', () => {
-      expect(isJSONifiable(null)).toBe(false);
-      expect(isJSONifiable(undefined)).toBe(false);
-      expect(isJSONifiable('')).toBe(false);
-      expect(isJSONifiable('123')).toBe(false);
-      expect(isJSONifiable('abcd')).toBe(false);
-      expect(isJSONifiable(123)).toBe(false);
-      expect(isJSONifiable(0)).toBe(false);
-      expect(isJSONifiable(false)).toBe(false);
-      expect(isJSONifiable(true)).toBe(false);
-      expect(isJSONifiable(Symbol())).toBe(false);
-      expect(isJSONifiable(20n)).toBe(false);
-      expect(isJSONifiable({})).toBe(false);
-      expect(isJSONifiable([])).toBe(false);
       expect(
         isJSONifiable({
           toJSON() {
