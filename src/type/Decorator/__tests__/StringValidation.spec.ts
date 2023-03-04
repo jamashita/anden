@@ -65,177 +65,159 @@ describe('StringValidation', () => {
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-string values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol('p')}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when non-string values given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act1(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(123);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(false);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(true);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1([]);
+        validation.act1(value);
       }).toThrow(TypeError);
     });
 
-    it('does not throw any Error when given string can be converted to number', () => {
+    it.each`
+    value
+    ${'123'}
+    ${'-123'}
+    ${'0'}
+    ${'0.18'}
+    `('does not throw any Error when given string can be converted to number', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act2('123');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2('-123');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2('0');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2('0.18');
+        validation.act2(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given string cannot be converted to number', () => {
+    it.each`
+    value
+    ${'1.2.3'}
+    ${'0..'}
+    ${'0..10'}
+    ${'a'}
+    ${'-Infinity'}
+    ${'NaN'}
+    `('throws TypeError when given string cannot be converted to number', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act2('1.2.3');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('0..');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('0..10');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('a');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('a');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('-Infinity');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2('NaN');
+        validation.act2(value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when string pattern does not match', () => {
+    it.each`
+    value
+    ${'ab'}
+    ${'aab'}
+    ${'abb'}
+    ${'acb'}
+    ${'abcab'}
+    `('does not throw any Error when string pattern matches', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act3('a');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3('b');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3('ab');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3('ba');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3('aab');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3('abb');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3('acb');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3('abcab');
+        validation.act3(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when less than min string length given', () => {
+    it.each`
+    value
+    ${'a'}
+    ${'b'}
+    ${'ba'}
+    `('does not throw any Error when string pattern matches', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act4('');
+        validation.act3(value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${''}
+    ${'p'}
+    ${'pq'}
+    ${'pqw'}
+    `('throws TypeError when less than min string length given', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act4('p');
+        validation.act4(value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pqwo'}
+    `('does not throw any Error when greater than min string length given', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act4('pq');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4('pqw');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4('pqwo');
+        validation.act4(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when greater than max string length given', () => {
+    it.each`
+    value
+    ${'pqwo1029'}
+    ${'pqwo102'}
+    ${'pqwo10'}
+    ${'pqwo1'}
+    `('throws TypeError when greater than max string length given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act5('pqwo1029');
+        validation.act5(value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pqwo'}
+    `('does not throw any Error when greater than max string length given', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act5('pqwo102');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5('pqwo10');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5('pqwo1');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5('pqwo');
+        validation.act5(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than min and greater than max string length given', () => {
+    it.each`
+    value
+    ${'pq'}
+    ${'pqw'}
+    ${'pqwo102'}
+    ${'pqwo1029'}
+    `('throws TypeError when given value is less than min and greater than max string length given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act6('pq');
+        validation.act6(value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${'pqwo'}
+    ${'pqwo1'}
+    ${'pqwo10'}
+    `('does not throw any Error when given value is less than min and greater than max string length given', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act6('pqw');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6('pqwo');
+        validation.act6(value);
       }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act6('pqwo1');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act6('pqwo10');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act6('pqwo102');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6('pqwo1029');
-      }).toThrow(TypeError);
     });
   });
 });

@@ -1,99 +1,74 @@
-import { PlainObject, PlainObjectItem } from '../../type/index.js';
+import { Inconnu, PlainObject, PlainObjectItem } from '../../type/index.js';
 import { Reference } from '../Reference.js';
 
 describe('Reference', () => {
   describe('isCircular', () => {
-    it('returns false if given objects do not have recursive reference', () => {
+    it.each`
+    object
+    ${{
+      a: null
+    }}
+    ${{
+      a: undefined
+    }}
+    ${{
+      a: true
+    }}
+    ${{
+      a: false
+    }}
+    ${{
+      a: 'picture in picture'
+    }}
+    ${{
+      a: 0.001
+    }}
+    ${{
+      a: -0.001
+    }}
+    ${{
+      a: Infinity
+    }}
+    ${{
+      a: NaN
+    }}
+    ${{
+      a: Symbol()
+    }}
+    ${{
+      a: 46n
+    }}
+    ${{
+      a: {}
+    }}
+    ${{
+      a: {
+        b: {
+          c: undefined,
+          d: {}
+        }
+      }
+    }}
+    ${{
+      a: []
+    }}
+    ${{
+      a: [undefined, [undefined]]
+    }}
+    ${[]}
+    ${[undefined, [undefined]]}
+    `('returns false if given objects do not have recursive reference', ({ object }: { object: object; }) => {
       expect(Reference.isCircular({})).toBe(false);
       expect(
-        Reference.isCircular({
-          a: null
-        })
+        Reference.isCircular(object)
       ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: undefined
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: true
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: false
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: 'picture in picture'
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: 0.001
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: -0.001
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: Infinity
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: NaN
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: Symbol()
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: 46n
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: {}
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: {
-            b: {
-              c: undefined,
-              d: {}
-            }
-          }
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: []
-        })
-      ).toBe(false);
-      expect(
-        Reference.isCircular({
-          a: [undefined, [undefined]]
-        })
-      ).toBe(false);
-      expect(Reference.isCircular([])).toBe(false);
-      expect(Reference.isCircular([undefined, [undefined]])).toBe(false);
     });
 
     it('returns true if objects have recursive references', () => {
-      const obj1: PlainObject = {
+      const obj1: Inconnu = {
         a: 'noi'
       };
-      const obj2: PlainObject = {
+      const obj2: Inconnu = {
         b: 'voi',
         o: obj1
       };
