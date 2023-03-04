@@ -112,442 +112,332 @@ class MockValidation {
 
 describe('StringValidation', () => {
   describe('decorator', () => {
-    it('does not throw any Error', () => {
+    it.each`
+    value
+    ${-1}
+    ${-1.01}
+    ${0}
+    ${1}
+    ${1.09}
+    ${-Infinity}
+    ${NaN}
+    ${Infinity}
+    `('does not throw any Error', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act1(-1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(-1.01);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(1.09);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(-Infinity);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(NaN);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act1(Infinity);
+        validation.act1(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-number values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${false}
+    ${true}
+    ${Symbol('p')}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when non-number values given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act1(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1('');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1('123');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1('abcd');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(false);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(true);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1([]);
+        validation.act1(value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than value', () => {
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    ${4}
+    `('throws TypeError when given value is less than 4', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act2(-Infinity);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(-1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(-0.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(2);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(3);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(3.5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act2(4.4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(6);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(7);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(7.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(8);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act2(Infinity);
-      }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is less than or equal to value', () => {
-      const validation: MockValidation = new MockValidation();
-
-      expect(() => {
-        validation.act3(-Infinity);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(-1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(-0.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(2);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(3);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(3.5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act3(4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(4.4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(6);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(7);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(7.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(8);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act3(Infinity);
-      }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is greater than value', () => {
-      const validation: MockValidation = new MockValidation();
-
-      expect(() => {
-        validation.act4(-Infinity);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(-1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(-0.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(2);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(3);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(3.5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act4(4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(4.4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(6);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(7);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(7.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(8);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act4(Infinity);
+        validation.act2(value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when given value is less than or equal to value', () => {
+    it.each`
+    value
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('does not throw any Error when given value is greater than 4', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act5(-Infinity);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(-1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(-0.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(2);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(3);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(3.5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act5(4.4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(6);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(7);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(7.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(8);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act5(Infinity);
-      }).toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is not equal to value', () => {
-      const validation: MockValidation = new MockValidation();
-
-      expect(() => {
-        validation.act6(-Infinity);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(-1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(-0.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(2);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(3);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(3.5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act6(4.4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(5);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(6);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(7);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(7.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(8);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act6(Infinity);
-      }).toThrow(TypeError);
-    });
-
-    it('throws TypeError when given value is equal to value', () => {
-      const validation: MockValidation = new MockValidation();
-
-      expect(() => {
-        validation.act7(-Infinity);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(-1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(-0.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(2);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(3);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(3.5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(4);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act7(4.4);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(5);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(6);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(7);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(7.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(8);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act7(Infinity);
+        validation.act2(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when decimal number given if int is set to true', () => {
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    `('throws TypeError when given value is less than or equal to 4', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act8(1.1);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act8(4.0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act8(-1.3);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act8(-2);
-      }).not.toThrow(TypeError);
-    });
-
-    it('throws TypeError when NaN given if noNaN is set to true', () => {
-      const validation: MockValidation = new MockValidation();
-
-      expect(() => {
-        validation.act9(1.1);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act9(4.0);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act9(-2);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act9(NaN);
+        validation.act3(value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when Infinity of -Infinity given if noInfinity is set to true', () => {
+    it.each`
+    value
+    ${4}
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('does not throw any Error when given value is greater than or equal to 4', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act10(1.1);
+        validation.act3(value);
       }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    `('does not throw any Error when given value is less than 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act10(4.0);
+        validation.act4(value);
       }).not.toThrow(TypeError);
+    });
+
+
+    it.each`
+    value
+    ${4}
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('throws TypeError when given value is greater than 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act10(-2);
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act10(Infinity);
+        validation.act4(value);
       }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    ${4}
+    `('does not throw TypeError when given value is less than or equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
       expect(() => {
-        validation.act10(-Infinity);
+        validation.act5(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('does not throw any Error when given value is greater than or equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act5(value);
+      }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('throws TypeError when given value is not equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act6(value);
+      }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${4}
+    `('does not throw TypeError when given value is not equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act6(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${-Infinity}
+    ${-1}
+    ${-0.1}
+    ${0}
+    ${1}
+    ${2}
+    ${3}
+    ${3.5}
+    ${4.4}
+    ${5}
+    ${6}
+    ${7}
+    ${7.1}
+    ${8}
+    ${Infinity}
+    `('does not throw TypeError when given value is equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act7(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${4}
+    `('throws TypeError when given value is equal to 4', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act7(value);
+      }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${1.1}
+    ${-1.3}
+    `('throws TypeError when decimal number given if int is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act8(value);
+      }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${4.0}
+    ${-2}
+    `('does not throw TypeError when decimal number given if int is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act8(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${1.1}
+    ${4.0}
+    ${-2}
+    `('does not throw TypeError when NaN given if noNaN is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act9(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${NaN}
+    `('throws TypeError when NaN given if noNaN is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act9(value);
+      }).toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${1.1}
+    ${4.0}
+    ${-2}
+    `('does not throw TypeError when Infinity of -Infinity given if noInfinity is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act10(value);
+      }).not.toThrow(TypeError);
+    });
+
+    it.each`
+    value
+    ${Infinity}
+    ${-Infinity}
+    `('throws TypeError when Infinity of -Infinity given if noInfinity is set to true', ({ value }: { value: unknown; }) => {
+      const validation: MockValidation = new MockValidation();
+
+      expect(() => {
+        validation.act10(value);
       }).toThrow(TypeError);
     });
   });

@@ -1,129 +1,31 @@
 import { Clone } from '../Clone.js';
+import { ObjectLiteral } from '../Value.js';
 
 describe('Clone', () => {
   describe('copy', () => {
-    it('can copy ObjectLiterals', () => {
-      expect(Clone.copy({})).toStrictEqual({});
-      expect(
-        Clone.copy({
-          a: null
-        })
-      ).toStrictEqual({
-        a: null
-      });
-      expect(
-        Clone.copy({
-          a: undefined
-        })
-      ).toStrictEqual({
-        a: undefined
-      });
-      expect(
-        Clone.copy({
-          a: true
-        })
-      ).toStrictEqual({
-        a: true
-      });
-      expect(
-        Clone.copy({
-          a: false
-        })
-      ).toStrictEqual({
-        a: false
-      });
-      expect(
-        Clone.copy({
-          a: 'picture in picture'
-        })
-      ).toStrictEqual({
-        a: 'picture in picture'
-      });
-      expect(
-        Clone.copy({
-          a: 0.001
-        })
-      ).toStrictEqual({
-        a: 0.001
-      });
-      expect(
-        Clone.copy({
-          a: -0.001
-        })
-      ).toStrictEqual({
-        a: -0.001
-      });
-      expect(
-        Clone.copy({
-          a: Infinity
-        })
-      ).toStrictEqual({
-        a: Infinity
-      });
-      expect(
-        Clone.copy({
-          a: NaN
-        })
-      ).toStrictEqual({
-        a: NaN
-      });
-
-      const sym: symbol = Symbol();
-
-      expect(
-        Clone.copy({
-          a: sym
-        })
-      ).toStrictEqual({
-        a: sym
-      });
-      expect(
-        Clone.copy({
-          a: 46n
-        })
-      ).toStrictEqual({
-        a: 46n
-      });
-      expect(
-        Clone.copy({
-          a: {}
-        })
-      ).toStrictEqual({
-        a: {}
-      });
-      expect(
-        Clone.copy({
-          a: {
-            b: {
-              c: undefined,
-              d: {}
-            }
-          }
-        })
-      ).toStrictEqual({
-        a: {
-          b: {
-            c: undefined,
-            d: {}
-          }
-        }
-      });
-      expect(
-        Clone.copy({
-          a: []
-        })
-      ).toStrictEqual({
-        a: []
-      });
-      expect(
-        Clone.copy({
-          a: [undefined, [undefined]]
-        })
-      ).toStrictEqual({
-        a: [undefined, [undefined]]
-      });
-      expect(Clone.copy([])).toStrictEqual([]);
-      expect(Clone.copy([undefined, [undefined]])).toStrictEqual([undefined, [undefined]]);
+    it.each`
+    object1 | object2
+    ${{}} | ${{}}
+    ${{ a: null }} | ${{ a: null }}
+    ${{ a: undefined }} | ${{ a: undefined }}
+    ${{ a: true }} | ${{ a: true }}
+    ${{ a: false }} | ${{ a: false }}
+    ${{ a: 'picture in picture' }} | ${{ a: 'picture in picture' }}
+    ${{ a: 0.001 }} | ${{ a: 0.001 }}
+    ${{ a: -0.001 }} | ${{ a: -0.001 }}
+    ${{ a: Infinity }} | ${{ a: Infinity }}
+    ${{ a: NaN }} | ${{ a: NaN }}
+    ${{ a: 46n }} | ${{ a: 46n }}
+    ${{ a: {} }} | ${{ a: {} }}
+    ${{ a: { b: { c: undefined,
+d: {} } } }} | ${{ a: { b: { c: undefined,
+d: {} } } }}
+    ${{ a: [] }} | ${{ a: [] }}
+    ${{ a: [undefined, [undefined]] }} | ${{ a: [undefined, [undefined]] }}
+    ${[]} | ${[]}
+    ${[undefined, [undefined]]} | ${[undefined, [undefined]]}
+    `('can copy ObjectLiterals', ({ object1, object2 }: { object1: ObjectLiteral; object2: ObjectLiteral; }) => {
+      expect(Clone.copy(object1)).toEqual(object2);
     });
   });
 });

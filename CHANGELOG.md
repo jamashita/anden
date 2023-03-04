@@ -1,3 +1,11 @@
+# [1.11.0](https://github.com/jamashita/anden/compare/v1.10.0...v1.11.0) (2023-03-04)
+
+
+### Features
+
+* 🎸 packages updated ([c5234bf](https://github.com/jamashita/anden/commit/c5234bfbb360b798ef17d009b5056398a0247622))
+* 🎸 yarn install ([313642b](https://github.com/jamashita/anden/commit/313642bb12efe304d60eb82bddefd66f05cf0bc8))
+
 # [1.10.0](https://github.com/jamashita/anden/compare/v1.9.0...v1.10.0) (2023-01-31)
 
 
