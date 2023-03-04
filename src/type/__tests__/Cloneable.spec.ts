@@ -8,20 +8,26 @@ class MockCloneable implements Cloneable<MockCloneable> {
 
 describe('Cloneable', () => {
   describe('isCloneable', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol()}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+      expect(isCloneable(value)).toBe(false);
+    });
+
     it('returns true if the object has duplicate()', () => {
-      expect(isCloneable(null)).toBe(false);
-      expect(isCloneable(undefined)).toBe(false);
-      expect(isCloneable('')).toBe(false);
-      expect(isCloneable('123')).toBe(false);
-      expect(isCloneable('abcd')).toBe(false);
-      expect(isCloneable(123)).toBe(false);
-      expect(isCloneable(0)).toBe(false);
-      expect(isCloneable(false)).toBe(false);
-      expect(isCloneable(true)).toBe(false);
-      expect(isCloneable(Symbol())).toBe(false);
-      expect(isCloneable(20n)).toBe(false);
-      expect(isCloneable({})).toBe(false);
-      expect(isCloneable([])).toBe(false);
       expect(
         isCloneable({
           duplicate() {

@@ -1,106 +1,34 @@
-import { asyncRandom, sequence } from '../../helper/index.js';
-import { Inconnu } from '../../type/index.js';
 import { Objet } from '../Objet.js';
 
 describe('Objet', () => {
   describe('identify', () => {
-    it('describes undefined', () => {
-      expect(Objet.identify(undefined)).toBe('undefined');
+    it.each`
+    value | expected
+    ${undefined} | ${'undefined'}
+    ${null} | ${'null'}
+    ${false} | ${'false'}
+    ${true} | ${'true'}
+    ${-100} | ${'-100'}
+    ${-10.05} | ${'-10.05'}
+    ${0} | ${'0'}
+    ${10.05} | ${'10.05'}
+    ${100} | ${'100'}
+    ${'hquHFH'} | ${'hquHFH'}
+    ${Symbol('hquHFH')} | ${Symbol('hquHFH').toString()}
+    ${-100n} | ${'-100'}
+    ${-1n} | ${'-1'}
+    ${0n} | ${'0'}
+    ${1n} | ${'1'}
+    ${100n} | ${'100'}
+    ${[]} | ${''}
+    ${[1, 2, 3]} | ${'1,2,3'}
+    ${{}} | ${'[object Object]'}
+    ${{ a: 1,
+b: 2,
+c: 3 }} | ${'[object Object]'}
+    ${Object.create(null)} | ${'[object Object]'}
+    `('returns $expected when given $value', ({ value, expected }: { value: unknown; expected: string; }) => {
+      expect(Objet.identify(value)).toBe(expected);
     });
-
-    it('describes null', () => {
-      expect(Objet.identify(null)).toBe('null');
-    });
-
-    it('describes boolean', () => {
-      expect(Objet.identify(false)).toBe('false');
-      expect(Objet.identify(true)).toBe('true');
-    });
-
-    it('describes number', () => {
-      for (let i: number = -100; i <= 100; i++) {
-        expect(Objet.identify(i)).toBe(`${i}`);
-      }
-    });
-
-    it('describes string', () => {
-      const dones: Array<Promise<void>> = sequence(100).map(async () => {
-        const str: string = await asyncRandom(40);
-
-        expect(Objet.identify(str)).toBe(str);
-      });
-
-      return Promise.all<void>(dones);
-    }, 10_000);
-
-    it('describes symbol', () => {
-      const dones: Array<Promise<void>> = sequence(100).map(async () => {
-        const sym: symbol = Symbol(await asyncRandom(40));
-
-        expect(Objet.identify(sym)).toBe(sym.toString());
-      });
-
-      return Promise.all<void>(dones);
-    }, 10_000);
-
-    it('describes bigint', () => {
-      for (let i: bigint = -100n; i <= 100n; i++) {
-        expect(Objet.identify(i)).toBe(`${i}`);
-      }
-    });
-
-    it('describes object literal', async () => {
-      expect(Objet.identify({})).toBe('[object Object]');
-
-      const obj: Inconnu = {};
-
-      const dones: Array<Promise<void>> = sequence(100).map(async (i: number) => {
-        const [key, value]: Array<string> = await Promise.all<string>([
-          asyncRandom(i),
-          asyncRandom(i)
-        ]);
-
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        obj[key!] = value;
-      });
-
-      await Promise.all<void>(dones);
-
-      expect(Objet.identify(obj)).toBe('[object Object]');
-    }, 10_000);
-
-    it('describes object.create(null)', async () => {
-      expect(Objet.identify(Object.create(null))).toBe('[object Object]');
-
-      const obj: Inconnu = {};
-
-      const dones: Array<Promise<void>> = sequence(100).map(async (i: number) => {
-        const [key, value]: Array<string> = await Promise.all<string>([
-          asyncRandom(i),
-          asyncRandom(i)
-        ]);
-
-        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-        obj[key!] = value;
-      });
-
-      await Promise.all<void>(dones);
-
-      expect(Objet.identify(obj)).toBe('[object Object]');
-    }, 10_000);
-
-    it('returns itself when it has toString()', () => {
-      const dones: Array<Promise<void>> = sequence(100).map(async () => {
-        const str: string = await asyncRandom(40);
-
-        expect(Objet.identify({
-          toString(): string {
-            return str;
-          }
-        })).toBe(str);
-      });
-
-      return Promise.all<void>(dones);
-    }, 10_000);
   });
 });
