@@ -8,58 +8,38 @@ describe('SymbolValidationRule', () => {
   });
 
   describe('evaluate', () => {
-    it('does not throw any Error', () => {
+    it.each`
+    value
+    ${Symbol()}
+    ${Symbol('mi')}
+    ${Symbol(-6)}
+    `('does not throw any Error', ({ value }: { value: symbol; }) => {
       const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {
-        rule.evaluate({}, Symbol());
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, Symbol('mi'));
-      }).not.toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, Symbol(-6));
+        rule.evaluate({}, value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-symbol values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when non-symbol $value given', ({ value }: { value: unknown; }) => {
       const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {
-        rule.evaluate({}, null);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, '123');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 'abcd');
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 123);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 0);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, false);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, true);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, 20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, {});
-      }).toThrow(TypeError);
-      expect(() => {
-        rule.evaluate({}, []);
+        rule.evaluate({}, value);
       }).toThrow(TypeError);
     });
   });

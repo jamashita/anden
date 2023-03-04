@@ -37,16 +37,14 @@ describe('ULID', () => {
       }).toThrow(ULIDError);
     });
 
-    it('throws ULIDError when the argument length is not 26', () => {
+    it.each`
+    value
+    ${'01FF2GJM51QP6DYKQFHQ1EAAR'}
+    ${'01FF2GJXXNB4Y71Q2WGP4KGPTRA'}
+    `('throws ULIDError when the argument length is not 26', ({ value }: { value: string; }) => {
       expect(() => {
-        ULID.of('01FF2GJM51QP6DYKQFHQ1EAAR');
+        ULID.of(value);
       }).toThrow(ULIDError);
-      expect(() => {
-        ULID.of('01FF2GJXXNB4Y71Q2WGP4KGPTRA');
-      }).toThrow(ULIDError);
-      expect(() => {
-        ULID.of('01FF2GK982W2K1GBJMBRF78BBC');
-      }).not.toThrow(ULIDError);
     });
   });
 

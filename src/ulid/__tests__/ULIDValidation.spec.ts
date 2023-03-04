@@ -12,60 +12,47 @@ class MockValidation {
 
 describe('ULIDValidation', () => {
   describe('decorator', () => {
-    it('does not throw any Error', () => {
+    it.each`
+    value
+    ${'01FETH0D504JKQH4N88CC5KNQR'}
+    ${'01FETH0MZYRY857DF04M8MFDYG'}
+    `('does not throw any Error', ({ value }: { value: string; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act('01FETH0D504JKQH4N88CC5KNQR');
-      }).not.toThrow(TypeError);
-      expect(() => {
-        validation.act('01FETH0MZYRY857DF04M8MFDYG');
+        validation.act(value);
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-string values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol('p')}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(123);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(false);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(true);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act([]);
+        validation.act(value);
       }).toThrow(TypeError);
     });
 
-    it('throws TypeError when non-ULID string given', () => {
+    it.each`
+    value
+    ${'e5f8279c-bbed-45e8-a7d5-7a4fbe5fdef5'}
+    ${'01FETH1A9JR3XK6K0F8T588CS'}
+    `('throws TypeError when non-ULID string given', ({ value }: { value: string; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act('e5f8279c-bbed-45e8-a7d5-7a4fbe5fdef5');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('01FETH1A9JR3XK6K0F8T588CS');
+        validation.act(value);
       }).toThrow(TypeError);
     });
   });

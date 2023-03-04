@@ -20,44 +20,25 @@ describe('SymbolValidation', () => {
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-symbol values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${''}
+    ${'123'}
+    ${'abcd'}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('123');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act('abcd');
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(123);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(false);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(true);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act([]);
+        validation.act(value);
       }).toThrow(TypeError);
     });
   });

@@ -35,38 +35,23 @@ describe('ZeitValidation', () => {
       }).not.toThrow(TypeError);
     });
 
-    it('throws TypeError when non-string values given', () => {
+    it.each`
+    value
+    ${null}
+    ${undefined}
+    ${123}
+    ${0}
+    ${false}
+    ${true}
+    ${Symbol('p')}
+    ${20n}
+    ${{}}
+    ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {
-        validation.act1(null);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(undefined);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(123);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(0);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(false);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(true);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(Symbol('p'));
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1(20n);
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1({});
-      }).toThrow(TypeError);
-      expect(() => {
-        validation.act1([]);
+        validation.act1(value);
       }).toThrow(TypeError);
     });
 
