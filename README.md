@@ -7,6 +7,12 @@ This package allows you to represent many classes using a unified interface.
 
 [![CI](https://github.com/jamashita/anden/actions/workflows/ci.yml/badge.svg)](https://github.com/jamashita/anden/actions/workflows/ci.yml)
 
+## Install
+
+```text
+yarn add @jamashita/anden
+```
+
 ## Requisite
 
 ```
