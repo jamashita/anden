@@ -5,16 +5,22 @@ This package allows you to represent many classes using a unified interface.
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-[![CI](https://github.com/jamashita/anden/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/jamashita/anden/actions/workflows/ci.yml)
+[![CI](https://github.com/jamashita/anden/actions/workflows/ci.yml/badge.svg)](https://github.com/jamashita/anden/actions/workflows/ci.yml)
+
+## Install
+
+```text
+yarn add @jamashita/anden
+```
 
 ## Requisite
 
 ```
 > node -v
-v18.9.1
+v19.7.0
 
 > npm -v
-8.19.1
+9.5.0
 
 > yarn -v
 1.22.19
@@ -69,39 +75,40 @@ same hash code.
 Converts the given`n` to string. If `n` has a `toString()` method, the result of calling that method is
 returned. Otherwise, the result of `String(n)` is returned.
 
-### (abstract) `objet.serialize(): string`
+### (abstract) `Objet.prototype.serialize(): string`
 
-This method is used in `objet.toString()` to customize the string representation of an object. It is strongly
+This method is used in `Objet.prototype.toString()` to customize the string representation of an object. It is strongly
 recommended to implement this method when extending the `Objet` class.
 
-### `objet.equals(other: unknown): boolean`
+### `Objet.prototype.equals(other: unknown): boolean`
 
 Compares the hash code of this instance with the hash code of the given `other`, and returns `true` if they are the
 same.
 
-### `objet.hashCode(): string`
+### `Objet.prototype.hashCode(): string`
 
 Returns the hash code of this instance. If the properties have the same values, this method must return the same hash
 code.
 
-### `objet.toString(): string`
+### `Objet.prototype.toString(): string`
 
-Calls and returns the result of the `Objet.serialize()` method.
+Calls and returns the result of the `Objet.prototype.serialize()` method.
 
 ## Entity\<I\>
 
 A class for entities in Domain-Driven Design (DDD). It is a concrete class extending the `Objet` class, and `I` is an
 identifier class.
 
-### (abstract) `entity.getIdentifier(): I`
+### (abstract) `Entity.prototype.getIdentifier(): I`
 
 Returns the identifier of the entity. It is used in the `entity.equals(other: unknown): boolean` method to compare two
 entities.
 
-### (override) `entity.equals(other: unknown): boolean`
+### (override) `Entity.prototype.equals(other: unknown): boolean`
 
 Compares the identifier of this object with the identifier of the given `other`. Returns `true` if they are the same.
-This method should not be overridden, as it relies on the correct implementation of the `entity.getIdentifier()` method.
+This method should not be overridden, as it relies on the correct implementation of
+the `Entity.prototype.getIdentifier()` method.
 
 ## ValueObject
 
@@ -222,7 +229,7 @@ Creates a deep copy of the given object literal.
 
 An interface for objects that can be cloned.
 
-### `cloneable.duplicate(): T`
+### `Cloneable.prototype.duplicate(): T`
 
 Should return a deep copy of itself.
 
@@ -243,7 +250,7 @@ Returns `true` if the two given object literals are the same, `false` otherwise.
 
 An interface for objects that can be compared for equality.
 
-### `equatable.equals(other: unknown): boolean`
+### `Equatable.prototype.equals(other: unknown): boolean`
 
 Should return `true` if this and the given object are the same, `false` otherwise.
 
@@ -251,7 +258,7 @@ Should return `true` if this and the given object are the same, `false` otherwis
 
 An interface for objects that can be converted to a JSON object.
 
-### `jsonifiable.toJSON(): O`
+### `JSONifiable.prototype.toJSON(): O`
 
 Returns the JSON representation of this object.
 
@@ -263,7 +270,7 @@ Returns `true` if the given `n` has a `toJSON` method, `false` otherwise.
 
 Class for type narrowing.
 
-### `Kind.isArray<T>(value: unknown): value is Array<T>`
+### `Kind.isArray<T = unknown>(value: unknown): value is Array<T>`
 
 ### `Kind.isBigInt(value: unknown): value is BigInt`
 
@@ -301,7 +308,7 @@ Class for type narrowing.
 
 An interface that extends both `Equatable` and `Serializable` interfaces.
 
-### `nominative.hashCode(): string`
+### `Nominative.prototype.hashCode(): string`
 
 Returns a hash code of this instance.
 
@@ -309,7 +316,7 @@ Returns a hash code of this instance.
 
 An interface for objects that can be converted to a string.
 
-### `serializable.serialize(): string`
+### `Serializable.prototype.serialize(): string`
 
 Returns a string representation of this instance.
 
@@ -433,7 +440,7 @@ cannot be parsed using the given format.
 
 Returns `true` if the given `str` can be parsed using the given `format`.
 
-### `zeit.advance(value: number, unit: ZeitUnitType): Zeit`
+### `Zeit.prototype.advance(value: number, unit: ZeitUnitType): Zeit`
 
 Returns a new `Zeit` instance that is `value` `unit` earlier than this instance.
 
@@ -445,19 +452,19 @@ console.log(zeit2.toString('YYYY-MM-DD'));
 // '2000-04-01'
 ```
 
-### `zeit.isAfter(other: Zeit): boolean`
+### `Zeit.prototype.isAfter(other: Zeit): boolean`
 
-Returns `true` if this instance is after the given `other` Zeit instance.
+Returns `true` if this instance is after the given `other` `Zeit` instance.
 
-### `zeit.isBefore(other: Zeit): boolean`
+### `Zeit.prototype.isBefore(other: Zeit): boolean`
 
-Returns `true` if this instance is before the given `other` Zeit instance.
+Returns `true` if this instance is before the given `other` `Zeit` instance.
 
-### `zeit.isValid(): boolean`
+### `Zeit.prototype.isValid(): boolean`
 
 Returns `true` if this instance represents a valid date and time.
 
-### `zeit.postpone(value: number, unit: ZeitUnitType): Zeit`
+### `Zeit.prototype.postpone(value: number, unit: ZeitUnitType): Zeit`
 
 Returns a new Zeit instance that is `value` `unit` later than this instance.
 
@@ -469,7 +476,7 @@ console.log(zeit2.toString('YYYY-MM-DD'));
 // '2000-04-03'
 ```
 
-### (override) `zeit.toString(format?: string): boolean`
+### (override) `Zeit.prototype.toString(format?: string): boolean`
 
 ### ZeitValidation
 
