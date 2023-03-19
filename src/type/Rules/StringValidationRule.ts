@@ -45,14 +45,14 @@ export class StringValidationRule implements ValidationRule {
     switch (this.args.type) {
       case 'numeric': {
         if (!Kind.isNumericalString(value)) {
-          throw new TypeError(`VALUE IS NOT NUMERICAL STRING. GIVEN: ${value}`);
+          throw new TypeError(`VALUE IS NOT NUMERICAL STRING: ${value}`);
         }
 
         return;
       }
       case 'pattern': {
         if (!this.args.pattern.test(value)) {
-          throw new TypeError(`VALUE DOES NOT FOLLOW THE PATTERN. GIVEN: ${value}`);
+          throw new TypeError(`VALUE DOES NOT FOLLOW THE PATTERN: ${value}`);
         }
 
         return;
@@ -60,12 +60,12 @@ export class StringValidationRule implements ValidationRule {
       case 'length': {
         if (!Kind.isUndefined(this.args.min)) {
           if (value.length < this.args.min) {
-            throw new TypeError(`VALUE IS SHORTER THAN min. GIVEN: ${value}`);
+            throw new TypeError(`VALUE IS SHORTER THAN min: ${value}`);
           }
         }
         if (!Kind.isUndefined(this.args.max)) {
           if (this.args.max < value.length) {
-            throw new TypeError(`VALUE IS LONGER THAN max. GIVEN: ${value}`);
+            throw new TypeError(`VALUE IS LONGER THAN max: ${value}`);
           }
         }
 
@@ -73,7 +73,7 @@ export class StringValidationRule implements ValidationRule {
       }
       case 'contain': {
         if (!this.args.samples.includes(value)) {
-          throw new TypeError(`THIS VALUE IS NOT CONTAINED IN SAMPLES. GIVEN: ${value}`);
+          throw new TypeError(`THIS VALUE IS NOT CONTAINED IN SAMPLES: ${value}`);
         }
 
         // eslint-disable-next-line no-useless-return

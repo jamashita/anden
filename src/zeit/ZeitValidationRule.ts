@@ -17,7 +17,7 @@ export class ZeitValidationRule implements ValidationRule {
       throw new TypeError('VALUE IS NOT STRING');
     }
     if (!Zeit.validate(value, this.format)) {
-      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR ZEIT. GIVEN: ${value} ${this.format}`);
+      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR ZEIT: ${value} ${this.format}`);
     }
   }
 }
