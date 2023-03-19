@@ -13,7 +13,7 @@ This package allows you to represent many classes using a unified interface.
 yarn add @jamashita/anden
 ```
 
-## Requisite
+## Prerequisite
 
 ```
 > node -v
