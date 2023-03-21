@@ -1,5 +1,6 @@
 import { SyncAsync } from './Value.js';
 
+export type AnyFunction = (...args: Array<unknown>) => unknown;
 export type UnaryFunction<A, R> = (arg: A) => R;
 export type BinaryFunction<A1, A2, R> = (arg1: A1, arg2: A2) => R;
 export type TernaryFunction<A1, A2, A3, R> = (arg1: A1, arg2: A2, arg3: A3) => R;

@@ -68,12 +68,12 @@ export class NumberValidationRule implements ValidationRule {
       });
 
       if (!satisfied) {
-        throw new TypeError(`VALUE IS NOT SATISFIED GIVEN CONDITIONS. GIVEN: ${value}`);
+        throw new TypeError(`VALUE IS NOT SATISFIED GIVEN CONDITIONS: ${value}`);
       }
     }
     if (this.int) {
       if (!Kind.isInteger(value)) {
-        throw new TypeError(`VALUE IS INTEGER. GIVEN: ${value}`);
+        throw new TypeError('VALUE IS INTEGER');
       }
     }
     if (this.noNaN) {

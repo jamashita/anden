@@ -54,7 +54,7 @@ export class BigIntValidationRule implements ValidationRule {
       });
 
       if (!satisfied) {
-        throw new TypeError(`VALUE IS NOT SATISFIED GIVEN CONDITIONS. GIVEN: ${value}`);
+        throw new TypeError(`VALUE IS NOT SATISFIED GIVEN CONDITIONS: ${value}`);
       }
     }
   }

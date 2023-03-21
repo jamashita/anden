@@ -7,7 +7,7 @@ export class UUIDValidationRule implements ValidationRule {
       throw new TypeError('VALUE IS NOT STRING');
     }
     if (!UUID.validate(value)) {
-      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR UUID. GIVEN: ${value}`);
+      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR UUID: ${value}`);
     }
   }
 }
