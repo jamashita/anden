@@ -7,7 +7,7 @@ export class ULIDValidationRule implements ValidationRule {
       throw new TypeError('VALUE IS NOT STRING');
     }
     if (!ULID.validate(value)) {
-      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR ULID. GIVEN: ${value}`);
+      throw new TypeError(`THIS STRING IS NOT SUITABLE FOR ULID: ${value}`);
     }
   }
 }
