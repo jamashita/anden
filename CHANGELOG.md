@@ -1,3 +1,15 @@
+# [1.13.0](https://github.com/jamashita/anden/compare/v1.12.0...v1.13.0) (2023-03-19)
+
+
+### Bug Fixes
+
+* 🐛 Integer -> number ([e87c7df](https://github.com/jamashita/anden/commit/e87c7df20629be43437d02bda97b56fdc073e1ee))
+
+
+### Features
+
+* 🎸 packages updated ([0ac56e9](https://github.com/jamashita/anden/commit/0ac56e99471d96e21ee14c6119f88d3fd30c3fa7))
+
 # [1.12.0](https://github.com/jamashita/anden/compare/v1.11.0...v1.12.0) (2023-03-12)
 
 
