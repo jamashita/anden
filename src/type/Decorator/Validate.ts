@@ -50,7 +50,11 @@ export const Validate = (): MethodDecorator => {
   };
 };
 
-export const addRule = (target: object, key: string | symbol, index: number, rule: ValidationRule): void => {
+export const addRule = (target: object, key: Ambiguous<string | symbol>, index: number, rule: ValidationRule): void => {
+  if (Kind.isUndefined(key)) {
+    return;
+  }
+
   const indices: Ambiguous<Set<number>> = getIndex(target, key);
   const rules: Ambiguous<Map<number, ValidationRule>> = getRules(target, key);
 
