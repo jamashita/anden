@@ -1,3 +1,11 @@
+# [1.15.0](https://github.com/jamashita/anden/compare/v1.14.0...v1.15.0) (2023-04-23)
+
+
+### Features
+
+* 🎸 update packages ([0841a86](https://github.com/jamashita/anden/commit/0841a8644f8daecb48df176d6cc21edd870a5bc8))
+* 🎸 validators accept undefined ([b0aafcd](https://github.com/jamashita/anden/commit/b0aafcdacdcb0fea96f5c4567e1f2432abbd24b6))
+
 # [1.14.0](https://github.com/jamashita/anden/compare/v1.13.0...v1.14.0) (2023-03-21)
 
 
