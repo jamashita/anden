@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/jamashita/anden/compare/v1.13.0...v1.14.0) (2023-03-21)
+
+
+### Features
+
+* 🎸 AnyFunction ([1ccc2f7](https://github.com/jamashita/anden/commit/1ccc2f76bcee25c7052c628727af4454dacd92b3))
+
 # [1.13.0](https://github.com/jamashita/anden/compare/v1.12.0...v1.13.0) (2023-03-19)
 
 
