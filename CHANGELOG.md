@@ -1,3 +1,11 @@
+# [1.16.0](https://github.com/jamashita/anden/compare/v1.15.0...v1.16.0) (2023-05-09)
+
+
+### Features
+
+* 🎸 packages updated ([eb18d63](https://github.com/jamashita/anden/commit/eb18d634bba769bcbddad03aa020df896a3e9a68))
+* 🎸 packagesu pdated ([8d70cf8](https://github.com/jamashita/anden/commit/8d70cf88910a50f298d0557e24a6fb32de167ee4))
+
 # [1.15.0](https://github.com/jamashita/anden/compare/v1.14.0...v1.15.0) (2023-04-23)
 
 
