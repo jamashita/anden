@@ -70,7 +70,7 @@ export const addRule = (target: object, key: Ambiguous<string | symbol>, index: 
   }
 
   if (Kind.isUndefined(rules)) {
-    const r: Map<number, ValidationRule> = new Map<number, ValidationRule>();
+    const r: Map<number, ValidationRule> = new Map();
 
     r.set(index, rule);
 

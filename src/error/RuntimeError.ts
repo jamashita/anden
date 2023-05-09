@@ -27,7 +27,7 @@ export class RuntimeError extends Error {
     return chain.map((err: Error) => {
       return err.stack;
     }).filter((stack: Ambiguous<string>): stack is string => {
-      return !Kind.isUndefined(stack);
+      return Kind.isString(stack);
     }).join(SEPARATOR_TEXT);
   }
 }
