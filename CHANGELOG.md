@@ -1,3 +1,11 @@
+# [1.17.0](https://github.com/jamashita/anden/compare/v1.16.0...v1.17.0) (2023-06-10)
+
+
+### Features
+
+* 🎸 add ExhaustiveError ([26432fe](https://github.com/jamashita/anden/commit/26432fe8e4d06d7ed898bbdaf239fc62fcf5f224))
+* 🎸 packages updated ([53fb784](https://github.com/jamashita/anden/commit/53fb784f6bf9c28c37752f307882f4cd1724c9fb))
+
 # [1.16.0](https://github.com/jamashita/anden/compare/v1.15.0...v1.16.0) (2023-05-09)
 
 
