@@ -50,6 +50,11 @@ This error class can hold multiple `Error` instances at once, and it extends the
 throw new Errors(new Error('Error 1'), new Error('Error 2'), new Error('Error 3'));
 ```
 
+## ExhaustiveError
+
+This error class can be used to detect cases that are not handled in a switch. TypeScript will generate an alert when
+there is an unhandled case and this error is included in the default clause.
+
 ## UnimplementedError
 
 This error class is mainly used to indicate that a method is not yet implemented and it extends the `RuntimeError`
