@@ -1,8 +1,9 @@
-import dayjs from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
+import { Kind, Nullable } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
 dayjs.extend(customParseFormat);
@@ -12,7 +13,7 @@ dayjs.extend(utc);
 export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'week' | 'year';
 
 export class Zeit extends ValueObject {
-  private readonly zeit: dayjs.Dayjs;
+  private readonly zeit: Dayjs;
 
   public static earliest(zeiten: Iterable<Zeit>): Zeit {
     const z: Array<Zeit> = [...zeiten];
@@ -25,13 +26,17 @@ export class Zeit extends ValueObject {
       return z[0]!;
     }
 
-    const dates: Array<dayjs.Dayjs> = z.map((zeit: Zeit) => {
+    const dates: Array<Dayjs> = z.map((zeit: Zeit) => {
       return zeit.get();
     });
 
-    const min: dayjs.Dayjs = dayjs.min(dates).utc(true);
+    const min: Nullable<Dayjs> = dayjs.min(dates);
 
-    return Zeit.of(min);
+    if (Kind.isNull(min)) {
+      throw new ZeitError('NO MINIMUM DATE FOUND');
+    }
+
+    return Zeit.of(min.utc(true));
   }
 
   public static latest(zeiten: Iterable<Zeit>): Zeit {
@@ -45,31 +50,35 @@ export class Zeit extends ValueObject {
       return z[0]!;
     }
 
-    const dates: Array<dayjs.Dayjs> = z.map((zeit: Zeit) => {
+    const dates: Array<Dayjs> = z.map((zeit: Zeit) => {
       return zeit.get();
     });
 
-    const max: dayjs.Dayjs = dayjs.max(dates).utc(true);
+    const max: Nullable<Dayjs> = dayjs.max(dates);
 
-    return Zeit.of(max);
+    if (Kind.isNull(max)) {
+      throw new ZeitError('NO MAXIMUM DATE FOUND');
+    }
+
+    return Zeit.of(max.utc(true));
   }
 
   public static now(): Zeit {
     return Zeit.of(dayjs().utc(false));
   }
 
-  public static of(zeit: dayjs.Dayjs): Zeit {
+  public static of(zeit: Dayjs): Zeit {
     return new Zeit(zeit.utc(true));
   }
 
   public static ofDate(date: Date): Zeit {
-    const zeit: dayjs.Dayjs = dayjs(date).utc(true);
+    const zeit: Dayjs = dayjs(date).utc(true);
 
     return Zeit.of(zeit);
   }
 
   public static ofString(str: string, format: string): Zeit {
-    const zeit: dayjs.Dayjs = dayjs(str, format, true).utc(true);
+    const zeit: Dayjs = dayjs(str, format, true).utc(true);
 
     if (zeit.isValid()) {
       return Zeit.of(zeit);
@@ -79,12 +88,12 @@ export class Zeit extends ValueObject {
   }
 
   public static validate(str: string, format: string): boolean {
-    const zeit: dayjs.Dayjs = dayjs(str, format, true).utc(true);
+    const zeit: Dayjs = dayjs(str, format, true).utc(true);
 
     return zeit.isValid();
   }
 
-  private constructor(zeit: dayjs.Dayjs) {
+  private constructor(zeit: Dayjs) {
     super();
     this.zeit = zeit;
   }
@@ -104,7 +113,7 @@ export class Zeit extends ValueObject {
     return this.zeit.isSame(other.zeit);
   }
 
-  public get(): dayjs.Dayjs {
+  public get(): Dayjs {
     return this.zeit;
   }
 
