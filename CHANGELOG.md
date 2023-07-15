@@ -1,3 +1,12 @@
+# [1.18.0](https://github.com/jamashita/anden/compare/v1.17.0...v1.18.0) (2023-07-15)
+
+
+### Features
+
+* 🎸 min max returns nullable value ([80cdf96](https://github.com/jamashita/anden/commit/80cdf96725aa1d310ca9f9ff3fb3480942602861))
+* 🎸 packagesu pdated ([089dbd6](https://github.com/jamashita/anden/commit/089dbd673b038ac0d1fff3e30cac94f9152f3281))
+* 🎸 yarn update ([4848c7d](https://github.com/jamashita/anden/commit/4848c7de7eee0eb456066da9f2b7ef55d2788355))
+
 # [1.17.0](https://github.com/jamashita/anden/compare/v1.16.0...v1.17.0) (2023-06-10)
 
 
