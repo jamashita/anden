@@ -47,6 +47,12 @@
         "default": "./dist/ulid/index.js"
       }
     },
+    "./url": {
+      "import": {
+        "types": "./dist/url/index.d.ts",
+        "default": "./dist/url/index.js"
+      }
+    },
     "./uuid": {
       "import": {
         "types": "./dist/uuid/index.d.ts",
