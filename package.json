@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": false,
   "repository": {
     "type": "git",
@@ -45,6 +45,12 @@
       "import": {
         "types": "./dist/ulid/index.d.ts",
         "default": "./dist/ulid/index.js"
+      }
+    },
+    "./url": {
+      "import": {
+        "types": "./dist/url/index.d.ts",
+        "default": "./dist/url/index.js"
       }
     },
     "./uuid": {

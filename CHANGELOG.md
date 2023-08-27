@@ -1,3 +1,17 @@
+# [2.1.0](https://github.com/jamashita/anden/compare/v2.0.0...v2.1.0) (2023-08-27)
+
+
+### Bug Fixes
+
+* 🐛 dayjs was required ([3ed5f93](https://github.com/jamashita/anden/commit/3ed5f9308b4bdfc1e7a2dc5d0d85ed8046062e44))
+* 🐛 export url ([57235f1](https://github.com/jamashita/anden/commit/57235f185c1d131907f4b792798ef9ce3d1b9446))
+* 🐛 text ([a58f66a](https://github.com/jamashita/anden/commit/a58f66a61781e27a7bbe26598f4b5c67513e47f4))
+
+
+### Features
+
+* 🎸 URL class ([45b8eb7](https://github.com/jamashita/anden/commit/45b8eb706a77d11702244454e49ab26ef1760e46))
+
 # [2.0.0](https://github.com/jamashita/anden/compare/v1.18.0...v2.0.0) (2023-08-27)
 
 

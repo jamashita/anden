@@ -1,4 +1,4 @@
-import dayjs, { Dayjs, extend } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
@@ -6,9 +6,9 @@ import { ValueObject } from '../object/index.js';
 import { Equatable, Kind, Nullable, Primitive } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
-extend(customParseFormat);
-extend(minMax);
-extend(utc);
+dayjs.extend(customParseFormat);
+dayjs.extend(minMax);
+dayjs.extend(utc);
 
 export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'week' | 'year';
 
