@@ -11,7 +11,7 @@ export class UUID extends ValueObject {
       return new UUID(id);
     }
 
-    throw new UUIDError(`ILLEGAL ID SPECIFIED: ${id}`);
+    throw new UUIDError(`ILLEGAL UUID SPECIFIED: ${id}`);
   }
 
   public static regex(): RegExp {

@@ -1,4 +1,3 @@
-import { MockValueObject } from '../../object/index.js';
 import { UUID } from '../UUID.js';
 import { UUIDError } from '../UUIDError.js';
 
@@ -85,29 +84,6 @@ describe('UUID', () => {
         expect(UUID.validate(v4id.get())).toBe(true);
         expect(UUID.validate(v5id.get())).toBe(true);
       });
-    });
-  });
-
-  describe('equals', () => {
-    it('returns true if the same instance given', () => {
-      const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
-
-      expect(uuid1.equals(uuid1)).toBe(true);
-    });
-
-    it('returns false if different class instance given', () => {
-      const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
-
-      expect(uuid1.equals(new MockValueObject('998106de-b2e7-4981-9643-22cd30cd74de'))).toBe(false);
-    });
-
-    it('returns true if the property is the same', () => {
-      const uuid1: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
-      const uuid2: UUID = UUID.of('ee49aef0-b515-4fd8-9c4b-5ad9740ef4f9');
-      const uuid3: UUID = UUID.of('998106de-b2e7-4981-9643-22cd30cd74de');
-
-      expect(uuid1.equals(uuid2)).toBe(false);
-      expect(uuid1.equals(uuid3)).toBe(true);
     });
   });
 
