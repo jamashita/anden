@@ -1,14 +1,14 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { Dayjs, extend } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
-import { Kind, Nullable } from '../type/index.js';
+import { Equatable, Kind, Nullable, Primitive } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
-dayjs.extend(customParseFormat);
-dayjs.extend(minMax);
-dayjs.extend(utc);
+extend(customParseFormat);
+extend(minMax);
+extend(utc);
 
 export type ZeitUnitType = 'day' | 'hour' | 'minute' | 'month' | 'second' | 'week' | 'year';
 
@@ -115,6 +115,14 @@ export class Zeit extends ValueObject {
 
   public get(): Dayjs {
     return this.zeit;
+  }
+
+  protected getEquatableProperties(): Array<Equatable> {
+    return [];
+  }
+
+  protected getPrimitiveProperties(): Array<Primitive> {
+    return [];
   }
 
   public isAfter(other: Zeit): boolean {

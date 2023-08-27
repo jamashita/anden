@@ -1,5 +1,6 @@
 import { v4, v5, validate } from 'uuid';
 import { ValueObject } from '../object/index.js';
+import { Equatable, Primitive } from '../type/index.js';
 import { UUIDError } from './UUIDError.js';
 
 export class UUID extends ValueObject {
@@ -38,19 +39,16 @@ export class UUID extends ValueObject {
     this.id = id;
   }
 
-  public override equals(other: unknown): boolean {
-    if (this === other) {
-      return true;
-    }
-    if (!(other instanceof UUID)) {
-      return false;
-    }
-
-    return this.id === other.id;
-  }
-
   public get(): string {
     return this.id;
+  }
+
+  protected getEquatableProperties(): Array<Equatable> {
+    return [];
+  }
+
+  protected getPrimitiveProperties(): Array<Primitive> {
+    return [this.id];
   }
 
   public serialize(): string {
