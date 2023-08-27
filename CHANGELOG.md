@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/jamashita/anden/compare/v1.18.0...v2.0.0) (2023-08-27)
+
+
+### Features
+
+* 🎸 equals() updated ([751c177](https://github.com/jamashita/anden/commit/751c1778955aa3fdfb3cde7b802c7139b90e7803))
+* 🎸 equals() updated ([6188269](https://github.com/jamashita/anden/commit/6188269d6a069c8b0c7fd7a65fc5cd315d64a396))
+* 🎸 packagseu pdated ([df6a22a](https://github.com/jamashita/anden/commit/df6a22a074c1e4448cbeaab0f6ab2346bb0acf69))
+
+
+### BREAKING CHANGES
+
+* 🧨 equals() for VO is updated
+
 # [1.18.0](https://github.com/jamashita/anden/compare/v1.17.0...v1.18.0) (2023-07-15)
 
 
