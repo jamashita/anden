@@ -1,5 +1,6 @@
 import { ulid } from 'ulid';
 import { ValueObject } from '../object/index.js';
+import { Equatable, Primitive } from '../type/index.js';
 import { ULIDError } from './ULIDError.js';
 
 export class ULID extends ValueObject {
@@ -34,19 +35,16 @@ export class ULID extends ValueObject {
     this.id = id;
   }
 
-  public override equals(other: unknown): boolean {
-    if (this === other) {
-      return true;
-    }
-    if (!(other instanceof ULID)) {
-      return false;
-    }
-
-    return this.id === other.id;
-  }
-
   public get(): string {
     return this.id;
+  }
+
+  protected getEquatableProperties(): Array<Equatable> {
+    return [];
+  }
+
+  protected getPrimitiveProperties(): Array<Primitive> {
+    return [this.id];
   }
 
   public serialize(): string {
