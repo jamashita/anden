@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Validate } from '../../type/index.js';
-import { URLValidation } from '../UUIDValidation.js';
+import { URLValidation } from '../URLValidation.js';
 
 class MockValidation {
   @Validate()
