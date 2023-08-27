@@ -1,3 +1,4 @@
+import { Equatable, Primitive } from '../../type/index.js';
 import { Objet } from '../Objet.js';
 import { ValueObject } from '../ValueObject.js';
 
@@ -22,6 +23,14 @@ export class MockValueObject<V> extends ValueObject {
 
   public get(): V {
     return this.value;
+  }
+
+  protected getEquatableProperties(): Array<Equatable> {
+    return [];
+  }
+
+  protected getPrimitiveProperties(): Array<Primitive> {
+    return [];
   }
 
   public serialize(): string {
