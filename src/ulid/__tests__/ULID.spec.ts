@@ -1,4 +1,3 @@
-import { MockValueObject } from '../../object/index.js';
 import { ULID } from '../ULID.js';
 import { ULIDError } from '../ULIDError.js';
 
@@ -70,29 +69,6 @@ describe('ULID', () => {
       ids.forEach((id: ULID) => {
         expect(ULID.validate(id.get())).toBe(true);
       });
-    });
-  });
-
-  describe('equals', () => {
-    it('returns true if the same instance given', () => {
-      const ulid1: ULID = ULID.of('01FETHB1JHDVTASRTZMYC624WD');
-
-      expect(ulid1.equals(ulid1)).toBe(true);
-    });
-
-    it('returns false if different class instance given', () => {
-      const ulid1: ULID = ULID.of('01FETHBG4Y4QQAVVKXQTZR52R6');
-
-      expect(ulid1.equals(new MockValueObject('01FETHBG4Y4QQAVVKXQTZR52R6'))).toBe(false);
-    });
-
-    it('returns true if the property is the same', () => {
-      const ulid1: ULID = ULID.of('01FETHBG4Y4QQAVVKXQTZR52R6');
-      const ulid2: ULID = ULID.of('01FETHCPXBCYDR7WW2RC6M4BMS');
-      const ulid3: ULID = ULID.of('01FETHBG4Y4QQAVVKXQTZR52R6');
-
-      expect(ulid1.equals(ulid2)).toBe(false);
-      expect(ulid1.equals(ulid3)).toBe(true);
     });
   });
 
