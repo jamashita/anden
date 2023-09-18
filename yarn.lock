@@ -387,10 +387,10 @@
   resolved "https://registry.yarnpkg.com/@isaacs/string-locale-compare/-/string-locale-compare-1.1.0.tgz#291c227e93fd407a96ecd59879a35809120e432b"
   integrity sha512-SQ7Kzhh9+D+ZW9MA0zkYv3VXhIDNx+LzM6EJ+/65I3QY+enU6Itte7E5XX7EWrqLW2FN4n06GWzBnPoC3th2aQ==
 
-"@jamashita/eslint-plugin@1.93.0":
-  version "1.93.0"
-  resolved "https://npm.pkg.github.com/download/@jamashita/eslint-plugin/1.93.0/6274e56bdea54189758c6d34f450a7e403dc6f2f#6274e56bdea54189758c6d34f450a7e403dc6f2f"
-  integrity sha512-iBSUZ1o+OA+T9fJnKbDnd2Q0rwKi99hQXPrcynlTudWlJBh+4NiDnA0xN5o8LNmaHnHyCfpBKcdsCtaN2KUYLw==
+"@jamashita/eslint-plugin@1.93.1":
+  version "1.93.1"
+  resolved "https://npm.pkg.github.com/download/@jamashita/eslint-plugin/1.93.1/562025da14d15ec660dbd804623ee1e696dc2e54#562025da14d15ec660dbd804623ee1e696dc2e54"
+  integrity sha512-vzFmvCoMlyFSUkZsyTLsAQk/C/trMdV/tWtWCEAwKHWiX5qeIuMly2PBDHygdo7d6hYqRSAv0xpiIeOwtxZczw==
   dependencies:
     "@next/eslint-plugin-next" "13.4.19"
     "@typescript-eslint/eslint-plugin" "6.7.0"
