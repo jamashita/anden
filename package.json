@@ -1,6 +1,6 @@
 {
   "name": "@jamashita/anden",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "private": false,
   "repository": {
     "type": "git",
@@ -117,7 +117,7 @@
     "vitest": "0.34.4"
   },
   "engines": {
-    "node": ">=20.x"
+    "node": ">=18.x"
   },
   "engineStrict": true,
   "publishConfig": {
