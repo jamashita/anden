@@ -1,3 +1,16 @@
+# [2.2.0](https://github.com/jamashita/anden/compare/v2.1.0...v2.2.0) (2023-09-18)
+
+
+### Bug Fixes
+
+* 🐛 required node version updated ([eed9642](https://github.com/jamashita/anden/commit/eed964224e435b09e64e73444ab4e3076580a988))
+
+
+### Features
+
+* 🎸 package updated ([741256e](https://github.com/jamashita/anden/commit/741256ef9f36c195a7b4d2f0048d099bf0b52433))
+* 🎸 packages updated ([3e0a1a7](https://github.com/jamashita/anden/commit/3e0a1a7fd66f1c76fb26470be365d7eee11feb4c))
+
 # [2.1.0](https://github.com/jamashita/anden/compare/v2.0.0...v2.1.0) (2023-08-27)
 
 
