@@ -1,3 +1,10 @@
+## [2.2.1](https://github.com/jamashita/anden/compare/v2.2.0...v2.2.1) (2023-09-18)
+
+
+### Bug Fixes
+
+* 🐛 reqruied engine version ([33c0f36](https://github.com/jamashita/anden/commit/33c0f364dcd683922973bc3146dcbd5dca4710ee))
+
 # [2.2.0](https://github.com/jamashita/anden/compare/v2.1.0...v2.2.0) (2023-09-18)
 
 
