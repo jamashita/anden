@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/jamashita/anden/compare/v2.2.1...v2.3.0) (2023-10-08)
+
+
+### Features
+
+* 🎸 pacakges updated ([9c2a033](https://github.com/jamashita/anden/commit/9c2a0337f144de111ed1af8e6806f1a96c5ddf90))
+
 ## [2.2.1](https://github.com/jamashita/anden/compare/v2.2.0...v2.2.1) (2023-09-18)
 
 
