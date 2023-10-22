@@ -1,5 +1,5 @@
 import { Kind } from '../Kind.js';
-import { Ambiguous } from '../Value.js';
+import { Undefinable } from '../Value.js';
 import { ValidationRule } from './ValidationRule.js';
 
 type NumberCondition = Readonly<{
@@ -15,7 +15,7 @@ export type NumberValidationArgs = Partial<Readonly<{
 }>>;
 
 export class NumberValidationRule implements ValidationRule {
-  private readonly conditions: Ambiguous<Array<NumberCondition>>;
+  private readonly conditions: Undefinable<Array<NumberCondition>>;
   private readonly int: boolean;
   private readonly noNaN: boolean;
   private readonly noInfinity: boolean;
