@@ -1,4 +1,4 @@
-import { Ambiguous, Kind } from '../type/index.js';
+import { Kind, Undefinable } from '../type/index.js';
 
 const SEPARATOR_TEXT: string = '\nCaused by';
 
@@ -26,7 +26,7 @@ export class RuntimeError extends Error {
 
     return chain.map((err: Error) => {
       return err.stack;
-    }).filter((stack: Ambiguous<string>): stack is string => {
+    }).filter((stack: Undefinable<string>): stack is string => {
       return Kind.isString(stack);
     }).join(SEPARATOR_TEXT);
   }

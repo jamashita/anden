@@ -1,4 +1,4 @@
-import { Ambiguous, Kind } from '../type/index.js';
+import { Kind, Undefinable } from '../type/index.js';
 import { RuntimeError } from './RuntimeError.js';
 
 export class Errors<out E extends Error = Error> extends RuntimeError implements Iterable<E> {
@@ -24,7 +24,7 @@ export class Errors<out E extends Error = Error> extends RuntimeError implements
   public override get stack(): string {
     return this.errors.map((error: E) => {
       return error.stack;
-    }).filter((stack: Ambiguous<string>): stack is string => {
+    }).filter((stack: Undefinable<string>): stack is string => {
       return Kind.isString(stack);
     }).join('\n');
   }
