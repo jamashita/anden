@@ -1,5 +1,5 @@
 import { Kind } from '../Kind.js';
-import { Ambiguous } from '../Value.js';
+import { Undefinable } from '../Value.js';
 import { ValidationRule } from './ValidationRule.js';
 
 type BigIntCondition = Readonly<{
@@ -12,7 +12,7 @@ export type BigIntValidationArgs = Partial<Readonly<{
 }>>;
 
 export class BigIntValidationRule implements ValidationRule {
-  private readonly conditions: Ambiguous<Array<BigIntCondition>>;
+  private readonly conditions: Undefinable<Array<BigIntCondition>>;
 
   public static of(args?: BigIntValidationArgs): BigIntValidationRule {
     return new BigIntValidationRule(args);
