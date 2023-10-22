@@ -1,3 +1,13 @@
+# [2.4.0](https://github.com/jamashita/anden/compare/v2.3.0...v2.4.0) (2023-10-22)
+
+
+### Features
+
+* 🎸 packages updated ([4f72cb3](https://github.com/jamashita/anden/commit/4f72cb310a59284e691e45b65eec4536bae028ed))
+* 🎸 packages updated ([7a6db88](https://github.com/jamashita/anden/commit/7a6db88e8ccc978ad604b5dba24a3b620f409287))
+* 🎸 Undefinale ([ae47fab](https://github.com/jamashita/anden/commit/ae47fab247b2f81bc35b457ed5e090e3f7227e00))
+* 🎸 variance ([4c7d096](https://github.com/jamashita/anden/commit/4c7d096f4101eda6bacc584204b7853bbdd8505c))
+
 # [2.3.0](https://github.com/jamashita/anden/compare/v2.2.1...v2.3.0) (2023-10-08)
 
 
