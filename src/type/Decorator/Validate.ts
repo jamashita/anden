@@ -1,28 +1,28 @@
 import 'reflect-metadata';
 import { Kind } from '../Kind.js';
 import { ValidationRule } from '../Rules/ValidationRule.js';
-import { Ambiguous } from '../Value.js';
+import { Undefinable } from '../Value.js';
 
 const INDEX_KEY: symbol = Symbol();
 const RULE_KEY: symbol = Symbol();
 
-const getIndex = (target: object, key: string | symbol): Ambiguous<Set<number>> => {
-  return Reflect.getOwnMetadata(INDEX_KEY, target, key) as Ambiguous<Set<number>>;
+const getIndex = (target: object, key: string | symbol): Undefinable<Set<number>> => {
+  return Reflect.getOwnMetadata(INDEX_KEY, target, key) as Undefinable<Set<number>>;
 };
 
-const getRules = (target: object, key: string | symbol): Ambiguous<Map<number, ValidationRule>> => {
-  return Reflect.getOwnMetadata(RULE_KEY, target, key) as Ambiguous<Map<number, ValidationRule>>;
+const getRules = (target: object, key: string | symbol): Undefinable<Map<number, ValidationRule>> => {
+  return Reflect.getOwnMetadata(RULE_KEY, target, key) as Undefinable<Map<number, ValidationRule>>;
 };
 
 export const Validate = (): MethodDecorator => {
   return <T>(target: object, key: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void => {
-    const indices: Ambiguous<Set<number>> = getIndex(target, key);
+    const indices: Undefinable<Set<number>> = getIndex(target, key);
 
     if (Kind.isUndefined(indices)) {
       return;
     }
 
-    const rules: Ambiguous<Map<number, ValidationRule>> = getRules(target, key);
+    const rules: Undefinable<Map<number, ValidationRule>> = getRules(target, key);
 
     if (Kind.isUndefined(rules)) {
       return;
@@ -50,13 +50,13 @@ export const Validate = (): MethodDecorator => {
   };
 };
 
-export const addRule = (target: object, key: Ambiguous<string | symbol>, index: number, rule: ValidationRule): void => {
+export const addRule = (target: object, key: Undefinable<string | symbol>, index: number, rule: ValidationRule): void => {
   if (Kind.isUndefined(key)) {
     return;
   }
 
-  const indices: Ambiguous<Set<number>> = getIndex(target, key);
-  const rules: Ambiguous<Map<number, ValidationRule>> = getRules(target, key);
+  const indices: Undefinable<Set<number>> = getIndex(target, key);
+  const rules: Undefinable<Map<number, ValidationRule>> = getRules(target, key);
 
   if (Kind.isUndefined(indices)) {
     const s: Set<number> = new Set<number>();
