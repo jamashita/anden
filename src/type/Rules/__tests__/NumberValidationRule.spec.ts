@@ -329,7 +329,7 @@ describe('NumberValidationRule', () => {
     ${4.0}
     ${-1.3}
     ${-2}
-    `('does not throw any Error when int is set to false', ({ value }: { value: number }) => {
+    `('does not throw any Error when int is set to false', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         int: false
       });
@@ -345,7 +345,7 @@ describe('NumberValidationRule', () => {
     ${4.0}
     ${-1.3}
     ${-2}
-    `('will throw the same response if omitted in case of int is set to false', ({ value }: { value: number }) => {
+    `('will throw the same response if omitted in case of int is set to false', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
@@ -358,7 +358,7 @@ describe('NumberValidationRule', () => {
     ${1.1}
     ${4.0}
     ${-1.3}
-    `('does not throw any Error when NaN given if noNaN is set to true', ({ value }: { value: number }) => {
+    `('does not throw any Error when NaN given if noNaN is set to true', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         noNaN: true
       });
@@ -371,7 +371,7 @@ describe('NumberValidationRule', () => {
     it.each`
     value
     ${NaN}
-    `('throws TypeError when NaN given if noNaN is set to true', ({ value }: { value: number }) => {
+    `('throws TypeError when NaN given if noNaN is set to true', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         noNaN: true
       });
@@ -405,7 +405,7 @@ describe('NumberValidationRule', () => {
     ${4.0}
     ${-1.3}
     ${-2}
-    `('does not throw any Error when Infinity of -Inifinity given if noInfinity is set to true', ({ value }: { value: number }) => {
+    `('does not throw any Error when Infinity of -Inifinity given if noInfinity is set to true', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         noInfinity: true
       });
@@ -419,7 +419,7 @@ describe('NumberValidationRule', () => {
     value
     ${Infinity}
     ${-Infinity}
-    `('throws TypeError when Infinity of -Inifinity given if noInfinity is set to true', ({ value }: { value: number }) => {
+    `('throws TypeError when Infinity of -Inifinity given if noInfinity is set to true', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         noInfinity: true
       });
@@ -433,7 +433,7 @@ describe('NumberValidationRule', () => {
     value
     ${Infinity}
     ${-Infinity}
-    `('does not throw any Error when noInfinity is set to false', ({ value }: { value: number }) => {
+    `('does not throw any Error when noInfinity is set to false', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of({
         noInfinity: false
       });
@@ -447,7 +447,7 @@ describe('NumberValidationRule', () => {
     value
     ${Infinity}
     ${-Infinity}
-    `('will throw the same response if omitted in case of noInfinity is set to false', ({ value }: { value: number }) => {
+    `('will throw the same response if omitted in case of noInfinity is set to false', ({ value }: { value: number; }) => {
       const rule: NumberValidationRule = NumberValidationRule.of();
 
       expect(() => {
