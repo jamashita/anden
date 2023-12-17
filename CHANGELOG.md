@@ -1,3 +1,10 @@
+# [2.5.0](https://github.com/jamashita/anden/compare/v2.4.0...v2.5.0) (2023-12-17)
+
+
+### Features
+
+* 🎸 packages updated ([703c8b1](https://github.com/jamashita/anden/commit/703c8b1980350dfcf2f7242a400bc41de5a5a3c6))
+
 # [2.4.0](https://github.com/jamashita/anden/compare/v2.3.0...v2.4.0) (2023-10-22)
 
 
