@@ -3,6 +3,7 @@ import { Constructor, NumericalString, Primitive, Vague } from './Value.js';
 const INTEGER_REGEX: RegExp = /^[+-]?\d+$/su;
 const DECIMAL_REGEX: RegExp = /^[+-]?\d+\.\d+$/su;
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class Kind {
   public static isArray<T = unknown>(value: unknown): value is Array<T> {
     return Array.isArray(value);

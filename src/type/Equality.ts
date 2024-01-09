@@ -1,6 +1,7 @@
 import { Kind } from './Kind.js';
 import { ObjectLiteral, PlainObject, PlainObjectItem, Primitive } from './Value.js';
 
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class Equality {
   public static same(n1: ObjectLiteral, n2: ObjectLiteral): boolean {
     return Equality.sameInternal(n1, n2);
