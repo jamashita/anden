@@ -1,3 +1,4 @@
+import { ExhaustiveError } from '../../error/index.js';
 import { Kind } from '../Kind.js';
 import { ValidationRule } from './ValidationRule.js';
 
@@ -42,7 +43,10 @@ export class StringValidationRule implements ValidationRule {
     if (!Kind.isString(value)) {
       throw new TypeError('VALUE IS NOT STRING');
     }
-    switch (this.args.type) {
+
+    const { type } = this.args;
+
+    switch (type) {
       case 'numeric': {
         if (!Kind.isNumericalString(value)) {
           throw new TypeError(`VALUE IS NOT NUMERICAL STRING: ${value}`);
@@ -76,12 +80,13 @@ export class StringValidationRule implements ValidationRule {
           throw new TypeError(`THIS VALUE IS NOT CONTAINED IN SAMPLES: ${value}`);
         }
 
-        // eslint-disable-next-line no-useless-return
         return;
       }
-      case 'none':
+      case 'none': {
+        return;
+      }
       default: {
-        // NOOP
+        throw new ExhaustiveError(type);
       }
     }
   }
