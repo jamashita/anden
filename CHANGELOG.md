@@ -1,3 +1,17 @@
+# [2.7.0](https://github.com/jamashita/anden/compare/v2.6.0...v2.7.0) (2024-01-17)
+
+
+### Bug Fixes
+
+* 🐛 semantic-release version down ([6177f97](https://github.com/jamashita/anden/commit/6177f97c62c3c5d329395f6d1fc861d1346ab32d))
+
+
+### Features
+
+* 🎸 pacakges udpated ([1a3e252](https://github.com/jamashita/anden/commit/1a3e2521c04b5255d951c8f4c1bfa56eda6a2eb7))
+* 🎸 pacakges updated ([7e4360e](https://github.com/jamashita/anden/commit/7e4360e7b344ef9fb26d02e1ab5b9443beb15eac))
+* 🎸 removessome codes ([7572c6b](https://github.com/jamashita/anden/commit/7572c6b133381178bac866bec19bbfe9bc38f040))
+
 # [2.6.0](https://github.com/jamashita/anden/compare/v2.5.0...v2.6.0) (2024-01-09)
 
 
