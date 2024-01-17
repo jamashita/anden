@@ -37,6 +37,7 @@ export class Kind {
     if (!Kind.isNumber(value)) {
       return false;
     }
+
     // eslint-disable-next-line no-self-compare
     return value !== value;
   }
