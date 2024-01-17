@@ -1,3 +1,15 @@
+# [2.6.0](https://github.com/jamashita/anden/compare/v2.5.0...v2.6.0) (2024-01-09)
+
+
+### Bug Fixes
+
+* 🐛 ignore a rule ([a28441c](https://github.com/jamashita/anden/commit/a28441cb4053fed5d71d12412f97eb9f2915558e))
+
+
+### Features
+
+* 🎸 packages updated ([7dc0bcf](https://github.com/jamashita/anden/commit/7dc0bcf6ffc9b34d0e8638c91758667216b87bf6))
+
 # [2.5.0](https://github.com/jamashita/anden/compare/v2.4.0...v2.5.0) (2023-12-17)
 
 
