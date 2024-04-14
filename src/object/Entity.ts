@@ -14,14 +14,14 @@ export abstract class Entity<I> extends Objet {
       return false;
     }
 
-    const thisID: I = this.getIdentifier();
-    const otherID: unknown = other.getIdentifier();
+    const thisId: I = this.getIdentifier();
+    const otherId: unknown = other.getIdentifier();
 
-    if (thisID === otherID) {
+    if (thisId === otherId) {
       return true;
     }
-    if (isEquatable(thisID)) {
-      return thisID.equals(otherID);
+    if (isEquatable(thisId)) {
+      return thisId.equals(otherId);
     }
 
     return false;

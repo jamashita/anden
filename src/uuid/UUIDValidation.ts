@@ -1,4 +1,4 @@
-import { addRule, Undefinable } from '../type/index.js';
+import { addRule, type Undefinable } from '../type/index.js';
 import { UUIDValidationRule } from './UUIDValidationRule.js';
 
 export const UUIDValidation = (): ParameterDecorator => {

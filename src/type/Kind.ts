@@ -1,9 +1,8 @@
-import { Constructor, NumericalString, Primitive, Vague } from './Value.js';
+import type { Constructor, NumericalString, Primitive, Vague } from './Value.js';
 
 const INTEGER_REGEX: RegExp = /^[+-]?\d+$/su;
 const DECIMAL_REGEX: RegExp = /^[+-]?\d+\.\d+$/su;
 
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class Kind {
   public static isArray<T = unknown>(value: unknown): value is Array<T> {
     return Array.isArray(value);
@@ -21,6 +20,7 @@ export class Kind {
     return instance instanceof klazz;
   }
 
+  // biome-ignore lint/complexity/noBannedTypes: <explanation>
   public static isFunction(value: unknown): value is Function {
     return typeof value === 'function';
   }
@@ -38,10 +38,11 @@ export class Kind {
       return false;
     }
 
-    // eslint-disable-next-line no-self-compare
+    // biome-ignore lint/suspicious/noSelfCompare: <explanation>
     return value !== value;
   }
 
+  // biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
   public static isNone(value: unknown): value is null | undefined | void {
     if (Kind.isNull(value)) {
       return true;

@@ -1,4 +1,4 @@
-import { isSerializable, Serializable } from '../Serializable.js';
+import { isSerializable, type Serializable } from '../Serializable.js';
 
 class MockSerializable implements Serializable {
   public serialize(): string {

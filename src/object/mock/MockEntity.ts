@@ -1,4 +1,4 @@
-import { ObjectLiteral } from '../../type/index.js';
+import type { ObjectLiteral } from '../../type/index.js';
 import { Entity } from '../Entity.js';
 import { Objet } from '../Objet.js';
 

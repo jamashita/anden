@@ -1,4 +1,4 @@
-import { Equatable, isEquatable } from '../Equatable.js';
+import { type Equatable, isEquatable } from '../Equatable.js';
 
 class MockEquatable implements Equatable {
   public equals(other: unknown): boolean {
@@ -9,21 +9,21 @@ class MockEquatable implements Equatable {
 describe('Equatable', () => {
   describe('isEquatable', () => {
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${''}
-    ${'123'}
-    ${'abcd'}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${Symbol()}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${''}
+      ${'123'}
+      ${'abcd'}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${Symbol()}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(isEquatable(value)).toBe(false);
     });
 

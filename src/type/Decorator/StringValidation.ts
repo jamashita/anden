@@ -1,5 +1,5 @@
-import { StringValidationArgs, StringValidationRule } from '../Rules/StringValidationRule.js';
-import { Undefinable } from '../Value.js';
+import { type StringValidationArgs, StringValidationRule } from '../Rules/StringValidationRule.js';
+import type { Undefinable } from '../Value.js';
 import { addRule } from './Validate.js';
 
 export const StringValidation = (args?: StringValidationArgs): ParameterDecorator => {

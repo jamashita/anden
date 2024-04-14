@@ -1,4 +1,4 @@
-import { Kind, Undefinable } from '../type/index.js';
+import { Kind, type Undefinable } from '../type/index.js';
 
 const SEPARATOR_TEXT: string = '\nCaused by';
 
@@ -24,10 +24,13 @@ export class RuntimeError extends Error {
 
     this.stackErrors(this, chain);
 
-    return chain.map((err: Error) => {
-      return err.stack;
-    }).filter((stack: Undefinable<string>): stack is string => {
-      return Kind.isString(stack);
-    }).join(SEPARATOR_TEXT);
+    return chain
+      .map((err: Error) => {
+        return err.stack;
+      })
+      .filter((stack: Undefinable<string>): stack is string => {
+        return Kind.isString(stack);
+      })
+      .join(SEPARATOR_TEXT);
   }
 }

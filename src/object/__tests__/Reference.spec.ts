@@ -1,67 +1,30 @@
-import { Inconnu, PlainObject, PlainObjectItem } from '../../type/index.js';
+import type { Inconnu, PlainObject, PlainObjectItem } from '../../type/index.js';
 import { Reference } from '../Reference.js';
 
 describe('Reference', () => {
   describe('isCircular', () => {
     it.each`
-    object
-    ${{
-      a: null
-    }}
-    ${{
-      a: undefined
-    }}
-    ${{
-      a: true
-    }}
-    ${{
-      a: false
-    }}
-    ${{
-      a: 'picture in picture'
-    }}
-    ${{
-      a: 0.001
-    }}
-    ${{
-      a: -0.001
-    }}
-    ${{
-      a: Infinity
-    }}
-    ${{
-      a: NaN
-    }}
-    ${{
-      a: Symbol()
-    }}
-    ${{
-      a: 46n
-    }}
-    ${{
-      a: {}
-    }}
-    ${{
-      a: {
-        b: {
-          c: undefined,
-          d: {}
-        }
-      }
-    }}
-    ${{
-      a: []
-    }}
-    ${{
-      a: [undefined, [undefined]]
-    }}
-    ${[]}
-    ${[undefined, [undefined]]}
-    `('returns false if given objects do not have recursive reference', ({ object }: { object: object; }) => {
+      object
+      ${{ a: null }}
+      ${{ a: undefined }}
+      ${{ a: true }}
+      ${{ a: false }}
+      ${{ a: 'picture in picture' }}
+      ${{ a: 0.001 }}
+      ${{ a: -0.001 }}
+      ${{ a: Number.POSITIVE_INFINITY }}
+      ${{ a: Number.NaN }}
+      ${{ a: Symbol() }}
+      ${{ a: 46n }}
+      ${{ a: {} }}
+      ${{ a: { b: { c: undefined, d: {} } } }}
+      ${{ a: [] }}
+      ${{ a: [undefined, [undefined]] }}
+      ${[]}
+      ${[undefined, [undefined]]}
+    `('returns false if given objects do not have recursive reference', ({ object }: { object: object }) => {
       expect(Reference.isCircular({})).toBe(false);
-      expect(
-        Reference.isCircular(object)
-      ).toBe(false);
+      expect(Reference.isCircular(object)).toBe(false);
     });
 
     it('returns true if objects have recursive references', () => {
@@ -73,7 +36,7 @@ describe('Reference', () => {
         o: obj1
       };
 
-      // eslint-disable-next-line @typescript-eslint/dot-notation
+      // biome-ignore lint/complexity/useLiteralKeys: <explanation>
       obj1['o'] = obj2;
 
       const arr: Array<PlainObject> = [];

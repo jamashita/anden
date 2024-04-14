@@ -17,14 +17,14 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
       ${20n}
       ${{}}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isArray(value)).toBe(false);
     });
 
@@ -45,14 +45,14 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isBigInt(value)).toBe(false);
     });
 
@@ -73,13 +73,13 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${Symbol('p')}
       ${20n}
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isBoolean(value)).toBe(false);
     });
 
@@ -112,7 +112,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -120,7 +120,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isFunction(value)).toBe(false);
     });
 
@@ -142,7 +142,7 @@ describe('Kind', () => {
       ${'123'}
       ${'abcd'}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -150,7 +150,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isInteger(value)).toBe(false);
     });
 
@@ -180,12 +180,12 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isNaN(value)).toBe(false);
     });
 
     it('returns true when only the value is NaN', () => {
-      expect(Kind.isNaN(NaN)).toBe(true);
+      expect(Kind.isNaN(Number.NaN)).toBe(true);
     });
   });
 
@@ -199,7 +199,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -207,7 +207,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isNone(value)).toBe(false);
     });
 
@@ -228,7 +228,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -236,7 +236,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isNull(value)).toBe(false);
     });
 
@@ -260,7 +260,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isNumber(value)).toBe(false);
     });
 
@@ -269,7 +269,7 @@ describe('Kind', () => {
       expect(Kind.isNumber(0)).toBe(true);
       expect(Kind.isNumber(-12)).toBe(true);
       expect(Kind.isNumber(0.3)).toBe(true);
-      expect(Kind.isNumber(NaN)).toBe(true);
+      expect(Kind.isNumber(Number.NaN)).toBe(true);
     });
   });
 
@@ -282,9 +282,9 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
-      ${Infinity}
-      ${-Infinity}
+      ${Number.NaN}
+      ${Number.POSITIVE_INFINITY}
+      ${Number.NEGATIVE_INFINITY}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -325,7 +325,7 @@ describe('Kind', () => {
       ${'NaN'}
       ${'Infinity'}
       ${'-Infinity'}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(Kind.isNumericalString(value)).toBe(false);
     });
 
@@ -353,12 +353,12 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
       ${20n}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isObject(value)).toBe(false);
     });
 
@@ -380,7 +380,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isPrimitive(value)).toBe(false);
     });
 
@@ -413,7 +413,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -421,7 +421,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isPromiseLike(value)).toBe(false);
     });
 
@@ -440,51 +440,61 @@ describe('Kind', () => {
       ).toBe(true);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: undefined
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: null
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: ''
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: 123
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: false
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: Symbol('p')
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: 20n
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: {}
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: []
         })
       ).toBe(false);
       expect(
         Kind.isPromiseLike({
+          // biome-ignore lint/suspicious/noThenProperty: <explanation>
           then: () => {
             // NOOP
           }
@@ -502,7 +512,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -510,7 +520,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isString(value)).toBe(false);
     });
 
@@ -533,14 +543,14 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${20n}
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isSymbol(value)).toBe(false);
     });
 
@@ -560,7 +570,7 @@ describe('Kind', () => {
       ${0}
       ${-12}
       ${0.3}
-      ${NaN}
+      ${Number.NaN}
       ${false}
       ${true}
       ${Symbol('p')}
@@ -568,7 +578,7 @@ describe('Kind', () => {
       ${{}}
       ${[]}
       ${Object.create(null)}
-    `('returns false if $value is given', ({ value }: { value: unknown; }) => {
+    `('returns false if $value is given', ({ value }: { value: unknown }) => {
       expect(Kind.isUndefined(value)).toBe(false);
     });
 

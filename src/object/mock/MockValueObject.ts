@@ -1,4 +1,4 @@
-import { Equatable, Primitive } from '../../type/index.js';
+import type { Equatable, Primitive } from '../../type/index.js';
 import { Objet } from '../Objet.js';
 import { ValueObject } from '../ValueObject.js';
 
