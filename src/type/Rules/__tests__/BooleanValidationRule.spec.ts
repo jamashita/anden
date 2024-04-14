@@ -9,10 +9,10 @@ describe('BooleanValidationRule', () => {
 
   describe('evaluate', () => {
     it.each`
-    value
-    ${false}
-    ${true}
-    `('does not throw any Error', ({ value }: { value: boolean; }) => {
+      value
+      ${false}
+      ${true}
+    `('does not throw any Error', ({ value }: { value: boolean }) => {
       const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {
@@ -21,19 +21,19 @@ describe('BooleanValidationRule', () => {
     });
 
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${''}
-    ${'123'}
-    ${'abcd'}
-    ${123}
-    ${0}
-    ${Symbol()}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('throws TypeError when non-boolean $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${''}
+      ${'123'}
+      ${'abcd'}
+      ${123}
+      ${0}
+      ${Symbol()}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('throws TypeError when non-boolean $value given', ({ value }: { value: unknown }) => {
       const rule: BooleanValidationRule = BooleanValidationRule.of();
 
       expect(() => {

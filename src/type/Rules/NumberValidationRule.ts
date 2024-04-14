@@ -1,18 +1,20 @@
 import { Kind } from '../Kind.js';
-import { Undefinable } from '../Value.js';
-import { ValidationRule } from './ValidationRule.js';
+import type { Undefinable } from '../Value.js';
+import type { ValidationRule } from './ValidationRule.js';
 
 type NumberCondition = Readonly<{
   operator: '!=' | '<' | '<=' | '=' | '>' | '>=';
   value: number;
 }>;
 
-export type NumberValidationArgs = Partial<Readonly<{
-  conditions: Array<NumberCondition>;
-  int: boolean;
-  noNaN: boolean;
-  noInfinity: boolean;
-}>>;
+export type NumberValidationArgs = Partial<
+  Readonly<{
+    conditions: Array<NumberCondition>;
+    int: boolean;
+    noNaN: boolean;
+    noInfinity: boolean;
+  }>
+>;
 
 export class NumberValidationRule implements ValidationRule {
   private readonly conditions: Undefinable<Array<NumberCondition>>;
@@ -24,12 +26,7 @@ export class NumberValidationRule implements ValidationRule {
     return new NumberValidationRule(args);
   }
 
-  protected constructor({
-    conditions = undefined,
-    int = false,
-    noNaN = false,
-    noInfinity = false
-  }: NumberValidationArgs = {}) {
+  protected constructor({ conditions = undefined, int = false, noNaN = false, noInfinity = false }: NumberValidationArgs = {}) {
     this.conditions = conditions;
     this.int = int;
     this.noNaN = noNaN;
@@ -82,7 +79,7 @@ export class NumberValidationRule implements ValidationRule {
       }
     }
     if (this.noInfinity) {
-      if (value === Infinity || value === -Infinity) {
+      if (value === Number.POSITIVE_INFINITY || value === Number.NEGATIVE_INFINITY) {
         throw new TypeError('VALUE IS Infinity');
       }
     }

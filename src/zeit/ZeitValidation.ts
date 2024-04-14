@@ -1,5 +1,5 @@
-import { addRule, Undefinable } from '../type/index.js';
-import { ZeitValidationArgs, ZeitValidationRule } from './ZeitValidationRule.js';
+import { addRule, type Undefinable } from '../type/index.js';
+import { type ZeitValidationArgs, ZeitValidationRule } from './ZeitValidationRule.js';
 
 export const ZeitValidation = (args: ZeitValidationArgs): ParameterDecorator => {
   const v: ZeitValidationRule = new ZeitValidationRule(args);

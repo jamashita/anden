@@ -1,9 +1,9 @@
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs, { type Dayjs } from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat.js';
 import minMax from 'dayjs/plugin/minMax.js';
 import utc from 'dayjs/plugin/utc.js';
 import { ValueObject } from '../object/index.js';
-import { Equatable, Kind, Nullable, Primitive } from '../type/index.js';
+import { type Equatable, Kind, type Nullable, type Primitive } from '../type/index.js';
 import { ZeitError } from './ZeitError.js';
 
 dayjs.extend(customParseFormat);
@@ -22,7 +22,7 @@ export class Zeit extends ValueObject {
       throw new ZeitError('ZEITEN ARE EMPTY');
     }
     if (z.length === 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
       return z[0]!;
     }
 
@@ -46,7 +46,7 @@ export class Zeit extends ValueObject {
       throw new ZeitError('ZEITEN ARE EMPTY');
     }
     if (z.length === 1) {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      // biome-ignore lint/style/noNonNullAssertion: <explanation>
       return z[0]!;
     }
 

@@ -11,18 +11,18 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${Symbol('p')}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('throws TypeError when non-string $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${Symbol('p')}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('throws TypeError when non-string $value given', ({ value }: { value: unknown }) => {
       const rule: StringValidationRule = StringValidationRule.of();
 
       expect(() => {
@@ -31,12 +31,12 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'123'}
-    ${'-123'}
-    ${'0'}
-    ${'0.18'}
-    `('does not throw any Error when given string can be converted to number', ({ value }: { value: string; }) => {
+      value
+      ${'123'}
+      ${'-123'}
+      ${'0'}
+      ${'0.18'}
+    `('does not throw any Error when given string can be converted to number', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'numeric'
       });
@@ -47,14 +47,14 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'1.2.3'}
-    ${'0..'}
-    ${'0..10'}
-    ${'a'}
-    ${'-Infinity'}
-    ${'NaN'}
-    `('throws TypeError when given string cannot be converted to number', ({ value }: { value: string; }) => {
+      value
+      ${'1.2.3'}
+      ${'0..'}
+      ${'0..10'}
+      ${'a'}
+      ${'-Infinity'}
+      ${'NaN'}
+    `('throws TypeError when given string cannot be converted to number', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'numeric'
       });
@@ -65,11 +65,11 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'a'}
-    ${'b'}
-    ${'ba'}
-    `('throws TypeError when string pattern does not match', ({ value }: { value: string; }) => {
+      value
+      ${'a'}
+      ${'b'}
+      ${'ba'}
+    `('throws TypeError when string pattern does not match', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'pattern',
         pattern: /^a.*b$/iu
@@ -81,13 +81,13 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'ab'}
-    ${'aab'}
-    ${'abb'}
-    ${'acb'}
-    ${'abcab'}
-    `('does not throw any Error when string pattern matches', ({ value }: { value: string; }) => {
+      value
+      ${'ab'}
+      ${'aab'}
+      ${'abb'}
+      ${'acb'}
+      ${'abcab'}
+    `('does not throw any Error when string pattern matches', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'pattern',
         pattern: /^a.*b$/iu
@@ -99,12 +99,12 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${''}
-    ${'p'}
-    ${'pq'}
-    ${'pqw'}
-    `('throws TypeError when given value is less than min string length given', ({ value }: { value: string; }) => {
+      value
+      ${''}
+      ${'p'}
+      ${'pq'}
+      ${'pqw'}
+    `('throws TypeError when given value is less than min string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4
@@ -116,9 +116,9 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pqwo'}
-    `('does not throw any Error when given value is greater than min string length given', ({ value }: { value: string; }) => {
+      value
+      ${'pqwo'}
+    `('does not throw any Error when given value is greater than min string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4
@@ -130,12 +130,12 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pqwo1029'}
-    ${'pqwo102'}
-    ${'pqwo10'}
-    ${'pqwo1'}
-    `('throws TypeError when given value is greater than max string length given', ({ value }: { value: string; }) => {
+      value
+      ${'pqwo1029'}
+      ${'pqwo102'}
+      ${'pqwo10'}
+      ${'pqwo1'}
+    `('throws TypeError when given value is greater than max string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         max: 4
@@ -147,9 +147,9 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pqwo'}
-    `('does not throw any Error when given value is less than max string length given', ({ value }: { value: string; }) => {
+      value
+      ${'pqwo'}
+    `('does not throw any Error when given value is less than max string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         max: 4
@@ -161,12 +161,12 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pq'}
-    ${'pqw'}
-    ${'pqwo102'}
-    ${'pqwo1029'}
-    `('throws TypeError when given value is less than min and greater than max string length given', ({ value }: { value: string; }) => {
+      value
+      ${'pq'}
+      ${'pqw'}
+      ${'pqwo102'}
+      ${'pqwo1029'}
+    `('throws TypeError when given value is less than min and greater than max string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4,
@@ -179,11 +179,11 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pqwo'}
-    ${'pqwo1'}
-    ${'pqwo10'}
-    `('does not throw any Error when given value is greater than min and less than max string length given', ({ value }: { value: string; }) => {
+      value
+      ${'pqwo'}
+      ${'pqwo1'}
+      ${'pqwo10'}
+    `('does not throw any Error when given value is greater than min and less than max string length given', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'length',
         min: 4,
@@ -196,20 +196,15 @@ describe('StringValidationRule', () => {
     });
 
     it.each`
-    value
-    ${'pi'}
-    ${'pu'}
-    ${'po'}
-    ${'pe'}
-    `('does not throw any Error when given string is contained by array', ({ value }: { value: string; }) => {
+      value
+      ${'pi'}
+      ${'pu'}
+      ${'po'}
+      ${'pe'}
+    `('does not throw any Error when given string is contained by array', ({ value }: { value: string }) => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'contain',
-        samples: [
-          'po',
-          'pu',
-          'pe',
-          'pi'
-        ]
+        samples: ['po', 'pu', 'pe', 'pi']
       });
 
       expect(() => {
@@ -220,12 +215,7 @@ describe('StringValidationRule', () => {
     it('throws TypeError when given string is not contained by array', () => {
       const rule: StringValidationRule = StringValidationRule.of({
         type: 'contain',
-        samples: [
-          'po',
-          'pu',
-          'pe',
-          'pi'
-        ]
+        samples: ['po', 'pu', 'pe', 'pi']
       });
 
       expect(() => {

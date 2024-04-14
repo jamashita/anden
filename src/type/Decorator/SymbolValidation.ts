@@ -1,5 +1,5 @@
 import { SymbolValidationRule } from '../Rules/SymbolValidationRule.js';
-import { Undefinable } from '../Value.js';
+import type { Undefinable } from '../Value.js';
 import { addRule } from './Validate.js';
 
 export const SymbolValidation = (): ParameterDecorator => {

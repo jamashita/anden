@@ -17,6 +17,7 @@ describe('ULID', () => {
       });
       const ids: Array<ULID> = await Promise.all<ULID>(promises);
 
+      // biome-ignore lint/complexity/noForEach: <explanation>
       ids.forEach((id: ULID) => {
         expect(id.get()).toHaveLength(ULID.size());
       });
@@ -37,10 +38,10 @@ describe('ULID', () => {
     });
 
     it.each`
-    value
-    ${'01FF2GJM51QP6DYKQFHQ1EAAR'}
-    ${'01FF2GJXXNB4Y71Q2WGP4KGPTRA'}
-    `('throws ULIDError when the argument length is not 26', ({ value }: { value: string; }) => {
+      value
+      ${'01FF2GJM51QP6DYKQFHQ1EAAR'}
+      ${'01FF2GJXXNB4Y71Q2WGP4KGPTRA'}
+    `('throws ULIDError when the argument length is not 26', ({ value }: { value: string }) => {
       expect(() => {
         ULID.of(value);
       }).toThrow(ULIDError);
@@ -66,6 +67,7 @@ describe('ULID', () => {
       });
       const ids: Array<ULID> = await Promise.all<ULID>(promises);
 
+      // biome-ignore lint/complexity/noForEach: <explanation>
       ids.forEach((id: ULID) => {
         expect(ULID.validate(id.get())).toBe(true);
       });

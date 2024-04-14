@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { Kind } from '../Kind.js';
-import { ValidationRule } from '../Rules/ValidationRule.js';
-import { Undefinable } from '../Value.js';
+import type { ValidationRule } from '../Rules/ValidationRule.js';
+import type { Undefinable } from '../Value.js';
 
 const INDEX_KEY: symbol = Symbol();
 const RULE_KEY: symbol = Symbol();
@@ -15,6 +15,7 @@ const getRules = (target: object, key: string | symbol): Undefinable<Map<number,
 };
 
 export const Validate = (): MethodDecorator => {
+  // biome-ignore lint/suspicious/noConfusingVoidType: <explanation>
   return <T>(target: object, key: string | symbol, descriptor: TypedPropertyDescriptor<T>): TypedPropertyDescriptor<T> | void => {
     const indices: Undefinable<Set<number>> = getIndex(target, key);
 
@@ -28,15 +29,16 @@ export const Validate = (): MethodDecorator => {
       return;
     }
 
-    indices.forEach((index: number) => {
-      rules.forEach((rule: ValidationRule, i: number) => {
+    for (const index of indices) {
+      for (const [i, rule] of rules.entries()) {
         if (index !== i) {
-          return;
+          continue;
         }
         if (!Kind.isFunction(descriptor.value)) {
-          return;
+          continue;
         }
 
+        // biome-ignore lint/complexity/noBannedTypes: <explanation>
         const method: Function = descriptor.value;
 
         // @ts-expect-error
@@ -45,8 +47,8 @@ export const Validate = (): MethodDecorator => {
 
           return method.apply(method, args) as T;
         };
-      });
-    });
+      }
+    }
   };
 };
 
@@ -64,8 +66,7 @@ export const addRule = (target: object, key: Undefinable<string | symbol>, index
     s.add(index);
 
     Reflect.defineMetadata(INDEX_KEY, s, target, key);
-  }
-  else {
+  } else {
     indices.add(index);
   }
 
@@ -75,8 +76,7 @@ export const addRule = (target: object, key: Undefinable<string | symbol>, index
     r.set(index, rule);
 
     Reflect.defineMetadata(RULE_KEY, r, target, key);
-  }
-  else {
+  } else {
     rules.set(index, rule);
   }
 };

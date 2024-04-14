@@ -9,11 +9,11 @@ describe('SymbolValidationRule', () => {
 
   describe('evaluate', () => {
     it.each`
-    value
-    ${Symbol()}
-    ${Symbol('mi')}
-    ${Symbol(-6)}
-    `('does not throw any Error', ({ value }: { value: symbol; }) => {
+      value
+      ${Symbol()}
+      ${Symbol('mi')}
+      ${Symbol(-6)}
+    `('does not throw any Error', ({ value }: { value: symbol }) => {
       const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {
@@ -22,20 +22,20 @@ describe('SymbolValidationRule', () => {
     });
 
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${''}
-    ${'123'}
-    ${'abcd'}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('throws TypeError when non-symbol $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${''}
+      ${'123'}
+      ${'abcd'}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('throws TypeError when non-symbol $value given', ({ value }: { value: unknown }) => {
       const rule: SymbolValidationRule = SymbolValidationRule.of();
 
       expect(() => {

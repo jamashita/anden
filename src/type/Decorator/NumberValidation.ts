@@ -1,5 +1,5 @@
-import { NumberValidationArgs, NumberValidationRule } from '../Rules/NumberValidationRule.js';
-import { Undefinable } from '../Value.js';
+import { type NumberValidationArgs, NumberValidationRule } from '../Rules/NumberValidationRule.js';
+import type { Undefinable } from '../Value.js';
 import { addRule } from './Validate.js';
 
 export const NumberValidation = (args: NumberValidationArgs = {}): ParameterDecorator => {

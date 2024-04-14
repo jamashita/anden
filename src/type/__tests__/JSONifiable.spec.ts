@@ -1,7 +1,7 @@
-import { isJSONifiable, JSONifiable } from '../JSONifiable.js';
-import { ObjectLiteral } from '../Value.js';
+import { isJSONifiable, type JSONifiable } from '../JSONifiable.js';
+import type { ObjectLiteral } from '../Value.js';
 
-class MockJSONifiable implements JSONifiable {
+class MockJsoNifiable implements JSONifiable {
   public toJSON(): ObjectLiteral {
     return {};
   }
@@ -10,21 +10,21 @@ class MockJSONifiable implements JSONifiable {
 describe('JSONifiable', () => {
   describe('isJSONifiable', () => {
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${''}
-    ${'123'}
-    ${'abcd'}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${Symbol()}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('returns false when $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${''}
+      ${'123'}
+      ${'abcd'}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${Symbol()}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('returns false when $value given', ({ value }: { value: unknown }) => {
       expect(isJSONifiable(value)).toBe(false);
     });
 
@@ -36,7 +36,7 @@ describe('JSONifiable', () => {
           }
         })
       ).toBe(true);
-      expect(isJSONifiable(new MockJSONifiable())).toBe(true);
+      expect(isJSONifiable(new MockJsoNifiable())).toBe(true);
     });
   });
 });
