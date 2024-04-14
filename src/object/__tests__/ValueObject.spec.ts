@@ -1,6 +1,5 @@
-/* eslint-disable max-classes-per-file */
 import { asyncRandom, sequence } from '../../helper/index.js';
-import { Equatable, Primitive } from '../../type/index.js';
+import type { Equatable, Primitive } from '../../type/index.js';
 import { MockValueObject } from '../mock/MockValueObject.js';
 import { Objet } from '../Objet.js';
 import { ValueObject } from '../ValueObject.js';

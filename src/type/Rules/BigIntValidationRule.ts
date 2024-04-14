@@ -1,15 +1,17 @@
 import { Kind } from '../Kind.js';
-import { Undefinable } from '../Value.js';
-import { ValidationRule } from './ValidationRule.js';
+import type { Undefinable } from '../Value.js';
+import type { ValidationRule } from './ValidationRule.js';
 
 type BigIntCondition = Readonly<{
   operator: '!=' | '<' | '<=' | '=' | '>' | '>=';
   value: bigint;
 }>;
 
-export type BigIntValidationArgs = Partial<Readonly<{
-  conditions: Array<BigIntCondition>;
-}>>;
+export type BigIntValidationArgs = Partial<
+  Readonly<{
+    conditions: Array<BigIntCondition>;
+  }>
+>;
 
 export class BigIntValidationRule implements ValidationRule {
   private readonly conditions: Undefinable<Array<BigIntCondition>>;

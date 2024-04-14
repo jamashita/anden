@@ -1,5 +1,5 @@
 import hash from 'object-hash';
-import { Kind, Nominative } from '../type/index.js';
+import { Kind, type Nominative } from '../type/index.js';
 
 export abstract class Objet implements Nominative {
   public static genHashCode(obj: object): string {
@@ -7,7 +7,7 @@ export abstract class Objet implements Nominative {
   }
 
   public static identify(n: unknown): string {
-    if (Kind.isObject<Object>(n)) {
+    if (Kind.isObject<object>(n)) {
       if (Kind.isFunction(n.toString)) {
         return n.toString.apply(n) as string;
       }

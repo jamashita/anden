@@ -1,4 +1,4 @@
-import { Kind, ValidationRule } from '../type/index.js';
+import { Kind, type ValidationRule } from '../type/index.js';
 import { UUID } from './UUID.js';
 
 export class UUIDValidationRule implements ValidationRule {

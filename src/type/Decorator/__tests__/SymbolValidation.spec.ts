@@ -4,7 +4,6 @@ import { Validate } from '../Validate.js';
 
 class MockValidation {
   @Validate()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public act(@SymbolValidation() _s: unknown): void {
     // NOOP
   }
@@ -21,20 +20,20 @@ describe('SymbolValidation', () => {
     });
 
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${''}
-    ${'123'}
-    ${'abcd'}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${''}
+      ${'123'}
+      ${'abcd'}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

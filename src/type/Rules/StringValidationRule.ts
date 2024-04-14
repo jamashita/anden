@@ -1,6 +1,6 @@
 import { ExhaustiveError } from '../../error/index.js';
 import { Kind } from '../Kind.js';
-import { ValidationRule } from './ValidationRule.js';
+import type { ValidationRule } from './ValidationRule.js';
 
 type NumericalStringPattern = Readonly<{
   type: 'numeric';

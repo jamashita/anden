@@ -45,6 +45,7 @@ describe('UUID', () => {
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
 
+      // biome-ignore lint/complexity/noForEach: <explanation>
       ids.forEach((id: UUID) => {
         expect(id.get()).toHaveLength(UUID.size());
       });
@@ -58,6 +59,7 @@ describe('UUID', () => {
       });
       const ids: Array<UUID> = await Promise.all<UUID>(promises);
 
+      // biome-ignore lint/complexity/noForEach: <explanation>
       ids.forEach((id: UUID) => {
         expect(id.get()).toHaveLength(UUID.size());
       });
@@ -80,6 +82,7 @@ describe('UUID', () => {
       });
       const ids: Array<[UUID, UUID]> = await Promise.all<[UUID, UUID]>(promises);
 
+      // biome-ignore lint/complexity/noForEach: <explanation>
       ids.forEach(([v4id, v5id]: [UUID, UUID]) => {
         expect(UUID.validate(v4id.get())).toBe(true);
         expect(UUID.validate(v5id.get())).toBe(true);

@@ -1,5 +1,5 @@
 import { ValueObject } from '../object/index.js';
-import { Equatable, Primitive } from '../type/index.js';
+import type { Equatable, Primitive } from '../type/index.js';
 import { URLError } from './URLError.js';
 
 export class URL extends ValueObject {
