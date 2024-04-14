@@ -1,4 +1,4 @@
-import { Equatable, Kind, Primitive } from '../type/index.js';
+import { type Equatable, Kind, type Primitive } from '../type/index.js';
 import { Objet } from './Objet.js';
 
 export abstract class ValueObject extends Objet {

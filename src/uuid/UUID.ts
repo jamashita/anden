@@ -1,6 +1,6 @@
 import { v4, v5, validate } from 'uuid';
 import { ValueObject } from '../object/index.js';
-import { Equatable, Primitive } from '../type/index.js';
+import type { Equatable, Primitive } from '../type/index.js';
 import { UUIDError } from './UUIDError.js';
 
 export class UUID extends ValueObject {

@@ -1,6 +1,5 @@
-// eslint-disable-next-line max-classes-per-file
 import { asyncRandom } from '../../../helper/index.js';
-import { ValidationRule } from '../../Rules/ValidationRule.js';
+import type { ValidationRule } from '../../Rules/ValidationRule.js';
 import { addRule, Validate } from '../Validate.js';
 
 type TestValidationArgs = Readonly<{
@@ -24,16 +23,14 @@ class TestValidationRule implements ValidationRule {
 const TestValidation = (args: TestValidationArgs): ParameterDecorator => {
   const v: TestValidationRule = new TestValidationRule(args);
 
-  return (target: object, key: string | symbol, index: number) => {
+  return (target: object, key: string | symbol | undefined, index: number) => {
     addRule(target, key, index, v);
   };
 };
 
 class Test1 {
   @Validate()
-  public oneA(
-    @TestValidation({ throwError: false }) arg1: unknown
-  ): unknown {
+  public oneA(@TestValidation({ throwError: false }) arg1: unknown): unknown {
     return arg1;
   }
 
@@ -47,19 +44,14 @@ class Test1 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: false }) _arg1: unknown,
-    @TestValidation({ throwError: false }) arg2: unknown
-  ): unknown {
+  public twoA(@TestValidation({ throwError: false }) _arg1: unknown, @TestValidation({ throwError: false }) arg2: unknown): unknown {
     return arg2;
   }
 }
 
 class Test2 {
   @Validate()
-  public oneA(
-    @TestValidation({ throwError: true }) arg1: unknown
-  ): unknown {
+  public oneA(@TestValidation({ throwError: true }) arg1: unknown): unknown {
     return arg1;
   }
 
@@ -73,19 +65,14 @@ class Test2 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: true }) _arg1: unknown,
-    @TestValidation({ throwError: false }) arg2: unknown
-  ): unknown {
+  public twoA(@TestValidation({ throwError: true }) _arg1: unknown, @TestValidation({ throwError: false }) arg2: unknown): unknown {
     return arg2;
   }
 }
 
 class Test3 {
   @Validate()
-  public oneA(
-    @TestValidation({ throwError: true }) arg1: unknown
-  ): unknown {
+  public oneA(@TestValidation({ throwError: true }) arg1: unknown): unknown {
     return arg1;
   }
 
@@ -99,19 +86,14 @@ class Test3 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: false }) _arg1: unknown,
-    @TestValidation({ throwError: true }) arg2: unknown
-  ): unknown {
+  public twoA(@TestValidation({ throwError: false }) _arg1: unknown, @TestValidation({ throwError: true }) arg2: unknown): unknown {
     return arg2;
   }
 }
 
 class Test4 {
   @Validate()
-  public oneA(
-    @TestValidation({ throwError: true }) arg1: unknown
-  ): unknown {
+  public oneA(@TestValidation({ throwError: true }) arg1: unknown): unknown {
     return arg1;
   }
 
@@ -125,10 +107,7 @@ class Test4 {
   }
 
   @Validate()
-  public twoA(
-    @TestValidation({ throwError: true }) _arg1: unknown,
-    @TestValidation({ throwError: true }) arg2: unknown
-  ): unknown {
+  public twoA(@TestValidation({ throwError: true }) _arg1: unknown, @TestValidation({ throwError: true }) arg2: unknown): unknown {
     return arg2;
   }
 }
@@ -149,11 +128,7 @@ describe('Validate', () => {
   });
 
   it('returns the same value of its original return value', async () => {
-    const [r1, r2, r3]: Array<string> = await Promise.all<string>([
-      asyncRandom(200),
-      asyncRandom(300),
-      asyncRandom(400)
-    ]);
+    const [r1, r2, r3]: Array<string> = await Promise.all<string>([asyncRandom(200), asyncRandom(300), asyncRandom(400)]);
 
     const test: Test1 = new Test1();
 

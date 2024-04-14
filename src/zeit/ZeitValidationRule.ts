@@ -1,4 +1,4 @@
-import { Kind, ValidationRule } from '../type/index.js';
+import { Kind, type ValidationRule } from '../type/index.js';
 import { Zeit } from './Zeit.js';
 
 export type ZeitValidationArgs = Readonly<{

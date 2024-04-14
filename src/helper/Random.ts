@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import crypto from 'node:crypto';
 
 const small: string = 'abcdefghijklmnopqrstuvwxyz';
 const large: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -14,7 +14,7 @@ export const random = (length: number): string => {
 
   const buf: Buffer = crypto.randomBytes(length);
   return buf.reduce((p: string, i: number) => {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    // biome-ignore lint/style/noNonNullAssertion: <explanation>
     return `${p}${chars[i % charLength]!}`;
   }, '');
 };

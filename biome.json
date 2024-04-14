@@ -6,7 +6,7 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true
+      "recommended": true
     }
   },
   "formatter": {
@@ -22,6 +22,9 @@
       "trailingComma": "none",
       "semicolons": "always",
       "arrowParentheses": "always"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
     }
   },
   "vcs": {
@@ -30,4 +33,3 @@
     "useIgnoreFile": true
   }
 }
-

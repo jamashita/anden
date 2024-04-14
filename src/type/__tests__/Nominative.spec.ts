@@ -1,4 +1,4 @@
-import { isNominative, Nominative } from '../Nominative.js';
+import { isNominative, type Nominative } from '../Nominative.js';
 
 class MockNominative implements Nominative {
   public equals(other: unknown): boolean {

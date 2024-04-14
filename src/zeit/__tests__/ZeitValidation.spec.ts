@@ -4,13 +4,11 @@ import { ZeitValidation } from '../ZeitValidation.js';
 
 class MockValidation {
   @Validate()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public act1(@ZeitValidation({ format: 'YYYY-MM-DD' }) _s: unknown): void {
     // NOOP
   }
 
   @Validate()
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   public act2(@ZeitValidation({ format: 'YYYY-MM-DD HH:mm:ss' }) _s: unknown, @ZeitValidation({ format: 'YYYY-MM-DD' }) _ss: unknown): void {
     // NOOP
   }
@@ -36,18 +34,18 @@ describe('ZeitValidation', () => {
     });
 
     it.each`
-    value
-    ${null}
-    ${undefined}
-    ${123}
-    ${0}
-    ${false}
-    ${true}
-    ${Symbol('p')}
-    ${20n}
-    ${{}}
-    ${[]}
-    `('throws TypeError when $value given', ({ value }: { value: unknown; }) => {
+      value
+      ${null}
+      ${undefined}
+      ${123}
+      ${0}
+      ${false}
+      ${true}
+      ${Symbol('p')}
+      ${20n}
+      ${{}}
+      ${[]}
+    `('throws TypeError when $value given', ({ value }: { value: unknown }) => {
       const validation: MockValidation = new MockValidation();
 
       expect(() => {

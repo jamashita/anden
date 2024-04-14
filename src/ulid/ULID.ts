@@ -1,6 +1,6 @@
 import { ulid } from 'ulid';
 import { ValueObject } from '../object/index.js';
-import { Equatable, Primitive } from '../type/index.js';
+import type { Equatable, Primitive } from '../type/index.js';
 import { ULIDError } from './ULIDError.js';
 
 export class ULID extends ValueObject {
