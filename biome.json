@@ -6,13 +6,23 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "all": true
     }
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "lineWidth": 150
+  },
+  "javascript": {
+    "formatter": {
+      "enabled": true,
+      "quoteStyle": "single",
+      "jsxQuoteStyle": "double",
+      "trailingComma": "none",
+      "semicolons": "always",
+      "arrowParentheses": "always"
+    }
   },
   "vcs": {
     "enabled": true,
