@@ -1,3 +1,15 @@
+# [2.9.0](https://github.com/jamashita/anden/compare/v2.8.0...v2.9.0) (2024-06-09)
+
+
+### Bug Fixes
+
+* 🐛 remove eslint files ([b7b4872](https://github.com/jamashita/anden/commit/b7b487243cff84ab203883c6e9b9998598bfd464))
+
+
+### Features
+
+* 🎸 package updated ([d5ca9e2](https://github.com/jamashita/anden/commit/d5ca9e224d27a278dbc0196c2e9253da19781b19))
+
 # [2.8.0](https://github.com/jamashita/anden/compare/v2.7.0...v2.8.0) (2024-04-14)
 
 
