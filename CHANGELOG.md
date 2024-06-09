@@ -1,3 +1,11 @@
+# [2.8.0](https://github.com/jamashita/anden/compare/v2.7.0...v2.8.0) (2024-04-14)
+
+
+### Features
+
+* 🎸 biome settings ([8f5cfdc](https://github.com/jamashita/anden/commit/8f5cfdc755602f803e17a94a7a213dd629ae4436))
+* 🎸 pacakges updated ([c635911](https://github.com/jamashita/anden/commit/c635911980622b43c46aaf5f03e778497fa9807a))
+
 # [2.7.0](https://github.com/jamashita/anden/compare/v2.6.0...v2.7.0) (2024-01-17)
 
 
