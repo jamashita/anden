@@ -2,10 +2,9 @@
 .husky/
 .idea/
 .editorconfig
-.eslintignore
-.eslintrc
 .lintstagedrc.json
 .releaserc.json
+biome.json
 commitlint.config.cjs
 tsconfig.compilation.json
 tsconfig.json
