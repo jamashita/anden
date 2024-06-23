@@ -1,4 +1,4 @@
-import { v4, v5, validate } from 'uuid';
+import { v4, v5, v6, v7, validate } from 'uuid';
 import { ValueObject } from '../object/index.js';
 import type { Equatable, Primitive } from '../type/index.js';
 import { UUIDError } from './UUIDError.js';
@@ -28,6 +28,14 @@ export class UUID extends ValueObject {
 
   public static v5(): UUID {
     return new UUID(v5('ANDEN', '1cf42063-b9c7-4bca-aff9-759dd62995d9'));
+  }
+
+  public static v6(): UUID {
+    return new UUID(v6());
+  }
+
+  public static v7(): UUID {
+    return new UUID(v7());
   }
 
   public static validate(str: string): boolean {

@@ -17,6 +17,22 @@ const v5 = (): Promise<UUID> => {
   });
 };
 
+const v6 = (): Promise<UUID> => {
+  return new Promise((resolve: (value: UUID) => void) => {
+    setImmediate(() => {
+      resolve(UUID.v6());
+    });
+  });
+};
+
+const v7 = (): Promise<UUID> => {
+  return new Promise((resolve: (value: UUID) => void) => {
+    setImmediate(() => {
+      resolve(UUID.v7());
+    });
+  });
+};
+
 describe('UUID', () => {
   describe('of', () => {
     it('returns instance', () => {
@@ -66,6 +82,34 @@ describe('UUID', () => {
     });
   });
 
+  describe('v6', () => {
+    it('always generates 36 length string', async () => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map(() => {
+        return v6();
+      });
+      const ids: Array<UUID> = await Promise.all<UUID>(promises);
+
+      // biome-ignore lint/complexity/noForEach: <explanation>
+      ids.forEach((id: UUID) => {
+        expect(id.get()).toHaveLength(UUID.size());
+      });
+    });
+  });
+
+  describe('v7', () => {
+    it('always generates 36 length string', async () => {
+      const promises: Array<Promise<UUID>> = Array.from(Array(100)).map(() => {
+        return v7();
+      });
+      const ids: Array<UUID> = await Promise.all<UUID>(promises);
+
+      // biome-ignore lint/complexity/noForEach: <explanation>
+      ids.forEach((id: UUID) => {
+        expect(id.get()).toHaveLength(UUID.size());
+      });
+    });
+  });
+
   describe('validate', () => {
     it('returns true if given string is not violated to uuid format', () => {
       const uuid: string = '998106de-b2e7-4981-9643-22cd30cd74de';
@@ -74,18 +118,17 @@ describe('UUID', () => {
     });
 
     it('generates UUID that must pass', async () => {
-      const promises: Array<Promise<[UUID, UUID]>> = Array.from(Array(100)).map(async (): Promise<[UUID, UUID]> => {
-        const v4id: UUID = await v4();
-        const v5id: UUID = await v5();
-
-        return [v4id, v5id];
+      const promises: Array<Promise<[UUID, UUID, UUID, UUID]>> = Array.from(Array(100)).map(() => {
+        return Promise.all([v4(), v5(), v6(), v7()]);
       });
-      const ids: Array<[UUID, UUID]> = await Promise.all<[UUID, UUID]>(promises);
+      const ids: Array<[UUID, UUID, UUID, UUID]> = await Promise.all(promises);
 
       // biome-ignore lint/complexity/noForEach: <explanation>
-      ids.forEach(([v4id, v5id]: [UUID, UUID]) => {
+      ids.forEach(([v4id, v5id, v6id, v7id]) => {
         expect(UUID.validate(v4id.get())).toBe(true);
         expect(UUID.validate(v5id.get())).toBe(true);
+        expect(UUID.validate(v6id.get())).toBe(true);
+        expect(UUID.validate(v7id.get())).toBe(true);
       });
     });
   });
