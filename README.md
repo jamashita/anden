@@ -391,6 +391,14 @@ Returns a new v4 UUID instance.
 
 Returns a new v5 UUID instance.
 
+### `UUID.v6(): UUID`
+
+Returns a new v6 UUID instance.
+
+### `UUID.v7(): UUID`
+
+Returns a new v7 UUID instance.
+
 ### `UUID.validate(str: string): boolean`
 
 Returns `true` if the given string is a valid UUID, `false` otherwise.
