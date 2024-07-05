@@ -93,7 +93,7 @@ export class Zeit extends ValueObject {
     return zeit.isValid();
   }
 
-  private constructor(zeit: Dayjs) {
+  public constructor(zeit: Dayjs) {
     super();
     this.zeit = zeit;
   }
