@@ -21,7 +21,7 @@ export class URL extends ValueObject {
     return URL.regex().test(str);
   }
 
-  private constructor(url: string) {
+  public constructor(url: string) {
     super();
     this.url = url;
   }

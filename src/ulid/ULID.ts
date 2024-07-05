@@ -30,7 +30,7 @@ export class ULID extends ValueObject {
     return ULID.regex().test(str);
   }
 
-  private constructor(id: string) {
+  public constructor(id: string) {
     super();
     this.id = id;
   }
