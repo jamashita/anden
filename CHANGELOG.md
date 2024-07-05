@@ -1,3 +1,11 @@
+# [2.10.0](https://github.com/jamashita/anden/compare/v2.9.0...v2.10.0) (2024-06-23)
+
+
+### Features
+
+* 🎸 packages updated ([c5e4e08](https://github.com/jamashita/anden/commit/c5e4e08ed620b302a8199fcda1b0773a15cf71c4))
+* 🎸 UUID.v6(), UUID.v7() ([513f973](https://github.com/jamashita/anden/commit/513f973affd3c206f8ffce34388b2ca1dceefa7d))
+
 # [2.9.0](https://github.com/jamashita/anden/compare/v2.8.0...v2.9.0) (2024-06-09)
 
 
