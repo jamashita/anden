@@ -1,3 +1,11 @@
+# [2.11.0](https://github.com/jamashita/anden/compare/v2.10.0...v2.11.0) (2024-07-05)
+
+
+### Features
+
+* 🎸 make public ([fa74336](https://github.com/jamashita/anden/commit/fa74336e278e24b722b7c933afbce64f41baf954))
+* 🎸 packages updated ([130234a](https://github.com/jamashita/anden/commit/130234a0e0489cfff21f0b9ab00a0ce3f09f1fb1))
+
 # [2.10.0](https://github.com/jamashita/anden/compare/v2.9.0...v2.10.0) (2024-06-23)
 
 
