@@ -42,7 +42,7 @@ export class UUID extends ValueObject {
     return validate(str);
   }
 
-  public constructor(id: string) {
+  private constructor(id: string) {
     super();
     this.id = id;
   }
