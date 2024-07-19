@@ -1,3 +1,10 @@
+## [2.11.1](https://github.com/jamashita/anden/compare/v2.11.0...v2.11.1) (2024-07-06)
+
+
+### Bug Fixes
+
+* 🐛 visibility ([20d8a04](https://github.com/jamashita/anden/commit/20d8a04d3018b5e96abdda14adcebe9ea1034beb))
+
 # [2.11.0](https://github.com/jamashita/anden/compare/v2.10.0...v2.11.0) (2024-07-05)
 
 
