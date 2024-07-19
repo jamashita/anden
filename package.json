@@ -88,7 +88,7 @@
     "update:upgrade": "ncu --packageManager yarn --deep --upgrade"
   },
   "dependencies": {
-    "dayjs": "1.11.11",
+    "dayjs": "1.11.12",
     "object-hash": "3.0.0",
     "reflect-metadata": "0.2.2",
     "ulid": "2.3.0",
@@ -101,22 +101,22 @@
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/commit-analyzer": "13.0.0",
     "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "10.0.7",
+    "@semantic-release/github": "10.1.1",
     "@semantic-release/npm": "12.0.1",
     "@semantic-release/release-notes-generator": "14.0.1",
-    "@types/node": "20.14.9",
+    "@types/node": "20.14.11",
     "@types/object-hash": "3.0.6",
     "@types/uuid": "10.0.0",
     "git-cz": "4.9.0",
-    "husky": "9.0.11",
+    "husky": "9.1.1",
     "is-ci": "3.0.1",
     "lint-staged": "15.2.7",
     "npm-check-updates": "16.14.20",
-    "rimraf": "5.0.7",
+    "rimraf": "6.0.1",
     "semantic-release": "24.0.0",
     "sort-package-json": "2.10.0",
     "typescript": "5.5.3",
-    "vitest": "1.6.0"
+    "vitest": "2.0.3"
   },
   "engines": {
     "node": ">=18.x"
