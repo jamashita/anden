@@ -1,3 +1,10 @@
+# [2.12.0](https://github.com/jamashita/anden/compare/v2.11.1...v2.12.0) (2024-07-19)
+
+
+### Features
+
+* 🎸 packages updated ([fd1ff34](https://github.com/jamashita/anden/commit/fd1ff346d407a5027b16d85cc0b007e6a0f7a855))
+
 ## [2.11.1](https://github.com/jamashita/anden/compare/v2.11.0...v2.11.1) (2024-07-06)
 
 
